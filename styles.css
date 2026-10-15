@@ -428,3 +428,32 @@ svg{flex-shrink:0}
   .to-top.is-visible{display:inline-flex;opacity:1;visibility:visible;transform:none;pointer-events:auto}
   body.menu-open .to-top{opacity:0;visibility:hidden;pointer-events:none}
 }
+
+/* example setup picker */
+.setup-form{margin:0 0 28px}
+.picker-step{border:0;margin:0 0 18px;padding:0;min-inline-size:0}
+.picker-step legend{display:flex;align-items:center;gap:8px;padding:0;margin-bottom:10px;font-weight:700;font-size:15px;color:var(--ink)}
+.picker-num{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:50%;background:var(--fjord-700);color:#fff;font-size:12px;font-weight:700}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{position:relative;display:inline-flex}
+.chip input{position:absolute;inset:0;margin:0;opacity:0;cursor:pointer}
+.chip span{display:inline-flex;align-items:center;padding:10px 16px;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--ink);font-size:14.5px;font-weight:600;line-height:1.2}
+.chip:hover span{border-color:var(--fjord-500)}
+.chip input:checked+span{background:var(--fjord-700);border-color:var(--fjord-700);color:#fff}
+.chip input:focus-visible+span{outline:3px solid var(--accent);outline-offset:3px}
+.setup-card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:32px;box-shadow:var(--shadow-sm)}
+.setup-pill{display:inline-block;margin-bottom:12px;font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#9a5a17;background:var(--accent-100);border-radius:999px;padding:4px 10px}
+.setup-card h3{font-family:var(--serif);font-weight:600;font-size:clamp(1.45rem,2vw,1.85rem);margin:0 0 22px}
+.setup-parts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.setup-part{background:var(--sand);border-radius:16px;padding:18px 18px 20px}
+.setup-part h4{margin:0 0 12px;font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--fjord-600)}
+.setup-list{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.setup-list li{position:relative;padding-left:14px;color:var(--ink-2);font-size:14.5px;line-height:1.45}
+.setup-list li::before{content:"";position:absolute;left:0;top:.55em;width:6px;height:6px;border-radius:50%;background:var(--accent)}
+.setup-disclaimer{margin:18px 0 0;font-size:14px;color:var(--ink-3)}
+.setup-cta{margin-top:16px}
+@media (max-width:800px){
+  .setup-parts{grid-template-columns:1fr}
+  .setup-card{padding:24px 20px}
+  .setup-cta{width:100%;white-space:normal;text-align:center}
+}

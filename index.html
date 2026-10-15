@@ -42,6 +42,7 @@
     <a href="#team">Et lite team</a>
     <a href="#sier-fra">Den sier fra</a>
     <a href="#mer">Og mye mer</a>
+    <a href="#ditt-eksempel">Ditt eksempel</a>
     <a href="#ai-agent">Hva er en AI-agent?</a>
     <a href="#sikkerhet">Sikkerhet</a>
     <a href="#priser">Priser</a>
@@ -225,6 +226,78 @@
         <p>innleggsutkast og oversikt</p>
       </article>
     </div>
+  </div>
+</section>
+
+<!-- DITT EKSEMPEL -->
+<section class="section section-tint" id="ditt-eksempel">
+  <div class="container">
+    <div class="section-head">
+      <h2>Se hva assistenten kan gjøre for deg</h2>
+      <p>Velg det som passer deg, så ser du et eksempel på oppsett før vi snakker sammen.</p>
+    </div>
+    <form class="setup-form" id="setup-form">
+      <fieldset class="picker-step" id="step-type">
+        <legend><span class="picker-num">1</span> Type</legend>
+        <div class="chips">
+          <label class="chip"><input type="radio" name="org-type" value="bedrift" checked><span>Bedrift</span></label>
+          <label class="chip"><input type="radio" name="org-type" value="enk"><span>Enkeltpersonforetak</span></label>
+          <label class="chip"><input type="radio" name="org-type" value="borettslag"><span>Borettslag/sameie</span></label>
+          <label class="chip"><input type="radio" name="org-type" value="forening"><span>Forening/organisasjon</span></label>
+        </div>
+      </fieldset>
+      <fieldset class="picker-step" id="step-bransje">
+        <legend><span class="picker-num">2</span> Bransje</legend>
+        <div class="chips">
+          <label class="chip"><input type="radio" name="bransje" value="handverk" checked><span>Håndverk og bygg</span></label>
+          <label class="chip"><input type="radio" name="bransje" value="regnskap"><span>Regnskap og rådgivning</span></label>
+          <label class="chip"><input type="radio" name="bransje" value="helse"><span>Helse og terapi</span></label>
+          <label class="chip"><input type="radio" name="bransje" value="butikk"><span>Butikk og netthandel</span></label>
+          <label class="chip"><input type="radio" name="bransje" value="eiendom"><span>Eiendom og utleie</span></label>
+          <label class="chip"><input type="radio" name="bransje" value="konsulent"><span>Konsulent og IT</span></label>
+          <label class="chip"><input type="radio" name="bransje" value="restaurant"><span>Restaurant og servering</span></label>
+          <label class="chip"><input type="radio" name="bransje" value="annet"><span>Annet</span></label>
+        </div>
+      </fieldset>
+      <fieldset class="picker-step" id="step-rolle-bedrift">
+        <legend><span class="picker-num">3</span> Rolle</legend>
+        <div class="chips">
+          <label class="chip"><input type="radio" name="rolle-bedrift" value="leder" checked><span>Daglig leder/eier</span></label>
+          <label class="chip"><input type="radio" name="rolle-bedrift" value="selger"><span>Selger</span></label>
+          <label class="chip"><input type="radio" name="rolle-bedrift" value="kontor"><span>Kontor/administrasjon</span></label>
+        </div>
+      </fieldset>
+      <fieldset class="picker-step" id="step-rolle-styre" hidden disabled>
+        <legend><span class="picker-num">3</span> Rolle</legend>
+        <div class="chips">
+          <label class="chip"><input type="radio" name="rolle-styre" value="styreleder" checked><span>Styreleder</span></label>
+          <label class="chip"><input type="radio" name="rolle-styre" value="styremedlem"><span>Styremedlem</span></label>
+          <label class="chip"><input type="radio" name="rolle-styre" value="forretning"><span>Forretningsfører/sekretær</span></label>
+        </div>
+      </fieldset>
+    </form>
+    <article class="setup-card">
+      <div id="setup-live" aria-live="polite">
+        <span class="setup-pill">Eksempel</span>
+        <h3 id="setup-title"></h3>
+        <div class="setup-parts">
+          <section class="setup-part">
+            <h4>Dine assistenter</h4>
+            <ul class="setup-list" id="setup-assistants"></ul>
+          </section>
+          <section class="setup-part">
+            <h4>En vanlig dag</h4>
+            <ul class="setup-list" id="setup-day"></ul>
+          </section>
+          <section class="setup-part">
+            <h4>Dette slipper du</h4>
+            <ul class="setup-list" id="setup-skip"></ul>
+          </section>
+        </div>
+      </div>
+      <p class="setup-disclaimer">Eksempel. Endelig oppsett tilpasses deg i en gratis prat.</p>
+      <a class="btn btn-accent setup-cta" id="setup-cta" href="mailto:andreas@fjellhoy.com">Book en gratis prat om dette oppsettet</a>
+    </article>
   </div>
 </section>
 
@@ -624,6 +697,121 @@
   desktop.addEventListener('change',closeOnDesktop);
 
   document.getElementById('year').textContent=new Date().getFullYear();
+
+  const setupForm=document.getElementById('setup-form');
+  const stepBransje=document.getElementById('step-bransje');
+  const stepRolleBedrift=document.getElementById('step-rolle-bedrift');
+  const stepRolleStyre=document.getElementById('step-rolle-styre');
+  const industries={
+    handverk:{
+      assistants:['Tilbud og prosjekt','Kunde og kalender','Faktura og økonomi'],
+      day:['Morgenbrief med befaringer i dag og tilbud som venter','Utkast til tilbud, basert på en lignende jobb. Du godkjenner før det sendes','Purring på forfalte fakturaer ligger klar, men går ikke ut uten ditt ja','Varsel dagen før en materialfrist eller en avtalt oppstart'],
+      skip:['Å skrive tilbud sent på kvelden','Å glemme en kunde som ba om pris','Å oppdage en ubetalt faktura for sent'],
+      inTitle:'håndverk og bygg'
+    },
+    regnskap:{
+      assistants:['Frister og leveranser','Kundemappe','Timer og faktura'],
+      day:['Morgenbrief med frister denne uken og kunder som venter svar','Utkast til svar på vanlige spørsmål. Du leser før noe sendes','Timegrunnlag er samlet til faktura. Ingenting sendes uten ditt ja','Varsel når et bilag mangler før en leveransefrist'],
+      skip:['Å lete etter forrige svar til samme kunde','Å holde leveransefristene i hodet','Å starte hvert kundebrev fra blankt ark'],
+      inTitle:'regnskap og rådgivning'
+    },
+    helse:{
+      assistants:['Timebok','Henvendelser','Oppgjør og faktura'],
+      day:['Morgenbrief med dagens timer og henvendelser som venter','Utkast til svar om time og praktiske spørsmål. Du godkjenner før det sendes','Oppgjørsgrunnlag er klargjort. Ingenting sendes eller betales uten ditt ja','Varsel når en time står tom eller en oppgjørsfrist nærmer seg'],
+      skip:['Å svare på de samme praktiske spørsmålene','Å oppdage et hull i timeboken for sent','Å samle oppgjørsgrunnlag for hånd'],
+      inTitle:'helse og terapi'
+    },
+    butikk:{
+      assistants:['Kunde og ordre','Leverandør og lager','Faktura og purring'],
+      day:['Morgenbrief med ordre som venter svar og varer som går tomme','Utkast til svar om levering og retur. Du godkjenner før det sendes','Leverandørfakturaer er sjekket mot forrige pris. Du godkjenner før noe betales','Varsel når en bestilling eller en kampanjefrist bør tas'],
+      skip:['Å svare på de samme spørsmålene om levering','Å oppdage en prisøkning fra leverandøren for sent','Å skrive purringer fra blankt ark'],
+      inTitle:'butikk og netthandel'
+    },
+    eiendom:{
+      assistants:['Leietaker og henvendelser','Kontrakt og frist','Husleie og faktura'],
+      day:['Morgenbrief med henvendelser fra leietakere og frister i kontraktene','Utkast til svar om praktiske forhold. Ingenting sendes uten ditt ja','Husleiekrav er lagt klare. Ingenting sendes før du har sagt ja','Varsel før en kontraktsfrist, en visning eller en regulering'],
+      skip:['Å lete i gamle e-poster når en leietaker spør','Å glemme en frist i leiekontrakten','Å sjekke hvert krav mot forrige beløp for hånd'],
+      inTitle:'eiendom og utleie'
+    },
+    konsulent:{
+      assistants:['Tilbud og oppdrag','Møte og oppfølging','Timer og faktura'],
+      day:['Morgenbrief med møter i dag og tilbud som har ligget stille','Utkast til oppfølging etter møtet. Du leser før det sendes','Timegrunnlag er samlet. Faktura sendes ikke uten ditt ja','Varsel når et tilbud eller en leveranse nærmer seg frist'],
+      skip:['Å skrive møtenotatet fra hukommelsen','Å glemme å følge opp et tilbud','Å rekonstruere timer når fakturaen skal lages'],
+      inTitle:'konsulent og IT'
+    },
+    restaurant:{
+      assistants:['Vakt og kalender','Leverandør og varemottak','Faktura og gjester'],
+      day:['Morgenbrief med vakter, leveranser og det som haster i dag','Utkast til svar på bordbestilling. Du godkjenner før det sendes','Leverandørfakturaer er sammenlignet med forrige. Ingenting betales uten ditt ja','Varsel når en vakt står åpen eller en bestilling bør ut'],
+      skip:['Å svare på bestillinger mellom øktene','Å oppdage en prisendring på råvarer for sent','Å holde vaktliste og leveranser i hodet'],
+      inTitle:'restaurant og servering'
+    },
+    annet:{
+      assistants:['Innboks og prioritering','Oppfølging og frister','Faktura og økonomi'],
+      day:['Morgenbrief med bare det som trenger deg','Utkast til vanlige svar. Du godkjenner før noe sendes','Fakturaer er sjekket mot tidligere beløp og lagt klare. Ingenting betales uten ditt ja','Varsel når en frist nærmer seg'],
+      skip:['Å starte dagen i en full innboks','Å skrive de samme svarene om igjen','Å oppdage en forfalt faktura for sent'],
+      inTitle:'en annen bransje'
+    }
+  };
+  const groups={
+    borettslag:{
+      assistants:['Styremøte og saksliste','Beboerhenvendelser','Faktura og leverandør'],
+      day:['Morgenbrief med henvendelser som venter svar','Utkast til svar til beboere. Du godkjenner før noe sendes','Fakturaer er sammenlignet med forrige fra samme leverandør. Du godkjenner før noe betales','Varsel før en frist, en generalforsamling eller et styremøte'],
+      skip:['Å sortere styremailen for hånd','Å skrive saksliste fra blankt ark','Å godkjenne en faktura uten å se avviket'],
+      inTitle:'borettslag/sameie'
+    },
+    forening:{
+      assistants:['Medlemshenvendelser','Møter og årsmøte','Kontingent og økonomi'],
+      day:['Morgenbrief med henvendelser fra medlemmer og saker som venter','Utkast til svar. Du godkjenner før noe sendes','Kontingent og fakturaer er lagt klare. Ingenting sendes eller betales uten ditt ja','Varsel før årsmøte, en søknadsfrist eller et styremøte'],
+      skip:['Å sortere medlemsmailen for hånd','Å starte innkalling og saksliste fra blankt ark','Å følge opp kontingent uten oversikt'],
+      inTitle:'forening/organisasjon'
+    }
+  };
+  const roleAddon={
+    leder:{assistant:'Morgenbrief',day:'Kort morgenbrief med bare det som trenger et ja fra deg',skip:'Å bruke morgenen på å finne ut hva som haster',inTitle:'Daglig leder'},
+    selger:{assistant:'Tilbudsoppfølging',day:'Utkast til oppfølging av tilbud som har ligget stille. Ingenting sendes uten ditt ja',skip:'Å glemme et tilbud som aldri ble fulgt opp',inTitle:'Selger'},
+    kontor:{assistant:'Dokumentarkiv',day:'Vedlegg er foreslått sortert. Ingenting flyttes eller slettes uten at du ser det',skip:'Å rydde innboks og arkiv for hånd',inTitle:'Kontor og administrasjon'},
+    styreleder:{assistant:'Oppfølging mellom møtene',day:'Saker som ble liggende etter forrige møte er samlet i et utkast',skip:'Å huske løse tråder mellom møtene',inTitle:'Styreleder'},
+    styremedlem:{assistant:'Lesestoff til møtet',day:'Kort utkast til det du bør lese før møtet',skip:'Å lete gjennom lange tråder kvelden før møtet',inTitle:'Styremedlem'},
+    forretning:{assistant:'Referat og frister',day:'Utkast til referat og oppfølgingspunkter. Ingenting sendes ut uten ditt ja',skip:'Å skrive referatet fra blankt ark etter møtet',inTitle:'Forretningsfører'}
+  };
+  const pick=fieldset=>{
+    const input=fieldset.querySelector('input:checked');
+    return {value:input.value,label:input.nextElementSibling.textContent.trim()};
+  };
+  const fill= (ul,items)=>{ul.replaceChildren(...items.map(text=>{const li=document.createElement('li');li.textContent=text;return li;}));};
+  const renderSetup=()=>{
+    const type=pick(document.getElementById('step-type'));
+    const board=type.value==='borettslag'||type.value==='forening';
+    stepBransje.hidden=board;
+    stepBransje.disabled=board;
+    stepRolleBedrift.hidden=board;
+    stepRolleBedrift.disabled=board;
+    stepRolleStyre.hidden=!board;
+    stepRolleStyre.disabled=!board;
+    const bransje=board?null:pick(stepBransje);
+    const role=pick(board?stepRolleStyre:stepRolleBedrift);
+    const base=board?groups[type.value]:industries[bransje.value];
+    const addon=roleAddon[role.value];
+    const assistants=base.assistants.includes(addon.assistant)?base.assistants.slice(0,4):base.assistants.concat(addon.assistant).slice(0,4);
+    const day=base.day.slice();
+    day[0]=addon.day;
+    if(type.value==='enk')day[day.length-1]='Korte utkast til det som kan tas mellom jobbene. Hvert ja tar du selv';
+    const skip=base.skip.slice();
+    skip[skip.length-1]=addon.skip;
+    const place=board?base.inTitle:(type.value==='enk'?`enkeltpersonforetak, ${base.inTitle}`:base.inTitle);
+    const title=`Eksempeloppsett: ${addon.inTitle} i ${place}`;
+    document.getElementById('setup-title').textContent=title;
+    fill(document.getElementById('setup-assistants'),assistants);
+    fill(document.getElementById('setup-day'),day);
+    fill(document.getElementById('setup-skip'),skip);
+    const subject=bransje?`Gratis prat – ${type.label}, ${bransje.label}, ${role.label}`:`Gratis prat – ${type.label}, ${role.label}`;
+    const lines=['Hei Andreas,','','Jeg vil gjerne ha en gratis prat om dette eksempeloppsettet.','',`Type: ${type.label}`];
+    if(bransje)lines.push(`Bransje: ${bransje.label}`);
+    lines.push(`Rolle: ${role.label}`,'',title);
+    document.getElementById('setup-cta').href=`mailto:andreas@fjellhoy.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(lines.join('\n'))}`;
+  };
+  setupForm.addEventListener('change',renderSetup);
+  renderSetup();
 </script>
 </body>
 </html>

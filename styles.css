@@ -131,8 +131,9 @@ svg{flex-shrink:0}
 .icon-card h3{margin:20px 0 8px}
 .icon-card p{color:var(--ink-2);font-size:15.5px}
 .icon-card-cta{background:linear-gradient(160deg,var(--fjord-700),var(--fjord-800));border-color:transparent;color:#d6e4e0;display:flex;flex-direction:column;justify-content:center}
-.icon-card-cta h3{color:#fff;margin-top:0;font-family:var(--serif);font-size:1.4rem}
+.icon-card-cta h3{color:#fff;font-family:var(--serif);font-size:1.4rem}
 .icon-card-cta p{color:#c4d6d1;margin-bottom:18px}
+.icon-card-cta .icon-wrap{background:rgba(255,255,255,.12);color:var(--accent)}
 .text-link{display:inline-flex;align-items:center;gap:8px;color:var(--accent);font-weight:600;text-decoration:none}
 .text-link:hover{gap:12px}
 .icon-wrap{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;background:#e6f0ed;color:var(--fjord-600)}
@@ -142,9 +143,11 @@ svg{flex-shrink:0}
 
 /* steps */
 .steps{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(3,1fr);gap:24px;position:relative;counter-reset:s}
-.steps::before{content:"";position:absolute;top:52px;left:16%;right:16%;height:2px;background:repeating-linear-gradient(90deg,var(--accent) 0 8px,transparent 8px 16px);opacity:.55}
-.step{position:relative;background:#fff;border-radius:var(--radius);padding:32px 30px 34px;box-shadow:var(--shadow);text-align:center}
-.step-num{position:relative;z-index:1;display:inline-grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--fjord-700);color:#fff;font-weight:700;margin-bottom:20px;box-shadow:0 0 0 6px var(--sand)}
+.steps::before{content:"";position:absolute;top:54px;left:16%;right:16%;height:2px;background:repeating-linear-gradient(90deg,var(--accent) 0 8px,transparent 8px 16px);opacity:.55}
+.step{position:relative;background:#fff;border:1px solid var(--line);border-top:4px solid var(--fjord-600);border-radius:var(--radius);padding:32px 30px 34px;box-shadow:var(--shadow);text-align:center}
+.step-num{position:relative;z-index:1;display:inline-grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--fjord-700);color:#fff;font-weight:700;margin-bottom:18px;box-shadow:0 0 0 6px var(--sand)}
+.step-ico{width:56px;height:56px;margin:0 auto 16px;border-radius:16px;display:grid;place-items:center;background:#e6f0ed;color:var(--fjord-600)}
+.step-ico svg{width:28px;height:28px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 .step h3{font-size:1.2rem;margin-bottom:10px}
 .step p{color:var(--ink-2);font-size:15.5px}
 
@@ -190,18 +193,6 @@ svg{flex-shrink:0}
 .board-card .price{margin-bottom:18px}
 .board-card .checklist li{color:#c8d9d4}
 .board-card .checklist svg{color:var(--accent)}
-
-/* compare */
-.compare{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:var(--shadow-sm)}
-.compare-item{padding:36px 32px;background:#fff}
-.compare-item+.compare-item{border-left:1px solid var(--line)}
-.compare-label{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-3)}
-.compare-price{font-size:1.65rem;font-weight:700;letter-spacing:-.02em;margin:10px 0 8px;color:var(--ink-2)}
-.compare-item p:last-child{color:var(--ink-3);font-size:15.5px}
-.compare-us{background:linear-gradient(160deg,var(--fjord-700),var(--fjord-800))}
-.compare-us .compare-label{color:var(--accent)}
-.compare-us .compare-price{color:#fff}
-.compare-us p:last-child{color:#c4d6d1}
 
 /* about */
 .about{display:grid;grid-template-columns:400px 1fr;gap:88px;align-items:center}
@@ -271,10 +262,9 @@ svg{flex-shrink:0}
   .about-photo{max-width:420px}
 }
 @media (max-width:900px){
-  .price-grid,.steps,.audience,.compare,.price-extras{grid-template-columns:1fr}
+  .price-grid,.steps,.audience,.price-extras{grid-template-columns:1fr}
   .steps::before{display:none}
   .price-card-featured{transform:none}
-  .compare-item+.compare-item{border-left:0;border-top:1px solid var(--line)}
   .cta-inner{flex-direction:column;align-items:flex-start;padding:44px 32px}
   .cta-side,.cta-actions,.cta-contact{align-items:flex-start;justify-content:flex-start;width:100%}
 }

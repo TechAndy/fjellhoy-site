@@ -81,12 +81,15 @@ svg{flex-shrink:0}
 .hero-grid{position:relative;display:grid;grid-template-columns:1.08fr .92fr;gap:64px;align-items:center}
 .eyebrow{display:inline-block;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--fjord-500);margin-bottom:16px}
 .eyebrow-light{color:var(--accent)}
-.hero h1{color:#fff;font-size:clamp(2.05rem,3.5vw,3.25rem);line-height:1.08;margin-bottom:14px;max-width:14em}
+.hero h1{color:#fff;font-size:clamp(2.05rem,3.5vw,3.15rem);line-height:1.08;margin-bottom:14px;max-width:14em}
 .lead{font-size:clamp(1.05rem,1.4vw,1.2rem);color:#c9dbd6;max-width:34em;margin-bottom:36px}
-.hero-handles{margin:0 0 22px;color:#d5e4df;font-size:1.12rem;font-weight:600}
-.hero-price{margin:0 0 22px;color:#fff;font-size:1.2rem;font-weight:700;letter-spacing:-.02em;line-height:1.3;white-space:nowrap}
-@media (max-width:600px){.hero-price{font-size:13.5px;letter-spacing:-.03em}}
-.hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:8px}
+.hero-who{display:flex;align-items:center;gap:12px;margin:0 0 16px}
+.hero-who img{width:64px;height:64px;border-radius:50%;object-fit:cover;object-position:center 18%;border:2px solid rgba(232,162,92,.75);flex:none}
+.hero-eyebrow{margin:0;color:#f3c99a;font-size:15px;font-weight:600}
+.hero-lead{margin:0 0 24px;max-width:34em;color:#d5e4df;font-size:1.05rem;line-height:1.5}
+.hero-actions{display:flex;flex-wrap:wrap;align-items:center;gap:14px 18px;margin-bottom:8px}
+.hero-more{color:#f3c99a;font-weight:600;text-decoration:none}
+.hero-more:hover{color:#fff}
 .hero-points{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:10px 26px;font-size:15px;color:#b9cec8}
 .hero-points li{display:flex;align-items:center;gap:8px}
 .hero-points svg{color:var(--accent)}
@@ -292,6 +295,8 @@ svg{flex-shrink:0}
   .about-photo{margin-right:12px}
   .cta-band{padding-bottom:76px}
   .cta-inner .btn,.hero-actions .btn{width:100%;white-space:normal;text-align:center}
+  .hero-who img{width:48px;height:48px}
+  .hero-actions{align-items:stretch}
   .cta-actions{flex-direction:column}
   .footer-links{margin-left:0;flex-direction:column;gap:8px}
 }

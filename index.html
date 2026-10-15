@@ -12,13 +12,14 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23173a3a'/%3E%3Cpath d='M5 24 L13 12 L18 19 L21 15 L27 24Z' fill='%23e8a25c'/%3E%3C/svg%3E">
 </head>
 <body>
+<div id="top"></div>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
 </svg>
 
-<header class="site-header" id="top">
+<header class="site-header">
   <div class="container nav">
     <a href="#top" class="brand" aria-label="Fjellhøy – til toppen">
       <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#173a3a"/><path d="M5 24 L13 12 L18 19 L21 15 L27 24Z" fill="#e8a25c"/><circle cx="23" cy="9" r="2.4" fill="#f3e7d3"/></svg>
@@ -34,9 +35,20 @@
       <a href="#faq">Spørsmål</a>
     </nav>
     <a class="btn btn-small btn-accent nav-cta" href="mailto:andreas@fjellhoy.com?subject=Gratis%2020-minutters%20prat">Book en prat</a>
-    <button class="menu-toggle" aria-label="Åpne meny" aria-expanded="false"><span></span><span></span></button>
+    <button class="menu-toggle" type="button" aria-label="Meny" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span></button>
   </div>
+  <nav id="mobile-menu" class="mobile-menu" aria-label="Seksjoner" hidden>
+    <a href="#slipper">Dette slipper du</a>
+    <a href="#ai-agent">Hva er en AI-agent?</a>
+    <a href="#sikkerhet">Sikkerhet</a>
+    <a href="#priser">Priser</a>
+    <a href="#styrer">For styrer</a>
+    <a href="#om">Om meg</a>
+    <a href="#faq">Spørsmål</a>
+    <a class="btn btn-accent mobile-menu-cta" href="mailto:andreas@fjellhoy.com?subject=Gratis%2020-minutters%20prat">Book en prat</a>
+  </nav>
 </header>
+<div class="menu-backdrop" hidden></div>
 
 <main>
 <!-- HERO -->
@@ -483,11 +495,41 @@
   </div>
 </footer>
 
+<a class="to-top" href="#top"><svg class="ico-xs" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 15l6-6 6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>til toppen</a>
+
 <script>
-  const t=document.querySelector('.menu-toggle'),h=document.querySelector('.site-header');
-  t.addEventListener('click',()=>{const o=h.classList.toggle('open');t.setAttribute('aria-expanded',o);t.setAttribute('aria-label',o?'Lukk meny':'Åpne meny');});
-  document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>{h.classList.remove('open');t.setAttribute('aria-expanded','false');}));
-  const onScroll=()=>h.classList.toggle('scrolled',window.scrollY>8);onScroll();addEventListener('scroll',onScroll,{passive:true});
+  const toggle=document.querySelector('.menu-toggle');
+  const header=document.querySelector('.site-header');
+  const menu=document.getElementById('mobile-menu');
+  const backdrop=document.querySelector('.menu-backdrop');
+  const toTop=document.querySelector('.to-top');
+
+  const setMenu=open=>{
+    header.classList.toggle('open',open);
+    document.body.classList.toggle('menu-open',open);
+    toggle.setAttribute('aria-expanded',open?'true':'false');
+    menu.hidden=!open;
+    backdrop.hidden=!open;
+  };
+
+  toggle.addEventListener('click',()=>setMenu(toggle.getAttribute('aria-expanded')!=='true'));
+  menu.addEventListener('click',e=>{if(e.target.closest('a'))setMenu(false);});
+  backdrop.addEventListener('click',()=>setMenu(false));
+  document.addEventListener('keydown',e=>{
+    if(e.key==='Escape'&&toggle.getAttribute('aria-expanded')==='true'){setMenu(false);toggle.focus();}
+  });
+
+  const onScroll=()=>{
+    header.classList.toggle('scrolled',window.scrollY>8);
+    toTop.classList.toggle('is-visible',window.scrollY>400);
+  };
+  onScroll();
+  addEventListener('scroll',onScroll,{passive:true});
+
+  const desktop=matchMedia('(min-width:861px)');
+  const closeOnDesktop=()=>{if(desktop.matches)setMenu(false);};
+  desktop.addEventListener('change',closeOnDesktop);
+
   document.getElementById('year').textContent=new Date().getFullYear();
 </script>
 </body>

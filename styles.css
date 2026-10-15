@@ -363,8 +363,8 @@ svg{flex-shrink:0}
 .chair-fees strong{color:var(--ink);font-weight:700}
 .chair-fees .row-included{color:var(--fjord-600)}
 .incl{display:inline-flex;align-items:center;gap:6px;font-weight:600}
-.chair-note .note,.chair-note .vat{margin:0!important;font-size:13.5px;color:var(--ink-3)!important}
-.chair-note .vat{margin-top:2px!important}
+.chair-note .note{margin:0!important;font-size:13.5px;color:var(--ink-3)!important}
+.chair-note .note+.note{margin-top:2px!important}
 .platform-card{margin:8px 0 26px;padding:22px 24px;background:#fff;border:1px solid var(--line);border-left:3px solid var(--fjord-500);border-radius:14px;box-shadow:var(--shadow-sm);max-width:36em}
 .platform-card h3{margin-bottom:6px}
 .platform-card p{margin-bottom:8px!important;font-size:15.5px}

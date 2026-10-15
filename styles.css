@@ -190,18 +190,6 @@ svg{flex-shrink:0}
 .board-card .price{margin-bottom:18px}
 .board-card .checklist li{color:#c8d9d4}
 .board-card .checklist svg{color:var(--accent)}
-.chair{margin-top:40px;display:grid;grid-template-columns:.85fr 1.15fr;gap:48px;align-items:center;background:#fff;color:var(--ink);border-radius:24px;padding:44px;box-shadow:var(--shadow-lg)}
-.chair h3{font-family:var(--serif);font-size:1.9rem;font-weight:600;margin-bottom:12px}
-.chair-intro p{color:var(--ink-2)}
-.note{margin-top:16px;padding:12px 16px;background:var(--sand);border-radius:12px;font-size:14.5px;color:var(--ink-2)!important}
-.table-wrap{overflow-x:auto}
-.chair-table{width:100%;border-collapse:collapse;font-size:16px}
-.chair-table th{text-align:left;font-size:12.5px;text-transform:uppercase;letter-spacing:.07em;color:var(--ink-3);font-weight:600;padding:0 0 12px;border-bottom:1px solid var(--line)}
-.chair-table td{padding:15px 0;border-bottom:1px solid var(--line)}
-.chair-table td:last-child,.chair-table th:last-child{text-align:right}
-.chair-table tr:last-child td{border-bottom:0}
-.row-included td{color:var(--fjord-600);font-weight:500}
-.incl{display:inline-flex;align-items:center;gap:6px;background:#e2f1ec;color:#1f6a58;font-weight:600;font-size:14px;padding:5px 12px;border-radius:999px}
 
 /* compare */
 .compare{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:var(--shadow-sm)}
@@ -279,7 +267,7 @@ svg{flex-shrink:0}
   .hero-visual{max-width:560px;padding-left:30px}
   .hero{padding-bottom:180px}
   .icon-grid{grid-template-columns:repeat(2,1fr)}
-  .chair,.about,.data-block,.faq-wrap{grid-template-columns:1fr;gap:40px}
+  .about,.data-block,.faq-wrap{grid-template-columns:1fr;gap:40px}
   .about-photo{max-width:420px}
 }
 @media (max-width:900px){
@@ -305,8 +293,6 @@ svg{flex-shrink:0}
   .mock-row{gap:10px;padding:12px 8px}
   .icon-grid{grid-template-columns:1fr}
   .icon-card,.audience-card,.price-card,.board-card{padding:28px 24px}
-  .chair{padding:30px 22px}
-  .chair-table{font-size:15px}
   .data-block{padding:30px 22px}
   .data-intro{flex-direction:column;align-items:flex-start}
   .about-photo::before{inset:16px -12px -16px 16px}
@@ -316,9 +302,6 @@ svg{flex-shrink:0}
   .cta-actions{flex-direction:column}
   .footer-links{margin-left:0;flex-direction:column;gap:8px}
 }
-.chair-table td:last-child{white-space:nowrap;padding-left:12px}
-@media (max-width:600px){.chair-table{font-size:14px}.chair-table td{padding:13px 0}.chair-table td:first-child{padding-right:8px}.incl{font-size:13px;padding:4px 10px}}
-
 /* slogan + hero sub */
 .slogan-pill{display:inline-flex;align-items:center;gap:8px;margin-bottom:22px;padding:8px 16px 8px 12px;border-radius:999px;background:rgba(232,162,92,.14);border:1px solid rgba(232,162,92,.35);color:#f3c99a;font-size:14.5px;font-weight:600;letter-spacing:.005em}
 .slogan-pill svg{color:var(--accent)}

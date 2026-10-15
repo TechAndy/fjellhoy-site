@@ -86,7 +86,9 @@ svg{flex-shrink:0}
 .hero-who{display:flex;align-items:center;gap:12px;margin:0 0 16px}
 .hero-who img{width:64px;height:64px;border-radius:50%;object-fit:cover;object-position:center 18%;border:2px solid rgba(232,162,92,.75);flex:none}
 .hero-eyebrow{margin:0;color:#f3c99a;font-size:15px;font-weight:600}
-.hero-lead{margin:0 0 24px;max-width:34em;color:#d5e4df;font-size:1.05rem;line-height:1.5}
+.hero-offer{margin:0 0 12px;max-width:22em;color:#fff;font-size:1.2rem;line-height:1.35}
+.hero-offer strong{font-weight:700}
+.hero-lead{margin:0 0 22px;max-width:36em;color:#d5e4df;font-size:1.02rem;line-height:1.5}
 .hero-actions{display:flex;flex-wrap:wrap;align-items:center;gap:14px 18px;margin-bottom:8px}
 .hero-more{color:#f3c99a;font-weight:600;text-decoration:none}
 .hero-more:hover{color:#fff}
@@ -281,7 +283,12 @@ svg{flex-shrink:0}
   html{scroll-padding-top:72px}
   .section{padding:76px 0}
   .section-head{margin-bottom:40px}
-  .hero{padding:56px 0 150px}
+  .hero{padding:28px 0 120px}
+  .slogan-pill{margin-bottom:12px}
+  .hero-who{margin-bottom:10px}
+  .hero h1{font-size:1.85rem;margin-bottom:8px}
+  .hero-offer{font-size:1.05rem;margin-bottom:8px}
+  .hero-lead{margin-bottom:14px;font-size:15.5px}
   .hero-fjord{height:190px}
   .hero-visual{padding:0 0 70px 0}
   .mock-approve{left:auto;right:-6px;width:86%}
@@ -331,7 +338,7 @@ svg{flex-shrink:0}
   .agent-arrow svg{transform:rotate(90deg)}
   .agent-boss{border-radius:20px;padding:18px 22px;max-width:520px;justify-content:flex-start}
 }
-@media (max-width:600px){.slogan-pill{font-size:13px}.agent-boss p{font-size:1.1rem}.section-agent{padding-top:8px}}
+@media (max-width:600px){.slogan-pill{font-size:13px;margin-bottom:12px}.agent-boss p{font-size:1.1rem}.section-agent{padding-top:8px}}
 
 /* sikkerhet */
 .section-compact-top{padding-top:0}

@@ -81,9 +81,17 @@ svg{flex-shrink:0}
 .hero-grid{position:relative;display:grid;grid-template-columns:1.08fr .92fr;gap:64px;align-items:center}
 .eyebrow{display:inline-block;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--fjord-500);margin-bottom:16px}
 .eyebrow-light{color:var(--accent)}
-.hero h1{color:#fff;font-size:clamp(2.6rem,5.2vw,4.25rem);line-height:1.04;margin-bottom:24px;max-width:13ch}
+.hero h1{color:#fff;font-size:clamp(2.05rem,3.5vw,3.15rem);line-height:1.08;margin-bottom:14px;max-width:14em}
 .lead{font-size:clamp(1.05rem,1.4vw,1.2rem);color:#c9dbd6;max-width:34em;margin-bottom:36px}
-.hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:36px}
+.hero-who{display:flex;align-items:center;gap:12px;margin:0 0 16px}
+.hero-who img{width:64px;height:64px;border-radius:50%;object-fit:cover;object-position:center 18%;border:2px solid rgba(232,162,92,.75);flex:none}
+.hero-eyebrow{margin:0;color:#f3c99a;font-size:15px;font-weight:600}
+.hero-offer{margin:0 0 12px;max-width:22em;color:#fff;font-size:1.2rem;line-height:1.35}
+.hero-offer strong{font-weight:700}
+.hero-lead{margin:0 0 22px;max-width:36em;color:#d5e4df;font-size:1.02rem;line-height:1.5}
+.hero-actions{display:flex;flex-wrap:wrap;align-items:center;gap:14px 18px;margin-bottom:8px}
+.hero-more{color:#f3c99a;font-weight:600;text-decoration:none}
+.hero-more:hover{color:#fff}
 .hero-points{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:10px 26px;font-size:15px;color:#b9cec8}
 .hero-points li{display:flex;align-items:center;gap:8px}
 .hero-points svg{color:var(--accent)}
@@ -275,7 +283,12 @@ svg{flex-shrink:0}
   html{scroll-padding-top:72px}
   .section{padding:76px 0}
   .section-head{margin-bottom:40px}
-  .hero{padding:56px 0 150px}
+  .hero{padding:28px 0 120px}
+  .slogan-pill{margin-bottom:12px}
+  .hero-who{margin-bottom:10px}
+  .hero h1{font-size:1.85rem;margin-bottom:8px}
+  .hero-offer{font-size:1.05rem;margin-bottom:8px}
+  .hero-lead{margin-bottom:14px;font-size:15.5px}
   .hero-fjord{height:190px}
   .hero-visual{padding:0 0 70px 0}
   .mock-approve{left:auto;right:-6px;width:86%}
@@ -289,14 +302,15 @@ svg{flex-shrink:0}
   .about-photo{margin-right:12px}
   .cta-band{padding-bottom:76px}
   .cta-inner .btn,.hero-actions .btn{width:100%;white-space:normal;text-align:center}
+  .hero-who img{width:48px;height:48px}
+  .hero-actions{align-items:stretch}
   .cta-actions{flex-direction:column}
   .footer-links{margin-left:0;flex-direction:column;gap:8px}
 }
 /* slogan + hero sub */
 .slogan-pill{display:inline-flex;align-items:center;gap:8px;margin-bottom:22px;padding:8px 16px 8px 12px;border-radius:999px;background:rgba(232,162,92,.14);border:1px solid rgba(232,162,92,.35);color:#f3c99a;font-size:14.5px;font-weight:600;letter-spacing:.005em}
 .slogan-pill svg{color:var(--accent)}
-.hero h1{margin-bottom:16px}
-.hero-sub{font-size:clamp(1.1rem,1.6vw,1.3rem);font-weight:600;color:#fff;margin-bottom:18px;letter-spacing:-.01em}
+.hero h1{margin-bottom:14px}
 .cta-inner h2{max-width:18ch}
 .cta-inner .eyebrow{margin-bottom:12px}
 
@@ -324,7 +338,7 @@ svg{flex-shrink:0}
   .agent-arrow svg{transform:rotate(90deg)}
   .agent-boss{border-radius:20px;padding:18px 22px;max-width:520px;justify-content:flex-start}
 }
-@media (max-width:600px){.slogan-pill{font-size:13px}.agent-boss p{font-size:1.1rem}.section-agent{padding-top:8px}}
+@media (max-width:600px){.slogan-pill{font-size:13px;margin-bottom:12px}.agent-boss p{font-size:1.1rem}.section-agent{padding-top:8px}}
 
 /* sikkerhet */
 .section-compact-top{padding-top:0}

@@ -259,7 +259,15 @@ svg{flex-shrink:0}
 .footer-links{display:flex;gap:28px;margin-left:auto}
 .footer-links a{color:#d6e4e0;text-decoration:none;font-size:15px}
 .footer-links a:hover{color:var(--accent)}
-.footer-copy{font-size:14px;color:#7f9993;width:100%;padding-top:24px;border-top:1px solid rgba(255,255,255,.08)}
+.footer-copy{font-size:14px;color:#7f9993;width:100%;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);line-height:1.6}
+.footer-copy a{color:#d6e4e0;text-decoration:none;white-space:nowrap}
+.footer-copy a:hover{color:var(--accent)}
+.footer-year{font-size:13px;color:#7f9993;width:100%;margin:8px 0 0}
+.cta-side{display:flex;flex-direction:column;align-items:flex-end;gap:14px}
+.cta-actions{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:12px}
+.cta-contact{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:8px 18px;margin:0;font-size:15px}
+.cta-contact a{color:#eaf2ef;text-decoration:none;font-weight:600;white-space:nowrap}
+.cta-contact a:hover{color:var(--accent)}
 
 /* responsive */
 @media (max-width:1080px){
@@ -278,6 +286,7 @@ svg{flex-shrink:0}
   .price-card-featured{transform:none}
   .compare-item+.compare-item{border-left:0;border-top:1px solid var(--line)}
   .cta-inner{flex-direction:column;align-items:flex-start;padding:44px 32px}
+  .cta-side,.cta-actions,.cta-contact{align-items:flex-start;justify-content:flex-start;width:100%}
 }
 @media (max-width:600px){
   body{font-size:16px}
@@ -288,7 +297,6 @@ svg{flex-shrink:0}
   .section-head{margin-bottom:40px}
   .hero{padding:56px 0 150px}
   .hero-fjord{height:190px}
-  .hero-actions .btn{width:100%;white-space:normal;text-align:center}
   .hero-visual{padding:0 0 70px 0}
   .mock-approve{left:auto;right:-6px;width:86%}
   .tag{flex-basis:74px;font-size:11px}
@@ -302,7 +310,8 @@ svg{flex-shrink:0}
   .about-photo::before{inset:16px -12px -16px 16px}
   .about-photo{margin-right:12px}
   .cta-band{padding-bottom:76px}
-  .cta-inner .btn{width:100%;white-space:normal;text-align:center}
+  .cta-inner .btn,.hero-actions .btn{width:100%;white-space:normal;text-align:center}
+  .cta-actions{flex-direction:column}
   .footer-links{margin-left:0;flex-direction:column;gap:8px}
 }
 .chair-table td:last-child{white-space:nowrap;padding-left:12px}

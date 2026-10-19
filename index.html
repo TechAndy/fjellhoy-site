@@ -191,20 +191,43 @@
     </div>
 
     <div class="hero-visual" aria-hidden="true">
-      <div class="mock-window">
-        <div class="mock-bar"><i></i><i></i><i></i><span>Innboks · i dag</span></div>
-        <div class="mock-list">
-          <div class="mock-row"><span class="tag tag-green">Svar klart</span><div><b>Kunde: Spørsmål om tilbud</b><small>Utkast skrevet basert på forrige tilbud</small></div></div>
-          <div class="mock-row"><span class="tag tag-amber">Faktura</span><div><b>Leverandør – faktura #2291</b><small>12 % høyere enn forrige måned</small></div></div>
-          <div class="mock-row"><span class="tag tag-blue">Frist</span><div><b>Purring sendes fredag</b><small>Påminnelse lagt i kalenderen</small></div></div>
-          <div class="mock-row muted"><span class="tag tag-grey">Sortert</span><div><b>14 nyhetsbrev og varsler</b><small>Flyttet ut av veien</small></div></div>
+      <div class="chat-app chat-hero">
+        <div class="chat-top">
+          <span class="chat-ava"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.2" fill="currentColor"/><path d="M6 19.2c.9-3 2.8-4.5 6-4.5s5.1 1.5 6 4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+          <span class="chat-name">Din assistent</span>
+          <span class="chat-illus">Illustrasjon</span>
         </div>
-      </div>
-      <div class="mock-approve">
-        <div class="approve-head"><span class="dot-live"></span>Venter på godkjenning</div>
-        <p class="approve-title">Svar til kunde</p>
-        <p class="approve-text">«Hei! Takk for henvendelsen. Vi kan starte uke 44, og prisen blir som i tilbudet fra mars …»</p>
-        <div class="approve-actions"><span class="pill pill-ghost">Rediger</span><span class="pill pill-go"><svg class="ico-xs"><use href="#i-check"/></svg>Godkjenn</span></div>
+        <div class="chat-body">
+          <div class="slot typing t1"><div class="clip"><div class="chat-typing"><i></i><i></i><i></i></div></div></div>
+          <div class="slot m1"><div class="clip"><article class="bubble">
+            <p>God morgen! Jeg har sortert innboksen: 3 viktige, 12 ryddet unna.</p>
+            <div class="mini-card">
+              <div class="mini-row"><span>Viktig</span><b>3</b></div>
+              <div class="mini-row"><span>Ryddet unna</span><b>12</b></div>
+            </div>
+          </article></div></div>
+          <div class="slot typing t2"><div class="clip"><div class="chat-typing"><i></i><i></i><i></i></div></div></div>
+          <div class="slot m2"><div class="clip"><article class="bubble">
+            <p>Faktura fra Leverandør AS er høyere enn forrige gang. Vil du se før du betaler?</p>
+            <div class="mini-card chat-actions">
+              <span class="cbtn cbtn-ghost">Se faktura</span>
+              <span class="cbtn cbtn-go">Godkjenn</span>
+            </div>
+          </article></div></div>
+          <div class="slot typing t3"><div class="clip"><div class="chat-typing"><i></i><i></i><i></i></div></div></div>
+          <div class="slot m3"><div class="clip"><article class="bubble">
+            <p>Jeg har skrevet et utkast til svar til Kunde.</p>
+            <div class="mini-card">
+              <p class="chat-preview">Hei! Takk for henvendelsen. Her er et forslag du kan lese før det sendes.</p>
+              <div class="chat-actions">
+                <span class="send-slot">
+                  <span class="cbtn cbtn-go chat-send">Send</span>
+                  <span class="cbtn cbtn-sent chat-sent">✓ Sendt</span>
+                </span>
+              </div>
+            </div>
+          </article></div></div>
+        </div>
       </div>
     </div>
   </div>

@@ -1176,12 +1176,12 @@
     }
   };
 
-  const BEAT={chip:240,type:380,work:420,say:560,react:460,press:520,sent:340,pick:1800,after:460,hold:1100,loop:1500};
-  const LINGER=2500;
+  const BEAT={chip:240,type:380,work:420,say:560,react:460,press:520,sent:340,pick:900,after:460,hold:550,loop:750};
+  const LINGER=1250;
   const typeMs=text=>Math.min(1480,240+String(text).length*22);
   const readMs=value=>{
     const n=typeof value==='number'?value:String(value??'').length;
-    return Math.max(3000,1500+n*60);
+    return Math.max(1000,500+n*16);
   };
   const textLen=parts=>parts.filter(Boolean).reduce((n,s)=>n+String(s).length,0);
   const pace=(turn,reactOnce)=>{
@@ -1192,25 +1192,25 @@
     push(BEAT.type,'type');
     for(const _line of (turn.work||[]))push(BEAT.work,'work');
     const linger=(turn.points||turn.linger)?LINGER:0;
+    const sends=turn.mail&&!turn.mail.draft;
     if(turn.ask){
       push(readMs(textLen([turn.say,...(turn.points||[])])),'say');
       if(reactOnce)push(BEAT.react,'react');
       push(readMs(textLen([turn.ask.q,...(turn.ask.opts||[])]))+(turn.linger?LINGER:0),'ask');
-      if(turn.mail){push(BEAT.press,'press');push(BEAT.sent,'sent');}
+      if(sends){push(BEAT.press,'press');push(BEAT.sent,'sent');}
       push(BEAT.pick,'pick');
       if(turn.ask.after)push(readMs(turn.ask.after),'after');
       push(BEAT.hold,'hold');
     }else if(turn.mail){
       push(readMs(textLen([turn.say,...(turn.points||[]),turn.mail.body])),'say');
       if(reactOnce)push(BEAT.react,'react');
-      push(BEAT.press,'press');
-      push(BEAT.sent,'sent');
+      if(sends){push(BEAT.press,'press');push(BEAT.sent,'sent');}
       push(BEAT.hold,'hold');
     }else{
       push(BEAT.say,'say');
       if(reactOnce)push(BEAT.react,'react');
       const lead=BEAT.say+(reactOnce?BEAT.react:0);
-      push(Math.max(400,readMs(textLen([turn.say,...(turn.points||[])]))+linger-lead),'hold');
+      push(Math.max(200,readMs(textLen([turn.say,...(turn.points||[])]))+linger-lead),'hold');
     }
     return plan;
   };
@@ -1361,7 +1361,7 @@
           host.append(q);
         });
       }
-      if(turn.mail){
+      if(turn.mail&&!turn.mail.draft){
         add(ms(),'press',()=>{sendBtn.classList.add('is-press');},true);
         add(ms(),'sent',()=>{mailActions.replaceChildren(el('span','cbtn cbtn-sent','✓ Sendt'));});
       }
@@ -1480,7 +1480,8 @@
       ]
     },
     {
-      "t": "08:50",
+      "t": "08:10",
+      "user": "Ta purringen til Marte først.",
       "work": [
         "Skrev utkast til Marte Ådnanes"
       ],
@@ -1488,7 +1489,21 @@
       "mail": {
         "to": "Marte Ådnanes",
         "sub": "Faktura forfalt",
-        "body": "Hei Marte. Vi minner om faktura 1042 for badjobben, som forfalt 10. oktober. Gi gjerne beskjed om noe er uklart. Hilsen Sindre"
+        "body": "Hei Marte. Vi minner om faktura 1042 for badjobben, som forfalt 10. oktober. Gi gjerne beskjed om noe er uklart. Hilsen Sindre",
+        "draft": true
+      }
+    },
+    {
+      "t": "08:50",
+      "user": "Legg til at hun kan dele betalingen i to.",
+      "work": [
+        "Oppdaterte utkastet"
+      ],
+      "say": "Oppdatert. Den går ut når du trykker Send.",
+      "mail": {
+        "to": "Marte Ådnanes",
+        "sub": "Faktura forfalt",
+        "body": "Hei Marte. Vi minner om faktura 1042 for badjobben, som forfalt 10. oktober. Beløpet kan deles i to. Gi gjerne beskjed om noe er uklart. Hilsen Sindre"
       }
     },
     {
@@ -1517,10 +1532,11 @@
     },
     {
       "t": "14:30",
+      "user": "Hvilke regninger kan vente?",
       "work": [
         "Sammenlignet med regninger som kommer"
       ],
-      "say": "Likviditeten er stram de neste ukene. Jeg har ikke betalt noe.",
+      "say": "Brekkevik Rør AS kan vente til du har sett avviket. Kontorleien kan vente til fredag. MVA-meldingen kan ikke vente.",
       "file": "Likviditet_uke43.xlsx"
     },
     {

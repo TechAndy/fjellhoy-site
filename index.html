@@ -1176,9 +1176,12 @@
     }
   };
 
-  const BEAT={chip:240,type:380,work:420,say:560,react:460,press:520,sent:340,pick:900,after:460,hold:550,loop:750};
+  const BEAT={chip:240,type:380,work:420,say:560,react:460,sent:340,pick:900,after:460,hold:550,loop:750};
+  const AIM=440;
+  const TAP=320;
+  const TYPE_GAP=40;
   const LINGER=1250;
-  const typeMs=text=>Math.min(1480,240+String(text).length*22);
+  const typeMs=text=>Math.max(TYPE_GAP,String(text).length*TYPE_GAP+120);
   const readMs=value=>{
     const n=typeof value==='number'?value:String(value??'').length;
     return Math.max(1000,500+n*16);
@@ -1188,23 +1191,25 @@
     const plan=[];
     const push=(ms,label)=>plan.push({ms,label});
     push(BEAT.chip,'chip');
-    if(turn.user){push(typeMs(turn.user),'typein');push(readMs(turn.user),'user');}
+    if(turn.user){push(typeMs(turn.user),'typein');push(AIM,'aim');push(TAP,'tap');push(readMs(turn.user),'user');}
     push(BEAT.type,'type');
     for(const _line of (turn.work||[]))push(BEAT.work,'work');
     const linger=(turn.points||turn.linger)?LINGER:0;
     const sends=turn.mail&&!turn.mail.draft;
+    const click=()=>{push(AIM,'aim');push(TAP,'tap');};
     if(turn.ask){
       push(readMs(textLen([turn.say,...(turn.points||[])])),'say');
       if(reactOnce)push(BEAT.react,'react');
       push(readMs(textLen([turn.ask.q,...(turn.ask.opts||[])]))+(turn.linger?LINGER:0),'ask');
-      if(sends){push(BEAT.press,'press');push(BEAT.sent,'sent');}
+      if(sends){click();push(BEAT.sent,'sent');}
+      click();
       push(BEAT.pick,'pick');
       if(turn.ask.after)push(readMs(turn.ask.after),'after');
       push(BEAT.hold,'hold');
     }else if(turn.mail){
       push(readMs(textLen([turn.say,...(turn.points||[]),turn.mail.body])),'say');
       if(reactOnce)push(BEAT.react,'react');
-      if(sends){push(BEAT.press,'press');push(BEAT.sent,'sent');}
+      if(sends){click();push(BEAT.sent,'sent');}
       push(BEAT.hold,'hold');
     }else{
       push(BEAT.say,'say');
@@ -1216,6 +1221,21 @@
   };
   const chatPlayers=new Map();
   const typeTimers=new Map();
+  const pointerSvg=()=>{
+    const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');
+    svg.setAttribute('viewBox','0 0 13 19');
+    svg.setAttribute('width','15');
+    svg.setAttribute('height','20');
+    svg.setAttribute('aria-hidden','true');
+    const path=document.createElementNS('http://www.w3.org/2000/svg','path');
+    path.setAttribute('fill','#fff');
+    path.setAttribute('stroke','#14211f');
+    path.setAttribute('stroke-width','1.15');
+    path.setAttribute('stroke-linejoin','round');
+    path.setAttribute('d','M1 1 L1 14.6 L4.7 11.2 L7.5 17.7 L9.7 16.8 L6.9 10.4 L11.5 10.2 Z');
+    svg.append(path);
+    return svg;
+  };
   const el=(tag,cls,text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text!=null)n.textContent=text;return n;};
   const clockOf=t=>String(t).split('·')[0].trim();
   const fileSize=name=>{let n=0;for(const c of name)n+=c.charCodeAt(0);return (16+(n%74))+' kB';};
@@ -1250,6 +1270,57 @@
     const field=()=>root.querySelector('.compose-text');
     const box=()=>root.querySelector('.compose-box');
     const go=()=>root.querySelector('.compose-go');
+    const live=()=>!root.classList.contains('is-instant');
+    const cursor=()=>{
+      let p=root.querySelector('.chat-pointer');
+      if(!p){p=el('span','chat-pointer');p.append(pointerSvg());root.append(p);}
+      return p;
+    };
+    const release=()=>{
+      root.querySelectorAll('.is-hot,.is-press').forEach(n=>n.classList.remove('is-hot','is-press'));
+      root.querySelectorAll('.tap-ring').forEach(n=>n.remove());
+      const p=root.querySelector('.chat-pointer');
+      if(p)p.style.opacity='0';
+    };
+    const aimAt=node=>{
+      if(!live()||!node)return;
+      const body=root.querySelector('.chat-body');
+      if(body)body.scrollTop=body.scrollHeight;
+      const p=cursor();
+      const bounds=root.getBoundingClientRect();
+      const r=node.getBoundingClientRect();
+      const pw=15,ph=20,pad=3;
+      let x=r.left-bounds.left-root.clientLeft+Math.min(12,Math.max(6,r.width*0.32));
+      let y=r.top-bounds.top-root.clientTop+Math.min(8,Math.max(4,r.height*0.28));
+      x=Math.max(pad,Math.min(bounds.width-pw-pad,x));
+      y=Math.max(pad,Math.min(bounds.height-ph-pad,y));
+      if(p.style.opacity!=='1'){
+        let sx=parseFloat(p.style.left),sy=parseFloat(p.style.top);
+        if(!p.dataset.parked||Math.hypot((sx||0)-x,(sy||0)-y)<48){
+          sx=Math.max(pad,Math.min(bounds.width-pw-pad,x-72));
+          sy=Math.max(pad,Math.min(bounds.height-ph-pad,y+40));
+          if(Math.hypot(sx-x,sy-y)<48){sx=Math.max(pad,x-88);sy=Math.max(pad,y-56);}
+        }
+        p.style.transition='none';
+        p.style.left=sx+'px';
+        p.style.top=sy+'px';
+        p.style.opacity='0';
+        void p.offsetWidth;
+        p.style.transition='';
+      }
+      p.dataset.parked='1';
+      p.style.left=x+'px';
+      p.style.top=y+'px';
+      p.style.opacity='1';
+      node.classList.add('is-hot');
+    };
+    const tapAt=node=>{
+      if(!live()||!node)return;
+      node.classList.remove('is-hot');
+      node.classList.add('is-press');
+      node.querySelectorAll('.tap-ring').forEach(n=>n.remove());
+      node.append(el('i','tap-ring'));
+    };
     const idleCompose=()=>{
       const timer=typeTimers.get(root);
       if(timer)clearInterval(timer);
@@ -1285,14 +1356,14 @@
             i+=1;
             f.textContent=turn.user.slice(0,i);
             if(i>=turn.user.length)clearInterval(timer);
-          },22);
+          },TYPE_GAP);
           typeTimers.set(root,timer);
         },true);
+        add(ms(),'aim',()=>{aimAt(go());},true);
+        add(ms(),'tap',()=>{tapAt(go());},true);
         add(ms(),'user',thread=>{
           idleCompose();
-          const button=go();
-          button?.classList.add('is-press');
-          if(!root.classList.contains('is-instant'))setTimeout(()=>button?.classList.remove('is-press'),220);
+          release();
           const m=el('div','msg msg-user');
           const bubble=el('div','bubble');
           bubble.append(el('p',null,turn.user));
@@ -1362,11 +1433,19 @@
         });
       }
       if(turn.mail&&!turn.mail.draft){
-        add(ms(),'press',()=>{sendBtn.classList.add('is-press');},true);
-        add(ms(),'sent',()=>{mailActions.replaceChildren(el('span','cbtn cbtn-sent','✓ Sendt'));});
+        add(ms(),'aim',()=>{aimAt(sendBtn);},true);
+        add(ms(),'tap',()=>{tapAt(sendBtn);},true);
+        add(ms(),'sent',()=>{
+          release();
+          mailActions.replaceChildren(el('span','cbtn cbtn-sent','✓ Sendt'));
+        });
       }
       if(turn.ask){
+        const chosen=()=>choiceBox&&choiceBox.children[turn.ask.pick];
+        add(ms(),'aim',()=>{aimAt(chosen());},true);
+        add(ms(),'tap',()=>{tapAt(chosen());},true);
         add(ms(),'pick',()=>{
+          release();
           [...choiceBox.children].forEach((c,i)=>{
             const on=i===turn.ask.pick;
             c.classList.toggle('is-on',on);
@@ -1396,6 +1475,10 @@
     if(stop)stop();
     const timer=typeTimers.get(root);
     if(timer)clearInterval(timer);
+    const p=root.querySelector('.chat-pointer');
+    if(p){p.style.transition='none';p.style.opacity='0';}
+    root.querySelectorAll('.is-hot,.is-press').forEach(n=>n.classList.remove('is-hot','is-press'));
+    root.querySelectorAll('.tap-ring').forEach(n=>n.remove());
   };
   const playChat=(root,turns)=>{
     stopChat(root);
@@ -1409,7 +1492,9 @@
       const f=root.querySelector('.compose-text');
       if(f)f.textContent='';
       root.querySelector('.compose-box')?.classList.remove('is-typing');
-      root.querySelector('.compose-go')?.classList.remove('is-press');
+      root.querySelector('.compose-go')?.classList.remove('is-press','is-hot');
+      const p=root.querySelector('.chat-pointer');
+      if(p)p.style.opacity='0';
     };
     thread.replaceChildren();
     resetCompose();

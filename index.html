@@ -202,13 +202,16 @@
           <div class="slot m1"><div class="clip"><article class="bubble">
             <p>God morgen! Jeg har sortert innboksen: 3 viktige, 12 ryddet unna.</p>
             <div class="mini-card">
-              <div class="mini-row"><span>Viktig</span><b>3</b></div>
-              <div class="mini-row"><span>Ryddet unna</span><b>12</b></div>
+              <ul class="mini-mails">
+                <li>Kari Nordmann – Tilbud på bad</li>
+                <li>Nordmann Rør AS – Faktura</li>
+                <li>Regnskapsfører Ola Nordmann – MVA-frist</li>
+              </ul>
             </div>
           </article></div></div>
           <div class="slot typing t2"><div class="clip"><div class="chat-typing"><i></i><i></i><i></i></div></div></div>
           <div class="slot m2"><div class="clip"><article class="bubble">
-            <p>Faktura fra Leverandør AS er høyere enn forrige gang. Vil du se før du betaler?</p>
+            <p>Faktura fra Nordmann Rør AS er høyere enn forrige gang. Vil du se før du betaler?</p>
             <div class="mini-card chat-actions">
               <span class="cbtn cbtn-ghost">Se faktura</span>
               <span class="cbtn cbtn-go">Godkjenn</span>
@@ -216,9 +219,9 @@
           </article></div></div>
           <div class="slot typing t3"><div class="clip"><div class="chat-typing"><i></i><i></i><i></i></div></div></div>
           <div class="slot m3"><div class="clip"><article class="bubble">
-            <p>Jeg har skrevet et utkast til svar til Kunde.</p>
+            <p>Jeg har skrevet et utkast til svar til Kari Nordmann.</p>
             <div class="mini-card">
-              <p class="chat-preview">Hei! Takk for henvendelsen. Her er et forslag du kan lese før det sendes.</p>
+              <p class="chat-preview">Hei Kari! Takk for henvendelsen. Her er et forslag du kan lese før det sendes.</p>
               <div class="chat-actions">
                 <span class="send-slot">
                   <span class="cbtn cbtn-go chat-send">Send</span>
@@ -466,8 +469,8 @@
             <section class="setup-part">
               <h4>En vanlig dag</h4>
               <ul class="setup-list">
-                <li>Kort morgenbrief med bare det som trenger et ja fra deg</li>
-                <li>Utkast til tilbud, basert på en lignende jobb. Du godkjenner før det sendes</li>
+                <li>Kort morgenbrief med bare det som trenger et ja fra deg: Kari Nordmann – Tilbud på bad, Nordmann Rør AS – Faktura, Regnskapsfører Ola Nordmann – MVA-frist</li>
+                <li>Utkast til tilbud til Kari Nordmann, basert på en lignende jobb. Du godkjenner før det sendes</li>
                 <li>Purring på forfalte fakturaer ligger klar, men går ikke ut uten ditt ja</li>
                 <li>Varsel dagen før en materialfrist eller en avtalt oppstart</li>
               </ul>
@@ -476,7 +479,7 @@
               <h4>Dette slipper du</h4>
               <ul class="setup-list">
                 <li>Å skrive tilbud sent på kvelden</li>
-                <li>Å glemme en kunde som ba om pris</li>
+                <li>Å glemme Kari Nordmann som ba om pris</li>
                 <li>Å bruke morgenen på å finne ut hva som haster</li>
               </ul>
             </section>
@@ -520,8 +523,8 @@
           <span class="chat-illus">Illustrasjon</span>
         </div>
         <div class="chat-body">
-          <article class="bubble"><span class="when">Morgen</span><p>Kort morgenbrief med bare det som trenger et ja fra deg</p></article>
-          <article class="bubble"><span class="when">Midt på dagen</span><p>Utkast til tilbud, basert på en lignende jobb. Du godkjenner før det sendes</p></article>
+          <article class="bubble"><span class="when">Morgen</span><p>Kort morgenbrief med bare det som trenger et ja fra deg: Kari Nordmann – Tilbud på bad, Nordmann Rør AS – Faktura, Regnskapsfører Ola Nordmann – MVA-frist</p></article>
+          <article class="bubble"><span class="when">Midt på dagen</span><p>Utkast til tilbud til Kari Nordmann, basert på en lignende jobb. Du godkjenner før det sendes</p></article>
           <article class="bubble"><span class="when">Kveld</span><p>Varsel dagen før en materialfrist eller en avtalt oppstart</p></article>
         </div>
       </div>
@@ -926,8 +929,8 @@
   const industries={
     handverk:{
       assistants:['Tilbud og prosjekt','Kunde og kalender','Faktura og økonomi'],
-      day:['Morgenbrief med befaringer i dag og tilbud som venter','Utkast til tilbud, basert på en lignende jobb. Du godkjenner før det sendes','Purring på forfalte fakturaer ligger klar, men går ikke ut uten ditt ja','Varsel dagen før en materialfrist eller en avtalt oppstart'],
-      skip:['Å skrive tilbud sent på kvelden','Å glemme en kunde som ba om pris','Å oppdage en ubetalt faktura for sent'],
+      day:['Morgenbrief med befaringer i dag og tilbud som venter','Utkast til tilbud til Kari Nordmann, basert på en lignende jobb. Du godkjenner før det sendes','Purring på forfalte fakturaer ligger klar, men går ikke ut uten ditt ja','Varsel dagen før en materialfrist eller en avtalt oppstart'],
+      skip:['Å skrive tilbud sent på kvelden','Å glemme Kari Nordmann som ba om pris','Å oppdage en ubetalt faktura for sent'],
       inTitle:'håndverk og bygg'
     },
     regnskap:{
@@ -1017,6 +1020,9 @@
     const assistants=base.assistants.includes(addon.assistant)?base.assistants.slice(0,4):base.assistants.concat(addon.assistant).slice(0,4);
     const day=base.day.slice();
     day[0]=addon.day;
+    if(!board && bransje.value==='handverk' && (enk || role.value==='leder')){
+      day[0]='Kort morgenbrief med bare det som trenger et ja fra deg: Kari Nordmann – Tilbud på bad, Nordmann Rør AS – Faktura, Regnskapsfører Ola Nordmann – MVA-frist';
+    }
     if(enk)day[day.length-1]='Korte utkast til det som kan tas mellom jobbene. Hvert ja tar du selv';
     const skip=base.skip.slice();
     skip[skip.length-1]=addon.skip;

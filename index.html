@@ -1176,8 +1176,44 @@
     }
   };
 
-  const BEAT={chip:240,type:380,work:420,say:560,react:460,press:520,sent:340,pick:620,after:460,hold:1100,loop:1500};
+  const BEAT={chip:240,type:380,work:420,say:560,react:460,press:520,sent:340,pick:1800,after:460,hold:1100,loop:1500};
+  const LINGER=2500;
   const typeMs=text=>Math.min(1480,240+String(text).length*22);
+  const readMs=value=>{
+    const n=typeof value==='number'?value:String(value??'').length;
+    return Math.max(3000,1500+n*60);
+  };
+  const textLen=parts=>parts.filter(Boolean).reduce((n,s)=>n+String(s).length,0);
+  const pace=(turn,reactOnce)=>{
+    const plan=[];
+    const push=(ms,label)=>plan.push({ms,label});
+    push(BEAT.chip,'chip');
+    if(turn.user){push(typeMs(turn.user),'typein');push(readMs(turn.user),'user');}
+    push(BEAT.type,'type');
+    for(const _line of (turn.work||[]))push(BEAT.work,'work');
+    const linger=(turn.points||turn.linger)?LINGER:0;
+    if(turn.ask){
+      push(readMs(textLen([turn.say,...(turn.points||[])])),'say');
+      if(reactOnce)push(BEAT.react,'react');
+      push(readMs(textLen([turn.ask.q,...(turn.ask.opts||[])]))+(turn.linger?LINGER:0),'ask');
+      if(turn.mail){push(BEAT.press,'press');push(BEAT.sent,'sent');}
+      push(BEAT.pick,'pick');
+      if(turn.ask.after)push(readMs(turn.ask.after),'after');
+      push(BEAT.hold,'hold');
+    }else if(turn.mail){
+      push(readMs(textLen([turn.say,...(turn.points||[]),turn.mail.body])),'say');
+      if(reactOnce)push(BEAT.react,'react');
+      push(BEAT.press,'press');
+      push(BEAT.sent,'sent');
+      push(BEAT.hold,'hold');
+    }else{
+      push(BEAT.say,'say');
+      if(reactOnce)push(BEAT.react,'react');
+      const lead=BEAT.say+(reactOnce?BEAT.react:0);
+      push(Math.max(400,readMs(textLen([turn.say,...(turn.points||[])]))+linger-lead),'hold');
+    }
+    return plan;
+  };
   const chatPlayers=new Map();
   const typeTimers=new Map();
   const el=(tag,cls,text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text!=null)n.textContent=text;return n;};
@@ -1193,18 +1229,10 @@
   const settle=thread=>thread.querySelectorAll('.workline.is-run').forEach(n=>{n.classList.remove('is-run');n.classList.add('is-done');});
   const timeline=turns=>{
     const items=[];
-    const push=(ms,label)=>items.push({ms,label});
     let reactOnce=true;
     for(const turn of turns){
-      push(BEAT.chip,'chip');
-      if(turn.user){push(typeMs(turn.user),'typein');push(280,'user');}
-      push(BEAT.type,'type');
-      for(const _line of (turn.work||[]))push(BEAT.work,'work');
-      push(BEAT.say,'say');
-      if(reactOnce){push(BEAT.react,'react');reactOnce=false;}
-      if(turn.mail){push(BEAT.press,'press');push(BEAT.sent,'sent');}
-      if(turn.ask){push(BEAT.pick,'pick');if(turn.ask.after)push(BEAT.after,'after');}
-      push(BEAT.hold,'hold');
+      items.push(...pace(turn,reactOnce));
+      if(reactOnce)reactOnce=false;
     }
     return items;
   };
@@ -1230,14 +1258,20 @@
     };
     let reactOnce=true;
     for(const turn of turns){
-      add(BEAT.chip,'chip',thread=>{
+      const plan=pace(turn,reactOnce);
+      const ms=()=>{
+        const step=plan.shift();
+        if(!step)throw new Error('chat pace');
+        return step.ms;
+      };
+      add(ms(),'chip',thread=>{
         const d=el('p','divider');
         d.append(el('span',null,clockOf(turn.t)));
         if(!turn.user)d.append(el('span','div-tag','Rutine'));
         thread.append(d);
       });
       if(turn.user){
-        add(typeMs(turn.user),'typein',()=>{
+        add(ms(),'typein',()=>{
           const f=field();
           const b=box();
           if(!f||!b)return;
@@ -1254,9 +1288,11 @@
           },22);
           typeTimers.set(root,timer);
         },true);
-        add(280,'user',thread=>{
+        add(ms(),'user',thread=>{
           idleCompose();
-          go()?.classList.add('is-press');
+          const button=go();
+          button?.classList.add('is-press');
+          if(!root.classList.contains('is-instant'))setTimeout(()=>button?.classList.remove('is-press'),220);
           const m=el('div','msg msg-user');
           const bubble=el('div','bubble');
           bubble.append(el('p',null,turn.user));
@@ -1268,9 +1304,9 @@
       const dots=el('div','chat-typing');
       dots.append(el('i'),el('i'),el('i'));
       typing.append(el('span','ava-sm','A'),dots);
-      add(BEAT.type,'type',thread=>{go()?.classList.remove('is-press');thread.append(typing);},true);
+      add(ms(),'type',thread=>{go()?.classList.remove('is-press');thread.append(typing);},true);
       for(const line of (turn.work||[])){
-        add(BEAT.work,'work',thread=>{
+        add(ms(),'work',thread=>{
           settle(thread);
           const row=el('p','workline is-run');
           row.append(el('i','wico'),el('span',null,line));
@@ -1278,7 +1314,7 @@
         });
       }
       let mailActions=null,sendBtn=null,choiceBox=null,host=null;
-      add(BEAT.say,'say',thread=>{
+      add(ms(),'say',thread=>{
         typing.remove();
         settle(thread);
         const m=el('div','msg msg-bot');
@@ -1304,30 +1340,33 @@
           mail.append(mailActions);
           col.append(mail);
         }
-        if(turn.ask){
-          const q=el('div','qcard');
-          q.append(el('p',null,turn.ask.q));
-          choiceBox=el('div','choices');
-          turn.ask.opts.forEach((opt,i)=>choiceBox.append(el('span',i===0?'choice is-primary':'choice',opt)));
-          q.append(choiceBox);
-          col.append(q);
-        }
         m.append(el('span','ava-sm','A'),col);
         thread.append(m);
       });
       if(reactOnce){
-        add(BEAT.react,'react',()=>{
+        add(ms(),'react',()=>{
           if(!host)return;
           host.insertBefore(el('span','react','👍'),host.querySelector('.filecard,.mail,.qcard'));
         });
         reactOnce=false;
       }
+      if(turn.ask){
+        add(ms(),'ask',()=>{
+          if(!host)return;
+          const q=el('div','qcard');
+          q.append(el('p',null,turn.ask.q));
+          choiceBox=el('div','choices');
+          turn.ask.opts.forEach((opt,i)=>choiceBox.append(el('span',i===0?'choice is-primary':'choice',opt)));
+          q.append(choiceBox);
+          host.append(q);
+        });
+      }
       if(turn.mail){
-        add(BEAT.press,'press',()=>{sendBtn.classList.add('is-press');},true);
-        add(BEAT.sent,'sent',()=>{mailActions.replaceChildren(el('span','cbtn cbtn-sent','✓ Sendt'));});
+        add(ms(),'press',()=>{sendBtn.classList.add('is-press');},true);
+        add(ms(),'sent',()=>{mailActions.replaceChildren(el('span','cbtn cbtn-sent','✓ Sendt'));});
       }
       if(turn.ask){
-        add(BEAT.pick,'pick',()=>{
+        add(ms(),'pick',()=>{
           [...choiceBox.children].forEach((c,i)=>{
             const on=i===turn.ask.pick;
             c.classList.toggle('is-on',on);
@@ -1337,7 +1376,7 @@
           });
         });
         if(turn.ask.after){
-          add(BEAT.after,'after',thread=>{
+          add(ms(),'after',thread=>{
             const m=el('div','msg msg-bot');
             const col=el('div','bot-col');
             col.append(el('p','bot-name','Din assistent'));
@@ -1347,7 +1386,8 @@
           });
         }
       }
-      add(BEAT.hold,'hold',()=>{});
+      add(ms(),'hold',()=>{});
+      if(plan.length)throw new Error('unused pace');
     }
     return steps;
   };
@@ -1485,6 +1525,7 @@
     },
     {
       "t": "16:20",
+      "linger": true,
       "work": [
         "Så på purringene denne uken"
       ],

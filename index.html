@@ -198,6 +198,14 @@
           <span class="chat-illus">Illustrasjon</span>
         </div>
         <div class="chat-body"><div class="thread" id="hero-thread"></div></div>
+        <div class="chat-compose">
+          <div class="compose-box">
+            <span class="compose-ph">Skriv en melding …</span>
+            <span class="compose-text"></span>
+            <span class="compose-caret" aria-hidden="true"></span>
+          </div>
+          <span class="compose-go" aria-hidden="true">Send</span>
+        </div>
       </div>
     </div>
   </div>
@@ -473,6 +481,14 @@
           <span class="chat-illus">Illustrasjon</span>
         </div>
       <div class="chat-body"><div class="thread" id="day-thread"></div></div>
+      <div class="chat-compose">
+        <div class="compose-box">
+          <span class="compose-ph">Skriv en melding …</span>
+          <span class="compose-text"></span>
+          <span class="compose-caret" aria-hidden="true"></span>
+        </div>
+        <span class="compose-go" aria-hidden="true">Send</span>
+      </div>
     </div>
     <noscript>
       <div class="chat-app chat-day chat-still">
@@ -482,8 +498,20 @@
           <span class="chat-illus">Illustrasjon</span>
         </div>
         <div class="chat-body"><div class="thread">
-          <p class="tchip">07:00 · Morgenrapport (fast rutine)</p><p class="workline">Leste 11 e-poster</p><p class="workline">Hentet utestående fra regnskapssystemet</p><div class="msg msg-bot"><span class="ava-sm" aria-hidden="true">A</span><div class="bubble"><p>Tre fakturaer er forfalt. Regningen fra Nordmann Rør AS kommer de neste ukene.</p><span class="filechip">Likviditet_uke43.xlsx</span></div></div><p class="tchip">09:15</p><div class="msg msg-user"><div class="bubble"><p>Hvordan ser likviditeten ut?</p></div></div><p class="workline">Sammenlignet med regninger som kommer</p><div class="msg msg-bot"><span class="ava-sm" aria-hidden="true">A</span><div class="bubble"><p>Uken er stram før MVA hos Ola Nordmann. Ingenting er betalt.</p></div></div><p class="tchip">12:10</p><div class="msg msg-user"><div class="bubble"><p>Hva med margen på badjobben til Kari?</p></div></div><p class="workline">Sammenlignet med 3 lignende badjobber</p><div class="msg msg-bot"><span class="ava-sm" aria-hidden="true">A</span><div class="bubble"><p>Badjobben til Kari Nordmann ligger under de tre. Ett punkt skiller seg ut.</p></div></div><p class="tchip">14:20</p><p class="workline">Fant 1 forfalt faktura</p><div class="msg msg-bot"><span class="ava-sm" aria-hidden="true">A</span><div class="bubble"><p>Nordmann Bygg AS har en faktura som er forfalt.</p><div class="qcard"><p>Skal jeg purre Nordmann Bygg AS?</p><div class="choices"><span class="choice is-on">Ja, lag purring</span><span class="choice is-off">Vent en uke</span></div></div></div></div><div class="msg msg-bot"><span class="ava-sm" aria-hidden="true">A</span><div class="bubble"><p>Jeg skriver utkastet. Det sendes ikke før du har lest det.</p></div></div><p class="tchip">16:30</p><p class="workline">Skrev purreutkast</p><p class="workline">Noterte sertifikatet denne uken</p><div class="msg msg-bot"><span class="ava-sm" aria-hidden="true">A</span><div class="bubble"><p>Her er utkastet. Sertifikatet er notert ved siden av. Ingenting sendes før du trykker Send.</p><div class="mail"><p class="mail-row"><b>Til</b><span>Nordmann Bygg AS</span></p><p class="mail-row"><b>Emne</b><span>Purring</span></p><p>Hei. Fakturaen er forfalt. Les utkastet før det sendes.</p><div class="chat-actions"><span class="cbtn cbtn-sent">✓ Sendt</span></div></div></div></div>
+          <p class="divider"><span>07:00</span><span class="div-tag">Rutine</span></p>
+          <p class="workline is-done"><i class="wico" aria-hidden="true"></i><span>Leste 11 e-poster</span></p>
+          <p class="workline is-done"><i class="wico" aria-hidden="true"></i><span>Søkte i regnskapssystemet</span></p>
+          <div class="msg msg-bot"><span class="ava-sm" aria-hidden="true">A</span><div class="bot-col"><p class="bot-name">Din assistent</p><p class="bot-text">Tre fakturaer er forfalt. Regningen fra Nordmann Rør AS kommer de neste ukene.</p><span class="react">👍</span><div class="filecard"><span class="file-ico" aria-hidden="true"></span><span class="file-meta"><b>Likviditet_uke43.xlsx</b><small>24 kB</small></span></div></div></div>
+          <p class="divider"><span>09:15</span></p>
+          <div class="msg msg-user"><div class="bubble"><p>Hvordan ser likviditeten ut?</p></div></div>
+          <p class="workline is-done"><i class="wico" aria-hidden="true"></i><span>Sammenlignet med regninger som kommer</span></p>
+          <div class="msg msg-bot"><span class="ava-sm" aria-hidden="true">A</span><div class="bot-col"><p class="bot-name">Din assistent</p><p class="bot-text">Uken er stram før MVA hos Ola Nordmann. Ingenting er betalt.</p></div></div>
+          <p class="divider"><span>14:20</span><span class="div-tag">Rutine</span></p>
+          <div class="msg msg-bot"><span class="ava-sm" aria-hidden="true">A</span><div class="bot-col"><p class="bot-name">Din assistent</p><p class="bot-text">Nordmann Bygg AS har en faktura som er forfalt.</p><div class="qcard"><p>Skal jeg purre Nordmann Bygg AS?</p><div class="choices"><span class="choice is-primary is-on">Ja, lag purring</span><span class="choice is-off">Vent en uke</span></div></div></div></div>
+          <p class="divider"><span>16:30</span><span class="div-tag">Rutine</span></p>
+          <div class="msg msg-bot"><span class="ava-sm" aria-hidden="true">A</span><div class="bot-col"><p class="bot-name">Din assistent</p><p class="bot-text">Her er utkastet. Ingenting sendes før du trykker Send.</p><div class="mail"><p class="mail-row"><b>Til</b><span>Nordmann Bygg AS</span></p><p class="mail-row"><b>Emne</b><span>Purring</span></p><p>Hei. Fakturaen er forfalt. Les utkastet før det sendes.</p><div class="chat-actions"><span class="cbtn cbtn-sent">✓ Sendt</span></div></div></div></div>
         </div></div>
+        <div class="chat-compose"><div class="compose-box"><span class="compose-ph">Skriv en melding …</span></div><span class="compose-go">Send</span></div>
       </div>
     </noscript>
   </div>
@@ -1110,19 +1138,32 @@
     }
   };
 
-  const BEAT={chip:260,user:460,type:400,work:440,say:600,press:560,sent:360,pick:640,after:480,hold:1200,loop:1500};
+  const BEAT={chip:240,type:380,work:420,say:560,react:460,press:520,sent:340,pick:620,after:460,hold:1100,loop:1500};
+  const typeMs=text=>Math.min(1480,240+String(text).length*22);
   const chatPlayers=new Map();
+  const typeTimers=new Map();
   const el=(tag,cls,text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text!=null)n.textContent=text;return n;};
-  const botMsg=node=>{const m=el('div','msg msg-bot');m.append(el('span','ava-sm','A'),node);return m;};
+  const clockOf=t=>String(t).split('·')[0].trim();
+  const fileSize=name=>{let n=0;for(const c of name)n+=c.charCodeAt(0);return (16+(n%74))+' kB';};
+  const fileCard=name=>{
+    const card=el('div','filecard');
+    const meta=el('span','file-meta');
+    meta.append(el('b',null,name),el('small',null,fileSize(name)));
+    card.append(el('span','file-ico'),meta);
+    return card;
+  };
+  const settle=thread=>thread.querySelectorAll('.workline.is-run').forEach(n=>{n.classList.remove('is-run');n.classList.add('is-done');});
   const timeline=turns=>{
     const items=[];
     const push=(ms,label)=>items.push({ms,label});
+    let reactOnce=true;
     for(const turn of turns){
       push(BEAT.chip,'chip');
-      if(turn.user)push(BEAT.user,'user');
+      if(turn.user){push(typeMs(turn.user),'typein');push(280,'user');}
       push(BEAT.type,'type');
       for(const _line of (turn.work||[]))push(BEAT.work,'work');
       push(BEAT.say,'say');
+      if(reactOnce){push(BEAT.react,'react');reactOnce=false;}
       if(turn.mail){push(BEAT.press,'press');push(BEAT.sent,'sent');}
       if(turn.ask){push(BEAT.pick,'pick');if(turn.ask.after)push(BEAT.after,'after');}
       push(BEAT.hold,'hold');
@@ -1137,32 +1178,77 @@
     }
     return seen?last:t;
   };
-  const chatSteps=turns=>{
+  const chatSteps=(root,turns)=>{
     const steps=[];
     const add=(ms,label,run,skip)=>steps.push({ms,label,run,skip:!!skip});
+    const field=()=>root.querySelector('.compose-text');
+    const box=()=>root.querySelector('.compose-box');
+    const go=()=>root.querySelector('.compose-go');
+    const idleCompose=()=>{
+      const timer=typeTimers.get(root);
+      if(timer)clearInterval(timer);
+      const f=field();if(f)f.textContent='';
+      box()?.classList.remove('is-typing');
+    };
+    let reactOnce=true;
     for(const turn of turns){
-      add(BEAT.chip,'chip',thread=>thread.append(el('p','tchip',turn.t)));
+      add(BEAT.chip,'chip',thread=>{
+        const d=el('p','divider');
+        d.append(el('span',null,clockOf(turn.t)));
+        if(!turn.user)d.append(el('span','div-tag','Rutine'));
+        thread.append(d);
+      });
       if(turn.user){
-        add(BEAT.user,'user',thread=>{
+        add(typeMs(turn.user),'typein',()=>{
+          const f=field();
+          const b=box();
+          if(!f||!b)return;
+          b.classList.add('is-typing');
+          if(root.classList.contains('is-instant')){f.textContent=turn.user;return;}
+          f.textContent='';
+          let i=0;
+          const prev=typeTimers.get(root);
+          if(prev)clearInterval(prev);
+          const timer=setInterval(()=>{
+            i+=1;
+            f.textContent=turn.user.slice(0,i);
+            if(i>=turn.user.length)clearInterval(timer);
+          },22);
+          typeTimers.set(root,timer);
+        },true);
+        add(280,'user',thread=>{
+          idleCompose();
+          go()?.classList.add('is-press');
           const m=el('div','msg msg-user');
-          const b=el('div','bubble');
-          b.append(el('p',null,turn.user));
-          m.append(b);
+          const bubble=el('div','bubble');
+          bubble.append(el('p',null,turn.user));
+          m.append(bubble);
           thread.append(m);
         });
       }
-      const typing=el('div','msg msg-bot');
+      const typing=el('div','msg msg-bot typing-row');
       const dots=el('div','chat-typing');
       dots.append(el('i'),el('i'),el('i'));
       typing.append(el('span','ava-sm','A'),dots);
-      add(BEAT.type,'type',thread=>thread.append(typing),true);
-      for(const line of (turn.work||[])) add(BEAT.work,'work',thread=>thread.append(el('p','workline',line)));
-      let mailActions=null,sendBtn=null,choiceBox=null;
+      add(BEAT.type,'type',thread=>{go()?.classList.remove('is-press');thread.append(typing);},true);
+      for(const line of (turn.work||[])){
+        add(BEAT.work,'work',thread=>{
+          settle(thread);
+          const row=el('p','workline is-run');
+          row.append(el('i','wico'),el('span',null,line));
+          thread.append(row);
+        });
+      }
+      let mailActions=null,sendBtn=null,choiceBox=null,host=null;
       add(BEAT.say,'say',thread=>{
         typing.remove();
-        const b=el('div','bubble');
-        b.append(el('p',null,turn.say));
-        if(turn.file)b.append(el('span','filechip',turn.file));
+        settle(thread);
+        const m=el('div','msg msg-bot');
+        const col=el('div','bot-col');
+        host=col;
+        col.append(el('p','bot-name','Din assistent'));
+        col.append(el('p','bot-text',turn.say));
+        if(turn.file)col.append(fileCard(turn.file));
         if(turn.mail){
           const mail=el('div','mail');
           const r1=el('p','mail-row');
@@ -1173,31 +1259,48 @@
           mailActions=el('div','chat-actions');
           mailActions.append(el('span','cbtn cbtn-ghost','Endre'),sendBtn=el('span','cbtn cbtn-go','Send'));
           mail.append(mailActions);
-          b.append(mail);
+          col.append(mail);
         }
         if(turn.ask){
           const q=el('div','qcard');
           q.append(el('p',null,turn.ask.q));
           choiceBox=el('div','choices');
-          for(const opt of turn.ask.opts)choiceBox.append(el('span','choice',opt));
+          turn.ask.opts.forEach((opt,i)=>choiceBox.append(el('span',i===0?'choice is-primary':'choice',opt)));
           q.append(choiceBox);
-          b.append(q);
+          col.append(q);
         }
-        thread.append(botMsg(b));
+        m.append(el('span','ava-sm','A'),col);
+        thread.append(m);
       });
+      if(reactOnce){
+        add(BEAT.react,'react',()=>{
+          if(!host)return;
+          host.insertBefore(el('span','react','👍'),host.querySelector('.filecard,.mail,.qcard'));
+        });
+        reactOnce=false;
+      }
       if(turn.mail){
         add(BEAT.press,'press',()=>{sendBtn.classList.add('is-press');},true);
         add(BEAT.sent,'sent',()=>{mailActions.replaceChildren(el('span','cbtn cbtn-sent','✓ Sendt'));});
       }
       if(turn.ask){
         add(BEAT.pick,'pick',()=>{
-          [...choiceBox.children].forEach((c,i)=>c.classList.add(i===turn.ask.pick?'is-on':'is-off'));
+          [...choiceBox.children].forEach((c,i)=>{
+            const on=i===turn.ask.pick;
+            c.classList.toggle('is-on',on);
+            c.classList.toggle('is-off',!on);
+            if(!on)c.classList.remove('is-primary');
+            if(on)c.classList.add('is-primary');
+          });
         });
         if(turn.ask.after){
           add(BEAT.after,'after',thread=>{
-            const b=el('div','bubble');
-            b.append(el('p',null,turn.ask.after));
-            thread.append(botMsg(b));
+            const m=el('div','msg msg-bot');
+            const col=el('div','bot-col');
+            col.append(el('p','bot-name','Din assistent'));
+            col.append(el('p','bot-text',turn.ask.after));
+            m.append(el('span','ava-sm','A'),col);
+            thread.append(m);
           });
         }
       }
@@ -1205,16 +1308,28 @@
     }
     return steps;
   };
-  const stopChat=root=>{const stop=chatPlayers.get(root);if(stop)stop();};
+  const stopChat=root=>{
+    const stop=chatPlayers.get(root);
+    if(stop)stop();
+    const timer=typeTimers.get(root);
+    if(timer)clearInterval(timer);
+  };
   const playChat=(root,turns)=>{
     stopChat(root);
     const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
     const body=root.querySelector('.chat-body');
     const thread=root.querySelector('.thread');
-    const steps=chatSteps(turns);
+    const steps=chatSteps(root,turns);
     let dead=false,timer=0;
     const scroll=()=>{body.scrollTop=body.scrollHeight;};
+    const resetCompose=()=>{
+      const f=root.querySelector('.compose-text');
+      if(f)f.textContent='';
+      root.querySelector('.compose-box')?.classList.remove('is-typing');
+      root.querySelector('.compose-go')?.classList.remove('is-press');
+    };
     thread.replaceChildren();
+    resetCompose();
     if(reduce){
       root.classList.add('is-instant');
       steps.forEach(s=>{if(!s.skip)s.run(thread);});
@@ -1230,6 +1345,7 @@
         timer=setTimeout(()=>{
           if(dead)return;
           thread.replaceChildren();
+          resetCompose();
           body.scrollTop=0;
           run(0);
         },BEAT.loop);
@@ -1252,7 +1368,10 @@
     const thread=root.querySelector('.thread');
     const prev=body.style.scrollBehavior;
     body.style.scrollBehavior='auto';
-    const steps=chatSteps(turns);
+    const f=root.querySelector('.compose-text');
+    if(f)f.textContent='';
+    root.querySelector('.compose-box')?.classList.remove('is-typing');
+    const steps=chatSteps(root,turns);
     thread.replaceChildren();
     let start=0;
     for(const s of steps){
@@ -1263,13 +1382,13 @@
     body.scrollTop=body.scrollHeight;
     body.style.scrollBehavior=prev;
   };
-
   const heroTurns = [
     {
       "t": "07:00 · Morgenrapport (fast rutine)",
       "work": [
         "Leste 14 e-poster",
-        "Hentet utestående fra regnskapssystemet"
+        "Søkte i regnskapssystemet",
+        "Kjørte gjennom utestående"
       ],
       "say": "Tre fakturaer er forfalt. Regningen fra Nordmann Rør AS kommer, og MVA hos Ola Nordmann står på listen.",
       "file": "Likviditet_uke43.xlsx"

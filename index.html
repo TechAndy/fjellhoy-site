@@ -1286,6 +1286,11 @@
         host=col;
         col.append(el('p','bot-name','Din assistent'));
         col.append(el('p','bot-text',turn.say));
+        if(turn.points){
+          const list=el('ul','brief');
+          turn.points.forEach(point=>list.append(el('li',null,point)));
+          col.append(list);
+        }
         if(turn.file)col.append(fileCard(turn.file));
         if(turn.mail){
           const mail=el('div','mail');
@@ -1422,7 +1427,20 @@
   };
   const heroTurns = [
     {
-      "t": "07:00 · Morgenrapport (fast rutine)",
+      "t": "07:30 · Morgenbrief (fast rutine)",
+      "work": [
+        "Samlet 4 saker for i dag"
+      ],
+      "say": "God morgen Ola. Dette er dagen din:",
+      "points": [
+        "Kari Nordmann: faktura 1042 er forfalt.",
+        "MVA hos Ola Nordmann står på listen.",
+        "Nordmann Rør AS skal sjekkes mot avtalen.",
+        "Likviditeten de neste ukene er stram."
+      ]
+    },
+    {
+      "t": "08:15 · Morgenrapport (fast rutine)",
       "work": [
         "Leste 14 e-poster",
         "Søkte i regnskapssystemet",

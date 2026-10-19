@@ -489,6 +489,46 @@
   </div>
 </section>
 
+<!-- SLIK KAN DAGEN DIN SE UT -->
+<section class="section" id="dagen">
+  <div class="container day-demo">
+    <div class="day-demo-copy">
+      <span class="eyebrow">Eksempelet du valgte</span>
+      <h2>Slik kan dagen din se ut</h2>
+      <p>Morgen, midt på dagen og kveld følger teksten i eksempelet over.</p>
+    </div>
+    <div class="chat-app chat-day" id="day-chat" hidden>
+      <div class="chat-top">
+        <span class="chat-ava" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.2" fill="currentColor"/><path d="M6 19.2c.9-3 2.8-4.5 6-4.5s5.1 1.5 6 4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+        <span class="chat-name">Din assistent</span>
+        <span class="chat-illus">Illustrasjon</span>
+      </div>
+      <div class="chat-body">
+        <div class="slot typing t1"><div class="clip"><div class="chat-typing" aria-hidden="true"><i></i><i></i><i></i></div></div></div>
+        <div class="slot m1"><div class="clip"><article class="bubble"><span class="when">Morgen</span><p id="day-morning"></p></article></div></div>
+        <div class="slot typing t2"><div class="clip"><div class="chat-typing" aria-hidden="true"><i></i><i></i><i></i></div></div></div>
+        <div class="slot m2"><div class="clip"><article class="bubble"><span class="when">Midt på dagen</span><p id="day-mid"></p></article></div></div>
+        <div class="slot typing t3"><div class="clip"><div class="chat-typing" aria-hidden="true"><i></i><i></i><i></i></div></div></div>
+        <div class="slot m3"><div class="clip"><article class="bubble"><span class="when">Kveld</span><p id="day-evening"></p></article></div></div>
+      </div>
+    </div>
+    <noscript>
+      <div class="chat-app chat-day chat-still">
+        <div class="chat-top">
+          <span class="chat-ava" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.2" fill="currentColor"/><path d="M6 19.2c.9-3 2.8-4.5 6-4.5s5.1 1.5 6 4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+          <span class="chat-name">Din assistent</span>
+          <span class="chat-illus">Illustrasjon</span>
+        </div>
+        <div class="chat-body">
+          <article class="bubble"><span class="when">Morgen</span><p>Kort morgenbrief med bare det som trenger et ja fra deg</p></article>
+          <article class="bubble"><span class="when">Midt på dagen</span><p>Utkast til tilbud, basert på en lignende jobb. Du godkjenner før det sendes</p></article>
+          <article class="bubble"><span class="when">Kveld</span><p>Varsel dagen før en materialfrist eller en avtalt oppstart</p></article>
+        </div>
+      </div>
+    </noscript>
+  </div>
+</section>
+
 <!-- HVA ER EN AI-AGENT -->
 <section class="section section-agent" id="ai-agent">
   <div class="container">
@@ -992,6 +1032,12 @@
     if(!enk)lines.push(`Rolle: ${role.label}`);
     lines.push('',title);
     document.getElementById('setup-cta').href=`mailto:andreas@fjellhoy.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(lines.join('\n'))}`;
+    const dayChat=document.getElementById('day-chat');
+    document.getElementById('day-morning').textContent=day[0];
+    document.getElementById('day-mid').textContent=day[Math.min(1,day.length-1)];
+    document.getElementById('day-evening').textContent=day[day.length-1];
+    dayChat.hidden=false;
+    dayChat.getAnimations({subtree:true}).forEach(a=>{a.cancel();a.play();});
   };
   setupForm.addEventListener('change',renderSetup);
   renderSetup();

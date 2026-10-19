@@ -161,6 +161,19 @@ svg{flex-shrink:0}
   .chat-send{display:none}
   .chat-sent{animation:none;opacity:1}
 }
+.day-demo{display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,440px);gap:56px;align-items:center}
+.day-demo-copy h2{margin-bottom:12px}
+.day-demo-copy p{color:var(--ink-2);font-size:18px;max-width:22em}
+.chat-day{--loop:12s;height:400px}
+.when{display:block;margin-bottom:4px;font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--fjord-500)}
+.chat-still{height:auto}
+.chat-still .chat-body{gap:8px}
+.chat-still .bubble+.bubble{margin-top:8px}
+@media (max-width:800px){
+  .day-demo{grid-template-columns:1fr;gap:28px}
+  .chat-day{height:380px}
+  .chat-still{height:auto}
+}
 
 /* sections */
 .section{padding:112px 0}

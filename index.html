@@ -191,49 +191,13 @@
     </div>
 
     <div class="hero-visual" aria-hidden="true">
-      <div class="chat-app chat-hero">
+      <div class="chat-app chat-hero" id="hero-chat">
         <div class="chat-top">
           <span class="chat-ava" aria-hidden="true">A</span>
           <span class="chat-name">Din assistent</span>
           <span class="chat-illus">Illustrasjon</span>
         </div>
-        <div class="chat-body">
-          <div class="slot typing t1"><div class="clip"><div class="chat-typing"><i></i><i></i><i></i></div></div></div>
-          <div class="slot m1"><div class="clip"><article class="bubble">
-            <p>Likviditet de neste ukene. Jeg setter opp postene.</p>
-            <div class="mini-card work">
-              <p class="work-kicker"><span class="work-phase">Bygger</span><span class="work-ready">Klar</span></p>
-              <ul class="work-rows">
-                <li><span class="lhs"><i class="mark"></i><b>Forfalt</b></span><span class="rhs">3 fakturaer</span></li>
-                <li><span class="lhs"><i class="mark"></i><b>Kommer</b></span><span class="rhs">Nordmann Rør AS</span></li>
-                <li class="is-flag"><span class="lhs"><i class="mark"></i><b>Frist</b></span><span class="rhs">MVA, Ola Nordmann</span></li>
-              </ul>
-              <div class="chat-actions"><span class="send-slot"><span class="cbtn cbtn-go hero-go1">Godkjenn</span><span class="cbtn cbtn-sent hero-ok1">✓ Godkjent</span></span></div>
-            </div>
-          </article></div></div>
-          <div class="slot typing t2"><div class="clip"><div class="chat-typing"><i></i><i></i><i></i></div></div></div>
-          <div class="slot m2"><div class="clip"><article class="bubble">
-            <p>Nordmann Rør AS avviker fra forrige og fra avtalen.</p>
-            <div class="mini-card work">
-              <p class="work-kicker"><span class="work-phase">Sjekker</span><span class="work-ready">Avvik</span></p>
-              <ul class="work-rows">
-                <li><span class="lhs"><i class="mark"></i><b>Forrige</b></span><span class="rhs">vanlig nivå</span></li>
-                <li class="is-flag"><span class="lhs"><i class="mark"></i><b>Denne</b></span><span class="rhs">høyere</span></li>
-                <li class="is-flag"><span class="lhs"><i class="mark"></i><b>Vilkår</b></span><span class="rhs">ett avvik</span></li>
-              </ul>
-              <div class="chat-actions"><span class="send-slot"><span class="cbtn cbtn-go hero-go2">Godkjenn</span><span class="cbtn cbtn-sent hero-ok2">✓ Godkjent</span></span></div>
-            </div>
-          </article></div></div>
-          <div class="slot typing t3"><div class="clip"><div class="chat-typing"><i></i><i></i><i></i></div></div></div>
-          <div class="slot m3"><div class="clip"><article class="bubble">
-            <p>Purreutkast til Kari. Ingenting sendes før du sier ja.</p>
-            <div class="mini-card work">
-              <p class="work-kicker"><span class="work-phase">Skriver</span><span class="work-ready">Utkast</span></p>
-              <p class="chat-preview">Hei Kari. Fakturaen er forfalt. Les utkastet før det sendes.</p>
-              <div class="chat-actions"><span class="send-slot"><span class="cbtn cbtn-go chat-send">Godkjenn</span><span class="cbtn cbtn-sent chat-sent">✓ Godkjent</span></span></div>
-            </div>
-          </article></div></div>
-        </div>
+        <div class="chat-body"><div class="thread" id="hero-thread"></div></div>
       </div>
     </div>
   </div>
@@ -503,19 +467,12 @@
       <p>Bytt eksempel over, så ser du hvordan en vanlig dag med assistenten kan se ut.</p>
     </div>
     <div class="chat-app chat-day" id="day-chat" hidden>
-      <div class="chat-top">
-        <span class="chat-ava" aria-hidden="true">A</span>
-        <span class="chat-name">Din assistent</span>
-        <span class="chat-illus">Illustrasjon</span>
-      </div>
-      <div class="chat-body">
-        <div class="slot typing t1"><div class="clip"><div class="chat-typing" aria-hidden="true"><i></i><i></i><i></i></div></div></div>
-        <div class="slot m1"><div class="clip"><article class="bubble"><span class="when">Morgen</span><p id="day-morning"></p><div class="mini-card work" id="day-morning-card"></div></article></div></div>
-        <div class="slot typing t2"><div class="clip"><div class="chat-typing" aria-hidden="true"><i></i><i></i><i></i></div></div></div>
-        <div class="slot m2"><div class="clip"><article class="bubble"><span class="when">Midt på dagen</span><p id="day-mid"></p><div class="mini-card work" id="day-mid-card"></div></article></div></div>
-        <div class="slot typing t3"><div class="clip"><div class="chat-typing" aria-hidden="true"><i></i><i></i><i></i></div></div></div>
-        <div class="slot m3"><div class="clip"><article class="bubble"><span class="when">Kveld</span><p id="day-evening"></p><div class="mini-card work" id="day-evening-card"></div></article></div></div>
-      </div>
+        <div class="chat-top">
+          <span class="chat-ava" aria-hidden="true">A</span>
+          <span class="chat-name">Din assistent</span>
+          <span class="chat-illus">Illustrasjon</span>
+        </div>
+      <div class="chat-body"><div class="thread" id="day-thread"></div></div>
     </div>
     <noscript>
       <div class="chat-app chat-day chat-still">
@@ -524,11 +481,9 @@
           <span class="chat-name">Din assistent</span>
           <span class="chat-illus">Illustrasjon</span>
         </div>
-        <div class="chat-body">
-          <article class="bubble"><span class="when">Morgen</span><p>Likviditet for de neste ukene, fra utestående og regninger som kommer.</p><div class="mini-card work"><p class="work-kicker"><span class="work-ready">Klar</span></p><ul class="work-rows"><li><span class="lhs"><i class="mark"></i><b>Forfalt</b></span><span class="rhs">3 fakturaer</span></li><li><span class="lhs"><i class="mark"></i><b>Kommer</b></span><span class="rhs">Nordmann Rør AS</span></li><li class="is-flag"><span class="lhs"><i class="mark"></i><b>Frist</b></span><span class="rhs">MVA, Ola Nordmann</span></li></ul><div class="chat-actions"><span class="cbtn cbtn-sent">✓ Godkjent</span></div></div></article>
-          <article class="bubble"><span class="when">Midt på dagen</span><p>Margen på badjobben til Kari Nordmann, sjekket mot lignende jobber.</p><div class="mini-card work"><p class="work-kicker"><span class="work-ready">Avvik</span></p><ul class="work-rows"><li><span class="lhs"><i class="mark"></i><b>Jobb</b></span><span class="rhs">Bad, Kari Nordmann</span></li><li class="is-flag"><span class="lhs"><i class="mark"></i><b>Status</b></span><span class="rhs">avviker</span></li><li><span class="lhs"><i class="mark"></i><b>Mot</b></span><span class="rhs">lignende jobber</span></li></ul><div class="chat-actions"><span class="cbtn cbtn-sent">✓ Godkjent</span></div></div></article>
-          <article class="bubble"><span class="when">Kveld</span><p>Purreutkast på forfalt faktura. MVA hos Ola Nordmann og sertifikat er med.</p><div class="mini-card work"><p class="work-kicker"><span class="work-ready">Utkast</span></p><ul class="work-rows"><li><span class="lhs"><i class="mark"></i><b>Purring</b></span><span class="rhs">forfalt faktura</span></li><li><span class="lhs"><i class="mark"></i><b>MVA</b></span><span class="rhs">Ola Nordmann</span></li><li class="is-flag"><span class="lhs"><i class="mark"></i><b>Sertifikat</b></span><span class="rhs">denne uken</span></li></ul><div class="chat-actions"><span class="cbtn cbtn-sent">✓ Godkjent</span></div></div></article>
-        </div>
+        <div class="chat-body"><div class="thread">
+          <p class="tchip">07:00 · Morgenrapport (fast rutine)</p><p class="workline">Leste 11 e-poster</p><p class="workline">Hentet utestående fra regnskapssystemet</p><div class="msg msg-bot"><span class="ava-sm" aria-hidden="true">A</span><div class="bubble"><p>Tre fakturaer er forfalt. Regningen fra Nordmann Rør AS kommer de neste ukene.</p><span class="filechip">Likviditet_uke43.xlsx</span></div></div><p class="tchip">09:15</p><div class="msg msg-user"><div class="bubble"><p>Hvordan ser likviditeten ut?</p></div></div><p class="workline">Sammenlignet med regninger som kommer</p><div class="msg msg-bot"><span class="ava-sm" aria-hidden="true">A</span><div class="bubble"><p>Uken er stram før MVA hos Ola Nordmann. Ingenting er betalt.</p></div></div><p class="tchip">12:10</p><div class="msg msg-user"><div class="bubble"><p>Hva med margen på badjobben til Kari?</p></div></div><p class="workline">Sammenlignet med 3 lignende badjobber</p><div class="msg msg-bot"><span class="ava-sm" aria-hidden="true">A</span><div class="bubble"><p>Badjobben til Kari Nordmann ligger under de tre. Ett punkt skiller seg ut.</p></div></div><p class="tchip">14:20</p><p class="workline">Fant 1 forfalt faktura</p><div class="msg msg-bot"><span class="ava-sm" aria-hidden="true">A</span><div class="bubble"><p>Nordmann Bygg AS har en faktura som er forfalt.</p><div class="qcard"><p>Skal jeg purre Nordmann Bygg AS?</p><div class="choices"><span class="choice is-on">Ja, lag purring</span><span class="choice is-off">Vent en uke</span></div></div></div></div><div class="msg msg-bot"><span class="ava-sm" aria-hidden="true">A</span><div class="bubble"><p>Jeg skriver utkastet. Det sendes ikke før du har lest det.</p></div></div><p class="tchip">16:30</p><p class="workline">Skrev purreutkast</p><p class="workline">Noterte sertifikatet denne uken</p><div class="msg msg-bot"><span class="ava-sm" aria-hidden="true">A</span><div class="bubble"><p>Her er utkastet. Sertifikatet er notert ved siden av. Ingenting sendes før du trykker Send.</p><div class="mail"><p class="mail-row"><b>Til</b><span>Nordmann Bygg AS</span></p><p class="mail-row"><b>Emne</b><span>Purring</span></p><p>Hei. Fakturaen er forfalt. Les utkastet før det sendes.</p><div class="chat-actions"><span class="cbtn cbtn-sent">✓ Sendt</span></div></div></div></div>
+        </div></div>
       </div>
     </noscript>
   </div>
@@ -1000,432 +955,2175 @@
     styremedlem:{assistant:'Lesestoff til møtet',day:'Kort utkast til det du bør lese før møtet',skip:'Å lete gjennom lange tråder kvelden før møtet',inTitle:'Styremedlem'},
     forretning:{assistant:'Referat og frister',day:'Utkast til referat og oppfølgingspunkter. Ingenting sendes ut uten ditt ja',skip:'Å skrive referatet fra blankt ark etter møtet',inTitle:'Forretningsfører'}
   };
-  const row=(k,v,flag)=>({k,v,flag:!!flag});
-  const card=(phase,ready,rows)=>({phase,ready,rows});
-  const fillCard=(el,spec,act)=>{
-    el.replaceChildren();
-    const kicker=document.createElement('p');
-    kicker.className='work-kicker';
-    const phase=document.createElement('span');
-    phase.className='work-phase';
-    phase.textContent=spec.phase;
-    const ready=document.createElement('span');
-    ready.className='work-ready';
-    ready.textContent=spec.ready;
-    kicker.append(phase,ready);
-    const ul=document.createElement('ul');
-    ul.className='work-rows';
-    spec.rows.forEach(item=>{
-      const li=document.createElement('li');
-      if(item.flag)li.className='is-flag';
-      const lhs=document.createElement('span');
-      lhs.className='lhs';
-      const mark=document.createElement('i');
-      mark.className='mark';
-      const b=document.createElement('b');
-      b.textContent=item.k;
-      lhs.append(mark,b);
-      const rhs=document.createElement('span');
-      rhs.className='rhs';
-      rhs.textContent=item.v;
-      li.append(lhs,rhs);
-      ul.append(li);
-    });
-    const actions=document.createElement('div');
-    actions.className='chat-actions';
-    const slot=document.createElement('span');
-    slot.className='send-slot';
-    const go=document.createElement('span');
-    go.className='cbtn cbtn-go day-go';
-    go.textContent=act;
-    const ok=document.createElement('span');
-    ok.className='cbtn cbtn-sent day-ok';
-    ok.textContent='✓ Godkjent';
-    slot.append(go,ok);
-    actions.append(slot);
-    el.append(kicker,ul,actions);
-  };
   const scenes={
     'handverk|leder':{
       day:['Likviditet for de neste ukene, fra utestående og regninger som kommer.','Margen på badjobben til Kari Nordmann, sjekket mot lignende jobber.','Purreutkast på forfalt faktura. MVA hos Ola Nordmann og sertifikat er med.'],
-      act:['Godkjenn','Se utkast','Godkjenn'],
       skip:['Å regne de neste ukenes likviditet for hånd','Å oppdage svak margen på jobben til Kari Nordmann for sent','Å skrive purring og holde MVA og sertifikat i hodet'],
-      card:[
-        card('Bygger','Klar',[row('Forfalt','3 fakturaer',1),row('Kommer','Nordmann Rør AS'),row('Ute','Kari Nordmann')]),
-        card('Sjekker','Avvik',[row('Jobb','Bad, Kari Nordmann'),row('Status','avviker',1),row('Mot','lignende jobber')]),
-        card('Skriver','Utkast',[row('Purring','forfalt faktura'),row('MVA','Ola Nordmann'),row('Sertifikat','denne uken',1)])
-      ]
     },
     'handverk|selger':{
-      day:['Research før møtet med Kari Nordmann: historikk og åpne saker.','Åpne tilbud i rekkefølge. Kari Nordmann følges opp først.','Tilbudsutkast til Nordmann Bygg AS, bygget på en lignende jobb.'],
-      act:['Se utkast','Godkjenn','Se utkast'],
-      skip:['Å lete i historikken til Kari rett før møtet','Å gjette hvilket tilbud som skal følges opp først','Å skrive tilbudet til Nordmann Bygg AS fra blankt ark'],
-      card:[
-        card('Samler','Klar',[row('Kunde','Kari Nordmann'),row('Historikk','bad og service'),row('Åpent','tilbud ubesvart',1)]),
-        card('Sorterer','Klar',[row('1','Kari Nordmann'),row('2','Nordmann Bygg AS'),row('3','Nordmann Eiendom AS')]),
-        card('Skriver','Utkast',[row('Bygd på','lignende jobb'),row('Til','Nordmann Bygg AS'),row('Status','ikke sendt')])
-      ]
+      day:['Research før møtet med Kari Nordmann: historikk og åpne saker.','Åpne tilbud i rekkefølge. Kari Nordmann følges opp først.','Tilbudsutkast til Kari Nordmann, bygget på badjobben i fjor.'],
+      skip:['Å lete i historikken til Kari rett før møtet','Å gjette hvilket tilbud som skal følges opp først','Å skrive tilbudet til Kari Nordmann fra blankt ark'],
     },
     'handverk|kontor':{
       day:['Fakturaer er avstemt mot ordre. Avvik fra Nordmann Rør AS er flagget.','Utkast til oppfølging av Kari Nordmann og leverandøren. Ingenting sendes ennå.','Mappen til Ola Nordmann er samlet fra regnskapssystemet ditt.'],
-      act:['Godkjenn','Se utkast','Godkjenn'],
       skip:['Å avstemme faktura mot ordre for hånd','Å skrive oppfølgingen til Kari og leverandøren fra blankt ark','Å lete fram grunnlag til Ola Nordmann'],
-      card:[
-        card('Avstemmer','Avvik',[row('Nordmann Rør AS','mot ordre',1),row('Kari Nordmann','stemmer'),row('Poster','2 å se')]),
-        card('Skriver','Utkast',[row('Til','Kari Nordmann'),row('Kopi','Nordmann Rør AS'),row('Status','utkast, ikke sendt')]),
-        card('Samler','Klar',[row('Bilag','samlet'),row('Avvik','lagt ved'),row('Til','Ola Nordmann')])
-      ]
     },
     'handverk|enk':{
       day:['Enkel likviditet: utestående og regninger neste uke.','Timer på badjobben til Kari er samlet. Fakturaen er et utkast.','MVA-frist og oppfølging til Kari Nordmann. Du sier ja selv.'],
-      act:['Godkjenn','Se utkast','Godkjenn'],
       skip:['Å regne likviditeten mellom jobbene','Å samle timer til faktura sent på kvelden','Å glemme MVA-fristen og oppfølgingen til Kari'],
-      card:[
-        card('Bygger','Klar',[row('Ute','2 fakturaer'),row('Kommer','Nordmann Rør AS'),row('Vurdering','se før du betaler')]),
-        card('Samler','Utkast',[row('Jobb','bad, Kari Nordmann'),row('Timer','samlet'),row('Status','utkast, ikke sendt')]),
-        card('Varsler','Klar',[row('MVA','denne perioden',1),row('Oppfølging','Kari Nordmann'),row('Utkast','ligger klart')])
-      ]
     },
     'regnskap|leder':{
       day:['Ukentlig nøkkeltall: omsetning, ordrereserve og avvik mot budsjett.','Møtebrief før Nordmann Bygg AS, med historikk, åpne saker og agenda.','A-melding og MVA er flagget. Ola Nordmann har fristen på listen.'],
-      act:['Godkjenn','Se utkast','Godkjenn'],
       skip:['Å hente nøkkeltallene fra flere steder','Å møte Nordmann Bygg AS uten historikk og åpne saker','Å holde a-melding og MVA i hodet'],
-      card:[
-        card('Samler','Avvik',[row('Omsetning','uken så langt'),row('Reserve','4 oppdrag'),row('Budsjett','ett avvik',1)]),
-        card('Skriver','Brief',[row('Historikk','Nordmann Bygg AS'),row('Åpent','2 saker'),row('Agenda','forslag klart')]),
-        card('Varsler','Klar',[row('A-melding','denne perioden',1),row('MVA','Ola Nordmann'),row('Varsel','ligger klart')])
-      ]
     },
     'regnskap|selger':{
       day:['Research før møtet med Nordmann Eiendom AS: tidligere oppdrag og åpne saker.','Pipeline: tre tilbud ligger åpne, satt i rekkefølge.','Tilbudsutkast til Nordmann Bygg AS, bygget på forrige lignende oppdrag.'],
-      act:['Se utkast','Godkjenn','Se utkast'],
       skip:['Å møte Nordmann Eiendom AS uten tidligere oppdrag','Å miste rekkefølgen på åpne tilbud','Å skrive tilbudet uten å se lignende oppdrag'],
-      card:[
-        card('Samler','Klar',[row('Prospekt','Nordmann Eiendom AS'),row('Tidligere','ett oppdrag'),row('Åpent','svar venter',1)]),
-        card('Sorterer','Klar',[row('1','Nordmann Eiendom AS'),row('2','Nordmann Bygg AS'),row('3','Kari Nordmann')]),
-        card('Skriver','Utkast',[row('Bygd på','forrige oppdrag'),row('Til','Nordmann Bygg AS'),row('Status','venter på deg')])
-      ]
     },
     'regnskap|kontor':{
       day:['Bilag avstemt mot timer og oppdrag. Avvik hos Nordmann Bygg AS er flagget.','Utkast til kundeoppfølging. Nordmann Bygg AS mangler ett bilag.','Leveransen til Ola Nordmann er gjort klar fra regnskapssystemet ditt.'],
-      act:['Godkjenn','Se utkast','Godkjenn'],
       skip:['Å avstemme bilag mot timer for hånd','Å purre bilaget fra Nordmann Bygg AS fra blankt ark','Å samle leveransen til Ola Nordmann selv'],
-      card:[
-        card('Avstemmer','Avvik',[row('Nordmann Bygg AS','timer avviker',1),row('Bilag','ett mangler'),row('Liste','klar til deg')]),
-        card('Skriver','Utkast',[row('Til','Nordmann Bygg AS'),row('Sak','manglende bilag'),row('Status','utkast')]),
-        card('Samler','Klar',[row('Mappe','samlet'),row('Kilde','regnskapssystemet ditt'),row('Til','Ola Nordmann')])
-      ]
     },
     'regnskap|enk':{
       day:['Enkel likviditet før neste ukes regninger.','Timer på oppdraget til Nordmann Bygg AS er klare til faktura.','Skattefrist og oppfølging. Utkastet sendes ikke før du sier ja.'],
-      act:['Godkjenn','Se utkast','Godkjenn'],
       skip:['Å regne likviditeten mellom oppdrag','Å samle timer til faktura for hånd','Å oppdage skattefristen for sent'],
-      card:[
-        card('Bygger','Klar',[row('Ute','2 fakturaer'),row('Kommer','faste regninger'),row('Vurdering','stramt',1)]),
-        card('Samler','Utkast',[row('Oppdrag','Nordmann Bygg AS'),row('Timer','samlet'),row('Status','utkast')]),
-        card('Varsler','Klar',[row('Skatt','perioden nærmer seg',1),row('Oppfølging','Nordmann Bygg AS'),row('Utkast','ikke sendt')])
-      ]
     },
     'helse|leder':{
       day:['Likviditet neste uker, fra utestående oppgjør og faste regninger.','Møtebrief før timen med Kari Nordmann: historikk, åpne saker og agenda.','Forsikring og autorisasjon har frist. Ubesvart henvendelse fra Kari er med.'],
-      act:['Godkjenn','Se utkast','Godkjenn'],
       skip:['Å sette opp likviditeten mellom timene','Å møte Kari Nordmann uten åpne saker','Å oppdage frist på forsikring og autorisasjon for sent'],
-      card:[
-        card('Bygger','Klar',[row('Ute','3 oppgjør'),row('Kommer','faste regninger'),row('Vurdering','stramt før frist',1)]),
-        card('Skriver','Brief',[row('Historikk','Kari Nordmann'),row('Åpent','1 sak'),row('Agenda','forslag klart')]),
-        card('Varsler','Klar',[row('Forsikring','denne uken',1),row('Autorisasjon','frist nærmer seg',1),row('Ubesvart','Kari Nordmann')])
-      ]
     },
     'helse|selger':{
       day:['Research før samtalen med Kari Nordmann: historikk og åpent spørsmål.','Oppfølging av henvendelser som har ligget stille, i rekkefølge.','Utkast til tilbud om opplegg, bygget på et lignende forløp. Ikke sendt.'],
-      act:['Se utkast','Godkjenn','Se utkast'],
       skip:['Å lete i historikken til Kari før samtalen','Å glemme henvendelser som har ligget stille','Å skrive tilbudet fra blankt ark'],
-      card:[
-        card('Samler','Klar',[row('Navn','Kari Nordmann'),row('Historikk','tidligere time'),row('Åpent','ett spørsmål',1)]),
-        card('Sorterer','Klar',[row('1','Kari Nordmann'),row('2','Nordmann Bygg AS'),row('3','ny henvendelse')]),
-        card('Skriver','Utkast',[row('Bygd på','lignende forløp'),row('Til','Kari Nordmann'),row('Status','ikke sendt')])
-      ]
     },
     'helse|kontor':{
       day:['Oppgjør avstemt mot timer. Avvik for Kari Nordmann er flagget.','Utkast til oppfølging av ubesvart time. Ingenting sendes uten ditt ja.','Grunnlag til Ola Nordmann er samlet fra regnskapssystemet ditt.'],
-      act:['Godkjenn','Se utkast','Godkjenn'],
       skip:['Å avstemme oppgjør mot timer for hånd','Å skrive oppfølgingen til Kari fra blankt ark','Å samle grunnlaget til Ola Nordmann selv'],
-      card:[
-        card('Avstemmer','Avvik',[row('Kari Nordmann','time mot oppgjør',1),row('Poster','2 å se'),row('Liste','klar')]),
-        card('Skriver','Utkast',[row('Til','Kari Nordmann'),row('Sak','ubesvart time'),row('Status','utkast')]),
-        card('Samler','Klar',[row('Grunnlag','samlet'),row('Kilde','regnskapssystemet ditt'),row('Til','Ola Nordmann')])
-      ]
     },
     'helse|enk':{
       day:['Enkel likviditet fra utestående oppgjør.','Timer og oppgjør for Kari Nordmann er klare til faktura.','MVA-frist og oppfølging av timen. Utkastet venter på deg.'],
-      act:['Godkjenn','Se utkast','Godkjenn'],
       skip:['Å regne likviditeten mellom timene','Å samle oppgjør til faktura for hånd','Å glemme MVA og oppfølgingen til Kari'],
-      card:[
-        card('Bygger','Klar',[row('Ute','3 oppgjør'),row('Kommer','faste regninger'),row('Vurdering','se før frist')]),
-        card('Samler','Utkast',[row('Time','Kari Nordmann'),row('Grunnlag','samlet'),row('Status','utkast')]),
-        card('Varsler','Klar',[row('MVA','denne perioden',1),row('Oppfølging','Kari Nordmann'),row('Utkast','ikke sendt')])
-      ]
     },
     'butikk|leder':{
       day:['Prisendring hos Nordmann Rør AS er flagget mot forrige avtale.','Margen på avsluttede ordre avviker. Tre ordre er merket.','Likviditet neste uke, og MVA-frist hos Ola Nordmann.'],
-      act:['Godkjenn','Se utkast','Godkjenn'],
       skip:['Å oppdage prisendringen fra Nordmann Rør AS i etterkant','Å sjekke margen på avsluttede ordre for hånd','Å regne neste uke og MVA-fristen selv'],
-      card:[
-        card('Sjekker','Avvik',[row('Leverandør','Nordmann Rør AS',1),row('Mot','forrige avtale'),row('Status','høyere enn sist')]),
-        card('Sjekker','Avvik',[row('Ordre','3 avsluttet'),row('Avvik','merket for deg',1),row('Utkast','gjennomgang klar')]),
-        card('Bygger','Klar',[row('Ute','3 fakturaer'),row('MVA','Ola Nordmann',1),row('Vurdering','se før betaling')])
-      ]
     },
     'butikk|selger':{
       day:['Research før samtalen med Kari Nordmann om leveransen.','Åpne tilbud i rekkefølge. Nordmann Bygg AS har ligget lengst.','Tilbudsutkast bygget på en lignende ordre. Du leser før det sendes.'],
-      act:['Se utkast','Godkjenn','Se utkast'],
       skip:['Å møte Kari uten leveransehistorikken','Å følge opp åpne tilbud i tilfeldig rekkefølge','Å skrive tilbudet uten lignende ordre'],
-      card:[
-        card('Samler','Klar',[row('Kunde','Kari Nordmann'),row('Sak','leveranse'),row('Åpent','ett spørsmål',1)]),
-        card('Sorterer','Klar',[row('1','Nordmann Bygg AS'),row('2','Kari Nordmann'),row('3','Nordmann Eiendom AS')]),
-        card('Skriver','Utkast',[row('Bygd på','lignende ordre'),row('Til','Nordmann Bygg AS'),row('Status','ikke sendt')])
-      ]
     },
     'butikk|kontor':{
       day:['Fakturaer avstemt mot ordre. Nordmann Rør AS er flagget på avvikslisten.','Utkast til leverandøroppfølging og svar til Kari Nordmann om retur.','Mappen til Ola Nordmann er klar fra regnskapssystemet ditt.'],
-      act:['Godkjenn','Se utkast','Godkjenn'],
       skip:['Å avstemme faktura mot ordre for hånd','Å skrive leverandøroppfølgingen fra blankt ark','Å lete fram bilag til Ola Nordmann'],
-      card:[
-        card('Avstemmer','Avvik',[row('Nordmann Rør AS','mot ordre',1),row('Retur','Kari Nordmann'),row('Poster','2 å se')]),
-        card('Skriver','Utkast',[row('Til','Nordmann Rør AS'),row('Sak','pris mot ordre'),row('Status','utkast')]),
-        card('Samler','Klar',[row('Bilag','samlet'),row('Avvik','lagt ved'),row('Til','Ola Nordmann')])
-      ]
     },
     'butikk|enk':{
       day:['Enkel likviditet: utestående og varekjøp neste uke.','Tilbud til Kari Nordmann, bygget på en lignende ordre.','MVA-frist og oppfølging av ordren. Ingenting sendes ennå.'],
-      act:['Godkjenn','Se utkast','Godkjenn'],
       skip:['Å regne likviditet og varekjøp for hånd','Å skrive tilbudet til Kari fra blankt ark','Å glemme MVA-fristen'],
-      card:[
-        card('Bygger','Klar',[row('Ute','2 fakturaer'),row('Varekjøp','Nordmann Rør AS'),row('Vurdering','se før betaling')]),
-        card('Skriver','Utkast',[row('Til','Kari Nordmann'),row('Bygd på','lignende ordre'),row('Status','utkast')]),
-        card('Varsler','Klar',[row('MVA','denne perioden',1),row('Oppfølging','Kari Nordmann'),row('Utkast','ikke sendt')])
-      ]
     },
     'eiendom|leder':{
       day:['Likviditet fra utestående husleie og regninger de neste ukene.','Kontrakten fra Nordmann Eiendom AS har punkter som avviker fra vanlige vilkår.','Forespørselen fra Kari Nordmann er ubesvart. Forsikringsfrist er flagget.'],
-      act:['Godkjenn','Se utkast','Godkjenn'],
       skip:['Å regne likviditeten fra husleie og regninger for hånd','Å lese kontrakten uten å se avvikene','Å glemme forespørselen fra Kari og forsikringsfristen'],
-      card:[
-        card('Bygger','Klar',[row('Ute','3 husleier'),row('Kommer','faste regninger'),row('Vurdering','se før utbetaling')]),
-        card('Sjekker','Avvik',[row('Fra','Nordmann Eiendom AS'),row('Vilkår','2 avvik',1),row('Mot','vanlig avtale')]),
-        card('Varsler','Utkast',[row('Ubesvart','Kari Nordmann',1),row('Forsikring','frist nærmer seg',1),row('Utkast','svar ligger klart')])
-      ]
     },
     'eiendom|selger':{
       day:['Research før visning med Kari Nordmann: historikk og åpne spørsmål.','Ubesvarte tilbud er satt i rekkefølge for oppfølging.','Tilbudsutkast til Nordmann Eiendom AS, bygget på forrige oppdrag.'],
-      act:['Se utkast','Godkjenn','Se utkast'],
       skip:['Å gå på visning uten historikken til Kari','Å glemme ubesvarte tilbud','Å skrive tilbudet til Nordmann Eiendom AS fra blankt ark'],
-      card:[
-        card('Samler','Klar',[row('Navn','Kari Nordmann'),row('Sak','visning'),row('Åpent','2 spørsmål',1)]),
-        card('Sorterer','Klar',[row('1','Kari Nordmann'),row('2','Nordmann Eiendom AS'),row('3','Nordmann Bygg AS')]),
-        card('Skriver','Utkast',[row('Bygd på','forrige oppdrag'),row('Til','Nordmann Eiendom AS'),row('Status','ikke sendt')])
-      ]
     },
     'eiendom|kontor':{
       day:['Krav avstemt mot avtaler. Avvik hos Kari Nordmann er flagget.','Utkast til oppfølging av Nordmann Eiendom AS. Ingenting sendes ennå.','Grunnlag til Ola Nordmann er samlet fra regnskapssystemet ditt.'],
-      act:['Godkjenn','Se utkast','Godkjenn'],
       skip:['Å avstemme krav mot avtaler for hånd','Å skrive oppfølgingen til Nordmann Eiendom AS fra blankt ark','Å samle grunnlaget til Ola Nordmann selv'],
-      card:[
-        card('Avstemmer','Avvik',[row('Kari Nordmann','mot avtale',1),row('Krav','2 å se'),row('Liste','klar')]),
-        card('Skriver','Utkast',[row('Til','Nordmann Eiendom AS'),row('Sak','kontraktsfrist'),row('Status','utkast')]),
-        card('Samler','Klar',[row('Grunnlag','samlet'),row('Kilde','regnskapssystemet ditt'),row('Til','Ola Nordmann')])
-      ]
     },
     'eiendom|enk':{
       day:['Enkel likviditet fra husleie som står ute.','Tilbud til Kari Nordmann om det praktiske. Utkast, ikke sendt.','Kontraktsfrist og skattefrist. Oppfølgingen venter på deg.'],
-      act:['Godkjenn','Se utkast','Godkjenn'],
       skip:['Å regne likviditeten fra husleie for hånd','Å skrive tilbudet til Kari fra blankt ark','Å glemme kontraktsfrist og skatt'],
-      card:[
-        card('Bygger','Klar',[row('Ute','2 husleier'),row('Kommer','faste regninger'),row('Vurdering','se før utbetaling')]),
-        card('Skriver','Utkast',[row('Til','Kari Nordmann'),row('Sak','det praktiske'),row('Status','utkast')]),
-        card('Varsler','Klar',[row('Kontrakt','Nordmann Eiendom AS',1),row('Skatt','perioden nærmer seg'),row('Oppfølging','Kari Nordmann')])
-      ]
     },
     'konsulent|leder':{
       day:['Nøkkeltall denne uken: omsetning, ordrereserve og avvik mot budsjett.','Møtebrief før Kari Nordmann, med historikk, åpne saker og agenda.','Tilbudet til Nordmann Bygg AS er ubesvart. MVA hos Ola Nordmann er med.'],
-      act:['Godkjenn','Se utkast','Se utkast'],
       skip:['Å hente nøkkeltall fra flere steder før uken starter','Å møte Kari Nordmann uten historikk og agenda','Å la tilbudet til Nordmann Bygg AS bli liggende'],
-      card:[
-        card('Samler','Avvik',[row('Omsetning','uken så langt'),row('Reserve','3 oppdrag'),row('Budsjett','ett avvik',1)]),
-        card('Skriver','Brief',[row('Historikk','Kari Nordmann'),row('Åpent','2 saker'),row('Agenda','forslag klart')]),
-        card('Varsler','Utkast',[row('Ubesvart','Nordmann Bygg AS',1),row('MVA','Ola Nordmann'),row('Utkast','purring ligger klar')])
-      ]
     },
     'konsulent|selger':{
       day:['Research før møtet med Kari Nordmann: tidligere oppdrag og åpne saker.','Pipeline med åpne tilbud i rekkefølge. Nordmann Bygg AS først.','Tilbudsutkast bygget på et lignende oppdrag. Du leser før det sendes.'],
-      act:['Se utkast','Godkjenn','Se utkast'],
       skip:['Å møte Kari uten tidligere oppdrag','Å miste oversikten over åpne tilbud','Å skrive tilbudet fra blankt ark'],
-      card:[
-        card('Samler','Klar',[row('Kunde','Kari Nordmann'),row('Tidligere','2 oppdrag'),row('Åpent','1 sak',1)]),
-        card('Sorterer','Klar',[row('1','Nordmann Bygg AS'),row('2','Kari Nordmann'),row('3','Nordmann Eiendom AS')]),
-        card('Skriver','Utkast',[row('Bygd på','lignende oppdrag'),row('Til','Nordmann Bygg AS'),row('Status','venter på deg')])
-      ]
     },
     'konsulent|kontor':{
       day:['Fakturaer avstemt mot timer. Avvik på Nordmann Bygg AS er flagget.','Utkast til oppfølging etter møtet med Kari Nordmann.','Timegrunnlag til Ola Nordmann er hentet fra regnskapssystemet ditt.'],
-      act:['Godkjenn','Se utkast','Godkjenn'],
       skip:['Å avstemme faktura mot timer for hånd','Å skrive oppfølgingen til Kari fra blankt ark','Å rekonstruere timene til Ola Nordmann'],
-      card:[
-        card('Avstemmer','Avvik',[row('Nordmann Bygg AS','timer mot faktura',1),row('Poster','2 å se'),row('Liste','klar')]),
-        card('Skriver','Utkast',[row('Til','Kari Nordmann'),row('Sak','etter møtet'),row('Status','utkast')]),
-        card('Samler','Klar',[row('Timer','samlet'),row('Kilde','regnskapssystemet ditt'),row('Til','Ola Nordmann')])
-      ]
     },
     'konsulent|enk':{
       day:['Enkel likviditet før neste ukes regninger.','Timer hos Kari Nordmann er klare. Fakturaen er et utkast.','MVA-frist, og tilbudet til Nordmann Bygg AS er ubesvart.'],
-      act:['Godkjenn','Se utkast','Godkjenn'],
       skip:['Å regne likviditeten mellom oppdrag','Å samle timer til faktura sent på kvelden','Å glemme MVA og tilbudet til Nordmann Bygg AS'],
-      card:[
-        card('Bygger','Klar',[row('Ute','2 fakturaer'),row('Kommer','faste regninger'),row('Vurdering','se før betaling')]),
-        card('Samler','Utkast',[row('Kunde','Kari Nordmann'),row('Timer','samlet'),row('Status','utkast')]),
-        card('Varsler','Klar',[row('MVA','denne perioden',1),row('Ubesvart','Nordmann Bygg AS',1),row('Utkast','oppfølging klar')])
-      ]
     },
     'restaurant|leder':{
       day:['Prisendring hos Nordmann Rør AS, og likviditet før neste ukes regninger.','Margen på avsluttet selskap for Kari Nordmann avviker fra lignende.','Forsikring og MVA har frist. Ola Nordmann står på listen.'],
-      act:['Godkjenn','Se utkast','Godkjenn'],
       skip:['Å oppdage prisendringen fra Nordmann Rør AS for sent','Å sjekke margen på selskapet til Kari for hånd','Å holde forsikring og MVA i hodet'],
-      card:[
-        card('Sjekker','Avvik',[row('Pris','Nordmann Rør AS',1),row('Regninger','neste uke'),row('Ute','3 fakturaer')]),
-        card('Sjekker','Avvik',[row('Selskap','Kari Nordmann'),row('Mot','lignende selskap'),row('Status','avviker',1)]),
-        card('Varsler','Klar',[row('Forsikring','denne måneden',1),row('MVA','Ola Nordmann'),row('Varsel','ligger klart')])
-      ]
     },
     'restaurant|selger':{
       day:['Research før henvendelsen fra Kari Nordmann om selskap.','Åpne forespørsler i rekkefølge. Nordmann Bygg AS har ventet lengst.','Tilbudsutkast til selskapet, bygget på et lignende arrangement.'],
-      act:['Se utkast','Godkjenn','Se utkast'],
       skip:['Å svare Kari uten å se tidligere selskap','Å følge opp forespørsler i tilfeldig rekkefølge','Å skrive tilbudet fra blankt ark'],
-      card:[
-        card('Samler','Klar',[row('Navn','Kari Nordmann'),row('Sak','selskap'),row('Åpent','meny og tid',1)]),
-        card('Sorterer','Klar',[row('1','Nordmann Bygg AS'),row('2','Kari Nordmann'),row('3','Nordmann Eiendom AS')]),
-        card('Skriver','Utkast',[row('Bygd på','lignende selskap'),row('Til','Kari Nordmann'),row('Status','ikke sendt')])
-      ]
     },
     'restaurant|kontor':{
       day:['Leverandørfaktura avstemt mot følgeseddel. Nordmann Rør AS avviker.','Utkast til oppfølging av leverandøren og svar til Kari Nordmann.','Mappen til Ola Nordmann er samlet fra regnskapssystemet ditt.'],
-      act:['Godkjenn','Se utkast','Godkjenn'],
       skip:['Å avstemme faktura mot følgeseddel for hånd','Å skrive oppfølgingen fra blankt ark','Å samle bilag til Ola Nordmann selv'],
-      card:[
-        card('Avstemmer','Avvik',[row('Nordmann Rør AS','mot følgeseddel',1),row('Poster','2 å se'),row('Liste','klar')]),
-        card('Skriver','Utkast',[row('Til','Nordmann Rør AS'),row('Også','Kari Nordmann'),row('Status','utkast')]),
-        card('Samler','Klar',[row('Bilag','samlet'),row('Avvik','lagt ved'),row('Til','Ola Nordmann')])
-      ]
     },
     'restaurant|enk':{
       day:['Enkel likviditet før varekjøp neste uke.','Tilbud på selskap til Kari Nordmann, bygget på et lignende.','MVA-frist og oppfølging. Utkastet sendes ikke før du sier ja.'],
-      act:['Godkjenn','Se utkast','Godkjenn'],
       skip:['Å regne likviditet og varekjøp for hånd','Å skrive tilbudet på selskapet fra blankt ark','Å glemme MVA-fristen'],
-      card:[
-        card('Bygger','Klar',[row('Ute','2 fakturaer'),row('Varekjøp','Nordmann Rør AS'),row('Vurdering','stramt',1)]),
-        card('Skriver','Utkast',[row('Til','Kari Nordmann'),row('Sak','selskap'),row('Status','utkast')]),
-        card('Varsler','Klar',[row('MVA','denne perioden',1),row('Oppfølging','Kari Nordmann'),row('Utkast','ikke sendt')])
-      ]
     },
     'annet|leder':{
       day:['Likviditet neste uker, fra utestående og kommende regninger.','Møtebrief før Kari Nordmann, med historikk, åpne saker og agenda.','Kort notat om et anbud, og frist for MVA og a-melding.'],
-      act:['Godkjenn','Se utkast','Godkjenn'],
       skip:['Å regne likviditeten for hånd','Å møte Kari Nordmann uten åpne saker','Å vurdere anbud og frister fra blankt ark'],
-      card:[
-        card('Bygger','Klar',[row('Forfalt','3 fakturaer',1),row('Kommer','Nordmann Rør AS'),row('Vurdering','stramt',1)]),
-        card('Skriver','Brief',[row('Historikk','Kari Nordmann'),row('Åpent','2 saker'),row('Agenda','forslag klart')]),
-        card('Vurderer','Klar',[row('Anbud','ett å se på'),row('Notat','verdt en titt'),row('Frist','MVA og a-melding',1)])
-      ]
     },
     'annet|selger':{
       day:['Research før møtet med Kari Nordmann: historikk og åpne saker.','Pipeline: åpne tilbud satt i rekkefølge.','Tilbudsutkast til Nordmann Bygg AS, bygget på en lignende jobb.'],
-      act:['Se utkast','Godkjenn','Se utkast'],
       skip:['Å lete i historikken rett før møtet','Å gjette rekkefølgen på åpne tilbud','Å skrive tilbudet til Nordmann Bygg AS fra blankt ark'],
-      card:[
-        card('Samler','Klar',[row('Kunde','Kari Nordmann'),row('Historikk','tidligere saker'),row('Åpent','1 sak',1)]),
-        card('Sorterer','Klar',[row('1','Kari Nordmann'),row('2','Nordmann Bygg AS'),row('3','Nordmann Eiendom AS')]),
-        card('Skriver','Utkast',[row('Bygd på','lignende jobb'),row('Til','Nordmann Bygg AS'),row('Status','ikke sendt')])
-      ]
     },
     'annet|kontor':{
       day:['Fakturaer avstemt mot underlag. Avvikslisten er klar.','Utkast til kunde- og leverandøroppfølging. Ingenting sendes ennå.','Mappen til Ola Nordmann er klar fra regnskapssystemet ditt.'],
-      act:['Godkjenn','Se utkast','Godkjenn'],
       skip:['Å avstemme faktura mot underlag for hånd','Å skrive oppfølgingen fra blankt ark','Å lete fram mappen til Ola Nordmann'],
-      card:[
-        card('Avstemmer','Avvik',[row('Nordmann Rør AS','mot underlag',1),row('Kari Nordmann','stemmer'),row('Poster','2 å se')]),
-        card('Skriver','Utkast',[row('Kunde','Kari Nordmann'),row('Leverandør','Nordmann Rør AS'),row('Status','utkast')]),
-        card('Samler','Klar',[row('Bilag','samlet'),row('Kilde','regnskapssystemet ditt'),row('Til','Ola Nordmann')])
-      ]
     },
     'annet|enk':{
       day:['Enkel likviditet: utestående og regninger neste uke.','Tilbud til Kari Nordmann. Timer er samlet til faktura.','MVA-frist og kundeoppfølging. Du godkjenner før noe sendes.'],
-      act:['Godkjenn','Se utkast','Godkjenn'],
       skip:['Å regne likviditeten mellom jobbene','Å skrive tilbud og samle timer for hånd','Å glemme MVA og oppfølgingen'],
-      card:[
-        card('Bygger','Klar',[row('Ute','2 fakturaer'),row('Kommer','Nordmann Rør AS'),row('Vurdering','se før betaling')]),
-        card('Skriver','Utkast',[row('Til','Kari Nordmann'),row('Timer','samlet'),row('Status','utkast')]),
-        card('Varsler','Klar',[row('MVA','denne perioden',1),row('Oppfølging','Kari Nordmann'),row('Utkast','ikke sendt')])
-      ]
     },
     'borettslag|styreleder':{
       day:['Faktura fra Nordmann Rør AS er sjekket mot tidligere pris og avtalen.','Saksliste og innkalling ligger klare. Utkast til svar til Per Nordmann.','Vedtak fra forrige møte, og to tilbud fra håndverkere, er sammenlignet.'],
-      act:['Godkjenn','Se utkast','Se utkast'],
       skip:['Å sjekke fakturaen mot avtale og forrige pris for hånd','Å skrive saksliste, innkalling og svar til Per fra blankt ark','Å sammenligne tilbud og følge vedtak uten oversikt'],
-      card:[
-        card('Sjekker','Avvik',[row('Fra','Nordmann Rør AS'),row('Mot','forrige pris'),row('Avtale','ett avvik',1)]),
-        card('Skriver','Utkast',[row('Saksliste','klar'),row('Innkalling','utkast'),row('Svar','Per Nordmann')]),
-        card('Sammenligner','Klar',[row('Vedtak','2 punkter åpne',1),row('Rør','Nordmann Rør AS'),row('Bygg','Nordmann Bygg AS')])
-      ]
     },
     'borettslag|styremedlem':{
       day:['Lesestoff før møtet: fakturaen fra Nordmann Rør AS, med avvik mot avtalen.','Utkast til svar til Per Nordmann. Ingenting sendes uten ditt ja.','Vedtak fra forrige møte som fortsatt er åpne, samlet til deg.'],
-      act:['Se utkast','Svar','Godkjenn'],
       skip:['Å lese faktura og avtale kvelden før møtet','Å skrive svaret til Per Nordmann fra blankt ark','Å lete etter vedtak som ikke er fulgt opp'],
-      card:[
-        card('Samler','Avvik',[row('Faktura','Nordmann Rør AS'),row('Avtale','ett avvik',1),row('Sak','Per Nordmann')]),
-        card('Skriver','Utkast',[row('Til','Per Nordmann'),row('Sak','henvendelse'),row('Status','utkast')]),
-        card('Samler','Klar',[row('Fra','forrige møte'),row('Åpent','2 punkter',1),row('Status','klar til deg')])
-      ]
     },
     'borettslag|forretning':{
       day:['Faktura fra Nordmann Rør AS mot tidligere pris og avtale. Avvik er flagget.','To tilbud fra håndverkere er sammenlignet. Det som skiller er merket.','Vedlikeholdsplan og frister, pluss innkalling som utkast.'],
-      act:['Godkjenn','Se utkast','Se utkast'],
       skip:['Å kontrollere faktura mot avtale for hånd','Å sammenligne tilbudene uten en merknad','Å holde vedlikeholdsplanen og innkallingen i hodet'],
-      card:[
-        card('Sjekker','Avvik',[row('Fra','Nordmann Rør AS'),row('Pris','mot forrige'),row('Avtale','ett avvik',1)]),
-        card('Sammenligner','Klar',[row('Rør','avvik på vilkår',1),row('Bygg','følger avtalen'),row('Merknad','klar til styret')]),
-        card('Samler','Klar',[row('Vedlikehold','neste punkt'),row('Frist','denne måneden',1),row('Innkalling','utkast')])
-      ]
     },
     'forening|styreleder':{
       day:['Faktura fra Nordmann Rør AS er sjekket mot avtale og forrige pris.','Saksliste og innkalling til styremøtet er klare. Svarutkast til Per Nordmann.','Vedtak fra forrige møte, og kontingent som står ute.'],
-      act:['Godkjenn','Se utkast','Godkjenn'],
       skip:['Å sjekke fakturaen mot avtale for hånd','Å skrive saksliste og svar til Per fra blankt ark','Å følge vedtak og kontingent uten oversikt'],
-      card:[
-        card('Sjekker','Avvik',[row('Fra','Nordmann Rør AS'),row('Mot','avtale og pris'),row('Status','ett avvik',1)]),
-        card('Skriver','Utkast',[row('Saksliste','klar'),row('Innkalling','utkast'),row('Svar','Per Nordmann')]),
-        card('Samler','Klar',[row('Åpent','2 punkter',1),row('Kontingent','3 medlemmer'),row('Utkast','påminnelse klar')])
-      ]
     },
     'forening|styremedlem':{
       day:['Lesestoff før møtet, med avvik på fakturaen fra Nordmann Rør AS.','Utkast til svar til Per Nordmann om årsmøtet.','Vedtak fra forrige møte som fortsatt er åpne.'],
-      act:['Se utkast','Svar','Godkjenn'],
       skip:['Å lete i saksdokumenter kvelden før møtet','Å skrive svaret til Per om årsmøtet fra blankt ark','Å møte uten å vite hvilke vedtak som står åpne'],
-      card:[
-        card('Samler','Avvik',[row('Faktura','Nordmann Rør AS'),row('Avvik','mot avtalen',1),row('Sak','Per Nordmann')]),
-        card('Skriver','Utkast',[row('Til','Per Nordmann'),row('Sak','årsmøtet'),row('Status','utkast')]),
-        card('Samler','Klar',[row('Fra','forrige møte'),row('Åpent','2 punkter',1),row('Status','klar til deg')])
-      ]
     },
     'forening|forretning':{
       day:['Faktura fra Nordmann Rør AS mot avtale. Avvik er flagget.','To tilbud er sammenlignet før de går til styret.','Vedlikehold og søknadsfrist, pluss innkalling til årsmøtet som utkast.'],
-      act:['Godkjenn','Se utkast','Se utkast'],
       skip:['Å kontrollere fakturaen mot avtalen for hånd','Å sammenligne tilbudene uten merknad','Å starte innkallingen og fristene fra blankt ark'],
-      card:[
-        card('Sjekker','Avvik',[row('Fra','Nordmann Rør AS'),row('Avtale','ett avvik',1),row('Pris','mot forrige')]),
-        card('Sammenligner','Klar',[row('Rør','vilkår avviker',1),row('Bygg','følger avtalen'),row('Merknad','klar til styret')]),
-        card('Samler','Klar',[row('Vedlikehold','neste punkt'),row('Søknad','frist nærmer seg',1),row('Årsmøte','innkalling som utkast')])
-      ]
     }
+  };
+
+  const BEAT={chip:260,user:460,type:400,work:440,say:600,press:560,sent:360,pick:640,after:480,hold:1200,loop:1500};
+  const chatPlayers=new Map();
+  const el=(tag,cls,text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text!=null)n.textContent=text;return n;};
+  const botMsg=node=>{const m=el('div','msg msg-bot');m.append(el('span','ava-sm','A'),node);return m;};
+  const timeline=turns=>{
+    const items=[];
+    const push=(ms,label)=>items.push({ms,label});
+    for(const turn of turns){
+      push(BEAT.chip,'chip');
+      if(turn.user)push(BEAT.user,'user');
+      push(BEAT.type,'type');
+      for(const _line of (turn.work||[]))push(BEAT.work,'work');
+      push(BEAT.say,'say');
+      if(turn.mail){push(BEAT.press,'press');push(BEAT.sent,'sent');}
+      if(turn.ask){push(BEAT.pick,'pick');if(turn.ask.after)push(BEAT.after,'after');}
+      push(BEAT.hold,'hold');
+    }
+    return items;
+  };
+  const atEnd=(turns,label)=>{
+    let t=0,last=0,seen=false;
+    for(const step of timeline(turns)){
+      t+=step.ms;
+      if(step.label===label){last=t;seen=true;}
+    }
+    return seen?last:t;
+  };
+  const chatSteps=turns=>{
+    const steps=[];
+    const add=(ms,label,run,skip)=>steps.push({ms,label,run,skip:!!skip});
+    for(const turn of turns){
+      add(BEAT.chip,'chip',thread=>thread.append(el('p','tchip',turn.t)));
+      if(turn.user){
+        add(BEAT.user,'user',thread=>{
+          const m=el('div','msg msg-user');
+          const b=el('div','bubble');
+          b.append(el('p',null,turn.user));
+          m.append(b);
+          thread.append(m);
+        });
+      }
+      const typing=el('div','msg msg-bot');
+      const dots=el('div','chat-typing');
+      dots.append(el('i'),el('i'),el('i'));
+      typing.append(el('span','ava-sm','A'),dots);
+      add(BEAT.type,'type',thread=>thread.append(typing),true);
+      for(const line of (turn.work||[])) add(BEAT.work,'work',thread=>thread.append(el('p','workline',line)));
+      let mailActions=null,sendBtn=null,choiceBox=null;
+      add(BEAT.say,'say',thread=>{
+        typing.remove();
+        const b=el('div','bubble');
+        b.append(el('p',null,turn.say));
+        if(turn.file)b.append(el('span','filechip',turn.file));
+        if(turn.mail){
+          const mail=el('div','mail');
+          const r1=el('p','mail-row');
+          r1.append(el('b',null,'Til'),el('span',null,turn.mail.to));
+          const r2=el('p','mail-row');
+          r2.append(el('b',null,'Emne'),el('span',null,turn.mail.sub));
+          mail.append(r1,r2,el('p',null,turn.mail.body));
+          mailActions=el('div','chat-actions');
+          mailActions.append(el('span','cbtn cbtn-ghost','Endre'),sendBtn=el('span','cbtn cbtn-go','Send'));
+          mail.append(mailActions);
+          b.append(mail);
+        }
+        if(turn.ask){
+          const q=el('div','qcard');
+          q.append(el('p',null,turn.ask.q));
+          choiceBox=el('div','choices');
+          for(const opt of turn.ask.opts)choiceBox.append(el('span','choice',opt));
+          q.append(choiceBox);
+          b.append(q);
+        }
+        thread.append(botMsg(b));
+      });
+      if(turn.mail){
+        add(BEAT.press,'press',()=>{sendBtn.classList.add('is-press');},true);
+        add(BEAT.sent,'sent',()=>{mailActions.replaceChildren(el('span','cbtn cbtn-sent','✓ Sendt'));});
+      }
+      if(turn.ask){
+        add(BEAT.pick,'pick',()=>{
+          [...choiceBox.children].forEach((c,i)=>c.classList.add(i===turn.ask.pick?'is-on':'is-off'));
+        });
+        if(turn.ask.after){
+          add(BEAT.after,'after',thread=>{
+            const b=el('div','bubble');
+            b.append(el('p',null,turn.ask.after));
+            thread.append(botMsg(b));
+          });
+        }
+      }
+      add(BEAT.hold,'hold',()=>{});
+    }
+    return steps;
+  };
+  const stopChat=root=>{const stop=chatPlayers.get(root);if(stop)stop();};
+  const playChat=(root,turns)=>{
+    stopChat(root);
+    const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const body=root.querySelector('.chat-body');
+    const thread=root.querySelector('.thread');
+    const steps=chatSteps(turns);
+    let dead=false,timer=0;
+    const scroll=()=>{body.scrollTop=body.scrollHeight;};
+    thread.replaceChildren();
+    if(reduce){
+      root.classList.add('is-instant');
+      steps.forEach(s=>{if(!s.skip)s.run(thread);});
+      scroll();
+      const stop=()=>{dead=true;};
+      chatPlayers.set(root,stop);
+      return stop;
+    }
+    root.classList.remove('is-instant');
+    const run=i=>{
+      if(dead)return;
+      if(i>=steps.length){
+        timer=setTimeout(()=>{
+          if(dead)return;
+          thread.replaceChildren();
+          body.scrollTop=0;
+          run(0);
+        },BEAT.loop);
+        return;
+      }
+      steps[i].run(thread);
+      scroll();
+      timer=setTimeout(()=>run(i+1),steps[i].ms);
+    };
+    run(0);
+    const stop=()=>{dead=true;clearTimeout(timer);};
+    chatPlayers.set(root,stop);
+    return stop;
+  };
+  const seekChat=(root,turns,ms)=>{
+    stopChat(root);
+    chatPlayers.set(root,()=>{});
+    root.classList.add('is-instant');
+    const body=root.querySelector('.chat-body');
+    const thread=root.querySelector('.thread');
+    const prev=body.style.scrollBehavior;
+    body.style.scrollBehavior='auto';
+    const steps=chatSteps(turns);
+    thread.replaceChildren();
+    let start=0;
+    for(const s of steps){
+      if(start>=ms)break;
+      s.run(thread);
+      start+=s.ms;
+    }
+    body.scrollTop=body.scrollHeight;
+    body.style.scrollBehavior=prev;
+  };
+
+  const heroTurns = [
+    {
+      "t": "07:00 · Morgenrapport (fast rutine)",
+      "work": [
+        "Leste 14 e-poster",
+        "Hentet utestående fra regnskapssystemet"
+      ],
+      "say": "Tre fakturaer er forfalt. Regningen fra Nordmann Rør AS kommer, og MVA hos Ola Nordmann står på listen.",
+      "file": "Likviditet_uke43.xlsx"
+    },
+    {
+      "t": "09:40",
+      "user": "Hvordan ser likviditeten ut?",
+      "work": [
+        "Sammenlignet med regninger som kommer"
+      ],
+      "say": "De neste ukene er stramme før MVA. Jeg har ikke betalt noe."
+    },
+    {
+      "t": "12:10",
+      "work": [
+        "Sammenlignet med 3 tidligere fakturaer"
+      ],
+      "say": "Fakturaen fra Nordmann Rør AS er høyere enn sist, og ett vilkår avviker fra avtalen.",
+      "ask": {
+        "q": "Skal jeg legge den til side?",
+        "opts": [
+          "Ja, vis avviket",
+          "Vent til i morgen"
+        ],
+        "pick": 0,
+        "after": "Greit. Den blir liggende til du har sett den."
+      }
+    },
+    {
+      "t": "16:30",
+      "work": [
+        "Skrev utkast til Kari Nordmann"
+      ],
+      "say": "Purreutkastet er klart. Ingenting går ut før du trykker Send.",
+      "mail": {
+        "to": "Kari Nordmann",
+        "sub": "Faktura forfalt",
+        "body": "Hei Kari. Fakturaen er forfalt. Les utkastet før det sendes."
+      }
+    }
+  ];
+  const dayTurns = {
+    "handverk|leder": [
+      {
+        "t": "07:00 · Morgenrapport (fast rutine)",
+        "work": [
+          "Leste 11 e-poster",
+          "Hentet utestående fra regnskapssystemet"
+        ],
+        "say": "Tre fakturaer er forfalt. Regningen fra Nordmann Rør AS kommer de neste ukene.",
+        "file": "Likviditet_uke43.xlsx"
+      },
+      {
+        "t": "09:15",
+        "user": "Hvordan ser likviditeten ut?",
+        "work": [
+          "Sammenlignet med regninger som kommer"
+        ],
+        "say": "Uken er stram før MVA hos Ola Nordmann. Ingenting er betalt."
+      },
+      {
+        "t": "12:10",
+        "user": "Hva med margen på badjobben til Kari?",
+        "work": [
+          "Sammenlignet med 3 lignende badjobber"
+        ],
+        "say": "Badjobben til Kari Nordmann ligger under de tre. Ett punkt skiller seg ut."
+      },
+      {
+        "t": "14:20",
+        "work": [
+          "Fant 1 forfalt faktura"
+        ],
+        "say": "Nordmann Bygg AS har en faktura som er forfalt.",
+        "ask": {
+          "q": "Skal jeg purre Nordmann Bygg AS?",
+          "opts": [
+            "Ja, lag purring",
+            "Vent en uke"
+          ],
+          "pick": 0,
+          "after": "Jeg skriver utkastet. Det sendes ikke før du har lest det."
+        }
+      },
+      {
+        "t": "16:30",
+        "work": [
+          "Skrev purreutkast",
+          "Noterte sertifikatet denne uken"
+        ],
+        "say": "Her er utkastet. Sertifikatet er notert ved siden av. Ingenting sendes før du trykker Send.",
+        "mail": {
+          "to": "Nordmann Bygg AS",
+          "sub": "Purring",
+          "body": "Hei. Fakturaen er forfalt. Les utkastet før det sendes."
+        }
+      }
+    ],
+    "handverk|selger": [
+      {
+        "t": "07:00 · Morgenrapport (fast rutine)",
+        "work": [
+          "Leste 8 e-poster",
+          "Hentet historikk på Kari Nordmann"
+        ],
+        "say": "Før møtet: bad og service i historikken, og ett tilbud som fortsatt er åpent."
+      },
+      {
+        "t": "09:05",
+        "user": "Forbered meg til møtet med Kari.",
+        "work": [
+          "Samlet 2 åpne saker"
+        ],
+        "say": "To saker er åpne. Jeg har lagt dem øverst. Ingenting er sendt."
+      },
+      {
+        "t": "12:10",
+        "work": [
+          "Satte 3 tilbud i rekkefølge"
+        ],
+        "say": "Kari Nordmann har ventet lengst. Så Nordmann Bygg AS, deretter Nordmann Eiendom AS.",
+        "ask": {
+          "q": "Skal jeg følge opp Kari først?",
+          "opts": [
+            "Ja, lag utkast",
+            "Ta Nordmann Bygg AS først"
+          ],
+          "pick": 0,
+          "after": "Utkastet kommer. Det sendes ikke før du sier ja."
+        }
+      },
+      {
+        "t": "15:40",
+        "user": "Lag et tilbud til Kari basert på badjobben i fjor.",
+        "work": [
+          "Leste badjobben fra i fjor"
+        ],
+        "say": "Tilbudet er bygget på den jobben. Les det før du trykker Send.",
+        "file": "Tilbud_Kari_Nordmann.pdf",
+        "mail": {
+          "to": "Kari Nordmann",
+          "sub": "Tilbud, bad",
+          "body": "Hei Kari. Her er et tilbud bygget på badjobben i fjor. Les utkastet før det sendes."
+        }
+      }
+    ],
+    "handverk|kontor": [
+      {
+        "t": "07:00 · Morgenrapport (fast rutine)",
+        "work": [
+          "Leste 12 e-poster",
+          "Avstemte 6 fakturaer mot ordre"
+        ],
+        "say": "Fakturaen fra Nordmann Rør AS stemmer ikke med ordren. Den fra Kari Nordmann stemmer."
+      },
+      {
+        "t": "10:05",
+        "user": "Hva er avviket?",
+        "work": [
+          "Sammenlignet med 2 ordre"
+        ],
+        "say": "Ett punkt hos Nordmann Rør AS avviker. To poster bør du se før noe betales.",
+        "ask": {
+          "q": "Skal jeg legge den til side?",
+          "opts": [
+            "Ja, vis avviket",
+            "Ta den med videre"
+          ],
+          "pick": 0,
+          "after": "Den blir liggende til du har sett den. Ingenting er betalt."
+        }
+      },
+      {
+        "t": "13:30",
+        "work": [
+          "Skrev utkast til Kari Nordmann"
+        ],
+        "say": "Oppfølging til Kari, med kopi til leverandøren. Ingenting sendes før du trykker Send.",
+        "mail": {
+          "to": "Kari Nordmann",
+          "sub": "Oppfølging av ordre",
+          "body": "Hei Kari. Jeg viser til ordren. Les utkastet før det sendes."
+        }
+      },
+      {
+        "t": "16:30",
+        "work": [
+          "Hentet bilag fra regnskapssystemet"
+        ],
+        "say": "Mappen til Ola Nordmann er samlet. Avviket er lagt ved.",
+        "file": "Mappe_Ola_Nordmann.pdf"
+      }
+    ],
+    "handverk|enk": [
+      {
+        "t": "07:00 · Morgenrapport (fast rutine)",
+        "work": [
+          "Hentet utestående fra regnskapssystemet"
+        ],
+        "say": "To fakturaer står ute. Regningen fra Nordmann Rør AS kommer neste uke.",
+        "file": "Likviditet_uke43.xlsx"
+      },
+      {
+        "t": "09:40",
+        "user": "Hvordan ser likviditeten ut?",
+        "work": [
+          "Sammenlignet med regninger neste uke"
+        ],
+        "say": "Neste uke er stram. Se oversikten før du betaler noe."
+      },
+      {
+        "t": "12:30",
+        "user": "Samle timene på badjobben til Kari.",
+        "work": [
+          "Samlet timer fra 4 dager"
+        ],
+        "say": "Timene er samlet. Fakturaen er et utkast, og sendes ikke før du trykker Send.",
+        "mail": {
+          "to": "Kari Nordmann",
+          "sub": "Faktura, badjobb",
+          "body": "Hei Kari. Her er timene på badjobben. Les utkastet før det sendes."
+        }
+      },
+      {
+        "t": "16:30",
+        "work": [
+          "Sjekket 2 frister"
+        ],
+        "say": "MVA-fristen denne perioden nærmer seg. Oppfølgingen til Kari er ikke sendt.",
+        "ask": {
+          "q": "Skal jeg minne Kari Nordmann?",
+          "opts": [
+            "Ja, lag utkast",
+            "Vent en uke"
+          ],
+          "pick": 1,
+          "after": "Greit. Jeg venter, og sier ifra igjen om en uke."
+        }
+      }
+    ],
+    "regnskap|leder": [
+      {
+        "t": "07:00 · Morgenrapport (fast rutine)",
+        "work": [
+          "Leste 9 e-poster",
+          "Hentet ukens tall fra regnskapssystemet"
+        ],
+        "say": "Omsetningen så langt er inne. Ordrereserven er 4 oppdrag, og ett tall avviker fra budsjettet.",
+        "file": "Nokkeltall_uke43.xlsx"
+      },
+      {
+        "t": "09:20",
+        "user": "Hva avviker?",
+        "work": [
+          "Sammenlignet med budsjettet"
+        ],
+        "say": "Ett tall ligger unna budsjettet. Resten følger uken.",
+        "ask": {
+          "q": "Skal jeg ta avviket med i møtebriefen?",
+          "opts": [
+            "Ja, ta det med",
+            "La det ligge"
+          ],
+          "pick": 0,
+          "after": "Det blir med. Ingenting er endret i tallene."
+        }
+      },
+      {
+        "t": "11:50",
+        "user": "Forbered meg til møtet med Nordmann Bygg AS.",
+        "work": [
+          "Hentet historikk",
+          "Fant 2 åpne saker"
+        ],
+        "say": "Historikk, to åpne saker og et forslag til agenda er klare.",
+        "file": "Motebrief_Nordmann_Bygg.pdf"
+      },
+      {
+        "t": "16:30",
+        "work": [
+          "Sjekket a-melding og MVA"
+        ],
+        "say": "A-melding og MVA denne perioden er flagget. Varselutkastet til Ola Nordmann sendes ikke før du trykker Send.",
+        "mail": {
+          "to": "Ola Nordmann",
+          "sub": "Frister denne perioden",
+          "body": "Hei Ola. A-melding og MVA står på listen. Les utkastet før det sendes."
+        }
+      }
+    ],
+    "regnskap|selger": [
+      {
+        "t": "07:00 · Morgenrapport (fast rutine)",
+        "work": [
+          "Leste 7 e-poster",
+          "Hentet tidligere oppdrag"
+        ],
+        "say": "Før møtet med Nordmann Eiendom AS: tre tidligere oppdrag og to åpne saker."
+      },
+      {
+        "t": "11:10",
+        "user": "Forbered meg til møtet med Nordmann Eiendom kl 13.",
+        "work": [
+          "Samlet historikk og åpne saker"
+        ],
+        "say": "Briefen er klar: historikk, åpne saker og det du bør spørre om.",
+        "file": "Motebrief_Nordmann_Eiendom.pdf"
+      },
+      {
+        "t": "14:05",
+        "work": [
+          "Satte 3 tilbud i rekkefølge"
+        ],
+        "say": "Tre tilbud ligger åpne. Nordmann Eiendom AS står først, så to andre.",
+        "ask": {
+          "q": "Skal jeg følge opp Nordmann Eiendom AS først?",
+          "opts": [
+            "Ja, lag utkast",
+            "Vent til etter møtet"
+          ],
+          "pick": 1,
+          "after": "Greit. Jeg venter til etter møtet, og sender ingenting."
+        }
+      },
+      {
+        "t": "16:40",
+        "user": "Lag tilbud til Nordmann Bygg AS, som forrige oppdrag.",
+        "work": [
+          "Leste forrige lignende oppdrag"
+        ],
+        "say": "Utkastet er bygget på det oppdraget. Les det før du trykker Send.",
+        "mail": {
+          "to": "Nordmann Bygg AS",
+          "sub": "Tilbud",
+          "body": "Hei. Her er et tilbud bygget på forrige oppdrag. Les utkastet før det sendes."
+        }
+      }
+    ],
+    "regnskap|kontor": [
+      {
+        "t": "07:00 · Morgenrapport (fast rutine)",
+        "work": [
+          "Avstemte 8 bilag mot timer"
+        ],
+        "say": "Bilagene er sjekket mot timer og oppdrag. Nordmann Bygg AS har ett avvik."
+      },
+      {
+        "t": "10:15",
+        "user": "Vis meg avviket.",
+        "work": [
+          "Sammenlignet med 2 oppdrag"
+        ],
+        "say": "Ett bilag hos Nordmann Bygg AS mangler. De andre stemmer.",
+        "ask": {
+          "q": "Skal jeg be om bilaget?",
+          "opts": [
+            "Ja, lag utkast",
+            "Jeg tar den selv"
+          ],
+          "pick": 0,
+          "after": "Utkastet kommer. Det sendes ikke før du har lest det."
+        }
+      },
+      {
+        "t": "13:20",
+        "work": [
+          "Skrev utkast til Nordmann Bygg AS"
+        ],
+        "say": "De mangler ett bilag. Ingenting sendes før du trykker Send.",
+        "mail": {
+          "to": "Nordmann Bygg AS",
+          "sub": "Bilag mangler",
+          "body": "Hei. Vi mangler ett bilag på oppdraget. Les utkastet før det sendes."
+        }
+      },
+      {
+        "t": "16:30",
+        "work": [
+          "Hentet leveransen fra regnskapssystemet"
+        ],
+        "say": "Leveransen til Ola Nordmann er klar. Avviket er lagt ved.",
+        "file": "Leveranse_Ola_Nordmann.pdf"
+      }
+    ],
+    "regnskap|enk": [
+      {
+        "t": "07:00 · Morgenrapport (fast rutine)",
+        "work": [
+          "Hentet utestående fra regnskapssystemet"
+        ],
+        "say": "To fakturaer står ute, og regningene neste uke er med.",
+        "file": "Likviditet_uke43.xlsx"
+      },
+      {
+        "t": "09:35",
+        "user": "Hvordan ser likviditeten ut?",
+        "work": [
+          "Sammenlignet med regninger neste uke"
+        ],
+        "say": "Neste uke er stram. Ingenting er betalt."
+      },
+      {
+        "t": "12:45",
+        "user": "Samle timene på Nordmann Bygg AS.",
+        "work": [
+          "Samlet timer fra 5 dager"
+        ],
+        "say": "Timene er klare til faktura. Utkastet sendes ikke før du trykker Send.",
+        "mail": {
+          "to": "Nordmann Bygg AS",
+          "sub": "Timer denne perioden",
+          "body": "Hei. Her er timene på oppdraget. Les utkastet før det sendes."
+        }
+      },
+      {
+        "t": "16:30",
+        "work": [
+          "Sjekket skattefristen"
+        ],
+        "say": "Skattefristen nærmer seg. Oppfølgingen ligger klar, men er ikke sendt.",
+        "ask": {
+          "q": "Skal jeg skrive oppfølgingen?",
+          "opts": [
+            "Ja, lag utkast",
+            "Vent en uke"
+          ],
+          "pick": 0,
+          "after": "Utkastet ligger klart. Det sendes ikke før du sier ja."
+        }
+      }
+    ],
+    "helse|leder": [
+      {
+        "t": "07:00 · Morgenrapport (fast rutine)",
+        "work": [
+          "Leste 10 e-poster",
+          "Hentet utestående oppgjør"
+        ],
+        "say": "Tre oppgjør står ute. Faste regninger de neste ukene er med i oversikten.",
+        "file": "Likviditet_uke43.xlsx"
+      },
+      {
+        "t": "10:40",
+        "user": "Forbered meg til timen med Kari Nordmann.",
+        "work": [
+          "Hentet historikk",
+          "Fant 2 åpne saker"
+        ],
+        "say": "Historikk, to åpne saker og et forslag til agenda er klare.",
+        "file": "Motebrief_Kari_Nordmann.pdf"
+      },
+      {
+        "t": "13:10",
+        "work": [
+          "Sjekket 2 frister"
+        ],
+        "say": "Forsikring og autorisasjon har frist denne perioden. Henvendelsen fra Kari er fortsatt ubesvart.",
+        "ask": {
+          "q": "Skal jeg svare Kari Nordmann?",
+          "opts": [
+            "Ja, lag utkast",
+            "Vent til etter timen"
+          ],
+          "pick": 1,
+          "after": "Greit. Jeg venter til etter timen, og sender ingenting."
+        }
+      },
+      {
+        "t": "16:30",
+        "work": [
+          "Skrev utkast til Kari Nordmann"
+        ],
+        "say": "Utkastet etter timen er klart. Ingenting sendes før du trykker Send.",
+        "mail": {
+          "to": "Kari Nordmann",
+          "sub": "Oppfølging etter timen",
+          "body": "Hei Kari. Takk for i dag. Les utkastet før det sendes."
+        }
+      }
+    ],
+    "helse|selger": [
+      {
+        "t": "07:00 · Morgenrapport (fast rutine)",
+        "work": [
+          "Leste 6 e-poster",
+          "Hentet historikk på Kari Nordmann"
+        ],
+        "say": "Før samtalen: historikken er samlet, og ett spørsmål er fortsatt åpent."
+      },
+      {
+        "t": "09:50",
+        "user": "Forbered meg til samtalen med Kari.",
+        "work": [
+          "Samlet 1 åpent spørsmål"
+        ],
+        "say": "Spørsmålet ligger øverst, med kort historikk under. Ingenting er sendt."
+      },
+      {
+        "t": "12:30",
+        "work": [
+          "Satte 3 henvendelser i rekkefølge"
+        ],
+        "say": "Tre henvendelser har ligget stille. Kari Nordmann har ventet lengst.",
+        "ask": {
+          "q": "Skal jeg følge opp Kari først?",
+          "opts": [
+            "Ja, lag utkast",
+            "Ta den neste først"
+          ],
+          "pick": 0,
+          "after": "Utkastet kommer. Det sendes ikke før du sier ja."
+        }
+      },
+      {
+        "t": "15:55",
+        "user": "Lag et tilbud om opplegg, som det lignende forløpet.",
+        "work": [
+          "Leste 1 lignende forløp"
+        ],
+        "say": "Tilbudet er bygget på det forløpet. Les det før du trykker Send.",
+        "mail": {
+          "to": "Kari Nordmann",
+          "sub": "Tilbud om opplegg",
+          "body": "Hei Kari. Her er et forslag bygget på et lignende forløp. Les utkastet før det sendes."
+        }
+      }
+    ],
+    "helse|kontor": [
+      {
+        "t": "07:00 · Morgenrapport (fast rutine)",
+        "work": [
+          "Avstemte 5 oppgjør mot timer"
+        ],
+        "say": "Oppgjørene er sjekket mot timer. Kari Nordmann har ett avvik."
+      },
+      {
+        "t": "10:25",
+        "user": "Vis meg avviket.",
+        "work": [
+          "Sammenlignet med timene"
+        ],
+        "say": "Ett oppgjør for Kari stemmer ikke med timene. De andre er i orden.",
+        "ask": {
+          "q": "Skal jeg legge det til side?",
+          "opts": [
+            "Ja, vis avviket",
+            "Ta det med videre"
+          ],
+          "pick": 0,
+          "after": "Det blir liggende til du har sett det. Ingenting er sendt."
+        }
+      },
+      {
+        "t": "13:40",
+        "work": [
+          "Skrev utkast om ubesvart time"
+        ],
+        "say": "Utkast til den ubesvarte timen. Ingenting sendes før du trykker Send.",
+        "mail": {
+          "to": "Kari Nordmann",
+          "sub": "Time som venter",
+          "body": "Hei Kari. Timen står fortsatt ubesvart. Les utkastet før det sendes."
+        }
+      },
+      {
+        "t": "16:30",
+        "work": [
+          "Hentet grunnlag fra regnskapssystemet"
+        ],
+        "say": "Grunnlaget til Ola Nordmann er samlet. Avviket er lagt ved.",
+        "file": "Grunnlag_Ola_Nordmann.pdf"
+      }
+    ],
+    "helse|enk": [
+      {
+        "t": "07:00 · Morgenrapport (fast rutine)",
+        "work": [
+          "Hentet utestående oppgjør"
+        ],
+        "say": "To oppgjør står ute. Oversikten for neste uke er med.",
+        "file": "Likviditet_uke43.xlsx"
+      },
+      {
+        "t": "09:25",
+        "user": "Hvordan ser likviditeten ut?",
+        "work": [
+          "Sammenlignet med faste regninger"
+        ],
+        "say": "Neste uke går, men se oppgjørene før du betaler noe."
+      },
+      {
+        "t": "12:15",
+        "user": "Samle timer og oppgjør for Kari.",
+        "work": [
+          "Samlet timer fra 3 dager"
+        ],
+        "say": "Timer og oppgjør for Kari Nordmann er klare. Fakturaen sendes ikke før du trykker Send.",
+        "mail": {
+          "to": "Kari Nordmann",
+          "sub": "Oppgjør",
+          "body": "Hei Kari. Her er oppgjøret for timene. Les utkastet før det sendes."
+        }
+      },
+      {
+        "t": "16:30",
+        "work": [
+          "Sjekket MVA-fristen"
+        ],
+        "say": "MVA-fristen nærmer seg. Oppfølgingen av timen venter på deg.",
+        "ask": {
+          "q": "Skal jeg skrive oppfølgingen?",
+          "opts": [
+            "Ja, lag utkast",
+            "Vent en uke"
+          ],
+          "pick": 0,
+          "after": "Utkastet ligger klart. Det sendes ikke før du sier ja."
+        }
+      }
+    ],
+    "butikk|leder": [
+      {
+        "t": "07:00 · Morgenrapport (fast rutine)",
+        "work": [
+          "Leste 13 e-poster",
+          "Sammenlignet med forrige avtale"
+        ],
+        "say": "Nordmann Rør AS har endret prisen mot forrige avtale. Jeg har ikke betalt noe."
+      },
+      {
+        "t": "10:00",
+        "work": [
+          "Sjekket margen på 3 ordre"
+        ],
+        "say": "Tre avsluttede ordre skiller seg ut på margen. De er merket.",
+        "ask": {
+          "q": "Skal jeg legge ordreavvikene til side?",
+          "opts": [
+            "Ja, vis dem",
+            "Ta dem i kveld"
+          ],
+          "pick": 0,
+          "after": "De ligger klare. Ingenting er endret i ordrene."
+        }
+      },
+      {
+        "t": "13:05",
+        "user": "Hvordan ser likviditeten ut?",
+        "work": [
+          "Hentet utestående fra regnskapssystemet"
+        ],
+        "say": "Neste uke er stram. MVA-fristen hos Ola Nordmann er med.",
+        "file": "Likviditet_uke43.xlsx"
+      },
+      {
+        "t": "16:30",
+        "work": [
+          "Skrev varselutkast til Ola Nordmann"
+        ],
+        "say": "Utkast om MVA-fristen. Ingenting sendes før du trykker Send.",
+        "mail": {
+          "to": "Ola Nordmann",
+          "sub": "MVA-frist",
+          "body": "Hei Ola. MVA-fristen står på listen denne perioden. Les utkastet før det sendes."
+        }
+      }
+    ],
+    "butikk|selger": [
+      {
+        "t": "07:00 · Morgenrapport (fast rutine)",
+        "work": [
+          "Leste 5 e-poster",
+          "Hentet leveransen til Kari Nordmann"
+        ],
+        "say": "Før samtalen med Kari: leveransen og ett åpent spørsmål er samlet."
+      },
+      {
+        "t": "09:40",
+        "user": "Forbered meg til samtalen med Kari om leveransen.",
+        "work": [
+          "Samlet 1 åpent spørsmål"
+        ],
+        "say": "Spørsmålet om leveransen ligger øverst. Ingenting er sendt."
+      },
+      {
+        "t": "12:20",
+        "work": [
+          "Satte 3 tilbud i rekkefølge"
+        ],
+        "say": "Nordmann Bygg AS har ligget lengst. Kari Nordmann står som nummer to.",
+        "ask": {
+          "q": "Skal jeg følge opp Nordmann Bygg AS først?",
+          "opts": [
+            "Ja, lag utkast",
+            "Ta Kari først"
+          ],
+          "pick": 0,
+          "after": "Utkastet kommer. Det sendes ikke før du sier ja."
+        }
+      },
+      {
+        "t": "15:30",
+        "user": "Lag et tilbud bygget på en lignende ordre.",
+        "work": [
+          "Leste 1 lignende ordre"
+        ],
+        "say": "Tilbudet er bygget på den ordren. Les det før du trykker Send.",
+        "mail": {
+          "to": "Nordmann Bygg AS",
+          "sub": "Tilbud",
+          "body": "Hei. Her er et tilbud bygget på en lignende ordre. Les utkastet før det sendes."
+        }
+      }
+    ],
+    "butikk|kontor": [
+      {
+        "t": "07:00 · Morgenrapport (fast rutine)",
+        "work": [
+          "Avstemte 7 fakturaer mot ordre"
+        ],
+        "say": "Fakturaene er sjekket mot ordre. Nordmann Rør AS står på avvikslisten."
+      },
+      {
+        "t": "10:35",
+        "user": "Hva avviker?",
+        "work": [
+          "Sammenlignet med 2 ordre"
+        ],
+        "say": "Ett punkt hos Nordmann Rør AS stemmer ikke. Resten er i orden.",
+        "ask": {
+          "q": "Skal jeg legge avviket til side?",
+          "opts": [
+            "Ja, vis avviket",
+            "Ta det med videre"
+          ],
+          "pick": 0,
+          "after": "Det blir liggende til du har sett det. Ingenting er betalt."
+        }
+      },
+      {
+        "t": "13:15",
+        "work": [
+          "Skrev utkast om retur"
+        ],
+        "say": "Svar til Kari Nordmann om returen, og et notat til leverandøren. Ingenting sendes før du trykker Send.",
+        "mail": {
+          "to": "Kari Nordmann",
+          "sub": "Retur",
+          "body": "Hei Kari. Jeg viser til returen. Les utkastet før det sendes."
+        }
+      },
+      {
+        "t": "16:30",
+        "work": [
+          "Hentet mappen fra regnskapssystemet"
+        ],
+        "say": "Mappen til Ola Nordmann er klar. Avviket er lagt ved.",
+        "file": "Mappe_Ola_Nordmann.pdf"
+      }
+    ],
+    "butikk|enk": [
+      {
+        "t": "07:00 · Morgenrapport (fast rutine)",
+        "work": [
+          "Hentet utestående fra regnskapssystemet"
+        ],
+        "say": "To fakturaer står ute. Varekjøpet neste uke er med.",
+        "file": "Likviditet_uke43.xlsx"
+      },
+      {
+        "t": "09:30",
+        "user": "Hvordan ser likviditeten ut?",
+        "work": [
+          "Sammenlignet med varekjøp neste uke"
+        ],
+        "say": "Neste uke er stram før varekjøpet. Ingenting er betalt."
+      },
+      {
+        "t": "12:40",
+        "user": "Lag et tilbud til Kari, som den lignende ordren.",
+        "work": [
+          "Leste 1 lignende ordre"
+        ],
+        "say": "Tilbudet er bygget på den ordren. Det sendes ikke før du trykker Send.",
+        "mail": {
+          "to": "Kari Nordmann",
+          "sub": "Tilbud",
+          "body": "Hei Kari. Her er et tilbud bygget på en lignende ordre. Les utkastet før det sendes."
+        }
+      },
+      {
+        "t": "16:30",
+        "work": [
+          "Sjekket MVA-fristen"
+        ],
+        "say": "MVA-fristen nærmer seg, og ordren til Kari er ikke fulgt opp.",
+        "ask": {
+          "q": "Skal jeg følge opp ordren?",
+          "opts": [
+            "Ja, lag utkast",
+            "Vent en uke"
+          ],
+          "pick": 0,
+          "after": "Utkastet ligger klart. Det sendes ikke før du sier ja."
+        }
+      }
+    ],
+    "eiendom|leder": [
+      {
+        "t": "07:00 · Morgenrapport (fast rutine)",
+        "work": [
+          "Leste 8 e-poster",
+          "Hentet utestående husleie"
+        ],
+        "say": "To husleier står ute. Regningene de neste ukene er med.",
+        "file": "Likviditet_uke43.xlsx"
+      },
+      {
+        "t": "10:20",
+        "work": [
+          "Leste kontrakten fra Nordmann Eiendom AS",
+          "Sammenlignet med vanlige vilkår"
+        ],
+        "say": "To punkter i kontrakten avviker fra vanlige vilkår.",
+        "ask": {
+          "q": "Skal jeg legge avvikene til side?",
+          "opts": [
+            "Ja, vis avvikene",
+            "Vent til i morgen"
+          ],
+          "pick": 0,
+          "after": "De blir liggende til du har lest dem. Ingenting er signert."
+        }
+      },
+      {
+        "t": "13:00",
+        "user": "Forespørselen fra Kari, er den svart?",
+        "work": [
+          "Leste tråden med Kari Nordmann"
+        ],
+        "say": "Nei. Den er fortsatt ubesvart. Forsikringsfristen er også flagget."
+      },
+      {
+        "t": "16:30",
+        "work": [
+          "Skrev utkast til Kari Nordmann"
+        ],
+        "say": "Utkastet er klart. Ingenting sendes før du trykker Send.",
+        "mail": {
+          "to": "Kari Nordmann",
+          "sub": "Forespørselen din",
+          "body": "Hei Kari. Takk for forespørselen. Les utkastet før det sendes."
+        }
+      }
+    ],
+    "eiendom|selger": [
+      {
+        "t": "07:00 · Morgenrapport (fast rutine)",
+        "work": [
+          "Leste 4 e-poster",
+          "Hentet historikk før visningen"
+        ],
+        "say": "Før visningen med Kari Nordmann: historikk og to åpne spørsmål er samlet."
+      },
+      {
+        "t": "09:15",
+        "user": "Forbered meg til visningen med Kari.",
+        "work": [
+          "Samlet 2 åpne spørsmål"
+        ],
+        "say": "Spørsmålene ligger øverst. Ingenting er sendt til Kari."
+      },
+      {
+        "t": "12:25",
+        "work": [
+          "Satte 3 ubesvarte tilbud i rekkefølge"
+        ],
+        "say": "Tre tilbud er ubesvart. Nordmann Eiendom AS har ventet lengst.",
+        "ask": {
+          "q": "Skal jeg følge opp Nordmann Eiendom AS først?",
+          "opts": [
+            "Ja, lag utkast",
+            "Vent en uke"
+          ],
+          "pick": 0,
+          "after": "Utkastet kommer. Det sendes ikke før du sier ja."
+        }
+      },
+      {
+        "t": "16:10",
+        "user": "Lag et tilbud til Nordmann Eiendom AS, som forrige oppdrag.",
+        "work": [
+          "Leste forrige oppdrag"
+        ],
+        "say": "Tilbudet er bygget på det oppdraget. Les det før du trykker Send.",
+        "mail": {
+          "to": "Nordmann Eiendom AS",
+          "sub": "Tilbud",
+          "body": "Hei. Her er et tilbud bygget på forrige oppdrag. Les utkastet før det sendes."
+        }
+      }
+    ],
+    "eiendom|kontor": [
+      {
+        "t": "07:00 · Morgenrapport (fast rutine)",
+        "work": [
+          "Avstemte 4 krav mot avtaler"
+        ],
+        "say": "Kravene er sjekket mot avtalene. Kari Nordmann har ett avvik."
+      },
+      {
+        "t": "10:45",
+        "user": "Hva stemmer ikke?",
+        "work": [
+          "Sammenlignet med avtalen"
+        ],
+        "say": "Ett krav til Kari avviker fra avtalen. De andre stemmer.",
+        "ask": {
+          "q": "Skal jeg legge det til side?",
+          "opts": [
+            "Ja, vis avviket",
+            "Ta det med videre"
+          ],
+          "pick": 0,
+          "after": "Det blir liggende til du har sett det. Ingenting er sendt."
+        }
+      },
+      {
+        "t": "13:35",
+        "work": [
+          "Skrev utkast til Nordmann Eiendom AS"
+        ],
+        "say": "Oppfølgingen er et utkast. Ingenting sendes før du trykker Send.",
+        "mail": {
+          "to": "Nordmann Eiendom AS",
+          "sub": "Oppfølging",
+          "body": "Hei. Jeg viser til avtalen. Les utkastet før det sendes."
+        }
+      },
+      {
+        "t": "16:30",
+        "work": [
+          "Hentet grunnlag fra regnskapssystemet"
+        ],
+        "say": "Grunnlaget til Ola Nordmann er samlet. Avviket er lagt ved.",
+        "file": "Grunnlag_Ola_Nordmann.pdf"
+      }
+    ],
+    "eiendom|enk": [
+      {
+        "t": "07:00 · Morgenrapport (fast rutine)",
+        "work": [
+          "Hentet husleie som står ute"
+        ],
+        "say": "To husleier står ute. Neste uke er med i oversikten.",
+        "file": "Likviditet_uke43.xlsx"
+      },
+      {
+        "t": "09:50",
+        "user": "Hvordan ser likviditeten ut?",
+        "work": [
+          "Sammenlignet med regninger som kommer"
+        ],
+        "say": "Uken går, men se husleien som står ute før du betaler noe."
+      },
+      {
+        "t": "12:35",
+        "user": "Lag et tilbud til Kari om det praktiske.",
+        "work": [
+          "Leste forespørselen"
+        ],
+        "say": "Utkastet er klart, og er ikke sendt. Les det før du trykker Send.",
+        "mail": {
+          "to": "Kari Nordmann",
+          "sub": "Tilbud, praktisk",
+          "body": "Hei Kari. Her er et tilbud på det praktiske. Les utkastet før det sendes."
+        }
+      },
+      {
+        "t": "16:30",
+        "work": [
+          "Sjekket 2 frister"
+        ],
+        "say": "Kontraktsfristen og skattefristen nærmer seg. Oppfølgingen venter på deg.",
+        "ask": {
+          "q": "Skal jeg skrive oppfølgingen?",
+          "opts": [
+            "Ja, lag utkast",
+            "Vent en uke"
+          ],
+          "pick": 1,
+          "after": "Greit. Jeg venter en uke, og sender ingenting."
+        }
+      }
+    ],
+    "konsulent|leder": [
+      {
+        "t": "07:00 · Morgenrapport (fast rutine)",
+        "work": [
+          "Leste 9 e-poster",
+          "Hentet ukens tall fra regnskapssystemet"
+        ],
+        "say": "Omsetning og ordrereserve er inne. Ett tall avviker fra budsjettet.",
+        "file": "Nokkeltall_uke43.xlsx"
+      },
+      {
+        "t": "10:30",
+        "user": "Forbered meg til møtet med Kari Nordmann.",
+        "work": [
+          "Hentet historikk",
+          "Fant 2 åpne saker"
+        ],
+        "say": "Historikk, to åpne saker og et forslag til agenda er klare.",
+        "file": "Motebrief_Kari_Nordmann.pdf"
+      },
+      {
+        "t": "13:25",
+        "work": [
+          "Fant 1 ubesvart tilbud"
+        ],
+        "say": "Tilbudet til Nordmann Bygg AS er fortsatt ubesvart. MVA hos Ola Nordmann er med på listen.",
+        "ask": {
+          "q": "Skal jeg minne Nordmann Bygg AS?",
+          "opts": [
+            "Ja, lag utkast",
+            "Vent en uke"
+          ],
+          "pick": 0,
+          "after": "Utkastet kommer. Det sendes ikke før du har lest det."
+        }
+      },
+      {
+        "t": "16:30",
+        "work": [
+          "Skrev påminnelse"
+        ],
+        "say": "Påminnelsen er klar. Ingenting sendes før du trykker Send.",
+        "mail": {
+          "to": "Nordmann Bygg AS",
+          "sub": "Tilbudet",
+          "body": "Hei. Tilbudet ligger fortsatt ubesvart. Les utkastet før det sendes."
+        }
+      }
+    ],
+    "konsulent|selger": [
+      {
+        "t": "07:00 · Morgenrapport (fast rutine)",
+        "work": [
+          "Leste 6 e-poster",
+          "Hentet tidligere oppdrag hos Kari"
+        ],
+        "say": "Før møtet med Kari Nordmann: to tidligere oppdrag og én åpen sak."
+      },
+      {
+        "t": "09:35",
+        "user": "Forbered meg til møtet med Kari.",
+        "work": [
+          "Samlet 1 åpen sak"
+        ],
+        "say": "Saken og historikken ligger klare. Ingenting er sendt."
+      },
+      {
+        "t": "12:15",
+        "work": [
+          "Satte 3 tilbud i rekkefølge"
+        ],
+        "say": "Nordmann Bygg AS står først i pipelinen. To andre har ligget kortere.",
+        "ask": {
+          "q": "Skal jeg følge opp Nordmann Bygg AS først?",
+          "opts": [
+            "Ja, lag utkast",
+            "Ta Kari først"
+          ],
+          "pick": 0,
+          "after": "Utkastet kommer. Det sendes ikke før du sier ja."
+        }
+      },
+      {
+        "t": "15:45",
+        "user": "Lag et tilbud bygget på det lignende oppdraget.",
+        "work": [
+          "Leste 1 lignende oppdrag"
+        ],
+        "say": "Tilbudet er bygget på det oppdraget. Les det før du trykker Send.",
+        "mail": {
+          "to": "Nordmann Bygg AS",
+          "sub": "Tilbud",
+          "body": "Hei. Her er et tilbud bygget på et lignende oppdrag. Les utkastet før det sendes."
+        }
+      }
+    ],
+    "konsulent|kontor": [
+      {
+        "t": "07:00 · Morgenrapport (fast rutine)",
+        "work": [
+          "Avstemte 6 fakturaer mot timer"
+        ],
+        "say": "Fakturaene er sjekket mot timer. Nordmann Bygg AS har ett avvik."
+      },
+      {
+        "t": "10:10",
+        "user": "Vis meg avviket.",
+        "work": [
+          "Sammenlignet med timelistene"
+        ],
+        "say": "Ett punkt stemmer ikke med timene. Resten er i orden.",
+        "ask": {
+          "q": "Skal jeg legge det til side?",
+          "opts": [
+            "Ja, vis avviket",
+            "Ta det med videre"
+          ],
+          "pick": 0,
+          "after": "Det blir liggende til du har sett det. Ingenting er sendt."
+        }
+      },
+      {
+        "t": "13:50",
+        "work": [
+          "Skrev oppfølging etter møtet"
+        ],
+        "say": "Utkast etter møtet med Kari Nordmann. Ingenting sendes før du trykker Send.",
+        "mail": {
+          "to": "Kari Nordmann",
+          "sub": "Etter møtet",
+          "body": "Hei Kari. Her er oppfølgingen etter møtet. Les utkastet før det sendes."
+        }
+      },
+      {
+        "t": "16:30",
+        "work": [
+          "Hentet timegrunnlag fra regnskapssystemet"
+        ],
+        "say": "Timegrunnlaget til Ola Nordmann er klart.",
+        "file": "Timer_Ola_Nordmann.xlsx"
+      }
+    ],
+    "konsulent|enk": [
+      {
+        "t": "07:00 · Morgenrapport (fast rutine)",
+        "work": [
+          "Hentet utestående fra regnskapssystemet"
+        ],
+        "say": "To fakturaer står ute. Regningene neste uke er med.",
+        "file": "Likviditet_uke43.xlsx"
+      },
+      {
+        "t": "09:40",
+        "user": "Hvordan ser likviditeten ut?",
+        "work": [
+          "Sammenlignet med regninger neste uke"
+        ],
+        "say": "Neste uke er stram. Ingenting er betalt."
+      },
+      {
+        "t": "12:20",
+        "user": "Kan du samle timene hos Kari?",
+        "work": [
+          "Samlet timer fra 4 dager"
+        ],
+        "say": "Timene hos Kari Nordmann er klare. Fakturaen er et utkast, og sendes ikke før du trykker Send.",
+        "mail": {
+          "to": "Kari Nordmann",
+          "sub": "Timer denne perioden",
+          "body": "Hei Kari. Her er timene. Les utkastet før det sendes."
+        }
+      },
+      {
+        "t": "16:30",
+        "work": [
+          "Sjekket MVA-fristen",
+          "Fant 1 ubesvart tilbud"
+        ],
+        "say": "MVA-fristen nærmer seg, og tilbudet til Nordmann Bygg AS er fortsatt ubesvart.",
+        "ask": {
+          "q": "Skal jeg minne om tilbudet?",
+          "opts": [
+            "Ja, lag utkast",
+            "Vent en uke"
+          ],
+          "pick": 0,
+          "after": "Utkastet ligger klart. Det sendes ikke før du sier ja."
+        }
+      }
+    ],
+    "restaurant|leder": [
+      {
+        "t": "07:00 · Morgenrapport (fast rutine)",
+        "work": [
+          "Leste 8 e-poster",
+          "Sammenlignet prisen med forrige avtale"
+        ],
+        "say": "Nordmann Rør AS har endret prisen. Likviditeten før neste ukes regninger er med i arket.",
+        "file": "Likviditet_uke43.xlsx"
+      },
+      {
+        "t": "11:05",
+        "work": [
+          "Sammenlignet selskapet med 3 lignende"
+        ],
+        "say": "Margen på selskapet for Kari Nordmann skiller seg fra de tre.",
+        "ask": {
+          "q": "Skal jeg legge avviket til side?",
+          "opts": [
+            "Ja, vis avviket",
+            "Ta det i kveld"
+          ],
+          "pick": 0,
+          "after": "Det ligger klart. Ingenting er endret."
+        }
+      },
+      {
+        "t": "14:10",
+        "user": "Hva med forsikring og MVA?",
+        "work": [
+          "Sjekket 2 frister"
+        ],
+        "say": "Begge har frist denne perioden. Ola Nordmann står på listen."
+      },
+      {
+        "t": "16:30",
+        "work": [
+          "Skrev varselutkast"
+        ],
+        "say": "Utkastet til Ola er klart. Ingenting sendes før du trykker Send.",
+        "mail": {
+          "to": "Ola Nordmann",
+          "sub": "Forsikring og MVA",
+          "body": "Hei Ola. Forsikring og MVA har frist denne perioden. Les utkastet før det sendes."
+        }
+      }
+    ],
+    "restaurant|selger": [
+      {
+        "t": "07:00 · Morgenrapport (fast rutine)",
+        "work": [
+          "Leste 5 e-poster",
+          "Hentet tidligere selskap"
+        ],
+        "say": "Forespørselen fra Kari Nordmann om selskap er lest, med ett lignende arrangement ved siden av."
+      },
+      {
+        "t": "10:15",
+        "user": "Forbered meg til henvendelsen fra Kari.",
+        "work": [
+          "Samlet 1 lignende arrangement"
+        ],
+        "say": "Kort historikk og det lignende selskapet ligger klare. Ingenting er sendt."
+      },
+      {
+        "t": "12:40",
+        "work": [
+          "Satte 3 forespørsler i rekkefølge"
+        ],
+        "say": "Nordmann Bygg AS har ventet lengst. Kari står som nummer to.",
+        "ask": {
+          "q": "Skal jeg svare Nordmann Bygg AS først?",
+          "opts": [
+            "Ja, lag utkast",
+            "Ta Kari først"
+          ],
+          "pick": 1,
+          "after": "Greit. Kari først. Utkastet sendes ikke før du sier ja."
+        }
+      },
+      {
+        "t": "15:20",
+        "user": "Lag tilbud på selskapet, som det lignende.",
+        "work": [
+          "Leste det lignende arrangementet"
+        ],
+        "say": "Tilbudet er bygget på det arrangementet. Les det før du trykker Send.",
+        "mail": {
+          "to": "Kari Nordmann",
+          "sub": "Tilbud, selskap",
+          "body": "Hei Kari. Her er et tilbud bygget på et lignende selskap. Les utkastet før det sendes."
+        }
+      }
+    ],
+    "restaurant|kontor": [
+      {
+        "t": "07:00 · Morgenrapport (fast rutine)",
+        "work": [
+          "Avstemte 4 fakturaer mot følgeseddel"
+        ],
+        "say": "Leverandørfakturaene er sjekket. Nordmann Rør AS avviker fra følgeseddelen."
+      },
+      {
+        "t": "10:30",
+        "user": "Hva avviker?",
+        "work": [
+          "Sammenlignet med 2 følgesedler"
+        ],
+        "say": "Ett punkt hos Nordmann Rør AS stemmer ikke. Resten er i orden.",
+        "ask": {
+          "q": "Skal jeg spørre leverandøren?",
+          "opts": [
+            "Ja, lag utkast",
+            "Jeg tar den selv"
+          ],
+          "pick": 0,
+          "after": "Utkastet kommer. Det sendes ikke før du har lest det."
+        }
+      },
+      {
+        "t": "13:45",
+        "work": [
+          "Skrev utkast til leverandøren"
+        ],
+        "say": "Utkast til Nordmann Rør AS, og et kort svar til Kari Nordmann venter. Ingenting sendes før du trykker Send.",
+        "mail": {
+          "to": "Nordmann Rør AS",
+          "sub": "Følgeseddel",
+          "body": "Hei. Fakturaen avviker fra følgeseddelen. Les utkastet før det sendes."
+        }
+      },
+      {
+        "t": "16:30",
+        "work": [
+          "Hentet mappen fra regnskapssystemet"
+        ],
+        "say": "Mappen til Ola Nordmann er samlet. Avviket er lagt ved.",
+        "file": "Mappe_Ola_Nordmann.pdf"
+      }
+    ],
+    "restaurant|enk": [
+      {
+        "t": "07:00 · Morgenrapport (fast rutine)",
+        "work": [
+          "Hentet utestående fra regnskapssystemet"
+        ],
+        "say": "Én faktura står ute. Varekjøpet neste uke er med.",
+        "file": "Likviditet_uke43.xlsx"
+      },
+      {
+        "t": "09:20",
+        "user": "Hvordan ser likviditeten ut?",
+        "work": [
+          "Sammenlignet med varekjøp neste uke"
+        ],
+        "say": "Neste uke er stram før varekjøpet. Ingenting er betalt."
+      },
+      {
+        "t": "12:50",
+        "user": "Lag tilbud på selskap til Kari, som det lignende.",
+        "work": [
+          "Leste 1 lignende selskap"
+        ],
+        "say": "Tilbudet er bygget på det selskapet. Det sendes ikke før du trykker Send.",
+        "mail": {
+          "to": "Kari Nordmann",
+          "sub": "Tilbud, selskap",
+          "body": "Hei Kari. Her er et tilbud på selskapet. Les utkastet før det sendes."
+        }
+      },
+      {
+        "t": "16:30",
+        "work": [
+          "Sjekket MVA-fristen"
+        ],
+        "say": "MVA-fristen nærmer seg. Oppfølgingen er ikke sendt.",
+        "ask": {
+          "q": "Skal jeg skrive oppfølgingen?",
+          "opts": [
+            "Ja, lag utkast",
+            "Vent en uke"
+          ],
+          "pick": 0,
+          "after": "Utkastet ligger klart. Det sendes ikke før du sier ja."
+        }
+      }
+    ],
+    "annet|leder": [
+      {
+        "t": "07:00 · Morgenrapport (fast rutine)",
+        "work": [
+          "Leste 10 e-poster",
+          "Hentet utestående fra regnskapssystemet"
+        ],
+        "say": "Tre fakturaer står ute. Regningene de neste ukene er med.",
+        "file": "Likviditet_uke43.xlsx"
+      },
+      {
+        "t": "10:15",
+        "user": "Forbered meg til møtet med Kari Nordmann.",
+        "work": [
+          "Hentet historikk",
+          "Fant 2 åpne saker"
+        ],
+        "say": "Historikk, to åpne saker og et forslag til agenda er klare.",
+        "file": "Motebrief_Kari_Nordmann.pdf"
+      },
+      {
+        "t": "13:30",
+        "work": [
+          "Leste anbudsnotatet",
+          "Sjekket 2 frister"
+        ],
+        "say": "Kort notat om anbudet er klart. MVA og a-melding har frist.",
+        "ask": {
+          "q": "Skal jeg legge anbudet på listen i kveld?",
+          "opts": [
+            "Ja, ta det med",
+            "Vent til i morgen"
+          ],
+          "pick": 0,
+          "after": "Det blir med i kveldsnotatet. Ingenting er sendt inn."
+        }
+      },
+      {
+        "t": "16:30",
+        "work": [
+          "Skrev varselutkast til Ola Nordmann"
+        ],
+        "say": "Utkast om fristene. Ingenting sendes før du trykker Send.",
+        "mail": {
+          "to": "Ola Nordmann",
+          "sub": "MVA og a-melding",
+          "body": "Hei Ola. MVA og a-melding har frist. Les utkastet før det sendes."
+        }
+      }
+    ],
+    "annet|selger": [
+      {
+        "t": "07:00 · Morgenrapport (fast rutine)",
+        "work": [
+          "Leste 6 e-poster",
+          "Hentet historikk på Kari Nordmann"
+        ],
+        "say": "Før møtet: historikk og to åpne saker er samlet."
+      },
+      {
+        "t": "09:25",
+        "user": "Forbered meg til møtet med Kari.",
+        "work": [
+          "Samlet 2 åpne saker"
+        ],
+        "say": "Sakene ligger øverst. Ingenting er sendt."
+      },
+      {
+        "t": "12:05",
+        "work": [
+          "Satte 3 tilbud i rekkefølge"
+        ],
+        "say": "Tre tilbud er åpne. Kari Nordmann har ventet lengst, så Nordmann Bygg AS.",
+        "ask": {
+          "q": "Skal jeg følge opp Kari først?",
+          "opts": [
+            "Ja, lag utkast",
+            "Ta Nordmann Bygg AS først"
+          ],
+          "pick": 0,
+          "after": "Utkastet kommer. Det sendes ikke før du sier ja."
+        }
+      },
+      {
+        "t": "16:15",
+        "user": "Lag et tilbud til Nordmann Bygg AS, som den lignende jobben.",
+        "work": [
+          "Leste 1 lignende jobb"
+        ],
+        "say": "Tilbudet er bygget på den jobben. Les det før du trykker Send.",
+        "mail": {
+          "to": "Nordmann Bygg AS",
+          "sub": "Tilbud",
+          "body": "Hei. Her er et tilbud bygget på en lignende jobb. Les utkastet før det sendes."
+        }
+      }
+    ],
+    "annet|kontor": [
+      {
+        "t": "07:00 · Morgenrapport (fast rutine)",
+        "work": [
+          "Avstemte 5 fakturaer mot underlag"
+        ],
+        "say": "Fakturaene er sjekket. Avvikslisten har to poster, den ene fra Nordmann Rør AS."
+      },
+      {
+        "t": "10:40",
+        "user": "Vis meg listen.",
+        "work": [
+          "Sammenlignet med 3 underlag"
+        ],
+        "say": "To poster bør du se før noe betales. Resten stemmer.",
+        "ask": {
+          "q": "Skal jeg legge avvikene til side?",
+          "opts": [
+            "Ja, vis avvikene",
+            "Ta dem med videre"
+          ],
+          "pick": 0,
+          "after": "De blir liggende til du har sett dem. Ingenting er betalt."
+        }
+      },
+      {
+        "t": "13:25",
+        "work": [
+          "Skrev utkast til kunde og leverandør"
+        ],
+        "say": "Oppfølging til Kari Nordmann og leverandøren. Ingenting sendes før du trykker Send.",
+        "mail": {
+          "to": "Kari Nordmann",
+          "sub": "Oppfølging",
+          "body": "Hei Kari. Jeg viser til saken. Les utkastet før det sendes."
+        }
+      },
+      {
+        "t": "16:30",
+        "work": [
+          "Hentet mappen fra regnskapssystemet"
+        ],
+        "say": "Mappen til Ola Nordmann er klar. Avvikene er lagt ved.",
+        "file": "Mappe_Ola_Nordmann.pdf"
+      }
+    ],
+    "annet|enk": [
+      {
+        "t": "07:00 · Morgenrapport (fast rutine)",
+        "work": [
+          "Hentet utestående fra regnskapssystemet"
+        ],
+        "say": "To fakturaer står ute. Regningene neste uke er med.",
+        "file": "Likviditet_uke43.xlsx"
+      },
+      {
+        "t": "09:45",
+        "user": "Hvordan ser likviditeten ut?",
+        "work": [
+          "Sammenlignet med regninger neste uke"
+        ],
+        "say": "Neste uke er stram. Ingenting er betalt."
+      },
+      {
+        "t": "12:25",
+        "user": "Lag et tilbud til Kari, og samle timene.",
+        "work": [
+          "Samlet timer fra 3 dager",
+          "Leste forrige jobb"
+        ],
+        "say": "Tilbudet og timene er samlet. Fakturaen er et utkast, og sendes ikke før du trykker Send.",
+        "mail": {
+          "to": "Kari Nordmann",
+          "sub": "Tilbud og timer",
+          "body": "Hei Kari. Her er tilbudet og timene. Les utkastet før det sendes."
+        }
+      },
+      {
+        "t": "16:30",
+        "work": [
+          "Sjekket MVA-fristen"
+        ],
+        "say": "MVA-fristen nærmer seg. Kundeoppfølgingen er ikke sendt.",
+        "ask": {
+          "q": "Skal jeg skrive oppfølgingen?",
+          "opts": [
+            "Ja, lag utkast",
+            "Vent en uke"
+          ],
+          "pick": 0,
+          "after": "Utkastet ligger klart. Det sendes ikke før du sier ja."
+        }
+      }
+    ],
+    "borettslag|styreleder": [
+      {
+        "t": "07:00 · Morgenrapport (fast rutine)",
+        "work": [
+          "Leste 9 e-poster",
+          "Sammenlignet med 4 tidligere fakturaer"
+        ],
+        "say": "Fakturaen fra Nordmann Rør AS er høyere enn sist, og ett punkt avviker fra avtalen.",
+        "ask": {
+          "q": "Skal jeg ta den med på styremøtet?",
+          "opts": [
+            "Ja, legg den på sakslisten",
+            "Legg den til side"
+          ],
+          "pick": 0,
+          "after": "Den blir med. Ingenting er betalt."
+        }
+      },
+      {
+        "t": "10:20",
+        "user": "Lag saksliste til styremøtet.",
+        "work": [
+          "Hentet saker fra forrige møte"
+        ],
+        "say": "Innkalling og saksliste er klare. Vedtak som fortsatt er åpne er med.",
+        "file": "Saksliste_styremote.pdf"
+      },
+      {
+        "t": "13:40",
+        "work": [
+          "Sammenlignet 2 tilbud"
+        ],
+        "say": "Nordmann Rør AS og Nordmann Bygg AS er satt ved siden av hverandre. Det som skiller er merket. Ingenting er bestilt.",
+        "file": "Tilbud_sammenligning.pdf"
+      },
+      {
+        "t": "16:30",
+        "user": "Skriv et svar til Per Nordmann.",
+        "work": [
+          "Leste tråden med Per Nordmann"
+        ],
+        "say": "Utkastet ligger her. Ingenting sendes før du trykker Send.",
+        "mail": {
+          "to": "Per Nordmann",
+          "sub": "Styremøtet",
+          "body": "Hei Per. Saken er med på neste møte. Les utkastet før det sendes."
+        }
+      }
+    ],
+    "borettslag|styremedlem": [
+      {
+        "t": "07:00 · Morgenrapport (fast rutine)",
+        "work": [
+          "Leste 6 e-poster",
+          "Sammenlignet fakturaen med avtalen"
+        ],
+        "say": "Lesestoffet til møtet er klart. Fakturaen fra Nordmann Rør AS avviker fra avtalen.",
+        "file": "Lesestoff_styremote.pdf"
+      },
+      {
+        "t": "11:00",
+        "user": "Hva bør jeg lese først?",
+        "work": [
+          "Merket 1 avvik"
+        ],
+        "say": "Start med avviket på fakturaen. Resten kan vente.",
+        "ask": {
+          "q": "Skal jeg sette avviket øverst?",
+          "opts": [
+            "Ja, sett det øverst",
+            "Vis alt likt"
+          ],
+          "pick": 0,
+          "after": "Avviket ligger øverst. Ingenting er betalt."
+        }
+      },
+      {
+        "t": "14:15",
+        "user": "Skriv et svar til Per Nordmann.",
+        "work": [
+          "Leste tråden med Per Nordmann"
+        ],
+        "say": "Utkastet er klart. Ingenting sendes før du trykker Send.",
+        "mail": {
+          "to": "Per Nordmann",
+          "sub": "Før møtet",
+          "body": "Hei Per. Jeg har lest saken. Les utkastet før det sendes."
+        }
+      },
+      {
+        "t": "16:30",
+        "work": [
+          "Hentet vedtak fra forrige møte"
+        ],
+        "say": "Tre vedtak fra forrige møte er fortsatt åpne. De ligger samlet til deg.",
+        "file": "Vedtak_apne.pdf"
+      }
+    ],
+    "borettslag|forretning": [
+      {
+        "t": "07:00 · Morgenrapport (fast rutine)",
+        "work": [
+          "Leste 11 e-poster",
+          "Sammenlignet med tidligere pris og avtale"
+        ],
+        "say": "Fakturaen fra Nordmann Rør AS er høyere enn sist, og ett punkt avviker fra avtalen.",
+        "ask": {
+          "q": "Skal jeg flagge den for styret?",
+          "opts": [
+            "Ja, flagg avviket",
+            "Legg den til side"
+          ],
+          "pick": 0,
+          "after": "Den er flagget. Ingenting er betalt."
+        }
+      },
+      {
+        "t": "11:30",
+        "work": [
+          "Sammenlignet 2 tilbud fra håndverkere"
+        ],
+        "say": "Nordmann Rør AS og Nordmann Bygg AS er sammenlignet. Det som skiller er merket. Ingenting er bestilt.",
+        "file": "Tilbud_sammenligning.pdf"
+      },
+      {
+        "t": "14:00",
+        "user": "Hva skiller tilbudene?",
+        "work": [
+          "Leste begge tilbudene"
+        ],
+        "say": "Pris og ett vilkår skiller. Resten er likt. Styret må se det før noe bestilles."
+      },
+      {
+        "t": "16:30",
+        "work": [
+          "Sjekket vedlikeholdsplanen",
+          "Skrev innkalling"
+        ],
+        "say": "Frister i vedlikeholdsplanen er med. Innkallingen er et utkast, og sendes ikke før du trykker Send.",
+        "mail": {
+          "to": "Per Nordmann",
+          "sub": "Innkalling til styremøte",
+          "body": "Hei. Innkalling og saksliste ligger ved. Les utkastet før det sendes."
+        }
+      }
+    ],
+    "forening|styreleder": [
+      {
+        "t": "07:00 · Morgenrapport (fast rutine)",
+        "work": [
+          "Leste 7 e-poster",
+          "Sammenlignet med forrige pris og avtale"
+        ],
+        "say": "Fakturaen fra Nordmann Rør AS er sjekket. Ett punkt avviker fra avtalen og fra forrige pris.",
+        "ask": {
+          "q": "Skal jeg ta den med på styremøtet?",
+          "opts": [
+            "Ja, legg den på sakslisten",
+            "Legg den til side"
+          ],
+          "pick": 0,
+          "after": "Den blir med. Ingenting er betalt."
+        }
+      },
+      {
+        "t": "10:40",
+        "user": "Lag saksliste og innkalling.",
+        "work": [
+          "Hentet saker fra forrige møte"
+        ],
+        "say": "Saksliste og innkalling til styremøtet er klare. Kontingent som står ute er et eget punkt.",
+        "file": "Saksliste_styremote.pdf"
+      },
+      {
+        "t": "13:20",
+        "work": [
+          "Fant 4 medlemmer med kontingent ute"
+        ],
+        "say": "Fire medlemmer har kontingent ute. Ingenting er purret."
+      },
+      {
+        "t": "16:30",
+        "user": "Skriv et svar til Per Nordmann.",
+        "work": [
+          "Leste tråden med Per Nordmann"
+        ],
+        "say": "Svarutkastet er klart. Ingenting sendes før du trykker Send.",
+        "mail": {
+          "to": "Per Nordmann",
+          "sub": "Styremøtet",
+          "body": "Hei Per. Saken er med på møtet. Les utkastet før det sendes."
+        }
+      }
+    ],
+    "forening|styremedlem": [
+      {
+        "t": "07:00 · Morgenrapport (fast rutine)",
+        "work": [
+          "Leste 5 e-poster",
+          "Sammenlignet fakturaen med avtalen"
+        ],
+        "say": "Lesestoffet er klart. Fakturaen fra Nordmann Rør AS avviker fra avtalen.",
+        "file": "Lesestoff_styremote.pdf"
+      },
+      {
+        "t": "11:15",
+        "user": "Hva bør jeg lese først?",
+        "work": [
+          "Merket 1 avvik"
+        ],
+        "say": "Start med avviket. Resten av lesestoffet kan vente til i kveld.",
+        "ask": {
+          "q": "Skal jeg sette avviket øverst?",
+          "opts": [
+            "Ja, sett det øverst",
+            "Vis alt likt"
+          ],
+          "pick": 0,
+          "after": "Avviket ligger øverst. Ingenting er betalt."
+        }
+      },
+      {
+        "t": "14:30",
+        "user": "Skriv et svar til Per om årsmøtet.",
+        "work": [
+          "Leste tråden med Per Nordmann"
+        ],
+        "say": "Utkastet om årsmøtet er klart. Ingenting sendes før du trykker Send.",
+        "mail": {
+          "to": "Per Nordmann",
+          "sub": "Årsmøtet",
+          "body": "Hei Per. Årsmøtet står på sakslisten. Les utkastet før det sendes."
+        }
+      },
+      {
+        "t": "16:30",
+        "work": [
+          "Hentet vedtak fra forrige møte"
+        ],
+        "say": "To vedtak fra forrige møte er fortsatt åpne.",
+        "file": "Vedtak_apne.pdf"
+      }
+    ],
+    "forening|forretning": [
+      {
+        "t": "07:00 · Morgenrapport (fast rutine)",
+        "work": [
+          "Leste 8 e-poster",
+          "Sammenlignet fakturaen med avtalen"
+        ],
+        "say": "Fakturaen fra Nordmann Rør AS avviker fra avtalen på ett punkt.",
+        "ask": {
+          "q": "Skal jeg flagge den for styret?",
+          "opts": [
+            "Ja, flagg avviket",
+            "Legg den til side"
+          ],
+          "pick": 0,
+          "after": "Den er flagget. Ingenting er betalt."
+        }
+      },
+      {
+        "t": "11:45",
+        "work": [
+          "Sammenlignet 2 tilbud"
+        ],
+        "say": "To tilbud er satt ved siden av hverandre før de går til styret. Det som skiller er merket. Ingenting er bestilt.",
+        "file": "Tilbud_sammenligning.pdf"
+      },
+      {
+        "t": "14:20",
+        "user": "Hva skiller dem?",
+        "work": [
+          "Leste begge tilbudene"
+        ],
+        "say": "Pris og ett vilkår skiller. Resten er likt."
+      },
+      {
+        "t": "16:30",
+        "work": [
+          "Sjekket søknadsfristen",
+          "Skrev innkalling til årsmøtet"
+        ],
+        "say": "Vedlikehold og søknadsfrist er med. Innkallingen er et utkast, og sendes ikke før du trykker Send.",
+        "mail": {
+          "to": "Per Nordmann",
+          "sub": "Innkalling til årsmøte",
+          "body": "Hei. Innkalling til årsmøtet ligger ved. Les utkastet før det sendes."
+        }
+      }
+    ]
   };
 
   const pick=fieldset=>{
@@ -1465,15 +3163,13 @@
     lines.push('',title);
     document.getElementById('setup-cta').href=`mailto:andreas@fjellhoy.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(lines.join('\n'))}`;
     const dayChat=document.getElementById('day-chat');
-    [['day-morning','day-morning-card'],['day-mid','day-mid-card'],['day-evening','day-evening-card']].forEach(([textId,cardId],i)=>{
-      document.getElementById(textId).textContent=scene.day[i];
-      fillCard(document.getElementById(cardId),scene.card[i],scene.act[i]);
-    });
     dayChat.hidden=false;
-    dayChat.getAnimations({subtree:true}).forEach(a=>{a.cancel();a.play();});
+    playChat(dayChat, dayTurns[sceneKey]);
   };
   setupForm.addEventListener('change',renderSetup);
   renderSetup();
+  playChat(document.getElementById('hero-chat'), heroTurns);
+  window.__fjellChat={heroTurns,dayTurns,timeline,atEnd,seek:seekChat,play:playChat};
 </script>
 </body>
 </html>

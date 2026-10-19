@@ -108,8 +108,8 @@ svg{flex-shrink:0}
 .offer-more a:hover{color:var(--fjord-600)}
 
 /* hero chat illustration */
-.hero-visual{position:relative;padding:8px 0 0;min-height:448px}
-.chat-app{--loop:15s;display:flex;flex-direction:column;height:440px;min-height:440px;max-height:440px;background:#f7f4ef;border-radius:20px;box-shadow:var(--shadow-lg);overflow:hidden;color:var(--ink);flex-shrink:0}
+.hero-visual{position:relative;padding:8px 0 0;min-height:618px}
+.chat-app{--loop:15s;display:flex;flex-direction:column;height:610px;min-height:610px;max-height:610px;background:#f7f4ef;border-radius:20px;box-shadow:var(--shadow-lg);overflow:hidden;color:var(--ink);flex-shrink:0}
 .chat-top{display:flex;align-items:center;gap:10px;flex:none;padding:12px 14px;background:var(--fjord-800);color:#fff}
 .chat-ava{width:32px;height:32px;border-radius:50%;display:grid;place-items:center;background:var(--accent);color:#2a1a08;flex:none;font-family:var(--serif);font-weight:600;font-size:16px;line-height:1}
 .chat-name{font-size:14px;font-weight:700;letter-spacing:-.01em}
@@ -122,9 +122,39 @@ svg{flex-shrink:0}
 .chat-app:not(.chat-still) .slot.typing{z-index:1;justify-self:start;align-self:start}
 .slot{display:block;opacity:0;min-height:0;min-width:0}
 .clip{min-height:0;min-width:0}
-.bubble{background:#fff;border:1px solid #efe9df;border-radius:16px 16px 16px 6px;padding:8px 10px;box-shadow:var(--shadow-sm)}
+.bubble{background:#fff;border:1px solid #efe9df;border-radius:16px 16px 16px 6px;padding:8px 10px;box-shadow:var(--shadow-sm);min-width:0}
 .bubble p{font-size:13.5px;line-height:1.35;color:var(--ink)}
 .mini-card{margin-top:8px;background:var(--sand);border-radius:12px;padding:8px 10px}
+.work-kicker{display:inline-grid;margin:0 0 6px;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--fjord-500)}
+.work-kicker span{grid-area:1/1}
+.work-ready,.day-ok,.hero-ok1,.hero-ok2{opacity:0}
+.work-rows{list-style:none;margin:0;padding:0;display:grid;gap:3px}
+.work-rows li{display:flex;justify-content:space-between;align-items:baseline;gap:8px;min-width:0}
+.work-rows .lhs{display:flex;align-items:center;gap:6px;min-width:0}
+.work-rows .lhs b{font-size:12px;font-weight:650;line-height:1.3}
+.work-rows .rhs{font-size:12px;line-height:1.3;color:var(--ink-2);text-align:right}
+.work-rows .mark{width:7px;height:7px;border-radius:50%;background:#c5bfb4;flex:none}
+.work-rows .is-flag .mark{background:var(--accent-600);box-shadow:0 0 0 3px rgba(232,162,92,.28)}
+.work-rows .is-flag .rhs{color:#9a4d12;font-weight:650}
+.work .chat-actions{margin-top:8px}
+.chat-hero .work-rows li,.chat-day .work-rows li{opacity:0}
+.chat-hero .m1 .work-rows li:nth-child(1){animation:hrow1a var(--loop) linear infinite}
+.chat-hero .m1 .work-rows li:nth-child(2){animation:hrow1b var(--loop) linear infinite}
+.chat-hero .m1 .work-rows li:nth-child(3){animation:hrow1c var(--loop) linear infinite}
+.chat-hero .m1 .work-phase{animation:hphase1 var(--loop) linear infinite}
+.chat-hero .m1 .work-ready{animation:hready1 var(--loop) linear infinite}
+.chat-hero .m1 .hero-go1{animation:hgo1 var(--loop) linear infinite}
+.chat-hero .m1 .hero-ok1{animation:hok1 var(--loop) linear infinite}
+.chat-hero .m2 .work-rows li:nth-child(1){animation:hrow2a var(--loop) linear infinite}
+.chat-hero .m2 .work-rows li:nth-child(2){animation:hrow2b var(--loop) linear infinite}
+.chat-hero .m2 .work-rows li:nth-child(3){animation:hrow2c var(--loop) linear infinite}
+.chat-hero .m2 .work-phase{animation:hphase2 var(--loop) linear infinite}
+.chat-hero .m2 .work-ready{animation:hready2 var(--loop) linear infinite}
+.chat-hero .m2 .hero-go2{animation:hgo2 var(--loop) linear infinite}
+.chat-hero .m2 .hero-ok2{animation:hok2 var(--loop) linear infinite}
+.chat-hero .m3 .work-phase{animation:hphase3 var(--loop) linear infinite}
+.chat-hero .m3 .work-ready{animation:hready3 var(--loop) linear infinite}
+.chat-hero .m3 .chat-preview{animation:htype var(--loop) linear infinite}
 .mini-row{display:flex;justify-content:space-between;gap:12px;padding:3px 0;font-size:12.5px;color:var(--ink-2)}
 .mini-row b{color:var(--ink);font-variant-numeric:tabular-nums}
 .mini-mails{list-style:none;margin:0;padding:0;display:grid;gap:3px}
@@ -159,26 +189,101 @@ svg{flex-shrink:0}
 @keyframes slot-m3{0%,69%{opacity:0}74%,93%{opacity:1}100%{opacity:0}}
 @keyframes send-press{0%,78%{opacity:1;transform:none}82%{opacity:1;transform:scale(.92)}86%,100%{opacity:0;transform:scale(.92)}}
 @keyframes sent-show{0%,84%{opacity:0}88%,93%{opacity:1}100%{opacity:0}}
+@keyframes hrow1a{0%,14%{opacity:0;transform:translateY(5px)}18%,93%{opacity:1;transform:none}100%{opacity:0}}
+@keyframes hrow1b{0%,18%{opacity:0;transform:translateY(5px)}22%,93%{opacity:1;transform:none}100%{opacity:0}}
+@keyframes hrow1c{0%,22%{opacity:0;transform:translateY(5px)}26%,93%{opacity:1;transform:none}100%{opacity:0}}
+@keyframes hphase1{0%,24%{opacity:1}28%,100%{opacity:0}}
+@keyframes hready1{0%,26%{opacity:0}30%,93%{opacity:1}100%{opacity:0}}
+@keyframes hgo1{0%,32%{opacity:1;transform:none}35%{opacity:1;transform:scale(.92)}38%,100%{opacity:0;transform:scale(.92)}}
+@keyframes hok1{0%,36%{opacity:0}40%,93%{opacity:1}100%{opacity:0}}
+@keyframes hrow2a{0%,45%{opacity:0;transform:translateY(5px)}49%,93%{opacity:1;transform:none}100%{opacity:0}}
+@keyframes hrow2b{0%,49%{opacity:0;transform:translateY(5px)}53%,93%{opacity:1;transform:none}100%{opacity:0}}
+@keyframes hrow2c{0%,53%{opacity:0;transform:translateY(5px)}57%,93%{opacity:1;transform:none}100%{opacity:0}}
+@keyframes hphase2{0%,60%{opacity:1}64%,100%{opacity:0}}
+@keyframes hready2{0%,62%{opacity:0}66%,93%{opacity:1}100%{opacity:0}}
+@keyframes hgo2{0%,66%{opacity:1;transform:none}69%{opacity:1;transform:scale(.92)}72%,100%{opacity:0;transform:scale(.92)}}
+@keyframes hok2{0%,70%{opacity:0}74%,93%{opacity:1}100%{opacity:0}}
+@keyframes hphase3{0%,78%{opacity:1}82%,100%{opacity:0}}
+@keyframes hready3{0%,80%{opacity:0}84%,93%{opacity:1}100%{opacity:0}}
+@keyframes htype{0%,74%{clip-path:inset(0 100% 0 0)}82%,93%{clip-path:inset(0 0 0 0)}100%{clip-path:inset(0 100% 0 0)}}
+@keyframes day-t1{0%,1%{opacity:0}2%,5%{opacity:1}8%,100%{opacity:0}}
+@keyframes day-m1{0%,5%{opacity:0}8%,94%{opacity:1}100%{opacity:0}}
+@keyframes day-t2{0%,30%{opacity:0}33%,36%{opacity:1}39%,100%{opacity:0}}
+@keyframes day-m2{0%,36%{opacity:0}39%,94%{opacity:1}100%{opacity:0}}
+@keyframes day-t3{0%,58%{opacity:0}61%,64%{opacity:1}67%,100%{opacity:0}}
+@keyframes day-m3{0%,64%{opacity:0}67%,94%{opacity:1}100%{opacity:0}}
+@keyframes drow1a{0%,9%{opacity:0;transform:translateY(5px)}13%,94%{opacity:1;transform:none}100%{opacity:0}}
+@keyframes drow1b{0%,12%{opacity:0;transform:translateY(5px)}16%,94%{opacity:1;transform:none}100%{opacity:0}}
+@keyframes drow1c{0%,15%{opacity:0;transform:translateY(5px)}19%,94%{opacity:1;transform:none}100%{opacity:0}}
+@keyframes dphase1{0%,17%{opacity:1}21%,100%{opacity:0}}
+@keyframes dready1{0%,19%{opacity:0}23%,94%{opacity:1}100%{opacity:0}}
+@keyframes dgo1{0%,24%{opacity:1;transform:none}27%{opacity:1;transform:scale(.92)}30%,100%{opacity:0;transform:scale(.92)}}
+@keyframes dok1{0%,28%{opacity:0}32%,94%{opacity:1}100%{opacity:0}}
+@keyframes drow2a{0%,40%{opacity:0;transform:translateY(5px)}44%,94%{opacity:1;transform:none}100%{opacity:0}}
+@keyframes drow2b{0%,43%{opacity:0;transform:translateY(5px)}47%,94%{opacity:1;transform:none}100%{opacity:0}}
+@keyframes drow2c{0%,46%{opacity:0;transform:translateY(5px)}50%,94%{opacity:1;transform:none}100%{opacity:0}}
+@keyframes dphase2{0%,52%{opacity:1}56%,100%{opacity:0}}
+@keyframes dready2{0%,54%{opacity:0}58%,94%{opacity:1}100%{opacity:0}}
+@keyframes dgo2{0%,60%{opacity:1;transform:none}63%{opacity:1;transform:scale(.92)}66%,100%{opacity:0;transform:scale(.92)}}
+@keyframes dok2{0%,64%{opacity:0}68%,94%{opacity:1}100%{opacity:0}}
+@keyframes drow3a{0%,68%{opacity:0;transform:translateY(5px)}72%,94%{opacity:1;transform:none}100%{opacity:0}}
+@keyframes drow3b{0%,71%{opacity:0;transform:translateY(5px)}75%,94%{opacity:1;transform:none}100%{opacity:0}}
+@keyframes drow3c{0%,74%{opacity:0;transform:translateY(5px)}78%,94%{opacity:1;transform:none}100%{opacity:0}}
+@keyframes dphase3{0%,76%{opacity:1}80%,100%{opacity:0}}
+@keyframes dready3{0%,78%{opacity:0}82%,94%{opacity:1}100%{opacity:0}}
+@keyframes dgo3{0%,82%{opacity:1;transform:none}85%{opacity:1;transform:scale(.92)}88%,100%{opacity:0;transform:scale(.92)}}
+@keyframes dok3{0%,86%{opacity:0}90%,94%{opacity:1}100%{opacity:0}}
 @media (prefers-reduced-motion:reduce){
   .chat-app .slot{animation:none;opacity:1}
   .chat-app .slot.typing{display:none}
   .chat-app .m3{margin-bottom:0}
   .chat-typing i{animation:none}
-  .chat-send{display:none}
-  .chat-sent{animation:none;opacity:1}
+  .chat-send,.day-go,.hero-go1,.hero-go2,.work-phase{display:none}
+  .chat-sent,.day-ok,.hero-ok1,.hero-ok2,.work-ready{animation:none;opacity:1}
+  .work-rows li{animation:none;opacity:1;transform:none}
+  .chat-preview{animation:none;clip-path:none}
 }
 .day-demo{display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,440px);gap:56px;align-items:center}
 .day-demo-copy h2{margin-bottom:12px}
 .day-demo-copy p{color:var(--ink-2);font-size:18px;max-width:22em}
-.chat-day{--loop:12s;height:520px;min-height:520px;max-height:520px;overflow:hidden}
+.chat-day{--loop:16s;height:768px;min-height:768px;max-height:768px;overflow:hidden}
+.chat-day .t1{animation-name:day-t1}
+.chat-day .m1{animation-name:day-m1}
+.chat-day .t2{animation-name:day-t2}
+.chat-day .m2{animation-name:day-m2}
+.chat-day .t3{animation-name:day-t3}
+.chat-day .m3{animation-name:day-m3}
+.chat-day .m1 .work-rows li:nth-child(1){animation:drow1a var(--loop) linear infinite}
+.chat-day .m1 .work-rows li:nth-child(2){animation:drow1b var(--loop) linear infinite}
+.chat-day .m1 .work-rows li:nth-child(3){animation:drow1c var(--loop) linear infinite}
+.chat-day .m1 .work-phase{animation:dphase1 var(--loop) linear infinite}
+.chat-day .m1 .work-ready{animation:dready1 var(--loop) linear infinite}
+.chat-day .m1 .day-go{animation:dgo1 var(--loop) linear infinite}
+.chat-day .m1 .day-ok{animation:dok1 var(--loop) linear infinite}
+.chat-day .m2 .work-rows li:nth-child(1){animation:drow2a var(--loop) linear infinite}
+.chat-day .m2 .work-rows li:nth-child(2){animation:drow2b var(--loop) linear infinite}
+.chat-day .m2 .work-rows li:nth-child(3){animation:drow2c var(--loop) linear infinite}
+.chat-day .m2 .work-phase{animation:dphase2 var(--loop) linear infinite}
+.chat-day .m2 .work-ready{animation:dready2 var(--loop) linear infinite}
+.chat-day .m2 .day-go{animation:dgo2 var(--loop) linear infinite}
+.chat-day .m2 .day-ok{animation:dok2 var(--loop) linear infinite}
+.chat-day .m3 .work-rows li:nth-child(1){animation:drow3a var(--loop) linear infinite}
+.chat-day .m3 .work-rows li:nth-child(2){animation:drow3b var(--loop) linear infinite}
+.chat-day .m3 .work-rows li:nth-child(3){animation:drow3c var(--loop) linear infinite}
+.chat-day .m3 .work-phase{animation:dphase3 var(--loop) linear infinite}
+.chat-day .m3 .work-ready{animation:dready3 var(--loop) linear infinite}
+.chat-day .m3 .day-go{animation:dgo3 var(--loop) linear infinite}
+.chat-day .m3 .day-ok{animation:dok3 var(--loop) linear infinite}
 .chat-day .chat-body{flex:none;overflow:hidden}
+.chat-still .work-rows li{opacity:1}
+.chat-still .work-ready,.chat-still .cbtn-sent{opacity:1}
 .when{display:block;margin-bottom:4px;font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--fjord-500)}
 .chat-still{height:auto;min-height:0;max-height:none;overflow:visible}
 .chat-still .chat-body{gap:8px;overflow:visible}
 .chat-still .bubble+.bubble{margin-top:8px}
 @media (max-width:800px){
   .day-demo{grid-template-columns:1fr;gap:28px}
-  .chat-day{height:530px;min-height:530px;max-height:530px}
+  .chat-day{height:768px;min-height:768px;max-height:768px}
   .chat-still{height:auto;min-height:0;max-height:none}
 }
 
@@ -323,7 +428,7 @@ svg{flex-shrink:0}
   .nav-links{gap:20px}
   .nav-links a{font-size:14px}
   .hero-grid{grid-template-columns:1fr;gap:56px}
-  .hero-visual{max-width:480px;padding:0;min-height:440px}
+  .hero-visual{max-width:480px;padding:0;min-height:610px}
   .hero{padding-bottom:180px}
   .icon-grid{grid-template-columns:repeat(2,1fr)}
   .about{grid-template-columns:minmax(220px,42%) 1fr;gap:36px}
@@ -351,8 +456,8 @@ svg{flex-shrink:0}
   .hero-lead{margin-bottom:14px;font-size:15.5px}
   .hero-fjord{height:190px}
   .hero-visual{max-width:none;padding:0}
-  .chat-hero{height:472px;min-height:472px;max-height:472px}
-  .hero-visual{min-height:472px}
+  .chat-hero{height:674px;min-height:674px;max-height:674px}
+  .hero-visual{min-height:674px}
   .bubble p{font-size:13px}
   .chat-preview{font-size:12px!important}
   .icon-grid{grid-template-columns:1fr}
@@ -375,9 +480,9 @@ svg{flex-shrink:0}
   .footer-links{margin-left:0;flex-direction:column;gap:8px}
 }
 @media (max-width:370px){
-  .chat-hero{height:520px;min-height:520px;max-height:520px}
-  .hero-visual{min-height:520px}
-  .chat-day{height:564px;min-height:564px;max-height:564px}
+  .chat-hero{height:674px;min-height:674px;max-height:674px}
+  .hero-visual{min-height:674px}
+  .chat-day{height:820px;min-height:820px;max-height:820px}
   .chat-still{height:auto;min-height:0;max-height:none}
 }
 /* slogan + hero sub */
@@ -537,4 +642,27 @@ svg{flex-shrink:0}
   .setup-parts{grid-template-columns:1fr}
   .setup-card{padding:24px 20px}
   .setup-cta{width:100%;white-space:normal;text-align:center}
+}
+@media (prefers-reduced-motion:reduce){
+  .chat-app .slot,
+  .chat-day .t1,.chat-day .m1,.chat-day .t2,.chat-day .m2,.chat-day .t3,.chat-day .m3,
+  .chat-hero .m1 .work-rows li:nth-child(1),.chat-hero .m1 .work-rows li:nth-child(2),.chat-hero .m1 .work-rows li:nth-child(3),
+  .chat-hero .m2 .work-rows li:nth-child(1),.chat-hero .m2 .work-rows li:nth-child(2),.chat-hero .m2 .work-rows li:nth-child(3),
+  .chat-day .m1 .work-rows li:nth-child(1),.chat-day .m1 .work-rows li:nth-child(2),.chat-day .m1 .work-rows li:nth-child(3),
+  .chat-day .m2 .work-rows li:nth-child(1),.chat-day .m2 .work-rows li:nth-child(2),.chat-day .m2 .work-rows li:nth-child(3),
+  .chat-day .m3 .work-rows li:nth-child(1),.chat-day .m3 .work-rows li:nth-child(2),.chat-day .m3 .work-rows li:nth-child(3),
+  .chat-hero .m1 .work-phase,.chat-hero .m2 .work-phase,.chat-hero .m3 .work-phase,
+  .chat-hero .m1 .work-ready,.chat-hero .m2 .work-ready,.chat-hero .m3 .work-ready,
+  .chat-hero .m1 .hero-go1,.chat-hero .m1 .hero-ok1,.chat-hero .m2 .hero-go2,.chat-hero .m2 .hero-ok2,
+  .chat-day .m1 .work-phase,.chat-day .m2 .work-phase,.chat-day .m3 .work-phase,
+  .chat-day .m1 .work-ready,.chat-day .m2 .work-ready,.chat-day .m3 .work-ready,
+  .chat-day .m1 .day-go,.chat-day .m2 .day-go,.chat-day .m3 .day-go,
+  .chat-day .m1 .day-ok,.chat-day .m2 .day-ok,.chat-day .m3 .day-ok,
+  .chat-send,.chat-sent,.chat-hero .m3 .chat-preview,.chat-typing i{animation:none}
+  .chat-app .slot{opacity:1}
+  .chat-app .slot.typing,.work-phase,.day-go,.hero-go1,.hero-go2,.chat-send{display:none}
+  .work-ready,.day-ok,.hero-ok1,.hero-ok2,.chat-sent,.chat-day .m1 .work-ready,.chat-day .m2 .work-ready,.chat-day .m3 .work-ready,.chat-hero .m1 .work-ready,.chat-hero .m2 .work-ready,.chat-hero .m3 .work-ready{opacity:1}
+  .chat-hero .m1 .work-rows li:nth-child(n),.chat-hero .m2 .work-rows li:nth-child(n),
+  .chat-day .m1 .work-rows li:nth-child(n),.chat-day .m2 .work-rows li:nth-child(n),.chat-day .m3 .work-rows li:nth-child(n){opacity:1;transform:none}
+  .chat-preview,.chat-hero .m3 .chat-preview{clip-path:none}
 }

@@ -575,6 +575,7 @@ svg{flex-shrink:0}
 
 /* bransjesider */
 .audience-3{grid-template-columns:repeat(3,1fr)}
+.audience+.audience-3{margin-top:56px}
 .bransje-cta{margin-top:56px;margin-bottom:0}
 .bransje-cta p{margin-bottom:16px}
 .bransje-links{font-size:15px}

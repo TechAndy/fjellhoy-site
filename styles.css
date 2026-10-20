@@ -340,7 +340,7 @@ svg{flex-shrink:0}
 .site-footer{background:var(--fjord-900);color:#a9c1bb;padding:44px 0}
 .footer-inner{display:flex;align-items:center;gap:32px;flex-wrap:wrap}
 .brand-light{color:#fff}
-.footer-links{display:flex;gap:28px;margin-left:auto}
+.footer-links{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:8px 28px;margin-left:auto;flex:1 1 320px;min-width:0}
 .footer-links a{color:#d6e4e0;text-decoration:none;font-size:15px}
 .footer-links a:hover{color:var(--accent)}
 .footer-copy{font-size:14px;color:#7f9993;width:100%;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);line-height:1.6}
@@ -403,7 +403,7 @@ svg{flex-shrink:0}
   .hero-who img{width:48px;height:48px}
   .hero-actions{align-items:stretch}
   .cta-actions{flex-direction:column}
-  .footer-links{margin-left:0;flex-direction:column;gap:8px}
+  .footer-links{margin-left:0;flex:1 1 auto;flex-direction:column;align-items:flex-start;justify-content:flex-start;gap:8px}
 }
 /* slogan + hero sub */
 .slogan-pill{display:inline-flex;align-items:center;gap:8px;margin-bottom:22px;padding:8px 16px 8px 12px;border-radius:999px;background:rgba(232,162,92,.14);border:1px solid rgba(232,162,92,.35);color:#f3c99a;font-size:14.5px;font-weight:600;letter-spacing:.005em}

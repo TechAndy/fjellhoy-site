@@ -572,3 +572,13 @@ svg{flex-shrink:0}
   .setup-card{padding:24px 20px}
   .setup-cta{width:100%;white-space:normal;text-align:center}
 }
+
+/* bransjesider */
+.audience-3{grid-template-columns:repeat(3,1fr)}
+.bransje-cta{margin-top:56px;margin-bottom:0}
+.bransje-cta p{margin-bottom:16px}
+.bransje-links{font-size:15px}
+.bransje-links a{color:var(--fjord-600)}
+.bransjer-links{margin-top:28px;text-align:center;color:var(--ink-2)}
+.bransjer-links a{color:var(--fjord-600);font-weight:600}
+@media (max-width:900px){.audience-3{grid-template-columns:1fr}}

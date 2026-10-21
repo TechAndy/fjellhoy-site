@@ -981,7 +981,7 @@
   onScroll();
   addEventListener('scroll',onScroll,{passive:true});
 
-  const desktop=matchMedia('(min-width:861px)');
+  const desktop=matchMedia('(min-width:1001px)');
   const closeOnDesktop=()=>{if(desktop.matches)setMenu(false);};
   desktop.addEventListener('change',closeOnDesktop);
 

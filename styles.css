@@ -519,7 +519,7 @@ svg{flex-shrink:0}
 }
 
 /* mobile section menu */
-@media (max-width:860px){
+@media (max-width:1000px){
   .nav-links,.nav-cta{display:none}
   .menu-toggle{display:flex;flex-direction:column;justify-content:center;gap:6px;margin-left:auto;width:44px;height:44px;border:1px solid var(--line);border-radius:12px;background:#fff;cursor:pointer;padding:0 12px}
   .menu-toggle span{display:block;height:2px;background:var(--ink);border-radius:2px;transition:transform .2s}
@@ -628,7 +628,7 @@ svg{flex-shrink:0}
 .lang-switch a:hover{color:var(--fjord-600)}
 .lang-switch a[aria-current="page"]:hover{color:#fff}
 .lang-switch a:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
-@media (max-width:860px){
+@media (max-width:1000px){
   .lang-switch{margin-left:auto;margin-right:8px}
   .menu-toggle{margin-left:0}
 }

@@ -586,3 +586,37 @@ svg{flex-shrink:0}
 .bransjer-links{margin-top:28px;text-align:center;color:var(--ink-2)}
 .bransjer-links a{color:var(--fjord-600);font-weight:600}
 @media (max-width:900px){.audience-3{grid-template-columns:1fr}}
+
+/* forsiden: nøkkelord, TL;DR og kontakt */
+.hero-subtitle{margin:0 0 18px;max-width:20em;color:#fff;font-family:var(--serif);font-size:clamp(1.25rem,2vw,1.7rem);font-weight:500;line-height:1.25}
+.tldr{margin:0 0 22px;padding:4px 16px;max-width:40em;border:1px solid rgba(232,162,92,.4);border-radius:16px;background:rgba(255,255,255,.06)}
+.tldr div{display:grid;grid-template-columns:6.2em 1fr;gap:10px 12px;padding:10px 0}
+.tldr div+div{border-top:1px solid rgba(255,255,255,.12)}
+.tldr dt{margin:0;color:#f3c99a;font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.tldr dd{margin:0;color:#eaf2ef;font-size:15.5px;line-height:1.45}
+.hero h1{font-size:clamp(1.85rem,3vw,2.85rem);max-width:16em}
+.cta-inner{flex-wrap:wrap}
+.contact-proof{flex:1 0 100%;margin:18px 0 0;color:#b9cec8;font-size:14.5px;line-height:1.5}
+.contact-proof a{color:#f3c99a;font-weight:600;text-decoration:none}
+.contact-proof a:hover{color:#fff}
+.crumb{margin:0 0 14px;color:var(--ink-3);font-size:14px}
+.crumb a{color:var(--fjord-600);font-weight:600;text-decoration:none}
+.crumb a:hover{text-decoration:underline}
+.kicker{display:block}
+.fag .tldr-plain{margin:0 0 28px;padding:18px 20px;border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:14px;background:var(--sand)}
+.fag a{overflow-wrap:anywhere}
+.fag .tldr-plain p{color:var(--ink);font-weight:500}
+.fag h2{scroll-margin-top:96px}
+.fag ol,.fag ul{margin:12px 0 0;padding-left:1.2em}
+.price-sources{width:100%;border-collapse:collapse;margin:8px 0 0;font-size:15.5px}
+.price-sources th,.price-sources td{text-align:left;vertical-align:top;padding:12px 14px;border-bottom:1px solid var(--line);color:var(--ink-2)}
+.price-sources th{color:var(--fjord-600);font-size:12.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase}
+.price-sources td:first-child{color:var(--ink);font-weight:600;width:28%}
+.price-sources caption{caption-side:bottom;text-align:left;color:var(--ink-3);font-size:14px;line-height:1.5;padding-top:10px}
+.fag .faq{margin-top:8px}
+@media (max-width:600px){
+  .tldr div{grid-template-columns:1fr;gap:2px;padding:8px 0}
+  .hero-subtitle{font-size:1.15rem;margin-bottom:12px}
+  .price-sources td:first-child{width:auto}
+  .contact-proof{margin-top:14px}
+}

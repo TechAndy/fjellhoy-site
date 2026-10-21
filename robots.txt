@@ -2,3 +2,5 @@ User-agent: *
 Allow: /
 
 Sitemap: https://fjellhoy.com/sitemap.xml
+
+# Maskinlesbar beskrivelse: https://fjellhoy.com/llms.txt

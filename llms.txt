@@ -28,3 +28,36 @@ Offentlig registrering: https://virksomhet.brreg.no/nb/oppslag/enheter/936970583
 - Telefon: [+47 416 00 048](tel:+4741600048)
 - E-post: [andreas@fjellhoy.com](mailto:andreas@fjellhoy.com)
 - Kontaktdel på forsiden: https://fjellhoy.com/#kontakt
+
+## English
+
+> Fjellhøy AS sets up an AI agent for small businesses. The agent drafts email, invoice follow-up and customer follow-up. You approve it before anything is sent. Tagline: The best colleague you never have to hire.
+
+The Norwegian site is the default. This section describes the same company in English. Pages live under https://fjellhoy.com/en/
+
+Fjellhøy AS is a Norwegian limited company, org. no. 936 970 583, with its address in 1540 Vestby. The managing director is Andreas Berthelsen. Phone: +47 416 00 048. Email: andreas@fjellhoy.com. Website: https://fjellhoy.com/en/
+
+The service is for the managing director of a small business who wants to automate email, invoices and customer follow-up, and for boards of condominiums, housing cooperatives and associations. The setup is done in the accounts the business already uses, and it takes a few hours. Fjellhøy is not tied to one agent vendor.
+
+Fjellhøy does not state a subscription price for the agent itself. The subscription is paid directly to the vendor. Prices for setup and follow-up are on the English home page. No testimonials or performance figures are published on the site.
+
+Public registration: https://virksomhet.brreg.no/nb/oppslag/enheter/936970583
+
+### Pages in English
+
+- [Home](https://fjellhoy.com/en/): an AI agent for small businesses, covering email, invoices and customer follow-up. Summary, how it works, prices for setup and follow-up, and contact.
+- [Automating invoice handling](https://fjellhoy.com/en/automatisere-fakturahandtering.html): differences against an earlier price, reminder drafts and deadlines. Nothing is paid or sent without approval.
+- [AI for email and customer follow-up](https://fjellhoy.com/en/ai-epost-og-kundeoppfolging.html): a sorted inbox, draft replies and follow-up for customers who are waiting.
+- [An AI adviser for small businesses](https://fjellhoy.com/en/ai-radgiver-for-smb.html): what Fjellhøy AS helps a small business with, and who you speak to.
+- [What an AI agent costs a small business in 2026](https://fjellhoy.com/en/hva-koster-en-ai-agent-for-en-smb-i-2026.html): the cost drivers. Public list prices are quoted from the vendors. No subscription price from Fjellhøy.
+- [AI agent for businesses](https://fjellhoy.com/en/ai-agent-for-bedrifter.html): draft replies, follow-up and a view of the day.
+- [Email and calendar](https://fjellhoy.com/en/ai-assistent-epost-kalender.html): an AI assistant for email and calendar.
+- [AI training for businesses](https://fjellhoy.com/en/ai-kurs-for-bedrifter.html): a course when several people in the company should use the agent the same way.
+- [About Fjellhøy](https://fjellhoy.com/en/hvorfor-fjellhoy.html): the name, the background and the values.
+- [Privacy](https://fjellhoy.com/en/personvern.html): how enquiries are handled. The page has no form.
+
+### Contact
+
+- Phone: [+47 416 00 048](tel:+4741600048)
+- Email: [andreas@fjellhoy.com](mailto:andreas@fjellhoy.com)
+- Contact section on the English home page: https://fjellhoy.com/en/#kontakt

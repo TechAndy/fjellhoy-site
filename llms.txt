@@ -31,7 +31,7 @@ Offentlig registrering: https://virksomhet.brreg.no/nb/oppslag/enheter/936970583
 
 ## English
 
-> Fjellhøy AS sets up an AI agent for small businesses. The agent drafts email, invoice follow-up and customer follow-up. You approve it before anything is sent. Tagline: The best colleague you never have to hire.
+> Fjellhøy AS sets up an AI agent for small businesses. The agent drafts email, invoice follow-up and customer follow-up. You approve it before anything is sent. Tagline: The best colleague, without hiring anyone.
 
 The Norwegian site is the default. This section describes the same company in English. Pages live under https://fjellhoy.com/en/
 

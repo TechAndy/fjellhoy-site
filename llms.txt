@@ -20,6 +20,9 @@ Offentlig registrering: https://virksomhet.brreg.no/nb/oppslag/enheter/936970583
 - [AI-agent for bedrifter](https://fjellhoy.com/ai-agent-for-bedrifter.html): Svarutkast, oppfølging og dagsoversikt.
 - [E-post og kalender](https://fjellhoy.com/ai-assistent-epost-kalender.html): AI-assistent for e-post og kalender.
 - [AI-kurs for bedrifter](https://fjellhoy.com/ai-kurs-for-bedrifter.html): Kurs når flere i bedriften skal bruke agenten på samme måte.
+- [AI for holdingselskap og eiendom](https://fjellhoy.com/ai-for-holdingselskap-og-eiendom.html): Bilag, leietakere, styrepapirer og frister. Kobles til Styresekretær-pakken.
+- [AI for bilag og regnskap](https://fjellhoy.com/ai-for-bilag-og-regnskap.html): Bilag fra e-post, fakturakontroll og oversikt klar til regnskapsfører.
+- [AI for styrepapirer](https://fjellhoy.com/ai-for-styrepapirer.html): Utkast til innkalling, saksliste og protokoll, og oppfølging av åpne saker.
 - [Om Fjellhøy](https://fjellhoy.com/hvorfor-fjellhoy.html): Navn, bakgrunn og verdier.
 - [Personvern](https://fjellhoy.com/personvern.html): Hvordan henvendelser behandles. Siden har ingen skjema.
 

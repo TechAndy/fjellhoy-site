@@ -3,8 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AI for e-post og kundeoppfølging | Fjellhøy</title>
-<meta name="description" content="AI for e-post og kundeoppfølging i små bedrifter. Sortert innboks, svarutkast og oppfølging av den som venter. Du godkjenner før noe sendes.">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; connect-src 'self'; base-uri 'self'; form-action 'none'; object-src 'none'; upgrade-insecure-requests">
+<title>Automatisering av e-post og kundeoppfølging | Fjellhøy</title>
+<meta name="description" content="Automatisering av e-post og kundeoppfølging. En AI-agent lager utkast i kontoene du allerede bruker, og du godkjenner før noe sendes.">
 <link rel="canonical" href="https://fjellhoy.com/ai-epost-og-kundeoppfolging.html">
 <link rel="alternate" hreflang="nb" href="https://fjellhoy.com/ai-epost-og-kundeoppfolging.html">
 <link rel="alternate" hreflang="no" href="https://fjellhoy.com/ai-epost-og-kundeoppfolging.html">
@@ -21,17 +23,105 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "AI for e-post og kundeoppfølging",
-  "serviceType": "Oppsett av AI-agent for e-post og kundeoppfølging",
-  "description": "En AI-agent som sorterer innboksen, skriver svarutkast og foreslår oppfølging. Du godkjenner før noe sendes.",
-  "provider": {
-    "@type": "Organization",
-    "name": "Fjellhøy AS",
-    "url": "https://fjellhoy.com/"
-  },
-  "areaServed": {"@type": "Country", "name": "Norway"},
-  "url": "https://fjellhoy.com/ai-epost-og-kundeoppfolging.html"
+  "@graph": [
+    {
+      "@type": [
+        "Organization",
+        "LocalBusiness",
+        "ProfessionalService"
+      ],
+      "@id": "https://fjellhoy.com/#organization",
+      "name": "Fjellhøy AS",
+      "legalName": "Fjellhøy AS",
+      "url": "https://fjellhoy.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://fjellhoy.com/assets/fjellhoy-v2c-bred.svg",
+        "width": 1200,
+        "height": 400
+      },
+      "image": "https://fjellhoy.com/assets/fjellhoy-v2c-profilbilde.png",
+      "telephone": "+47 41600048",
+      "email": "andreas@fjellhoy.com",
+      "description": "Fjellhøy AS gir rådgivning og automatisering av kontorarbeid for små bedrifter og styrer, inkludert regnskap og styrearbeid. Vi setter opp en AI-agent i kontoene kunden allerede bruker, og kunden godkjenner før noe sendes.",
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "Organisasjonsnummer",
+        "value": "936970583"
+      },
+      "vatID": "NO936970583MVA",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Sole allé 65",
+        "postalCode": "1540",
+        "addressLocality": "Vestby",
+        "addressCountry": "NO"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Vestby"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Follo"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Østfold"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Vestfold"
+        },
+        {
+          "@type": "Country",
+          "name": "Norway"
+        }
+      ],
+      "sameAs": [
+        "https://w2.brreg.no/enhet/sok/detalj.jsp?orgnr=936970583",
+        "https://virksomhet.brreg.no/nb/oppslag/enheter/936970583"
+      ],
+      "knowsAbout": [
+        "rådgivning",
+        "regnskap",
+        "styrearbeid",
+        "personvern"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+47-416-00-048",
+        "email": "andreas@fjellhoy.com",
+        "contactType": "customer service",
+        "availableLanguage": [
+          "Norwegian",
+          "English"
+        ],
+        "areaServed": "NO"
+      },
+      "founder": {
+        "@type": "Person",
+        "name": "Andreas Berthelsen",
+        "jobTitle": "Daglig leder",
+        "sameAs": "https://www.linkedin.com/in/andreassberthelsen"
+      }
+    },
+    {
+      "@type": "Service",
+      "name": "Automatisering av e-post og kundeoppfølging",
+      "serviceType": "Oppsett av AI-agent for e-post og kundeoppfølging",
+      "description": "En AI-agent som sorterer innboksen, skriver svarutkast og foreslår oppfølging. Du godkjenner før noe sendes.",
+      "provider": {
+        "@id": "https://fjellhoy.com/#organization"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Norway"
+      },
+      "url": "https://fjellhoy.com/ai-epost-og-kundeoppfolging.html"
+    }
+  ]
 }
 </script>
 <meta property="og:image" content="https://fjellhoy.com/assets/fjellhoy-v2c-profilbilde.png">
@@ -50,7 +140,7 @@
       <img class="brand-logo" src="assets/fjellhoy-v2c-bred.svg" alt="" width="138" height="46">
     </a>
     <nav class="nav-links" aria-label="Hovedmeny">
-      <a href="index.html#ai-agent">AI-agent</a>
+      <a href="index.html#ai-agent">Tjenester</a>
       <a href="index.html#sikkerhet">Sikkerhet</a>
       <a href="index.html#slik">Slik fungerer det</a>
       <a href="index.html#priser">Priser</a>
@@ -80,7 +170,7 @@
     <div class="section-head">
       <p class="crumb"><a href="index.html">Forside</a> · E-post og kundeoppfølging</p>
       <span class="eyebrow">E-post</span>
-      <h1>AI for e-post og kundeoppfølging</h1>
+      <h1>Automatisering av e-post og kundeoppfølging</h1>
       <p>Innboksen og oppfølgingen trenger ikke vente til kvelden. En AI-agent sorterer det som kom inn, skriver utkast og finner tråder som har stått stille. Du leser før noe går ut.</p>
     </div>
     <div class="audience audience-3">
@@ -116,7 +206,7 @@
       <p>Eksempel: Marte Ådnanes får svarutkast på e-post som venter, og et forslag til oppfølging. Hun godkjenner før noe sendes. Sindre Vassenden kan starte dagen med en oversikt over henvendelser som ligger klare. Eksemplene viser arbeidsmåten. De er ikke kundehistorier.</p>
       <p>Oppsettet gjøres i e-posten du allerede bruker. Satt opp på bare noen timer. Kalender kan tas med der det trengs.</p>
       <p><a class="btn btn-large btn-accent" href="#kontakt">Book en prat</a></p>
-      <p class="bransje-links">Les også: <a href="ai-assistent-epost-kalender.html">E-post og kalender</a> · <a href="automatisere-fakturahandtering.html">Automatisere fakturahåndtering</a> · <a href="ai-radgiver-for-smb.html">AI-rådgiver for SMB</a> · <a href="ai-agent-for-bedrifter.html">AI-agent for bedrifter</a> · <a href="index.html">Til forsiden</a></p>
+      <p class="bransje-links">Les også: <a href="ai-assistent-epost-kalender.html">E-post og kalender</a> · <a href="automatisere-fakturahandtering.html">Automatisere fakturahåndtering</a> · <a href="ai-radgiver-for-smb.html">Rådgivning for SMB</a> · <a href="ai-agent-for-bedrifter.html">Automatisering for bedrifter</a> · <a href="index.html">Til forsiden</a></p>
     </div>
   </div>
 </section>
@@ -152,8 +242,8 @@
       <a href="mailto:andreas@fjellhoy.com">andreas@fjellhoy.com</a>
       <a href="index.html">Forsiden</a>
       <a href="automatisere-fakturahandtering.html">Automatisere fakturahåndtering</a>
-      <a href="ai-epost-og-kundeoppfolging.html" aria-current="page">AI for e-post og kundeoppfølging</a>
-      <a href="ai-radgiver-for-smb.html">AI-rådgiver for SMB</a>
+      <a href="ai-epost-og-kundeoppfolging.html" aria-current="page">E-post og kundeoppfølging</a>
+      <a href="ai-radgiver-for-smb.html">Rådgivning for SMB</a>
       <a href="hva-koster-en-ai-agent-for-en-smb-i-2026.html">Hva koster en AI-agent</a>
       <a href="hvorfor-fjellhoy.html">Om Fjellhøy</a>
       <a href="gdpr-og-databehandleravtale.html">GDPR og databehandleravtale</a>

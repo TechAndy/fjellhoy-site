@@ -3,8 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AI-assistent for håndverker | Fjellhøy</title>
-<meta name="description" content="AI-assistent for håndverker, og AI for rørlegger, elektriker og snekker. Tilbud, timeoppfølging, purring og bilag. Du godkjenner før noe sendes. Pris per måned avklares i en prat.">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; connect-src 'self'; base-uri 'self'; form-action 'none'; object-src 'none'; upgrade-insecure-requests">
+<title>Automatisering av tilbud, timer og purring for håndverkere | Fjellhøy</title>
+<meta name="description" content="Automatisering av tilbud, timer og purring for håndverkere, inkludert rørlegger, elektriker og snekker. En AI-agent lager utkast. Du godkjenner før noe sendes. Pris per måned avklares i en prat, og står ikke som et beløp her.">
 <link rel="canonical" href="https://fjellhoy.com/handverkere.html">
 <link rel="alternate" hreflang="nb" href="https://fjellhoy.com/handverkere.html">
 <link rel="alternate" hreflang="no" href="https://fjellhoy.com/handverkere.html">
@@ -13,47 +15,137 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "inLanguage": "nb",
-  "mainEntity": [
+  "@graph": [
     {
-      "@type": "Question",
-      "name": "Hva er en AI-assistent for en håndverker?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "En AI-assistent for en håndverker lager utkast til tilbud, befaringsbooking, timeoppfølging, purring og bilag mens du er på jobb. Den jobber i kontoene du allerede har. Du godkjenner før noe sendes."
+      "@type": [
+        "Organization",
+        "LocalBusiness",
+        "ProfessionalService"
+      ],
+      "@id": "https://fjellhoy.com/#organization",
+      "name": "Fjellhøy AS",
+      "legalName": "Fjellhøy AS",
+      "url": "https://fjellhoy.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://fjellhoy.com/assets/fjellhoy-v2c-bred.svg",
+        "width": 1200,
+        "height": 400
+      },
+      "image": "https://fjellhoy.com/assets/fjellhoy-v2c-profilbilde.png",
+      "telephone": "+47 41600048",
+      "email": "andreas@fjellhoy.com",
+      "description": "Fjellhøy AS gir rådgivning og automatisering av kontorarbeid for små bedrifter og styrer, inkludert regnskap og styrearbeid. Vi setter opp en AI-agent i kontoene kunden allerede bruker, og kunden godkjenner før noe sendes.",
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "Organisasjonsnummer",
+        "value": "936970583"
+      },
+      "vatID": "NO936970583MVA",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Sole allé 65",
+        "postalCode": "1540",
+        "addressLocality": "Vestby",
+        "addressCountry": "NO"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Vestby"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Follo"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Østfold"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Vestfold"
+        },
+        {
+          "@type": "Country",
+          "name": "Norway"
+        }
+      ],
+      "sameAs": [
+        "https://w2.brreg.no/enhet/sok/detalj.jsp?orgnr=936970583",
+        "https://virksomhet.brreg.no/nb/oppslag/enheter/936970583"
+      ],
+      "knowsAbout": [
+        "rådgivning",
+        "regnskap",
+        "styrearbeid",
+        "personvern"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+47-416-00-048",
+        "email": "andreas@fjellhoy.com",
+        "contactType": "customer service",
+        "availableLanguage": [
+          "Norwegian",
+          "English"
+        ],
+        "areaServed": "NO"
+      },
+      "founder": {
+        "@type": "Person",
+        "name": "Andreas Berthelsen",
+        "jobTitle": "Daglig leder",
+        "sameAs": "https://www.linkedin.com/in/andreassberthelsen"
       }
     },
     {
-      "@type": "Question",
-      "name": "Passer en AI-assistent for rørlegger, elektriker og snekker?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja. En rørlegger, en elektriker og en snekker har den samme papirbunken: forespørsel, befaring, timer og faktura. Assistenten skriver utkastene. Du leser dem når du har et rolig minutt."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Hva koster en AI-assistent per måned?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Det står ikke et beløp her. Kostnaden er engangsoppsettet, som står i prisdelen på forsiden, pluss plattformabonnementet som faktureres separat av leverandøren. Be om et tilbud, så går vi gjennom pris per måned i en prat."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Kan den kobles til e-post, regnskapssystem, timeføring og kalender?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja, mot den typen system du allerede bruker: e-post som Outlook eller Gmail, et regnskapssystem, timeføring eller prosjekt, og kalender. Det er ikke et offisielt partnerskap med en bestemt leverandør."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Sender den tilbud eller purring uten meg?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Nei. Den legger utkastet klart. Du sier ja før tilbud, purring eller påminnelse om bilag sendes."
+      "@type": "FAQPage",
+      "inLanguage": "nb",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Hva gjør assistenten for en håndverker?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Assistenten lager utkast til tilbud, befaringsbooking, timeoppfølging, purring og bilag mens du er på jobb. Den jobber i kontoene du allerede har. Du godkjenner før noe sendes."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Passer oppsettet for rørlegger, elektriker og snekker?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. En rørlegger, en elektriker og en snekker har den samme papirbunken: forespørsel, befaring, timer og faktura. Assistenten skriver utkastene. Du leser dem når du har et rolig minutt."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Hva koster assistenten per måned?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Det står ikke et beløp her. Kostnaden er engangsoppsettet, som står i prisdelen på forsiden, pluss plattformabonnementet som faktureres separat av leverandøren. Be om et tilbud, så går vi gjennom pris per måned i en prat."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kan den kobles til e-post, regnskapssystem, timeføring og kalender?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja, mot den typen system du allerede bruker: e-post som Outlook eller Gmail, et regnskapssystem, timeføring eller prosjekt, og kalender. Det er ikke et offisielt partnerskap med en bestemt leverandør."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Sender den tilbud eller purring uten meg?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nei. Den legger utkastet klart. Du sier ja før tilbud, purring eller påminnelse om bilag sendes."
+          }
+        }
+      ],
+      "provider": {
+        "@id": "https://fjellhoy.com/#organization"
       }
     }
   ]
@@ -83,7 +175,7 @@
       <img class="brand-logo" src="assets/fjellhoy-v2c-bred.svg" alt="" width="138" height="46">
     </a>
     <nav class="nav-links" aria-label="Hovedmeny">
-      <a href="index.html#ai-agent">AI-agent</a>
+      <a href="index.html#ai-agent">Tjenester</a>
       <a href="index.html#sikkerhet">Sikkerhet</a>
       <a href="index.html#slik">Slik fungerer det</a>
       <a href="index.html#priser">Priser</a>
@@ -112,7 +204,7 @@
   <div class="container">
     <div class="section-head">
       <span class="eyebrow">Håndverkere</span>
-      <h1>AI-assistent for håndverkere</h1>
+      <h1>Automatisering av tilbud, timer og purring for håndverkere</h1>
       <p>Du står på jobb, assistenten tar papirarbeidet. En AI-assistent for håndverkeren følger opp tilbud, befaringer og fakturaer, enten du er rørlegger, elektriker eller snekker.</p>
     </div>
     <div class="audience audience-3">
@@ -149,8 +241,8 @@
       <p>Agenten settes opp i dine egne kontoer. Satt opp på bare noen timer. Agent-abonnement (kommer i tillegg).</p>
       <p><a class="btn btn-large btn-accent" href="index.html#kontakt">Book en gratis prat</a></p>
       <p class="bransje-links">Andre bransjer: <a href="regnskapsbyra.html">Regnskapsbyrå</a> · <a href="borettslag-og-sameier.html">Borettslag og sameier</a> · <a href="eiendomsmegler.html">Eiendomsmegler</a> · <a href="advokat.html">Advokat</a> · <a href="klinikk-og-tannlege.html">Klinikk og tannlege</a> · <a href="nettbutikk.html">Nettbutikk</a> · <a href="byggfirma.html">Byggfirma</a></p>
-      <p class="bransje-links">Tema: <a href="ai-agent-for-bedrifter.html">AI-agent for bedrifter</a> · <a href="ai-assistent-epost-kalender.html">E-post og kalender</a> · <a href="ai-kurs-for-bedrifter.html">AI-kurs for bedrifter</a> · <a href="index.html">Til forsiden</a></p>
-      <p class="bransje-links">Les også: <a href="automatisere-fakturahandtering.html">Automatisere fakturahåndtering</a> · <a href="ai-epost-og-kundeoppfolging.html">AI for e-post og kundeoppfølging</a> · <a href="ai-radgiver-for-smb.html">AI-rådgiver for SMB</a> · <a href="hva-koster-en-ai-agent-for-en-smb-i-2026.html">Hva koster en AI-agent</a> · <a href="gdpr-og-databehandleravtale.html">GDPR og databehandleravtale</a> · <a href="#pris-per-maned">Hva koster en AI-assistent per måned?</a></p>
+      <p class="bransje-links">Tema: <a href="ai-agent-for-bedrifter.html">Automatisering for bedrifter</a> · <a href="ai-assistent-epost-kalender.html">E-post og kalender</a> · <a href="ai-kurs-for-bedrifter.html">Kurs i kontorautomatisering</a> · <a href="index.html">Til forsiden</a></p>
+      <p class="bransje-links">Les også: <a href="automatisere-fakturahandtering.html">Automatisere fakturahåndtering</a> · <a href="ai-epost-og-kundeoppfolging.html">E-post og kundeoppfølging</a> · <a href="ai-radgiver-for-smb.html">Rådgivning for SMB</a> · <a href="hva-koster-en-ai-agent-for-en-smb-i-2026.html">Hva koster en AI-agent</a> · <a href="gdpr-og-databehandleravtale.html">GDPR og databehandleravtale</a> · <a href="#pris-per-maned">Hva koster assistenten per måned?</a></p>
     </div>
   </div>
 </section>
@@ -159,8 +251,8 @@
   <div class="container">
     <div class="section-head">
       <span class="eyebrow">Rørlegger, elektriker, snekker</span>
-      <h2>AI for rørlegger, elektriker og snekker</h2>
-      <p>En rørlegger, en elektriker og en snekker har den samme kvelden: et tilbud som skulle vært sendt, en befaring som skal bookes, og en faktura som ligger og venter. AI-assistenten for håndverkeren tar utkastene mens du er på jobb.</p>
+      <h2>Automatisering for rørlegger, elektriker og snekker</h2>
+      <p>En rørlegger, en elektriker og en snekker har den samme kvelden: et tilbud som skulle vært sendt, en befaring som skal bookes, og en faktura som ligger og venter. Assistenten for håndverkeren tar utkastene mens du er på jobb.</p>
     </div>
     <div class="section-head bransje-cta">
       <p>Eksempel: Halvard Mjøsund i Brekkevik Rør AS får utkast til tilbud ferdig mens han er på neste jobb. Han ser over og sender selv. En purring til en kunde som Lomelde Bygg AS leses før den går ut. Eksempelet viser arbeidsmåten. Det er ikke en kundehistorie.</p>
@@ -239,7 +331,7 @@
   <div class="container">
     <article class="legal">
       <span class="eyebrow kicker">Pris</span>
-      <h2>Hva koster en AI-assistent per måned?</h2>
+      <h2>Hva koster assistenten per måned?</h2>
       <p>Det er ikke ett beløp, og det står ikke et tall på denne siden. Prisen per måned består av to deler, og de faktureres hver for seg.</p>
       <p>Den ene delen er oppsettet hos Fjellhøy. Det er en engangsjobb. Prisen står i <a href="index.html#priser">prisdelen på forsiden</a>, sammen med oppfølging hvis du vil ha justering etterpå. Vi skriver ikke beløpet om igjen her. Be om et tilbud, så går vi gjennom det som passer bedriften din.</p>
       <p>Den andre delen er plattformabonnementet. Det faktureres separat, direkte fra leverandøren du velger. Abonnementsprisen står ikke her. Den avhenger av leverandør og hvor mange som skal inn, og vi tar den i den gratis praten.</p>
@@ -252,20 +344,20 @@
   <div class="container faq-wrap">
     <div class="section-head section-head-left">
       <span class="eyebrow">Spørsmål og svar</span>
-      <h2>Vanlige spørsmål om AI-assistent for håndverker</h2>
+      <h2>Vanlige spørsmål om automatisering for håndverkere</h2>
       <p>Finner du ikke svaret? Ring <a href="tel:+4741600048">+47 416 00 048</a> eller send en e-post til <a href="mailto:andreas@fjellhoy.com">andreas@fjellhoy.com</a>.</p>
     </div>
     <div class="faq">
       <details open>
-        <summary>Hva er en AI-assistent for en håndverker?</summary>
-        <p>En AI-assistent for en håndverker lager utkast til tilbud, befaringsbooking, timeoppfølging, purring og bilag mens du er på jobb. Den jobber i kontoene du allerede har. Du godkjenner før noe sendes.</p>
+        <summary>Hva gjør assistenten for en håndverker?</summary>
+        <p>Assistenten lager utkast til tilbud, befaringsbooking, timeoppfølging, purring og bilag mens du er på jobb. Den jobber i kontoene du allerede har. Du godkjenner før noe sendes.</p>
       </details>
       <details>
-        <summary>Passer en AI-assistent for rørlegger, elektriker og snekker?</summary>
+        <summary>Passer oppsettet for rørlegger, elektriker og snekker?</summary>
         <p>Ja. En rørlegger, en elektriker og en snekker har den samme papirbunken: forespørsel, befaring, timer og faktura. Assistenten skriver utkastene. Du leser dem når du har et rolig minutt.</p>
       </details>
       <details>
-        <summary>Hva koster en AI-assistent per måned?</summary>
+        <summary>Hva koster assistenten per måned?</summary>
         <p>Det står ikke et beløp her. Kostnaden er engangsoppsettet, som står i <a href="index.html#priser">prisdelen på forsiden</a>, pluss plattformabonnementet som faktureres separat av leverandøren. Be om et tilbud, så går vi gjennom pris per måned i en prat.</p>
       </details>
       <details>
@@ -291,8 +383,8 @@
       <a href="mailto:andreas@fjellhoy.com">andreas@fjellhoy.com</a>
       <a href="https://fjellhoy.com">fjellhoy.com</a>
       <a href="automatisere-fakturahandtering.html">Automatisere fakturahåndtering</a>
-      <a href="ai-epost-og-kundeoppfolging.html">AI for e-post og kundeoppfølging</a>
-      <a href="ai-radgiver-for-smb.html">AI-rådgiver for SMB</a>
+      <a href="ai-epost-og-kundeoppfolging.html">E-post og kundeoppfølging</a>
+      <a href="ai-radgiver-for-smb.html">Rådgivning for SMB</a>
       <a href="hva-koster-en-ai-agent-for-en-smb-i-2026.html">Hva koster en AI-agent</a>
       <a href="gdpr-og-databehandleravtale.html">GDPR og databehandleravtale</a>
       <a href="personvern.html">Personvern</a>

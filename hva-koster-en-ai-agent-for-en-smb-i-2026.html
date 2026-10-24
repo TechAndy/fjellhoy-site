@@ -3,6 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; connect-src 'self'; base-uri 'self'; form-action 'none'; object-src 'none'; upgrade-insecure-requests">
 <title>Hva koster en AI-agent for en SMB i 2026 | Fjellhøy</title>
 <meta name="description" content="Hva koster en AI-agent for en SMB i 2026? Kostnadsdrivere, med offentlige listepriser fra leverandørene. Fjellhøy oppgir ingen abonnementspris.">
 <link rel="canonical" href="https://fjellhoy.com/hva-koster-en-ai-agent-for-en-smb-i-2026.html">
@@ -23,6 +25,89 @@
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": [
+        "Organization",
+        "LocalBusiness",
+        "ProfessionalService"
+      ],
+      "@id": "https://fjellhoy.com/#organization",
+      "name": "Fjellhøy AS",
+      "legalName": "Fjellhøy AS",
+      "url": "https://fjellhoy.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://fjellhoy.com/assets/fjellhoy-v2c-bred.svg",
+        "width": 1200,
+        "height": 400
+      },
+      "image": "https://fjellhoy.com/assets/fjellhoy-v2c-profilbilde.png",
+      "telephone": "+47 41600048",
+      "email": "andreas@fjellhoy.com",
+      "description": "Fjellhøy AS gir rådgivning og automatisering av kontorarbeid for små bedrifter og styrer, inkludert regnskap og styrearbeid. Vi setter opp en AI-agent i kontoene kunden allerede bruker, og kunden godkjenner før noe sendes.",
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "Organisasjonsnummer",
+        "value": "936970583"
+      },
+      "vatID": "NO936970583MVA",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Sole allé 65",
+        "postalCode": "1540",
+        "addressLocality": "Vestby",
+        "addressCountry": "NO"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Vestby"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Follo"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Østfold"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Vestfold"
+        },
+        {
+          "@type": "Country",
+          "name": "Norway"
+        }
+      ],
+      "sameAs": [
+        "https://w2.brreg.no/enhet/sok/detalj.jsp?orgnr=936970583",
+        "https://virksomhet.brreg.no/nb/oppslag/enheter/936970583"
+      ],
+      "knowsAbout": [
+        "rådgivning",
+        "regnskap",
+        "styrearbeid",
+        "personvern"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+47-416-00-048",
+        "email": "andreas@fjellhoy.com",
+        "contactType": "customer service",
+        "availableLanguage": [
+          "Norwegian",
+          "English"
+        ],
+        "areaServed": "NO"
+      },
+      "founder": {
+        "@type": "Person",
+        "name": "Andreas Berthelsen",
+        "jobTitle": "Daglig leder",
+        "sameAs": "https://www.linkedin.com/in/andreassberthelsen"
+      }
+    },
+    {
       "@type": "Article",
       "headline": "Hva koster en AI-agent for en SMB i 2026",
       "description": "Kostnadsdrivere for en AI-agent i en liten bedrift, med leverandørenes offentlige listepriser. Fjellhøy oppgir ingen abonnementspris.",
@@ -36,13 +121,7 @@
         "url": "https://fjellhoy.com/hvorfor-fjellhoy.html"
       },
       "publisher": {
-        "@type": "Organization",
-        "name": "Fjellhøy AS",
-        "url": "https://fjellhoy.com/",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://fjellhoy.com/assets/fjellhoy-v2c-bred.svg"
-        }
+        "@id": "https://fjellhoy.com/#organization"
       }
     },
     {
@@ -72,7 +151,10 @@
             "text": "Fjellhøy setter opp agenten på bare noen timer, i e-posten, kalenderen og fakturaene bedriften allerede bruker."
           }
         }
-      ]
+      ],
+      "provider": {
+        "@id": "https://fjellhoy.com/#organization"
+      }
     }
   ]
 }
@@ -93,7 +175,7 @@
       <img class="brand-logo" src="assets/fjellhoy-v2c-bred.svg" alt="" width="138" height="46">
     </a>
     <nav class="nav-links" aria-label="Hovedmeny">
-      <a href="index.html#ai-agent">AI-agent</a>
+      <a href="index.html#ai-agent">Tjenester</a>
       <a href="index.html#sikkerhet">Sikkerhet</a>
       <a href="index.html#slik">Slik fungerer det</a>
       <a href="index.html#priser">Priser</a>
@@ -198,14 +280,14 @@
         <li>Skal én person bruke agenten, eller flere?</li>
         <li>Hva skal agenten la ligge, for eksempel betaling, sletting og det som krever regnskapsfører?</li>
       </ul>
-      <p>Mer om selve arbeidet: <a href="automatisere-fakturahandtering.html">automatisere fakturahåndtering</a> og <a href="ai-epost-og-kundeoppfolging.html">AI for e-post og kundeoppfølging</a>. Om rollen til Fjellhøy: <a href="ai-radgiver-for-smb.html">AI-rådgiver for SMB</a>.</p>
+      <p>Mer om selve arbeidet: <a href="automatisere-fakturahandtering.html">automatisere fakturahåndtering</a> og <a href="ai-epost-og-kundeoppfolging.html">E-post og kundeoppfølging</a>. Om rollen til Fjellhøy: <a href="ai-radgiver-for-smb.html">Rådgivning for SMB</a>.</p>
 
       <h2 id="kilder">Kilder</h2>
       <p>Alle tall over er hentet fra disse sidene 21. oktober 2026. Sidene kan endres etter det.</p>
       <ul>
-        <li>Microsoft: <a href="https://www.microsoft.com/en-us/copilot/pricing/business">Microsoft Copilot Plans and Pricing — Business</a>. Listeprisene for Business Premium with Copilot, Business Standard with Copilot og Copilot Business-tillegget, inkludert kampanjeperioden 1. juli 2026 til 31. desember 2026 og omtalen av bruksbasert fakturering.</li>
-        <li>OpenAI Help Center: <a href="https://help.openai.com/en/articles/8792828-chatgpt-business-overview">ChatGPT Business — Overview</a>. Standard og premium sete, minste antall seter, og forbeholdet om at pris kan variere med land og valuta.</li>
-        <li>OpenAI: <a href="https://openai.com/index/premium-seats-chatgpt-business/">Premium seats are coming to ChatGPT Business</a>, datert 10. august 2026, med oppdatering 25. august 2026. Samme seterpriser som i hjelpesenteret.</li>
+        <li>Microsoft: Microsoft Copilot Plans and Pricing — Business. Listeprisene for Business Premium with Copilot, Business Standard with Copilot og Copilot Business-tillegget, inkludert kampanjeperioden 1. juli 2026 til 31. desember 2026 og omtalen av bruksbasert fakturering.</li>
+        <li>OpenAI Help Center: ChatGPT Business — Overview. Standard og premium sete, minste antall seter, og forbeholdet om at pris kan variere med land og valuta.</li>
+        <li>OpenAI: Premium seats are coming to ChatGPT Business, datert 10. august 2026, med oppdatering 25. august 2026. Samme seterpriser som i hjelpesenteret.</li>
       </ul>
 
       <h2 id="sporsmal-og-svar">Spørsmål og svar</h2>
@@ -258,8 +340,8 @@
       <a href="mailto:andreas@fjellhoy.com">andreas@fjellhoy.com</a>
       <a href="index.html">Forsiden</a>
       <a href="automatisere-fakturahandtering.html">Automatisere fakturahåndtering</a>
-      <a href="ai-epost-og-kundeoppfolging.html">AI for e-post og kundeoppfølging</a>
-      <a href="ai-radgiver-for-smb.html">AI-rådgiver for SMB</a>
+      <a href="ai-epost-og-kundeoppfolging.html">E-post og kundeoppfølging</a>
+      <a href="ai-radgiver-for-smb.html">Rådgivning for SMB</a>
       <a href="hva-koster-en-ai-agent-for-en-smb-i-2026.html" aria-current="page">Hva koster en AI-agent</a>
       <a href="hvorfor-fjellhoy.html">Om Fjellhøy</a>
       <a href="gdpr-og-databehandleravtale.html">GDPR og databehandleravtale</a>

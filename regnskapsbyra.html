@@ -3,8 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AI-agent for regnskapsbyrå | Fjellhøy</title>
-<meta name="description" content="AI-agent for regnskapsbyrå: bilag, purring, timeoppfølging og svarutkast. Kobles til e-post, regnskapssystem, timeføring og kalender. Du godkjenner før noe sendes.">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; connect-src 'self'; base-uri 'self'; form-action 'none'; object-src 'none'; upgrade-insecure-requests">
+<title>Automatisering av bilag, purring og frister for regnskapsbyrå | Fjellhøy</title>
+<meta name="description" content="Automatisering av bilag, purring og frister for regnskapsbyrå. En AI-agent lager utkast i kontoene du allerede bruker, og du godkjenner før noe sendes.">
 <link rel="canonical" href="https://fjellhoy.com/regnskapsbyra.html">
 <link rel="alternate" hreflang="nb" href="https://fjellhoy.com/regnskapsbyra.html">
 <link rel="alternate" hreflang="no" href="https://fjellhoy.com/regnskapsbyra.html">
@@ -13,47 +15,137 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "inLanguage": "nb",
-  "mainEntity": [
+  "@graph": [
     {
-      "@type": "Question",
-      "name": "Hva er en AI-agent for et regnskapsbyrå?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "En AI-agent for et regnskapsbyrå tar rutinearbeidet i innboksen: bilag som mangler, purringer og svarutkast til kundemail. Den jobber i kontoene byrået allerede har. Du godkjenner før noe sendes."
+      "@type": [
+        "Organization",
+        "LocalBusiness",
+        "ProfessionalService"
+      ],
+      "@id": "https://fjellhoy.com/#organization",
+      "name": "Fjellhøy AS",
+      "legalName": "Fjellhøy AS",
+      "url": "https://fjellhoy.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://fjellhoy.com/assets/fjellhoy-v2c-bred.svg",
+        "width": 1200,
+        "height": 400
+      },
+      "image": "https://fjellhoy.com/assets/fjellhoy-v2c-profilbilde.png",
+      "telephone": "+47 41600048",
+      "email": "andreas@fjellhoy.com",
+      "description": "Fjellhøy AS gir rådgivning og automatisering av kontorarbeid for små bedrifter og styrer, inkludert regnskap og styrearbeid. Vi setter opp en AI-agent i kontoene kunden allerede bruker, og kunden godkjenner før noe sendes.",
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "Organisasjonsnummer",
+        "value": "936970583"
+      },
+      "vatID": "NO936970583MVA",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Sole allé 65",
+        "postalCode": "1540",
+        "addressLocality": "Vestby",
+        "addressCountry": "NO"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Vestby"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Follo"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Østfold"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Vestfold"
+        },
+        {
+          "@type": "Country",
+          "name": "Norway"
+        }
+      ],
+      "sameAs": [
+        "https://w2.brreg.no/enhet/sok/detalj.jsp?orgnr=936970583",
+        "https://virksomhet.brreg.no/nb/oppslag/enheter/936970583"
+      ],
+      "knowsAbout": [
+        "rådgivning",
+        "regnskap",
+        "styrearbeid",
+        "personvern"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+47-416-00-048",
+        "email": "andreas@fjellhoy.com",
+        "contactType": "customer service",
+        "availableLanguage": [
+          "Norwegian",
+          "English"
+        ],
+        "areaServed": "NO"
+      },
+      "founder": {
+        "@type": "Person",
+        "name": "Andreas Berthelsen",
+        "jobTitle": "Daglig leder",
+        "sameAs": "https://www.linkedin.com/in/andreassberthelsen"
       }
     },
     {
-      "@type": "Question",
-      "name": "Kan agenten kobles til Outlook, Gmail, regnskapssystem, timeføring og kalender?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja, mot den typen system dere allerede bruker: e-post som Outlook eller Gmail, et regnskapssystem, timeføring eller prosjekt, og kalender. Det er ikke et offisielt partnerskap med en bestemt leverandør. Vi setter opp det som passer byrået."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Sender agenten purring eller ber om bilag av seg selv?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Nei. Den lager utkastet og legger det klart. Noen hos dere leser og sier ja før det sendes."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Erstatter agenten regnskapsføreren?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Nei. Den gjør grovarbeidet med påminnelser, utkast og oversikt. Fagvurderingen, og det som skal bokføres, blir hos dere."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Hvor ligger kundenes data?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "I byråets egne kontoer. Fjellhøy kopierer ikke e-posten eller dokumentene utover det oppsettet krever, og tilgangene fjernes når oppsettet er ferdig. Vi signerer databehandleravtale med deg før oppstart. Mer står på siden GDPR og databehandleravtale."
+      "@type": "FAQPage",
+      "inLanguage": "nb",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Hva gjør oppsettet for et regnskapsbyrå?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oppsettet tar rutinearbeidet i innboksen: bilag som mangler, purringer og svarutkast til kundemail. Den jobber i kontoene byrået allerede har. Du godkjenner før noe sendes."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kan agenten kobles til Outlook, Gmail, regnskapssystem, timeføring og kalender?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja, mot den typen system dere allerede bruker: e-post som Outlook eller Gmail, et regnskapssystem, timeføring eller prosjekt, og kalender. Det er ikke et offisielt partnerskap med en bestemt leverandør. Vi setter opp det som passer byrået."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Sender agenten purring eller ber om bilag av seg selv?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nei. Den lager utkastet og legger det klart. Noen hos dere leser og sier ja før det sendes."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Erstatter agenten regnskapsføreren?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nei. Den gjør grovarbeidet med påminnelser, utkast og oversikt. Fagvurderingen, og det som skal bokføres, blir hos dere."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Hvor ligger kundenes data?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "I byråets egne kontoer. Fjellhøy kopierer ikke e-posten eller dokumentene utover det oppsettet krever, og tilgangene fjernes når oppsettet er ferdig. Vi signerer databehandleravtale med deg før oppstart. Mer står på siden GDPR og databehandleravtale."
+          }
+        }
+      ],
+      "provider": {
+        "@id": "https://fjellhoy.com/#organization"
       }
     }
   ]
@@ -83,7 +175,7 @@
       <img class="brand-logo" src="assets/fjellhoy-v2c-bred.svg" alt="" width="138" height="46">
     </a>
     <nav class="nav-links" aria-label="Hovedmeny">
-      <a href="index.html#ai-agent">AI-agent</a>
+      <a href="index.html#ai-agent">Tjenester</a>
       <a href="index.html#sikkerhet">Sikkerhet</a>
       <a href="index.html#slik">Slik fungerer det</a>
       <a href="index.html#priser">Priser</a>
@@ -112,7 +204,7 @@
   <div class="container">
     <div class="section-head">
       <span class="eyebrow">Regnskapsbyrå</span>
-      <h1>AI-agent for regnskapsbyrå</h1>
+      <h1>Automatisering av bilag, purring og frister for regnskapsbyrå</h1>
       <p>Mindre jakt på bilag og mer tid til faget. En AI-agent for regnskapsbyrået tar rutinearbeidet i innboksen, og du godkjenner før noe sendes.</p>
     </div>
     <div class="audience audience-3">
@@ -149,8 +241,8 @@
       <p>Agenten settes opp i dine egne kontoer. Satt opp på bare noen timer. Agent-abonnement (kommer i tillegg).</p>
       <p><a class="btn btn-large btn-accent" href="index.html#kontakt">Book en gratis prat</a></p>
       <p class="bransje-links">Andre bransjer: <a href="handverkere.html">Håndverkere</a> · <a href="borettslag-og-sameier.html">Borettslag og sameier</a> · <a href="eiendomsmegler.html">Eiendomsmegler</a> · <a href="advokat.html">Advokat</a> · <a href="klinikk-og-tannlege.html">Klinikk og tannlege</a> · <a href="nettbutikk.html">Nettbutikk</a> · <a href="byggfirma.html">Byggfirma</a></p>
-      <p class="bransje-links">Tema: <a href="ai-agent-for-bedrifter.html">AI-agent for bedrifter</a> · <a href="ai-assistent-epost-kalender.html">E-post og kalender</a> · <a href="ai-kurs-for-bedrifter.html">AI-kurs for bedrifter</a> · <a href="index.html">Til forsiden</a></p>
-      <p class="bransje-links">Les også: <a href="automatisere-fakturahandtering.html">Automatisere fakturahåndtering</a> · <a href="ai-epost-og-kundeoppfolging.html">AI for e-post og kundeoppfølging</a> · <a href="ai-radgiver-for-smb.html">AI-rådgiver for SMB</a> · <a href="hva-koster-en-ai-agent-for-en-smb-i-2026.html">Hva koster en AI-agent</a> · <a href="ai-for-holdingselskap-og-eiendom.html">AI for holdingselskap og eiendom</a> · <a href="ai-for-bilag-og-regnskap.html">AI for bilag og regnskap</a> · <a href="ai-for-styrepapirer.html">AI for styrepapirer</a> · <a href="gdpr-og-databehandleravtale.html">GDPR og databehandleravtale</a></p>
+      <p class="bransje-links">Tema: <a href="ai-agent-for-bedrifter.html">Automatisering for bedrifter</a> · <a href="ai-assistent-epost-kalender.html">E-post og kalender</a> · <a href="ai-kurs-for-bedrifter.html">Kurs i kontorautomatisering</a> · <a href="index.html">Til forsiden</a></p>
+      <p class="bransje-links">Les også: <a href="automatisere-fakturahandtering.html">Automatisere fakturahåndtering</a> · <a href="ai-epost-og-kundeoppfolging.html">E-post og kundeoppfølging</a> · <a href="ai-radgiver-for-smb.html">Rådgivning for SMB</a> · <a href="hva-koster-en-ai-agent-for-en-smb-i-2026.html">Hva koster en AI-agent</a> · <a href="ai-for-holdingselskap-og-eiendom.html">Holdingselskap og eiendom</a> · <a href="ai-for-bilag-og-regnskap.html">Bilag og regnskap</a> · <a href="ai-for-styrepapirer.html">Styrepapirer</a> · <a href="gdpr-og-databehandleravtale.html">GDPR og databehandleravtale</a></p>
     </div>
   </div>
 </section>
@@ -226,13 +318,13 @@
   <div class="container faq-wrap">
     <div class="section-head section-head-left">
       <span class="eyebrow">Spørsmål og svar</span>
-      <h2>Vanlige spørsmål om AI-agent for regnskapsbyrå</h2>
+      <h2>Vanlige spørsmål om automatisering for regnskapsbyrå</h2>
       <p>Finner du ikke svaret? Ring <a href="tel:+4741600048">+47 416 00 048</a> eller send en e-post til <a href="mailto:andreas@fjellhoy.com">andreas@fjellhoy.com</a>.</p>
     </div>
     <div class="faq">
       <details open>
-        <summary>Hva er en AI-agent for et regnskapsbyrå?</summary>
-        <p>En AI-agent for et regnskapsbyrå tar rutinearbeidet i innboksen: bilag som mangler, purringer og svarutkast til kundemail. Den jobber i kontoene byrået allerede har. Du godkjenner før noe sendes.</p>
+        <summary>Hva gjør oppsettet for et regnskapsbyrå?</summary>
+        <p>Oppsettet tar rutinearbeidet i innboksen: bilag som mangler, purringer og svarutkast til kundemail. Den jobber i kontoene byrået allerede har. Du godkjenner før noe sendes.</p>
       </details>
       <details>
         <summary>Kan agenten kobles til Outlook, Gmail, regnskapssystem, timeføring og kalender?</summary>
@@ -265,8 +357,8 @@
       <a href="mailto:andreas@fjellhoy.com">andreas@fjellhoy.com</a>
       <a href="https://fjellhoy.com">fjellhoy.com</a>
       <a href="automatisere-fakturahandtering.html">Automatisere fakturahåndtering</a>
-      <a href="ai-epost-og-kundeoppfolging.html">AI for e-post og kundeoppfølging</a>
-      <a href="ai-radgiver-for-smb.html">AI-rådgiver for SMB</a>
+      <a href="ai-epost-og-kundeoppfolging.html">E-post og kundeoppfølging</a>
+      <a href="ai-radgiver-for-smb.html">Rådgivning for SMB</a>
       <a href="hva-koster-en-ai-agent-for-en-smb-i-2026.html">Hva koster en AI-agent</a>
       <a href="gdpr-og-databehandleravtale.html">GDPR og databehandleravtale</a>
       <a href="personvern.html">Personvern</a>

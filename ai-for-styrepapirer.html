@@ -3,8 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AI for styrepapirer | Fjellhøy</title>
-<meta name="description" content="AI for styrepapirer: utkast til innkalling, saksliste og protokoll, og oversikt over saker som blir liggende. Styret godkjenner alt. Fjellhøy AS.">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; connect-src 'self'; base-uri 'self'; form-action 'none'; object-src 'none'; upgrade-insecure-requests">
+<title>Automatisering av styrepapirer | Fjellhøy</title>
+<meta name="description" content="Automatisering av styrepapirer. En AI-agent lager utkast i kontoene du allerede bruker, og du godkjenner før noe sendes.">
 <link rel="canonical" href="https://fjellhoy.com/ai-for-styrepapirer.html">
 <link rel="alternate" hreflang="nb" href="https://fjellhoy.com/ai-for-styrepapirer.html">
 <link rel="alternate" hreflang="no" href="https://fjellhoy.com/ai-for-styrepapirer.html">
@@ -21,17 +23,105 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "AI for styrepapirer",
-  "serviceType": "AI for styrepapirer",
-  "description": "AI for styrepapirer: utkast til innkalling, saksliste og protokoll, og oversikt over saker som blir liggende. Styret godkjenner alt. Fjellhøy AS.",
-  "provider": {
-    "@type": "Organization",
-    "name": "Fjellhøy AS",
-    "url": "https://fjellhoy.com/"
-  },
-  "areaServed": {"@type": "Country", "name": "Norway"},
-  "url": "https://fjellhoy.com/ai-for-styrepapirer.html"
+  "@graph": [
+    {
+      "@type": [
+        "Organization",
+        "LocalBusiness",
+        "ProfessionalService"
+      ],
+      "@id": "https://fjellhoy.com/#organization",
+      "name": "Fjellhøy AS",
+      "legalName": "Fjellhøy AS",
+      "url": "https://fjellhoy.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://fjellhoy.com/assets/fjellhoy-v2c-bred.svg",
+        "width": 1200,
+        "height": 400
+      },
+      "image": "https://fjellhoy.com/assets/fjellhoy-v2c-profilbilde.png",
+      "telephone": "+47 41600048",
+      "email": "andreas@fjellhoy.com",
+      "description": "Fjellhøy AS gir rådgivning og automatisering av kontorarbeid for små bedrifter og styrer, inkludert regnskap og styrearbeid. Vi setter opp en AI-agent i kontoene kunden allerede bruker, og kunden godkjenner før noe sendes.",
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "Organisasjonsnummer",
+        "value": "936970583"
+      },
+      "vatID": "NO936970583MVA",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Sole allé 65",
+        "postalCode": "1540",
+        "addressLocality": "Vestby",
+        "addressCountry": "NO"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Vestby"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Follo"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Østfold"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Vestfold"
+        },
+        {
+          "@type": "Country",
+          "name": "Norway"
+        }
+      ],
+      "sameAs": [
+        "https://w2.brreg.no/enhet/sok/detalj.jsp?orgnr=936970583",
+        "https://virksomhet.brreg.no/nb/oppslag/enheter/936970583"
+      ],
+      "knowsAbout": [
+        "rådgivning",
+        "regnskap",
+        "styrearbeid",
+        "personvern"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+47-416-00-048",
+        "email": "andreas@fjellhoy.com",
+        "contactType": "customer service",
+        "availableLanguage": [
+          "Norwegian",
+          "English"
+        ],
+        "areaServed": "NO"
+      },
+      "founder": {
+        "@type": "Person",
+        "name": "Andreas Berthelsen",
+        "jobTitle": "Daglig leder",
+        "sameAs": "https://www.linkedin.com/in/andreassberthelsen"
+      }
+    },
+    {
+      "@type": "Service",
+      "name": "Automatisering av styrepapirer",
+      "serviceType": "Automatisering av styrepapirer",
+      "description": "AI for styrepapirer: utkast til innkalling, saksliste og protokoll, og oversikt over saker som blir liggende. Styret godkjenner alt. Fjellhøy AS.",
+      "provider": {
+        "@id": "https://fjellhoy.com/#organization"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Norway"
+      },
+      "url": "https://fjellhoy.com/ai-for-styrepapirer.html"
+    }
+  ]
 }
 </script>
 <meta property="og:image" content="https://fjellhoy.com/assets/fjellhoy-v2c-profilbilde.png">
@@ -50,7 +140,7 @@
       <img class="brand-logo" src="assets/fjellhoy-v2c-bred.svg" alt="" width="138" height="46">
     </a>
     <nav class="nav-links" aria-label="Hovedmeny">
-      <a href="index.html#ai-agent">AI-agent</a>
+      <a href="index.html#ai-agent">Tjenester</a>
       <a href="index.html#sikkerhet">Sikkerhet</a>
       <a href="index.html#slik">Slik fungerer det</a>
       <a href="index.html#priser">Priser</a>
@@ -80,7 +170,7 @@
     <div class="section-head">
       <p class="crumb"><a href="index.html">Forside</a> · Styrepapirer</p>
       <span class="eyebrow">Styre</span>
-      <h1>AI for styrepapirer</h1>
+      <h1>Automatisering av styrepapirer</h1>
       <p>Styrearbeid i sameier, borettslag, foreninger og små selskaper drukner ofte i papirer. En AI-agent kan lage utkast til innkalling, saksliste og protokoll, og holde orden på sakene.</p>
     </div>
     <div class="audience audience-3">
@@ -116,7 +206,7 @@
       <p>Eksempel: Halvard Mjøsund er styreleder og får et utkast til innkalling en uke før møtet. Han retter det og sender selv. Eksempelet viser arbeidsmåten. Det er ikke en kundehistorie.</p>
       <p>Se pakkene for styrer på <a href="index.html#styrer">forsiden</a>, eller les om <a href="borettslag-og-sameier.html">borettslag og sameier</a>.</p>
       <p><a class="btn btn-large btn-accent" href="#kontakt">Book en prat</a></p>
-      <p class="bransje-links">Les også: <a href="ai-for-holdingselskap-og-eiendom.html">AI for holdingselskap og eiendom</a> · <a href="ai-for-bilag-og-regnskap.html">AI for bilag og regnskap</a> · <a href="automatisere-fakturahandtering.html">Automatisere fakturahåndtering</a> · <a href="borettslag-og-sameier.html">Borettslag og sameier</a> · <a href="index.html#styrer">Pakker for styrer</a></p>
+      <p class="bransje-links">Les også: <a href="ai-for-holdingselskap-og-eiendom.html">Holdingselskap og eiendom</a> · <a href="ai-for-bilag-og-regnskap.html">Bilag og regnskap</a> · <a href="automatisere-fakturahandtering.html">Automatisere fakturahåndtering</a> · <a href="borettslag-og-sameier.html">Borettslag og sameier</a> · <a href="index.html#styrer">Pakker for styrer</a></p>
     </div>
   </div>
 </section>
@@ -151,9 +241,9 @@
       <a href="tel:+4741600048">+47 416 00 048</a>
       <a href="mailto:andreas@fjellhoy.com">andreas@fjellhoy.com</a>
       <a href="index.html">Forsiden</a>
-      <a href="ai-for-styrepapirer.html" aria-current="page">AI for styrepapirer</a>
-      <a href="ai-epost-og-kundeoppfolging.html">AI for e-post og kundeoppfølging</a>
-      <a href="ai-radgiver-for-smb.html">AI-rådgiver for SMB</a>
+      <a href="ai-for-styrepapirer.html" aria-current="page">Styrepapirer</a>
+      <a href="ai-epost-og-kundeoppfolging.html">E-post og kundeoppfølging</a>
+      <a href="ai-radgiver-for-smb.html">Rådgivning for SMB</a>
       <a href="hva-koster-en-ai-agent-for-en-smb-i-2026.html">Hva koster en AI-agent</a>
       <a href="hvorfor-fjellhoy.html">Om Fjellhøy</a>
       <a href="gdpr-og-databehandleravtale.html">GDPR og databehandleravtale</a>

@@ -211,6 +211,8 @@ svg{flex-shrink:0}
   .chat-still{height:auto;min-height:0;max-height:none}
 }
 
+.vendor-note{max-width:40em;margin:0 auto;text-align:center;color:var(--ink-2);font-size:17px}
+
 /* sections */
 .section{padding:112px 0}
 .section-compact{padding:72px 0}
@@ -219,15 +221,6 @@ svg{flex-shrink:0}
 .section-head h2{margin-bottom:14px}
 .section-head p{color:var(--ink-2);font-size:18px}
 .section-head-left{text-align:left;margin:0}
-.market-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
-.market-card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px 22px 24px;box-shadow:var(--shadow-sm);min-width:0}
-.market-name{margin:0 0 6px;font-family:var(--serif)}
-.market-product{margin:0 0 10px;color:var(--fjord-600);font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
-.market-card p:last-child{color:var(--ink-2);font-size:15.5px}
-.market-note{max-width:42em;margin:22px auto 0;color:var(--ink-3);font-size:14px;line-height:1.6;text-align:center}
-@media (max-width:800px){
-  .market-grid{grid-template-columns:1fr}
-}
 
 /* icon grid */
 .icon-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}

@@ -3,8 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AI agent for accounting firms | Fjellhøy</title>
-<meta name="description" content="An AI agent for accounting firms: missing documents, payment reminders, time records and client email. It connects to the email, accounting system, time tracking and calendar you already use. You approve it before anything is sent.">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; connect-src 'self'; base-uri 'self'; form-action 'none'; object-src 'none'; upgrade-insecure-requests">
+<title>Automation of documents, reminders and deadlines for accounting firms | Fjellhøy</title>
+<meta name="description" content="Automation of documents, reminders and deadlines for accounting firms. An AI agent drafts the work in the accounts you already use, and you approve it before anything is sent.">
 <link rel="canonical" href="https://fjellhoy.com/en/regnskapsbyra.html">
 <link rel="alternate" hreflang="nb" href="https://fjellhoy.com/regnskapsbyra.html">
 <link rel="alternate" hreflang="no" href="https://fjellhoy.com/regnskapsbyra.html">
@@ -13,47 +15,137 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "inLanguage": "en",
-  "mainEntity": [
+  "@graph": [
     {
-      "@type": "Question",
-      "name": "What is an AI agent for an accounting firm?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "An AI agent for an accounting firm takes the routine work in the inbox: missing documents, payment reminders and draft replies to clients. It works in the accounts the firm already has. You approve it before anything is sent."
+      "@type": [
+        "Organization",
+        "LocalBusiness",
+        "ProfessionalService"
+      ],
+      "@id": "https://fjellhoy.com/#organization",
+      "name": "Fjellhøy AS",
+      "legalName": "Fjellhøy AS",
+      "url": "https://fjellhoy.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://fjellhoy.com/assets/fjellhoy-v2c-bred.svg",
+        "width": 1200,
+        "height": 400
+      },
+      "image": "https://fjellhoy.com/assets/fjellhoy-v2c-profilbilde.png",
+      "telephone": "+47 41600048",
+      "email": "andreas@fjellhoy.com",
+      "description": "Fjellhøy AS advises small businesses and boards and automates office work, including bookkeeping and board work. An AI agent is set up in the accounts the customer already uses, and the customer approves anything before it is sent.",
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "Organisasjonsnummer",
+        "value": "936970583"
+      },
+      "vatID": "NO936970583MVA",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Sole allé 65",
+        "postalCode": "1540",
+        "addressLocality": "Vestby",
+        "addressCountry": "NO"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Vestby"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Follo"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Østfold"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Vestfold"
+        },
+        {
+          "@type": "Country",
+          "name": "Norway"
+        }
+      ],
+      "sameAs": [
+        "https://w2.brreg.no/enhet/sok/detalj.jsp?orgnr=936970583",
+        "https://virksomhet.brreg.no/nb/oppslag/enheter/936970583"
+      ],
+      "knowsAbout": [
+        "advisory work",
+        "bookkeeping",
+        "board work",
+        "privacy"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+47-416-00-048",
+        "email": "andreas@fjellhoy.com",
+        "contactType": "customer service",
+        "availableLanguage": [
+          "Norwegian",
+          "English"
+        ],
+        "areaServed": "NO"
+      },
+      "founder": {
+        "@type": "Person",
+        "name": "Andreas Berthelsen",
+        "jobTitle": "Managing director",
+        "sameAs": "https://www.linkedin.com/in/andreassberthelsen"
       }
     },
     {
-      "@type": "Question",
-      "name": "Can the agent connect to Outlook, Gmail, an accounting system, time tracking and a calendar?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes, to the kind of system you already use: email such as Outlook or Gmail, an accounting system, time tracking or projects, and a calendar. It is not an official partnership with a particular vendor. We set up what fits the firm."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Does the agent send a reminder or ask for documents on its own?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No. It writes the draft and leaves it ready. Someone at the firm reads it and says yes before it is sent."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Does the agent replace the accountant?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No. It does the prep: reminders, drafts and a view of what is waiting. The professional judgement, and what gets booked, stays with you."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Where does client data live?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "In the firm's own accounts. Fjellhøy does not copy the email or the documents beyond what the setup requires, and access is removed when the setup is finished. We sign a data processing agreement with you before we start. There is more on GDPR and data processing agreement."
+      "@type": "FAQPage",
+      "inLanguage": "en",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What does the setup do for an accounting firm?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The setup takes the routine work in the inbox: missing documents, payment reminders and draft replies to clients. It works in the accounts the firm already has. You approve it before anything is sent."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can the agent connect to Outlook, Gmail, an accounting system, time tracking and a calendar?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, to the kind of system you already use: email such as Outlook or Gmail, an accounting system, time tracking or projects, and a calendar. It is not an official partnership with a particular vendor. We set up what fits the firm."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does the agent send a reminder or ask for documents on its own?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. It writes the draft and leaves it ready. Someone at the firm reads it and says yes before it is sent."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does the agent replace the accountant?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. It does the prep: reminders, drafts and a view of what is waiting. The professional judgement, and what gets booked, stays with you."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where does client data live?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "In the firm's own accounts. Fjellhøy does not copy the email or the documents beyond what the setup requires, and access is removed when the setup is finished. We sign a data processing agreement with you before we start. There is more on GDPR and data processing agreement."
+          }
+        }
+      ],
+      "provider": {
+        "@id": "https://fjellhoy.com/#organization"
       }
     }
   ]
@@ -83,7 +175,7 @@
     <a href="index.html" class="brand" aria-label="Fjellhøy, home">
       <img class="brand-logo" src="../assets/fjellhoy-v2c-bred.svg" alt="" width="138" height="46">
     </a>
-    <nav class="nav-links" aria-label="Main"><a href="index.html#ai-agent">AI agent</a><a href="index.html#sikkerhet">Security</a><a href="index.html#slik">How it works</a><a href="index.html#priser">Pricing</a><a href="index.html#styrer">For boards</a><a href="hvorfor-fjellhoy.html">About</a><a href="index.html#faq">Questions</a></nav>
+    <nav class="nav-links" aria-label="Main"><a href="index.html#ai-agent">Services</a><a href="index.html#sikkerhet">Security</a><a href="index.html#slik">How it works</a><a href="index.html#priser">Pricing</a><a href="index.html#styrer">For boards</a><a href="hvorfor-fjellhoy.html">About</a><a href="index.html#faq">Questions</a></nav>
     <a class="btn btn-small btn-accent nav-cta" href="index.html#kontakt">Book a call</a>
     <nav class="lang-switch" aria-label="Language"><a href="../regnskapsbyra.html" hreflang="nb" lang="nb">NO</a><a href="regnskapsbyra.html" hreflang="en" lang="en" aria-current="page">EN</a></nav>
     <button class="menu-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span></button>
@@ -98,8 +190,8 @@
 <section class="section"><div class="container">
   <div class="section-head">
     <span class="eyebrow">Accounting firms</span>
-    <h1>An AI agent for accounting firms</h1>
-    <p>Less time chasing receipts, more time for the work clients actually pay for. The agent handles the routine mail. You approve anything before it is sent.</p>
+    <h1>Automation of documents, reminders and deadlines for accounting firms</h1>
+    <p>Less time chasing receipts, more time for the work clients actually pay for. An AI agent handles the routine mail. You approve anything before it is sent.</p>
   </div>
   <div class="audience audience-3"><article class="audience-card"><h3>Collecting receipts</h3><p>The agent sees which clients are missing documents before a deadline, and drafts a polite reminder for each of them.</p><ul class="checklist"><li><svg><use href="#i-check"/></svg>A list of missing documents, by client</li><li><svg><use href="#i-check"/></svg>Reminders ready for you to approve</li><li><svg><use href="#i-check"/></svg>A view of what has already come in</li></ul></article><article class="audience-card"><h3>Payment reminders</h3><p>The agent watches unpaid invoices and drafts reminders in the right tone, with the due date included.</p><ul class="checklist"><li><svg><use href="#i-check"/></svg>A draft reminder when an invoice is due</li><li><svg><use href="#i-check"/></svg>A further reminder if it stays unpaid</li><li><svg><use href="#i-check"/></svg>You decide what actually goes out</li></ul></article><article class="audience-card"><h3>Client email</h3><p>The agent sorts the inbox and drafts replies to ordinary questions about deadlines, VAT and paperwork.</p><ul class="checklist"><li><svg><use href="#i-check"/></svg>Draft replies to the usual questions</li><li><svg><use href="#i-check"/></svg>The important threads marked first</li><li><svg><use href="#i-check"/></svg>A morning view of what is waiting</li></ul></article></div>
   <div class="section-head bransje-cta">
@@ -107,8 +199,8 @@
     <p>The agent is set up in your own accounts. Ready in a few hours. The agent subscription is extra, and you pay the vendor directly.</p>
     <p><a class="btn btn-large btn-accent" href="index.html#kontakt">Book a free call</a></p>
     <p class="bransje-links">Other industries: <a href="handverkere.html">Trades</a> · <a href="borettslag-og-sameier.html">Housing co-ops and condominiums</a> · <a href="eiendomsmegler.html">Estate agents</a> · <a href="advokat.html">Law firms</a> · <a href="klinikk-og-tannlege.html">Clinics and dentists</a> · <a href="nettbutikk.html">Online shops</a> · <a href="byggfirma.html">Construction firms</a></p>
-    <p class="bransje-links">Topics: <a href="ai-agent-for-bedrifter.html">AI agent for businesses</a> · <a href="ai-assistent-epost-kalender.html">Email and calendar</a> · <a href="ai-kurs-for-bedrifter.html">AI training for businesses</a> · <a href="index.html">Home</a></p>
-    <p class="bransje-links">Also read: <a href="automatisere-fakturahandtering.html">Automating invoice handling</a> · <a href="ai-epost-og-kundeoppfolging.html">AI for email and customer follow-up</a> · <a href="ai-radgiver-for-smb.html">An AI adviser for small businesses</a> · <a href="hva-koster-en-ai-agent-for-en-smb-i-2026.html">What an AI agent costs</a> · <a href="ai-for-holdingselskap-og-eiendom.html">AI for holding companies and property</a> · <a href="ai-for-bilag-og-regnskap.html">AI for receipts and bookkeeping</a> · <a href="ai-for-styrepapirer.html">AI for board papers</a> · <a href="gdpr-and-data-processing-agreement.html">GDPR and data processing agreement</a></p>
+    <p class="bransje-links">Topics: <a href="ai-agent-for-bedrifter.html">Automation for businesses</a> · <a href="ai-assistent-epost-kalender.html">Email and calendar</a> · <a href="ai-kurs-for-bedrifter.html">Training in office automation</a> · <a href="index.html">Home</a></p>
+    <p class="bransje-links">Also read: <a href="automatisere-fakturahandtering.html">Automating invoice handling</a> · <a href="ai-epost-og-kundeoppfolging.html">Email and customer follow-up</a> · <a href="ai-radgiver-for-smb.html">Advice for small businesses</a> · <a href="hva-koster-en-ai-agent-for-en-smb-i-2026.html">What an AI agent costs</a> · <a href="ai-for-holdingselskap-og-eiendom.html">Holding companies and property</a> · <a href="ai-for-bilag-og-regnskap.html">Receipts and bookkeeping</a> · <a href="ai-for-styrepapirer.html">Board papers</a> · <a href="gdpr-and-data-processing-agreement.html">GDPR and data processing agreement</a></p>
   </div>
 </div></section>
 
@@ -183,13 +275,13 @@
   <div class="container faq-wrap">
     <div class="section-head section-head-left">
       <span class="eyebrow">Questions and answers</span>
-      <h2>Common questions about an AI agent for an accounting firm</h2>
+      <h2>Common questions about automation for an accounting firm</h2>
       <p>Can't find the answer? Call <a href="tel:+4741600048">+47 416 00 048</a>, or email <a href="mailto:andreas@fjellhoy.com">andreas@fjellhoy.com</a>.</p>
     </div>
     <div class="faq">
       <details open>
-        <summary>What is an AI agent for an accounting firm?</summary>
-        <p>An AI agent for an accounting firm takes the routine work in the inbox: missing documents, payment reminders and draft replies to clients. It works in the accounts the firm already has. You approve it before anything is sent.</p>
+        <summary>What does the setup do for an accounting firm?</summary>
+        <p>The setup takes the routine work in the inbox: missing documents, payment reminders and draft replies to clients. It works in the accounts the firm already has. You approve it before anything is sent.</p>
       </details>
       <details>
         <summary>Can the agent connect to Outlook, Gmail, an accounting system, time tracking and a calendar?</summary>
@@ -214,7 +306,7 @@
 <footer class="site-footer">
   <div class="container footer-inner">
     <a href="index.html" class="brand brand-light"><img class="brand-logo" src="../assets/fjellhoy-v2c-bred-mork.svg" alt="Fjellhøy" width="138" height="46"></a>
-    <div class="footer-links"><a href="tel:+4741600048">+47 416 00 048</a><a href="mailto:andreas@fjellhoy.com">andreas@fjellhoy.com</a><a href="https://fjellhoy.com/en/">fjellhoy.com</a><a href="regnskapsbyra.html">Accounting firms</a><a href="handverkere.html">Trades</a><a href="borettslag-og-sameier.html">Housing co-ops and condominiums</a><a href="eiendomsmegler.html">Estate agents</a><a href="advokat.html">Law firms</a><a href="klinikk-og-tannlege.html">Clinics and dentists</a><a href="nettbutikk.html">Online shops</a><a href="byggfirma.html">Construction firms</a><a href="ai-agent-for-bedrifter.html">AI agent for businesses</a><a href="ai-assistent-epost-kalender.html">Email and calendar</a><a href="ai-kurs-for-bedrifter.html">AI training for businesses</a><a href="hvorfor-fjellhoy.html">About Fjellhøy</a><a href="automatisere-fakturahandtering.html">Automating invoice handling</a><a href="ai-epost-og-kundeoppfolging.html">AI for email and customer follow-up</a><a href="ai-radgiver-for-smb.html">An AI adviser for small businesses</a><a href="hva-koster-en-ai-agent-for-en-smb-i-2026.html">What an AI agent costs</a><a href="gdpr-and-data-processing-agreement.html">GDPR and data processing agreement</a><a href="personvern.html">Privacy</a></div>
+    <div class="footer-links"><a href="tel:+4741600048">+47 416 00 048</a><a href="mailto:andreas@fjellhoy.com">andreas@fjellhoy.com</a><a href="https://fjellhoy.com/en/">fjellhoy.com</a><a href="regnskapsbyra.html">Accounting firms</a><a href="handverkere.html">Trades</a><a href="borettslag-og-sameier.html">Housing co-ops and condominiums</a><a href="eiendomsmegler.html">Estate agents</a><a href="advokat.html">Law firms</a><a href="klinikk-og-tannlege.html">Clinics and dentists</a><a href="nettbutikk.html">Online shops</a><a href="byggfirma.html">Construction firms</a><a href="ai-agent-for-bedrifter.html">Automation for businesses</a><a href="ai-assistent-epost-kalender.html">Email and calendar</a><a href="ai-kurs-for-bedrifter.html">Training in office automation</a><a href="hvorfor-fjellhoy.html">About Fjellhøy</a><a href="automatisere-fakturahandtering.html">Automating invoice handling</a><a href="ai-epost-og-kundeoppfolging.html">Email and customer follow-up</a><a href="ai-radgiver-for-smb.html">Advice for small businesses</a><a href="hva-koster-en-ai-agent-for-en-smb-i-2026.html">What an AI agent costs</a><a href="gdpr-and-data-processing-agreement.html">GDPR and data processing agreement</a><a href="personvern.html">Privacy</a></div>
     <p class="footer-copy">Fjellhøy AS · org. no. 936 970 583 · VAT registered · Sole allé 65, 1540 Vestby · <a href="tel:+4741600048">+47 416 00 048</a> · <a href="mailto:andreas@fjellhoy.com">andreas@fjellhoy.com</a></p>
     <p class="footer-year">© <span id="year">2026</span> Fjellhøy AS</p>
   </div>

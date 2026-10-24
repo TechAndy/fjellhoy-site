@@ -3,6 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; connect-src 'self'; base-uri 'self'; form-action 'none'; object-src 'none'; upgrade-insecure-requests">
 <title>What an AI agent costs a small business in 2026 | Fjellhøy</title>
 <meta name="description" content="What an AI agent costs a small business in 2026. The cost drivers, with published list prices from the vendors. Fjellhøy states no subscription price.">
 <link rel="canonical" href="https://fjellhoy.com/en/hva-koster-en-ai-agent-for-en-smb-i-2026.html">
@@ -23,6 +25,89 @@
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": [
+        "Organization",
+        "LocalBusiness",
+        "ProfessionalService"
+      ],
+      "@id": "https://fjellhoy.com/#organization",
+      "name": "Fjellhøy AS",
+      "legalName": "Fjellhøy AS",
+      "url": "https://fjellhoy.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://fjellhoy.com/assets/fjellhoy-v2c-bred.svg",
+        "width": 1200,
+        "height": 400
+      },
+      "image": "https://fjellhoy.com/assets/fjellhoy-v2c-profilbilde.png",
+      "telephone": "+47 41600048",
+      "email": "andreas@fjellhoy.com",
+      "description": "Fjellhøy AS advises small businesses and boards and automates office work, including bookkeeping and board work. An AI agent is set up in the accounts the customer already uses, and the customer approves anything before it is sent.",
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "Organisasjonsnummer",
+        "value": "936970583"
+      },
+      "vatID": "NO936970583MVA",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Sole allé 65",
+        "postalCode": "1540",
+        "addressLocality": "Vestby",
+        "addressCountry": "NO"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Vestby"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Follo"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Østfold"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Vestfold"
+        },
+        {
+          "@type": "Country",
+          "name": "Norway"
+        }
+      ],
+      "sameAs": [
+        "https://w2.brreg.no/enhet/sok/detalj.jsp?orgnr=936970583",
+        "https://virksomhet.brreg.no/nb/oppslag/enheter/936970583"
+      ],
+      "knowsAbout": [
+        "advisory work",
+        "bookkeeping",
+        "board work",
+        "privacy"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+47-416-00-048",
+        "email": "andreas@fjellhoy.com",
+        "contactType": "customer service",
+        "availableLanguage": [
+          "Norwegian",
+          "English"
+        ],
+        "areaServed": "NO"
+      },
+      "founder": {
+        "@type": "Person",
+        "name": "Andreas Berthelsen",
+        "jobTitle": "Managing director",
+        "sameAs": "https://www.linkedin.com/in/andreassberthelsen"
+      }
+    },
+    {
       "@type": "Article",
       "headline": "What an AI agent costs a small business in 2026",
       "description": "What drives the cost of an AI agent in a small business, with the vendors' published list prices. Fjellhøy does not state a subscription price.",
@@ -30,12 +115,13 @@
       "datePublished": "2026-10-21",
       "dateModified": "2026-10-21",
       "mainEntityOfPage": "https://fjellhoy.com/en/hva-koster-en-ai-agent-for-en-smb-i-2026.html",
-      "author": {"@type": "Person", "name": "Andreas Berthelsen", "url": "https://fjellhoy.com/en/hvorfor-fjellhoy.html"},
+      "author": {
+        "@type": "Person",
+        "name": "Andreas Berthelsen",
+        "url": "https://fjellhoy.com/en/hvorfor-fjellhoy.html"
+      },
       "publisher": {
-        "@type": "Organization",
-        "name": "Fjellhøy AS",
-        "url": "https://fjellhoy.com/",
-        "logo": {"@type": "ImageObject", "url": "https://fjellhoy.com/assets/fjellhoy-v2c-bred.svg"}
+        "@id": "https://fjellhoy.com/#organization"
       }
     },
     {
@@ -44,19 +130,31 @@
         {
           "@type": "Question",
           "name": "Does Fjellhøy publish a subscription price for the AI agent?",
-          "acceptedAnswer": {"@type": "Answer", "text": "No. The subscription is paid directly to the vendor. Fjellhøy invoices the setup and the follow-up. Those prices are on the home page, and the vendor's subscription is something we go through on a call."}
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. The subscription is paid directly to the vendor. Fjellhøy invoices the setup and the follow-up. Those prices are on the home page, and the vendor's subscription is something we go through on a call."
+          }
         },
         {
           "@type": "Question",
           "name": "Are the dollar list prices what a Norwegian company pays?",
-          "acceptedAnswer": {"@type": "Answer", "text": "No. The figures are taken from the vendors' own pages and are in US dollars. The Norwegian price, currency and tax can differ, and the pages can change."}
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. The figures are taken from the vendors' own pages and are in US dollars. The Norwegian price, currency and tax can differ, and the pages can change."
+          }
         },
         {
           "@type": "Question",
           "name": "How long does the setup take?",
-          "acceptedAnswer": {"@type": "Answer", "text": "Fjellhøy sets the agent up in a few hours, in the email, calendar and invoices the company already uses."}
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Fjellhøy sets the agent up in a few hours, in the email, calendar and invoices the company already uses."
+          }
         }
-      ]
+      ],
+      "provider": {
+        "@id": "https://fjellhoy.com/#organization"
+      }
     }
   ]
 }
@@ -77,7 +175,7 @@
     <a href="index.html" class="brand" aria-label="Fjellhøy, home">
       <img class="brand-logo" src="../assets/fjellhoy-v2c-bred.svg" alt="" width="138" height="46">
     </a>
-    <nav class="nav-links" aria-label="Main"><a href="index.html#ai-agent">AI agent</a><a href="index.html#sikkerhet">Security</a><a href="index.html#slik">How it works</a><a href="index.html#priser">Pricing</a><a href="index.html#styrer">For boards</a><a href="hvorfor-fjellhoy.html">About</a><a href="index.html#faq">Questions</a></nav>
+    <nav class="nav-links" aria-label="Main"><a href="index.html#ai-agent">Services</a><a href="index.html#sikkerhet">Security</a><a href="index.html#slik">How it works</a><a href="index.html#priser">Pricing</a><a href="index.html#styrer">For boards</a><a href="hvorfor-fjellhoy.html">About</a><a href="index.html#faq">Questions</a></nav>
     <a class="btn btn-small btn-accent nav-cta" href="#kontakt">Book a call</a>
     <nav class="lang-switch" aria-label="Language"><a href="../hva-koster-en-ai-agent-for-en-smb-i-2026.html" hreflang="nb" lang="nb">NO</a><a href="hva-koster-en-ai-agent-for-en-smb-i-2026.html" hreflang="en" lang="en" aria-current="page">EN</a></nav>
     <button class="menu-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span></button>
@@ -137,13 +235,13 @@
         <li>Will one person use the agent, or several?</li>
         <li>What should the agent leave alone, for example payment, deletion and anything that needs an accountant?</li>
       </ul>
-      <p>More on the work itself: <a href="automatisere-fakturahandtering.html">automating invoice handling</a> and <a href="ai-epost-og-kundeoppfolging.html">AI for email and customer follow-up</a>. On Fjellhøy's role: <a href="ai-radgiver-for-smb.html">an AI adviser for small businesses</a>.</p>
+      <p>More on the work itself: <a href="automatisere-fakturahandtering.html">automating invoice handling</a> and <a href="ai-epost-og-kundeoppfolging.html">Email and customer follow-up</a>. On Fjellhøy's role: <a href="ai-radgiver-for-smb.html">an AI adviser for small businesses</a>.</p>
       <h2 id="sources">Sources</h2>
       <p>Every figure above was taken from these pages on 21 October 2026. The pages can change after that.</p>
       <ul>
-        <li>Microsoft: <a href="https://www.microsoft.com/en-us/copilot/pricing/business">Microsoft Copilot Plans and Pricing — Business</a>. The list prices for Business Premium with Copilot, Business Standard with Copilot and the Copilot Business add-on, including the promotion from 1 July 2026 to 31 December 2026 and the description of usage-based billing.</li>
-        <li>OpenAI Help Center: <a href="https://help.openai.com/en/articles/8792828-chatgpt-business-overview">ChatGPT Business — Overview</a>. Standard and premium seats, the minimum number of seats, and the caveat that price can vary by country and currency.</li>
-        <li>OpenAI: <a href="https://openai.com/index/premium-seats-chatgpt-business/">Premium seats are coming to ChatGPT Business</a>, dated 10 August 2026, with an update on 25 August 2026. The same seat prices as in the Help Center.</li>
+        <li>Microsoft: Microsoft Copilot Plans and Pricing — Business. The list prices for Business Premium with Copilot, Business Standard with Copilot and the Copilot Business add-on, including the promotion from 1 July 2026 to 31 December 2026 and the description of usage-based billing.</li>
+        <li>OpenAI Help Center: ChatGPT Business — Overview. Standard and premium seats, the minimum number of seats, and the caveat that price can vary by country and currency.</li>
+        <li>OpenAI: Premium seats are coming to ChatGPT Business, dated 10 August 2026, with an update on 25 August 2026. The same seat prices as in the Help Center.</li>
       </ul>
       <h2 id="faq">Questions and answers</h2>
       <div class="faq">
@@ -180,7 +278,7 @@
 <footer class="site-footer">
   <div class="container footer-inner">
     <a href="index.html" class="brand brand-light"><img class="brand-logo" src="../assets/fjellhoy-v2c-bred-mork.svg" alt="Fjellhøy" width="138" height="46"></a>
-    <div class="footer-links"><a href="tel:+4741600048">+47 416 00 048</a><a href="mailto:andreas@fjellhoy.com">andreas@fjellhoy.com</a><a href="https://fjellhoy.com/en/">fjellhoy.com</a><a href="regnskapsbyra.html">Accounting firms</a><a href="handverkere.html">Trades</a><a href="borettslag-og-sameier.html">Housing co-ops and condominiums</a><a href="eiendomsmegler.html">Estate agents</a><a href="advokat.html">Law firms</a><a href="klinikk-og-tannlege.html">Clinics and dentists</a><a href="nettbutikk.html">Online shops</a><a href="byggfirma.html">Construction firms</a><a href="ai-agent-for-bedrifter.html">AI agent for businesses</a><a href="ai-assistent-epost-kalender.html">Email and calendar</a><a href="ai-kurs-for-bedrifter.html">AI training for businesses</a><a href="hvorfor-fjellhoy.html">About Fjellhøy</a><a href="automatisere-fakturahandtering.html">Automating invoice handling</a><a href="ai-epost-og-kundeoppfolging.html">AI for email and customer follow-up</a><a href="ai-radgiver-for-smb.html">An AI adviser for small businesses</a><a href="hva-koster-en-ai-agent-for-en-smb-i-2026.html">What an AI agent costs</a><a href="gdpr-and-data-processing-agreement.html">GDPR and data processing agreement</a><a href="personvern.html">Privacy</a></div>
+    <div class="footer-links"><a href="tel:+4741600048">+47 416 00 048</a><a href="mailto:andreas@fjellhoy.com">andreas@fjellhoy.com</a><a href="https://fjellhoy.com/en/">fjellhoy.com</a><a href="regnskapsbyra.html">Accounting firms</a><a href="handverkere.html">Trades</a><a href="borettslag-og-sameier.html">Housing co-ops and condominiums</a><a href="eiendomsmegler.html">Estate agents</a><a href="advokat.html">Law firms</a><a href="klinikk-og-tannlege.html">Clinics and dentists</a><a href="nettbutikk.html">Online shops</a><a href="byggfirma.html">Construction firms</a><a href="ai-agent-for-bedrifter.html">Automation for businesses</a><a href="ai-assistent-epost-kalender.html">Email and calendar</a><a href="ai-kurs-for-bedrifter.html">Training in office automation</a><a href="hvorfor-fjellhoy.html">About Fjellhøy</a><a href="automatisere-fakturahandtering.html">Automating invoice handling</a><a href="ai-epost-og-kundeoppfolging.html">Email and customer follow-up</a><a href="ai-radgiver-for-smb.html">Advice for small businesses</a><a href="hva-koster-en-ai-agent-for-en-smb-i-2026.html">What an AI agent costs</a><a href="gdpr-and-data-processing-agreement.html">GDPR and data processing agreement</a><a href="personvern.html">Privacy</a></div>
     <p class="footer-copy">Fjellhøy AS · org. no. 936 970 583 · VAT registered · Sole allé 65, 1540 Vestby · <a href="tel:+4741600048">+47 416 00 048</a> · <a href="mailto:andreas@fjellhoy.com">andreas@fjellhoy.com</a></p>
     <p class="footer-year">© <span id="year">2026</span> Fjellhøy AS</p>
   </div>

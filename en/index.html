@@ -3,33 +3,40 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; connect-src 'self'; base-uri 'self'; form-action 'none'; object-src 'none'; upgrade-insecure-requests">
 <meta name="msvalidate.01" content="ADEBF596B8CFBCED548FFF2466C686BA" />
-<title>AI agent for small businesses: email, invoices and customer follow-up | Fjellhøy</title>
-<meta name="description" content="An AI agent for small businesses: email, invoices and customer follow-up. The best colleague, without hiring anyone. Nothing goes out until you approve it. Ready in a few hours. Fjellhøy AS, Vestby.">
-<meta property="og:title" content="AI agent for small businesses: email, invoices and customer follow-up | Fjellhøy">
-<meta property="og:description" content="An AI agent for small businesses: email, invoices and customer follow-up. The best colleague, without hiring anyone. Nothing goes out until you approve it. Ready in a few hours.">
+<title>Fjellhøy AS – advice and automation of office work for small businesses and boards</title>
+<meta name="description" content="Advice and automation of email, invoices and customer follow-up for small businesses and boards. We set up an AI agent in the accounts you already use, and you approve everything before it is sent. Fjellhøy AS, Vestby.">
+<meta property="og:title" content="Fjellhøy AS – advice and automation of office work for small businesses and boards">
+<meta property="og:description" content="Advice and automation of email, invoices and customer follow-up for small businesses and boards. We set up an AI agent in the accounts you already use, and you approve everything before it is sent.">
 <meta property="og:url" content="https://fjellhoy.com/en/">
 <meta property="og:image" content="https://fjellhoy.com/assets/fjellhoy-v2c-profilbilde.png">
 <meta property="og:image:width" content="512">
 <meta property="og:image:height" content="512">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="AI agent for small businesses: email, invoices and customer follow-up | Fjellhøy">
-<meta name="twitter:description" content="An AI agent for small businesses: email, invoices and customer follow-up. The best colleague, without hiring anyone. Nothing goes out until you approve it. Ready in a few hours.">
+<meta name="twitter:title" content="Fjellhøy AS – advice and automation of office work for small businesses and boards">
+<meta name="twitter:description" content="Advice and automation of email, invoices and customer follow-up for small businesses and boards. We set up an AI agent in the accounts you already use, and you approve everything before it is sent.">
 <meta name="twitter:image" content="https://fjellhoy.com/assets/fjellhoy-v2c-profilbilde.png">
 <link rel="canonical" href="https://fjellhoy.com/en/">
 <link rel="alternate" hreflang="nb" href="https://fjellhoy.com/">
 <link rel="alternate" hreflang="no" href="https://fjellhoy.com/">
 <link rel="alternate" hreflang="en" href="https://fjellhoy.com/en/">
 <link rel="alternate" hreflang="x-default" href="https://fjellhoy.com/">
-<link rel="alternate" type="text/plain" href="https://fjellhoy.com/llms.txt" title="llms.txt">
 <!-- TODO: add a public Google Business Profile URL to sameAs when one exists. A search on 21 October 2026 found no public profile URL for Fjellhøy AS in Vestby. -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": ["Organization", "LocalBusiness", "ProfessionalService"],
+      "@type": [
+        "Organization",
+        "LocalBusiness",
+        "ProfessionalService"
+      ],
+      "@id": "https://fjellhoy.com/#organization",
       "name": "Fjellhøy AS",
+      "legalName": "Fjellhøy AS",
       "url": "https://fjellhoy.com/",
       "logo": {
         "@type": "ImageObject",
@@ -40,6 +47,13 @@
       "image": "https://fjellhoy.com/assets/fjellhoy-v2c-profilbilde.png",
       "telephone": "+47 41600048",
       "email": "andreas@fjellhoy.com",
+      "description": "Fjellhøy AS advises small businesses and boards and automates office work, including bookkeeping and board work. An AI agent is set up in the accounts the customer already uses, and the customer approves anything before it is sent.",
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "Organisasjonsnummer",
+        "value": "936970583"
+      },
+      "vatID": "NO936970583MVA",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Sole allé 65",
@@ -47,23 +61,47 @@
         "addressLocality": "Vestby",
         "addressCountry": "NO"
       },
-      "vatID": "936970583",
       "areaServed": [
-        {"@type": "City", "name": "Vestby"},
-        {"@type": "AdministrativeArea", "name": "Follo"},
-        {"@type": "AdministrativeArea", "name": "Østfold"},
-        {"@type": "AdministrativeArea", "name": "Vestfold"},
-        {"@type": "Country", "name": "Norway"}
+        {
+          "@type": "City",
+          "name": "Vestby"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Follo"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Østfold"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Vestfold"
+        },
+        {
+          "@type": "Country",
+          "name": "Norway"
+        }
       ],
       "sameAs": [
+        "https://w2.brreg.no/enhet/sok/detalj.jsp?orgnr=936970583",
         "https://virksomhet.brreg.no/nb/oppslag/enheter/936970583"
+      ],
+      "knowsAbout": [
+        "advisory work",
+        "bookkeeping",
+        "board work",
+        "privacy"
       ],
       "contactPoint": {
         "@type": "ContactPoint",
         "telephone": "+47-416-00-048",
         "email": "andreas@fjellhoy.com",
         "contactType": "customer service",
-        "availableLanguage": ["Norwegian", "English"],
+        "availableLanguage": [
+          "Norwegian",
+          "English"
+        ],
         "areaServed": "NO"
       },
       "founder": {
@@ -157,7 +195,10 @@
             "text": "Yes. Call +47 416 00 048."
           }
         }
-      ]
+      ],
+      "provider": {
+        "@id": "https://fjellhoy.com/#organization"
+      }
     }
   ]
 }
@@ -185,7 +226,7 @@
       <img class="brand-logo" src="../assets/fjellhoy-v2c-bred.svg" alt="" width="138" height="46">
     </a>
     <nav class="nav-links" aria-label="Main">
-      <a href="#ai-agent">AI agent</a>
+      <a href="#ai-agent">Services</a>
       <a href="#sikkerhet">Security</a>
       <a href="#slik">How it works</a>
       <a href="#priser">Pricing</a>
@@ -217,8 +258,8 @@
   <div class="container hero-grid">
     <div class="hero-copy">
       <span class="slogan-pill"><svg class="ico-xs" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4-6.2-4.6-6.2 4.6 2.4-7.4L2 9.4h7.6z" fill="currentColor"/></svg>The best colleague, without hiring anyone</span>
-      <h1>AI agent for small businesses: email, invoices and customer follow-up</h1>
-      <p class="hero-subtitle">Ever wished you had a PA?</p>
+      <h1>Advice and automation of email, invoices and customer follow-up</h1>
+      <p class="hero-subtitle">We set up an AI agent in the accounts you already use, and you approve everything before it is sent.</p>
       <dl class="tldr">
         <div>
           <dt>What</dt>
@@ -294,7 +335,7 @@
         <div class="icon-wrap"><svg viewBox="0 0 24 24"><path d="M22 12h-6l-2 3h-4l-2-3H2"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/></svg></div>
         <h3>The inbox is already sorted when you start</h3>
         <p>What matters sits at the top. The rest has been cleared away.</p>
-        <p><a href="ai-epost-og-kundeoppfolging.html">AI for email and customer follow-up</a></p>
+        <p><a href="ai-epost-og-kundeoppfolging.html">Email and customer follow-up</a></p>
       </article>
       <article class="icon-card">
         <div class="icon-wrap"><svg viewBox="0 0 24 24"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><path d="M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg></div>
@@ -695,8 +736,8 @@
         </ul>
       </article>
     </div>
-    <p class="bransjer-links"><a href="ai-radgiver-for-smb.html">An AI adviser for small businesses</a> · <a href="automatisere-fakturahandtering.html">Automating invoice handling</a> · <a href="ai-epost-og-kundeoppfolging.html">AI for email and customer follow-up</a> · <a href="hva-koster-en-ai-agent-for-en-smb-i-2026.html">What an AI agent costs in 2026</a> · <a href="ai-for-holdingselskap-og-eiendom.html">AI for holding companies and property</a> · <a href="ai-for-bilag-og-regnskap.html">AI for receipts and bookkeeping</a> · <a href="ai-for-styrepapirer.html">AI for board papers</a></p>
-    <p class="bransjer-links">Industries: <a href="regnskapsbyra.html">Accounting firms</a> · <a href="handverkere.html">Trades</a> · <a href="borettslag-og-sameier.html">Housing co-ops and condominiums</a> · <a href="eiendomsmegler.html">Estate agents</a> · <a href="advokat.html">Law firms</a> · <a href="klinikk-og-tannlege.html">Clinics and dentists</a> · <a href="nettbutikk.html">Online shops</a> · <a href="byggfirma.html">Construction firms</a> · <a href="ai-agent-for-bedrifter.html">AI agent for businesses</a> · <a href="ai-assistent-epost-kalender.html">Email and calendar</a> · <a href="ai-kurs-for-bedrifter.html">AI training for businesses</a> · <a href="hvorfor-fjellhoy.html">About Fjellhøy</a></p>
+    <p class="bransjer-links"><a href="ai-radgiver-for-smb.html">Advice for small businesses</a> · <a href="automatisere-fakturahandtering.html">Automating invoice handling</a> · <a href="ai-epost-og-kundeoppfolging.html">Email and customer follow-up</a> · <a href="hva-koster-en-ai-agent-for-en-smb-i-2026.html">What an AI agent costs in 2026</a> · <a href="ai-for-holdingselskap-og-eiendom.html">Holding companies and property</a> · <a href="ai-for-bilag-og-regnskap.html">Receipts and bookkeeping</a> · <a href="ai-for-styrepapirer.html">Board papers</a></p>
+    <p class="bransjer-links">Industries: <a href="regnskapsbyra.html">Accounting firms</a> · <a href="handverkere.html">Trades</a> · <a href="borettslag-og-sameier.html">Housing co-ops and condominiums</a> · <a href="eiendomsmegler.html">Estate agents</a> · <a href="advokat.html">Law firms</a> · <a href="klinikk-og-tannlege.html">Clinics and dentists</a> · <a href="nettbutikk.html">Online shops</a> · <a href="byggfirma.html">Construction firms</a> · <a href="ai-agent-for-bedrifter.html">Automation for businesses</a> · <a href="ai-assistent-epost-kalender.html">Email and calendar</a> · <a href="ai-kurs-for-bedrifter.html">Training in office automation</a> · <a href="hvorfor-fjellhoy.html">About Fjellhøy</a></p>
   </div>
 </section>
 
@@ -902,42 +943,10 @@
   </div>
 </section>
 
-<!-- MARKED -->
-<section class="section" id="markedet">
+<!-- UAVHENGIG -->
+<section class="section section-compact" id="uavhengig">
   <div class="container">
-    <div class="section-head">
-      <span class="eyebrow">Providers</span>
-      <h2>The market right now</h2>
-      <p>There are several large providers of AI assistants and agents, and they change quickly. Here is a short, neutral look at five of the largest, as the market stands in October 2026. The order is alphabetical. I am not a partner or a reseller for any of them. I help you choose the one that fits, and set it up, whichever vendor it is.</p>
-    </div>
-    <div class="market-grid">
-      <article class="market-card">
-        <h3 class="market-name">Anthropic</h3>
-        <p class="market-product">Claude</p>
-        <p>Claude can connect to email, calendar and documents, and take on recurring tasks on its own.</p>
-      </article>
-      <article class="market-card">
-        <h3 class="market-name">Google</h3>
-        <p class="market-product">Gemini</p>
-        <p>Gemini sits inside Google Workspace, and can run regular routines.</p>
-      </article>
-      <article class="market-card">
-        <h3 class="market-name">Meta</h3>
-        <p class="market-product">Meta AI and Business Agent</p>
-        <p>Meta Business Agent can reply on WhatsApp and Instagram, then hand the conversation to you.</p>
-      </article>
-      <article class="market-card">
-        <h3 class="market-name">Microsoft</h3>
-        <p class="market-product">Copilot</p>
-        <p>Copilot sits inside Microsoft 365, and you can build your own agents for recurring tasks.</p>
-      </article>
-      <article class="market-card">
-        <h3 class="market-name">OpenAI</h3>
-        <p class="market-product">ChatGPT</p>
-        <p>ChatGPT can plan and finish tasks on its own, and it asks you when it needs a yes.</p>
-      </article>
-    </div>
-    <p class="market-note">This is the market as it stands now, not a list of partnerships. Fjellhøy AS is independent. All names belong to the respective companies. Last updated October 2026.</p>
+    <p class="vendor-note">We do not depend on one vendor. The cost drivers are in <a href="hva-koster-en-ai-agent-for-en-smb-i-2026.html">the article on what an AI agent costs</a>.</p>
   </div>
 </section>
 </main>
@@ -959,13 +968,13 @@
       <a href="klinikk-og-tannlege.html">Clinics and dentists</a>
       <a href="nettbutikk.html">Online shops</a>
       <a href="byggfirma.html">Construction firms</a>
-      <a href="ai-agent-for-bedrifter.html">AI agent for businesses</a>
+      <a href="ai-agent-for-bedrifter.html">Automation for businesses</a>
       <a href="ai-assistent-epost-kalender.html">Email and calendar</a>
-      <a href="ai-kurs-for-bedrifter.html">AI training for businesses</a>
+      <a href="ai-kurs-for-bedrifter.html">Training in office automation</a>
       <a href="hvorfor-fjellhoy.html">About Fjellhøy</a>
       <a href="automatisere-fakturahandtering.html">Automating invoice handling</a>
-      <a href="ai-epost-og-kundeoppfolging.html">AI for email and customer follow-up</a>
-      <a href="ai-radgiver-for-smb.html">An AI adviser for small businesses</a>
+      <a href="ai-epost-og-kundeoppfolging.html">Email and customer follow-up</a>
+      <a href="ai-radgiver-for-smb.html">Advice for small businesses</a>
       <a href="hva-koster-en-ai-agent-for-en-smb-i-2026.html">What an AI agent costs</a>
       <a href="gdpr-and-data-processing-agreement.html">GDPR and data processing agreement</a><a href="personvern.html">Privacy</a>
     </div>

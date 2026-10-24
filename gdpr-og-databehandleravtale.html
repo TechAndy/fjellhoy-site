@@ -3,6 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; connect-src 'self'; base-uri 'self'; form-action 'none'; object-src 'none'; upgrade-insecure-requests">
 <title>GDPR og databehandleravtale | Fjellhøy</title>
 <meta name="description" content="GDPR og databehandleravtale hos Fjellhøy AS. Oppsettet skjer i dine egne kontoer, du godkjenner før noe sendes, og vi signerer databehandleravtale før oppstart.">
 <link rel="canonical" href="https://fjellhoy.com/gdpr-og-databehandleravtale.html">
@@ -21,55 +23,145 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "inLanguage": "nb",
-  "mainEntity": [
+  "@graph": [
     {
-      "@type": "Question",
-      "name": "Hvor ligger dataene når agenten er satt opp?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "I dine egne kontoer. Fjellhøy kopierer ikke e-posten eller dokumentene dine utover det oppsettet krever, og tilgangene fjernes når oppsettet er ferdig. Agent-tilbyderen du velger behandler opplysningene under din avtale med den tilbyderen."
+      "@type": [
+        "Organization",
+        "LocalBusiness",
+        "ProfessionalService"
+      ],
+      "@id": "https://fjellhoy.com/#organization",
+      "name": "Fjellhøy AS",
+      "legalName": "Fjellhøy AS",
+      "url": "https://fjellhoy.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://fjellhoy.com/assets/fjellhoy-v2c-bred.svg",
+        "width": 1200,
+        "height": 400
+      },
+      "image": "https://fjellhoy.com/assets/fjellhoy-v2c-profilbilde.png",
+      "telephone": "+47 41600048",
+      "email": "andreas@fjellhoy.com",
+      "description": "Fjellhøy AS gir rådgivning og automatisering av kontorarbeid for små bedrifter og styrer, inkludert regnskap og styrearbeid. Vi setter opp en AI-agent i kontoene kunden allerede bruker, og kunden godkjenner før noe sendes.",
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "Organisasjonsnummer",
+        "value": "936970583"
+      },
+      "vatID": "NO936970583MVA",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Sole allé 65",
+        "postalCode": "1540",
+        "addressLocality": "Vestby",
+        "addressCountry": "NO"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Vestby"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Follo"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Østfold"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Vestfold"
+        },
+        {
+          "@type": "Country",
+          "name": "Norway"
+        }
+      ],
+      "sameAs": [
+        "https://w2.brreg.no/enhet/sok/detalj.jsp?orgnr=936970583",
+        "https://virksomhet.brreg.no/nb/oppslag/enheter/936970583"
+      ],
+      "knowsAbout": [
+        "rådgivning",
+        "regnskap",
+        "styrearbeid",
+        "personvern"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+47-416-00-048",
+        "email": "andreas@fjellhoy.com",
+        "contactType": "customer service",
+        "availableLanguage": [
+          "Norwegian",
+          "English"
+        ],
+        "areaServed": "NO"
+      },
+      "founder": {
+        "@type": "Person",
+        "name": "Andreas Berthelsen",
+        "jobTitle": "Daglig leder",
+        "sameAs": "https://www.linkedin.com/in/andreassberthelsen"
       }
     },
     {
-      "@type": "Question",
-      "name": "Signerer dere databehandleravtale?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja. Vi signerer databehandleravtale med deg før oppstart."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Kan agenten sende noe uten at jeg har godkjent det?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Nei. Du godkjenner før noe sendes. Det gjelder også betaling og sletting."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Hvor lenge lagres henvendelser og kundeopplysninger?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "E-posthenvendelser som ikke blir et kundeforhold, slettes senest 12 måneder etter siste kontakt. Kundeopplysninger i kunderegisteret lagres så lenge kundeforholdet varer, og slettes senest 12 måneder etter at det er avsluttet."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Hvor lenge oppbevares regnskapsopplysninger?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Faktura og regnskapsopplysninger oppbevares i fem år etter bokføringsloven."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Er Fjellhøy GDPR-sertifisert, eller garanterer dere at oppsettet er lovlig?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Nei. Vi beskriver hvordan oppsettet fungerer, og vi signerer databehandleravtale før oppstart. Vi har ingen sertifisering å vise til, og vi gir ingen juridisk garanti."
+      "@type": "FAQPage",
+      "inLanguage": "nb",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Hvor ligger dataene når agenten er satt opp?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "I dine egne kontoer. Fjellhøy kopierer ikke e-posten eller dokumentene dine utover det oppsettet krever, og tilgangene fjernes når oppsettet er ferdig. Agent-tilbyderen du velger behandler opplysningene under din avtale med den tilbyderen."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Signerer dere databehandleravtale?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. Vi signerer databehandleravtale med deg før oppstart."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kan agenten sende noe uten at jeg har godkjent det?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nei. Du godkjenner før noe sendes. Det gjelder også betaling og sletting."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Hvor lenge lagres henvendelser og kundeopplysninger?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "E-posthenvendelser som ikke blir et kundeforhold, slettes senest 12 måneder etter siste kontakt. Kundeopplysninger i kunderegisteret lagres så lenge kundeforholdet varer, og slettes senest 12 måneder etter at det er avsluttet."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Hvor lenge oppbevares regnskapsopplysninger?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Faktura og regnskapsopplysninger oppbevares i fem år etter bokføringsloven."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Er Fjellhøy GDPR-sertifisert, eller garanterer dere at oppsettet er lovlig?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nei. Vi beskriver hvordan oppsettet fungerer, og vi signerer databehandleravtale før oppstart. Vi har ingen sertifisering å vise til, og vi gir ingen juridisk garanti."
+          }
+        }
+      ],
+      "provider": {
+        "@id": "https://fjellhoy.com/#organization"
       }
     }
   ]
@@ -88,7 +180,7 @@
       <img class="brand-logo" src="assets/fjellhoy-v2c-bred.svg" alt="" width="138" height="46">
     </a>
     <nav class="nav-links" aria-label="Hovedmeny">
-      <a href="index.html#ai-agent">AI-agent</a>
+      <a href="index.html#ai-agent">Tjenester</a>
       <a href="index.html#sikkerhet">Sikkerhet</a>
       <a href="index.html#slik">Slik fungerer det</a>
       <a href="index.html#priser">Priser</a>
@@ -189,8 +281,8 @@
       <a href="mailto:andreas@fjellhoy.com">andreas@fjellhoy.com</a>
       <a href="https://fjellhoy.com">fjellhoy.com</a>
       <a href="automatisere-fakturahandtering.html">Automatisere fakturahåndtering</a>
-      <a href="ai-epost-og-kundeoppfolging.html">AI for e-post og kundeoppfølging</a>
-      <a href="ai-radgiver-for-smb.html">AI-rådgiver for SMB</a>
+      <a href="ai-epost-og-kundeoppfolging.html">E-post og kundeoppfølging</a>
+      <a href="ai-radgiver-for-smb.html">Rådgivning for SMB</a>
       <a href="hva-koster-en-ai-agent-for-en-smb-i-2026.html">Hva koster en AI-agent</a>
       <a href="gdpr-og-databehandleravtale.html">GDPR og databehandleravtale</a>
       <a href="personvern.html">Personvern</a>

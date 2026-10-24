@@ -3,6 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; connect-src 'self'; base-uri 'self'; form-action 'none'; object-src 'none'; upgrade-insecure-requests">
 <title>GDPR and data processing agreement | Fjellhøy</title>
 <meta name="description" content="GDPR and the data processing agreement at Fjellhøy AS. The setup stays in your own accounts, you approve anything before it is sent, and we sign the agreement before we start.">
 <link rel="canonical" href="https://fjellhoy.com/en/gdpr-and-data-processing-agreement.html">
@@ -21,55 +23,145 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "inLanguage": "en",
-  "mainEntity": [
+  "@graph": [
     {
-      "@type": "Question",
-      "name": "Where does the data live once the agent is set up?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "In your own accounts. Fjellhøy does not copy your email or documents beyond what the setup requires, and access is removed when the setup is finished. The agent provider you choose processes the information under your agreement with that provider."
+      "@type": [
+        "Organization",
+        "LocalBusiness",
+        "ProfessionalService"
+      ],
+      "@id": "https://fjellhoy.com/#organization",
+      "name": "Fjellhøy AS",
+      "legalName": "Fjellhøy AS",
+      "url": "https://fjellhoy.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://fjellhoy.com/assets/fjellhoy-v2c-bred.svg",
+        "width": 1200,
+        "height": 400
+      },
+      "image": "https://fjellhoy.com/assets/fjellhoy-v2c-profilbilde.png",
+      "telephone": "+47 41600048",
+      "email": "andreas@fjellhoy.com",
+      "description": "Fjellhøy AS advises small businesses and boards and automates office work, including bookkeeping and board work. An AI agent is set up in the accounts the customer already uses, and the customer approves anything before it is sent.",
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "Organisasjonsnummer",
+        "value": "936970583"
+      },
+      "vatID": "NO936970583MVA",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Sole allé 65",
+        "postalCode": "1540",
+        "addressLocality": "Vestby",
+        "addressCountry": "NO"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Vestby"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Follo"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Østfold"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Vestfold"
+        },
+        {
+          "@type": "Country",
+          "name": "Norway"
+        }
+      ],
+      "sameAs": [
+        "https://w2.brreg.no/enhet/sok/detalj.jsp?orgnr=936970583",
+        "https://virksomhet.brreg.no/nb/oppslag/enheter/936970583"
+      ],
+      "knowsAbout": [
+        "advisory work",
+        "bookkeeping",
+        "board work",
+        "privacy"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+47-416-00-048",
+        "email": "andreas@fjellhoy.com",
+        "contactType": "customer service",
+        "availableLanguage": [
+          "Norwegian",
+          "English"
+        ],
+        "areaServed": "NO"
+      },
+      "founder": {
+        "@type": "Person",
+        "name": "Andreas Berthelsen",
+        "jobTitle": "Managing director",
+        "sameAs": "https://www.linkedin.com/in/andreassberthelsen"
       }
     },
     {
-      "@type": "Question",
-      "name": "Do you sign a data processing agreement?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. We sign a data processing agreement with you before we start."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can the agent send something before I have approved it?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No. You approve it before anything is sent. The same applies to payment and deletion."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How long are enquiries and customer details kept?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Email enquiries that do not become a customer relationship are deleted within 12 months of the last contact. Customer details in the customer register are kept for as long as the relationship lasts, and are deleted within 12 months of it ending."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How long are accounting records kept?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Invoices and accounting records are kept for five years under the Norwegian Bookkeeping Act."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Is Fjellhøy GDPR-certified, or do you guarantee that the setup is lawful?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No. We describe how the setup works, and we sign a data processing agreement before we start. We have no certification to show, and we give no legal guarantee."
+      "@type": "FAQPage",
+      "inLanguage": "en",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Where does the data live once the agent is set up?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "In your own accounts. Fjellhøy does not copy your email or documents beyond what the setup requires, and access is removed when the setup is finished. The agent provider you choose processes the information under your agreement with that provider."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you sign a data processing agreement?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. We sign a data processing agreement with you before we start."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can the agent send something before I have approved it?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. You approve it before anything is sent. The same applies to payment and deletion."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long are enquiries and customer details kept?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Email enquiries that do not become a customer relationship are deleted within 12 months of the last contact. Customer details in the customer register are kept for as long as the relationship lasts, and are deleted within 12 months of it ending."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long are accounting records kept?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Invoices and accounting records are kept for five years under the Norwegian Bookkeeping Act."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Fjellhøy GDPR-certified, or do you guarantee that the setup is lawful?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. We describe how the setup works, and we sign a data processing agreement before we start. We have no certification to show, and we give no legal guarantee."
+          }
+        }
+      ],
+      "provider": {
+        "@id": "https://fjellhoy.com/#organization"
       }
     }
   ]
@@ -87,7 +179,7 @@
     <a href="index.html" class="brand" aria-label="Fjellhøy, home">
       <img class="brand-logo" src="../assets/fjellhoy-v2c-bred.svg" alt="" width="138" height="46">
     </a>
-    <nav class="nav-links" aria-label="Main"><a href="index.html#ai-agent">AI agent</a><a href="index.html#sikkerhet">Security</a><a href="index.html#slik">How it works</a><a href="index.html#priser">Pricing</a><a href="index.html#styrer">For boards</a><a href="hvorfor-fjellhoy.html">About</a><a href="index.html#faq">Questions</a></nav>
+    <nav class="nav-links" aria-label="Main"><a href="index.html#ai-agent">Services</a><a href="index.html#sikkerhet">Security</a><a href="index.html#slik">How it works</a><a href="index.html#priser">Pricing</a><a href="index.html#styrer">For boards</a><a href="hvorfor-fjellhoy.html">About</a><a href="index.html#faq">Questions</a></nav>
     <a class="btn btn-small btn-accent nav-cta" href="index.html#kontakt">Book a call</a>
     <nav class="lang-switch" aria-label="Language"><a href="../gdpr-og-databehandleravtale.html" hreflang="nb" lang="nb">NO</a><a href="gdpr-and-data-processing-agreement.html" hreflang="en" lang="en" aria-current="page">EN</a></nav>
     <button class="menu-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span></button>
@@ -163,7 +255,7 @@
 <footer class="site-footer">
   <div class="container footer-inner">
     <a href="index.html" class="brand brand-light"><img class="brand-logo" src="../assets/fjellhoy-v2c-bred-mork.svg" alt="Fjellhøy" width="138" height="46"></a>
-    <div class="footer-links"><a href="tel:+4741600048">+47 416 00 048</a><a href="mailto:andreas@fjellhoy.com">andreas@fjellhoy.com</a><a href="https://fjellhoy.com/en/">fjellhoy.com</a><a href="regnskapsbyra.html">Accounting firms</a><a href="handverkere.html">Trades</a><a href="borettslag-og-sameier.html">Housing co-ops and condominiums</a><a href="eiendomsmegler.html">Estate agents</a><a href="advokat.html">Law firms</a><a href="klinikk-og-tannlege.html">Clinics and dentists</a><a href="nettbutikk.html">Online shops</a><a href="byggfirma.html">Construction firms</a><a href="ai-agent-for-bedrifter.html">AI agent for businesses</a><a href="ai-assistent-epost-kalender.html">Email and calendar</a><a href="ai-kurs-for-bedrifter.html">AI training for businesses</a><a href="hvorfor-fjellhoy.html">About Fjellhøy</a><a href="automatisere-fakturahandtering.html">Automating invoice handling</a><a href="ai-epost-og-kundeoppfolging.html">AI for email and customer follow-up</a><a href="ai-radgiver-for-smb.html">An AI adviser for small businesses</a><a href="hva-koster-en-ai-agent-for-en-smb-i-2026.html">What an AI agent costs</a><a href="gdpr-and-data-processing-agreement.html">GDPR and data processing agreement</a><a href="personvern.html">Privacy</a></div>
+    <div class="footer-links"><a href="tel:+4741600048">+47 416 00 048</a><a href="mailto:andreas@fjellhoy.com">andreas@fjellhoy.com</a><a href="https://fjellhoy.com/en/">fjellhoy.com</a><a href="regnskapsbyra.html">Accounting firms</a><a href="handverkere.html">Trades</a><a href="borettslag-og-sameier.html">Housing co-ops and condominiums</a><a href="eiendomsmegler.html">Estate agents</a><a href="advokat.html">Law firms</a><a href="klinikk-og-tannlege.html">Clinics and dentists</a><a href="nettbutikk.html">Online shops</a><a href="byggfirma.html">Construction firms</a><a href="ai-agent-for-bedrifter.html">Automation for businesses</a><a href="ai-assistent-epost-kalender.html">Email and calendar</a><a href="ai-kurs-for-bedrifter.html">Training in office automation</a><a href="hvorfor-fjellhoy.html">About Fjellhøy</a><a href="automatisere-fakturahandtering.html">Automating invoice handling</a><a href="ai-epost-og-kundeoppfolging.html">Email and customer follow-up</a><a href="ai-radgiver-for-smb.html">Advice for small businesses</a><a href="hva-koster-en-ai-agent-for-en-smb-i-2026.html">What an AI agent costs</a><a href="gdpr-and-data-processing-agreement.html">GDPR and data processing agreement</a><a href="personvern.html">Privacy</a></div>
     <p class="footer-copy">Fjellhøy AS · org. no. 936 970 583 · VAT registered · Sole allé 65, 1540 Vestby · <a href="tel:+4741600048">+47 416 00 048</a> · <a href="mailto:andreas@fjellhoy.com">andreas@fjellhoy.com</a></p>
     <p class="footer-year">© <span id="year">2026</span> Fjellhøy AS</p>
   </div>

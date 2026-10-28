@@ -599,6 +599,10 @@ svg{flex-shrink:0}
 
 /* forsiden: nøkkelord, TL;DR og kontakt */
 .hero-subtitle{margin:0 0 18px;max-width:20em;color:#fff;font-family:var(--serif);font-size:clamp(1.25rem,2vw,1.7rem);font-weight:500;line-height:1.25}
+.hero-chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px;padding:0;list-style:none;max-width:40em}
+.hero-chips li{display:inline-flex;align-items:center;gap:7px;margin:0;padding:6px 11px 6px 9px;border:1px solid rgba(176,141,87,.45);border-radius:999px;background:rgba(255,255,255,.05);color:#f4efe6;font-size:13.5px;font-weight:600;line-height:1.2}
+.hero-chips svg{width:16px;height:16px;color:#e4d2a8}
+.hero-chips svg path{fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round}
 .agent-intro{position:relative;z-index:2;padding:36px 0 8px;background:#fff}
 .agent-intro h2{font-size:clamp(1.55rem,2.2vw,2rem);margin-bottom:10px}
 .agent-intro p{max-width:42em;color:var(--ink-2)}
@@ -647,4 +651,11 @@ svg{flex-shrink:0}
   .lang-switch{margin-left:auto;margin-right:8px}
   .menu-toggle{margin-left:0}
 }
+
+/* Bare på preview-hero-*.html. Sidene og denne linjen fjernes før merge. */
+.preview-bar{position:relative;z-index:80;background:#3d2a12;color:#f4efe6;font-size:14.5px;line-height:1.45}
+.preview-bar .container{display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px;padding-top:10px;padding-bottom:10px}
+.preview-bar a{color:#e4d2a8;font-weight:700;text-decoration:none}
+.preview-bar a[aria-current="page"]{color:#fff;text-decoration:underline;text-underline-offset:3px}
+.preview-bar a:hover{color:#fff}
 

@@ -63,9 +63,15 @@ svg{flex-shrink:0}
 .nav{display:flex;align-items:center;gap:32px;height:72px;flex-wrap:nowrap}
 .brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-weight:700;font-size:19px;letter-spacing:-.02em;flex:none}
 .brand-logo{height:46px;width:auto}
-.nav-links{display:flex;gap:28px;margin-left:auto;flex-wrap:nowrap;min-width:0}
+.nav-links{display:flex;gap:22px;margin-left:auto;flex-wrap:nowrap;min-width:0;align-items:center}
 .nav-links a{color:var(--ink-2);text-decoration:none;font-size:15px;font-weight:500;white-space:nowrap;transition:color .15s}
 .nav-links a:hover,.nav-links a[aria-current="page"]{color:var(--fjord-600)}
+.nav-drop{position:relative}
+.nav-sub{display:none;position:absolute;left:0;top:100%;z-index:70;padding-top:10px}
+.nav-drop:hover .nav-sub,.nav-drop:focus-within .nav-sub{display:block}
+.nav-sub-box{min-width:220px;display:grid;padding:8px;border:1px solid var(--line);border-radius:14px;background:#fff;box-shadow:var(--shadow)}
+.nav-sub-box a{display:block;padding:8px 10px;border-radius:8px}
+.nav-sub-box a:hover{background:var(--sand)}
 .nav-links a[aria-current="page"]{font-weight:600}
 .nav-cta{flex:none}
 .menu-toggle{display:none}
@@ -531,6 +537,7 @@ svg{flex-shrink:0}
   .mobile-menu{position:absolute;top:100%;left:0;right:0;z-index:2;flex-direction:column;background:#fff;border-bottom:1px solid var(--line);padding:2px 20px 12px;box-shadow:0 24px 40px -24px rgba(16,40,38,.35)}
   .site-header.open .mobile-menu{display:flex}
   .mobile-menu a:not(.btn){color:var(--ink);text-decoration:none;font-size:16px;font-weight:600;padding:9px 2px;border-bottom:1px solid #f1ede6}
+  .mobile-menu a.menu-sub{padding-left:16px;font-weight:500;color:var(--ink-2)}
   .mobile-menu a:not(.btn):hover,.mobile-menu a:not(.btn):focus-visible,.mobile-menu a[aria-current="page"]{color:var(--fjord-600)}
   .mobile-menu-cta{margin-top:12px;width:100%;padding:12px 18px}
   .menu-backdrop{position:fixed;inset:0;z-index:40;background:rgba(11,33,34,.4)}
@@ -592,6 +599,10 @@ svg{flex-shrink:0}
 
 /* forsiden: nøkkelord, TL;DR og kontakt */
 .hero-subtitle{margin:0 0 18px;max-width:20em;color:#fff;font-family:var(--serif);font-size:clamp(1.25rem,2vw,1.7rem);font-weight:500;line-height:1.25}
+.agent-intro{position:relative;z-index:2;padding:36px 0 8px;background:#fff}
+.agent-intro h2{font-size:clamp(1.55rem,2.2vw,2rem);margin-bottom:10px}
+.agent-intro p{max-width:42em;color:var(--ink-2)}
+.agent-intro .agent-more{margin-top:12px}
 .tldr{margin:0 0 22px;padding:4px 16px;max-width:40em;border:1px solid rgba(176,141,87,.4);border-radius:16px;background:rgba(255,255,255,.06)}
 .tldr div{display:grid;grid-template-columns:6.2em 1fr;gap:10px 12px;padding:10px 0}
 .tldr div+div{border-top:1px solid rgba(255,255,255,.12)}
@@ -636,3 +647,4 @@ svg{flex-shrink:0}
   .lang-switch{margin-left:auto;margin-right:8px}
   .menu-toggle{margin-left:0}
 }
+

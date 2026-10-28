@@ -116,7 +116,7 @@
           "name": "Hvem eier kontoene, og kan tilgangen trekkes tilbake?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Kontoene eies av dere. Assistenten får minst mulig tilgang, bare det oppgaven krever, og bare så lenge dere har sagt ja. Dere kan trekke tilgangen tilbake. Når arbeidet er ferdig, fjernes tilgangene."
+            "text": "Kontoene eies av dere. Assistenten får minst mulig tilgang, bare det oppgaven krever, og bare så lenge dere har sagt ja. Dere kan trekke tilgangen tilbake. Tilgangene fjernes når oppsettet er ferdig, eller når oppfølgingen avsluttes."
           }
         },
         {
@@ -172,26 +172,29 @@
       <img class="brand-logo" src="assets/fjellhoy-v2c-bred.svg" alt="" width="138" height="46">
     </a>
     <nav class="nav-links" aria-label="Hovedmeny">
+  <div class="nav-drop">
       <a href="index.html#ai-agent">Tjenester</a>
-      <a href="sikkerhet.html" aria-current="page">Sikkerhet</a>
-      <a href="index.html#slik">Slik fungerer det</a>
-      <a href="index.html#priser">Priser</a>
-      <a href="index.html#styrer">For styrer</a>
-      <a href="hvorfor-fjellhoy.html">Om Fjellhøy</a>
-      <a href="#sporsmal">Spørsmål</a>
+      <div class="nav-sub"><div class="nav-sub-box">
+        <a href="okonomiavdeling.html">Økonomiavdeling</a>
+        <a href="index.html#styrer">For styrer</a>
+      </div></div>
+    </div>
+  <a href="index.html#slik">Slik fungerer det</a>
+  <a href="index.html#priser">Priser</a>
+  <a href="hvorfor-fjellhoy.html">Om Fjellhøy</a>
     </nav>
     <a class="btn btn-small btn-accent nav-cta" href="#kontakt">Book en prat</a>
     <nav class="lang-switch" aria-label="Språk"><a href="sikkerhet.html" hreflang="nb" lang="nb" aria-current="page">NO</a><a href="en/security.html" hreflang="en" lang="en">EN</a></nav>
     <button class="menu-toggle" type="button" aria-label="Meny" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span></button>
   </div>
   <nav id="mobile-menu" class="mobile-menu" aria-label="Seksjoner" hidden>
+    <a href="index.html#ai-agent">Tjenester</a>
+    <a class="menu-sub" href="okonomiavdeling.html">Økonomiavdeling</a>
+    <a class="menu-sub" href="index.html#styrer">For styrer</a>
     <a href="index.html#slik">Slik fungerer det</a>
     <a href="index.html#priser">Priser</a>
-    <a href="index.html#styrer">For styrer</a>
     <a href="hvorfor-fjellhoy.html">Om Fjellhøy</a>
-    <a href="#sporsmal">Spørsmål</a>
-    <a href="#kontakt">Kontakt</a>
-    <a class="btn btn-accent mobile-menu-cta" href="#kontakt">Book en prat</a>
+    <a class="btn btn-accent mobile-menu-cta" href="index.html#kontakt">Book en prat</a>
   </nav>
 </header>
 <div class="menu-backdrop" hidden></div>
@@ -253,7 +256,7 @@
       <p>Hvert forslag assistenten lager, og hvert ja eller nei fra et menneske, logges. Loggen viser hva som ble foreslått, hvem som godkjente, og hva som ble stående. Den er til intern kontroll, slik at økonomiavdelingen eller den dere har pekt ut, kan gå tilbake og se hva som skjedde. Loggen er ikke et sertifikat, og den er ikke en garanti.</p>
 
       <h2>Tilgangsstyring</h2>
-      <p>Assistenten får minst mulig tilgang: bare det oppgaven krever, og bare i den perioden dere har sagt ja til. Kontoene eies av dere, ikke av Fjellhøy. Dere kan trekke tilgangen tilbake når dere vil. Når oppsettet eller oppfølgingen er ferdig, fjernes tilgangene.</p>
+      <p>Assistenten får minst mulig tilgang: bare det oppgaven krever, og bare i den perioden dere har sagt ja til. Kontoene eies av dere, ikke av Fjellhøy. Dere kan trekke tilgangen tilbake når dere vil. Tilgangene fjernes når oppsettet er ferdig, eller når oppfølgingen avsluttes.</p>
       <p>Fjellhøy ber ikke om å beholde tilgang etter at arbeidet er gjort. Innlogging og engangskoder tar dere selv, slik det også står i kortversjonen på forsiden.</p>
 
       <h2>Hvor data lagres</h2>
@@ -275,7 +278,7 @@
         </details>
         <details>
           <summary>Hvem eier kontoene, og kan tilgangen trekkes tilbake?</summary>
-          <p>Kontoene eies av dere. Assistenten får minst mulig tilgang, bare det oppgaven krever, og bare så lenge dere har sagt ja. Dere kan trekke tilgangen tilbake. Når arbeidet er ferdig, fjernes tilgangene.</p>
+          <p>Kontoene eies av dere. Assistenten får minst mulig tilgang, bare det oppgaven krever, og bare så lenge dere har sagt ja. Dere kan trekke tilgangen tilbake. Tilgangene fjernes når oppsettet er ferdig, eller når oppfølgingen avsluttes.</p>
         </details>
         <details>
           <summary>Hvor lagres dataene?</summary>
@@ -292,7 +295,7 @@
       </div>
 
       <h2>Videre</h2>
-      <p>For økonomiavdelingen: <a href="okonomiavdeling.html">fakturamottak, bilagsføring og månedsrapport</a> for bedrifter som bruker Xledger, Business Central, Tripletex eller Visma. Kortversjonen av sikkerhet står på <a href="index.html#sikkerhet">forsiden</a>.</p>
+      <p>For økonomiavdelingen: <a href="okonomiavdeling.html">fakturamottak, forberedte bilag og månedsrapport – du eller regnskapsføreren godkjenner</a> for bedrifter som bruker Xledger, Business Central, Tripletex eller Visma. Kortversjonen av sikkerhet står på <a href="index.html#sikkerhet">forsiden</a>.</p>
       <p><a class="btn btn-large btn-accent" href="#kontakt">Book en gratis prat</a></p>
     </article>
   </div>
@@ -330,6 +333,7 @@
       <a href="https://fjellhoy.com">fjellhoy.com</a>
       <a href="okonomiavdeling.html">Økonomiavdeling</a>
       <a href="sikkerhet.html" aria-current="page">Sikkerhet</a>
+      <a href="#sporsmal">Spørsmål</a>
       <a href="gdpr-og-databehandleravtale.html">GDPR og databehandleravtale</a>
       <a href="personvern.html">Personvern</a>
     </div>

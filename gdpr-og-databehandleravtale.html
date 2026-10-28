@@ -116,7 +116,7 @@
           "name": "Hvor ligger dataene når agenten er satt opp?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "I dine egne kontoer. Fjellhøy kopierer ikke e-posten eller dokumentene dine utover det oppsettet krever, og tilgangene fjernes når oppsettet er ferdig. Agent-tilbyderen du velger behandler opplysningene under din avtale med den tilbyderen."
+            "text": "I dine egne kontoer. Fjellhøy kopierer ikke e-posten eller dokumentene dine utover det oppsettet krever, og tilgangene fjernes når oppsettet er ferdig, eller når oppfølgingen avsluttes. Agent-tilbyderen du velger, behandler opplysningene under din avtale med den tilbyderen."
           }
         },
         {
@@ -148,7 +148,7 @@
           "name": "Hvor lenge oppbevares regnskapsopplysninger?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Faktura og regnskapsopplysninger oppbevares i fem år etter bokføringsloven."
+            "text": "Faktura- og regnskapsopplysninger oppbevares i fem år etter bokføringsloven."
           }
         },
         {
@@ -180,25 +180,28 @@
       <img class="brand-logo" src="assets/fjellhoy-v2c-bred.svg" alt="" width="138" height="46">
     </a>
     <nav class="nav-links" aria-label="Hovedmeny">
+  <div class="nav-drop">
       <a href="index.html#ai-agent">Tjenester</a>
-      <a href="sikkerhet.html">Sikkerhet</a>
-      <a href="index.html#slik">Slik fungerer det</a>
-      <a href="index.html#priser">Priser</a>
-      <a href="index.html#styrer">For styrer</a>
-      <a href="hvorfor-fjellhoy.html">Om Fjellhøy</a>
-      <a href="index.html#faq">Spørsmål</a>
+      <div class="nav-sub"><div class="nav-sub-box">
+        <a href="okonomiavdeling.html">Økonomiavdeling</a>
+        <a href="index.html#styrer">For styrer</a>
+      </div></div>
+    </div>
+  <a href="index.html#slik">Slik fungerer det</a>
+  <a href="index.html#priser">Priser</a>
+  <a href="hvorfor-fjellhoy.html">Om Fjellhøy</a>
     </nav>
     <a class="btn btn-small btn-accent nav-cta" href="index.html#kontakt">Book en prat</a>
     <nav class="lang-switch" aria-label="Språk"><a href="gdpr-og-databehandleravtale.html" hreflang="nb" lang="nb" aria-current="page">NO</a><a href="en/gdpr-and-data-processing-agreement.html" hreflang="en" lang="en">EN</a></nav>
     <button class="menu-toggle" type="button" aria-label="Meny" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span></button>
   </div>
   <nav id="mobile-menu" class="mobile-menu" aria-label="Seksjoner" hidden>
+    <a href="index.html#ai-agent">Tjenester</a>
+    <a class="menu-sub" href="okonomiavdeling.html">Økonomiavdeling</a>
+    <a class="menu-sub" href="index.html#styrer">For styrer</a>
     <a href="index.html#slik">Slik fungerer det</a>
     <a href="index.html#priser">Priser</a>
-    <a href="index.html#styrer">For styrer</a>
     <a href="hvorfor-fjellhoy.html">Om Fjellhøy</a>
-    <a href="index.html#faq">Spørsmål</a>
-    <a href="index.html#kontakt">Kontakt</a>
     <a class="btn btn-accent mobile-menu-cta" href="index.html#kontakt">Book en prat</a>
   </nav>
 </header>
@@ -212,11 +215,11 @@
       <p class="legal-updated">Sist oppdatert oktober 2026.</p>
 
       <h2>Kort fortalt</h2>
-      <p>Når vi setter opp en AI-agent for deg, skjer det i dine egne kontoer. Du godkjenner før noe sendes. Vi signerer databehandleravtale med deg før oppstart. Henvendelser og kundeopplysninger slettes senest 12 måneder etter at kontakten eller kundeforholdet er avsluttet. Faktura og regnskapsopplysninger oppbevares i fem år.</p>
+      <p>Når vi setter opp en AI-agent for deg, skjer det i dine egne kontoer. Du godkjenner før noe sendes. Vi signerer databehandleravtale med deg før oppstart. Henvendelser og kundeopplysninger slettes senest 12 måneder etter at kontakten eller kundeforholdet er avsluttet. Faktura- og regnskapsopplysninger oppbevares i fem år.</p>
 
       <h2>Hvor dataene ligger</h2>
-      <p>Oppsettet gjøres i kontoene du allerede bruker. Det er det samme som står under «Oppsett hos deg» i <a href="personvern.html">personvernerklæringen</a>. E-post, kalender og dokumenter blir værende der. Agent-tilbyderen du velger behandler opplysningene under din egen avtale med den tilbyderen.</p>
-      <p>Fjellhøy kopierer eller lagrer ikke e-posten eller dokumentene dine utover det oppsettet krever. Tilgangene fjernes når oppsettet er ferdig.</p>
+      <p>Oppsettet gjøres i kontoene du allerede bruker. Det er det samme som står under «Oppsett hos deg» i <a href="personvern.html">personvernerklæringen</a>. E-post, kalender og dokumenter blir værende der. Agent-tilbyderen du velger, behandler opplysningene under din egen avtale med den tilbyderen.</p>
+      <p>Fjellhøy kopierer eller lagrer ikke e-posten eller dokumentene dine utover det oppsettet krever. Tilgangene fjernes når oppsettet er ferdig, eller når oppfølgingen avsluttes.</p>
       <p>Nettsiden og e-post til oss er beskrevet i personvernerklæringen. Der står det også hvem som er behandlingsansvarlig for fjellhoy.com, og hvordan henvendelser til oss behandles.</p>
 
       <h2>Du godkjenner før noe sendes</h2>
@@ -224,13 +227,14 @@
 
       <h2>Databehandleravtale før oppstart</h2>
       <p>Vi signerer databehandleravtale med deg før oppstart. Avtalen gjelder arbeidet Fjellhøy gjør med personopplysninger for å sette opp og følge opp agenten. Ingenting starter før den er signert.</p>
-      <p>Revisjonsspor, tilgang og hvor data lagres, står på <a href="sikkerhet.html">Sikkerhet</a>.</p>
+      <p>Revisjonsspor, tilgang og hvor data lagres, står på <a href="sikkerhet.html">Sikkerhet</a>
+      <a href="index.html#faq">Spørsmål</a>.</p>
       <p>Avtalen er en del av oppstarten. Den er ikke en sertifisering, og den er ikke en garanti for at alt du bruker agenten til, er vurdert juridisk. Du bestemmer fortsatt hva som skal sendes, og du har avtalen med agent-tilbyderen du velger.</p>
 
       <h2>Sletting</h2>
       <p>E-posthenvendelser som ikke blir et kundeforhold, slettes senest 12 måneder etter siste kontakt. Det samme står i personvernerklæringen.</p>
       <p>Når du er kunde, registrerer vi navn, kontaktinformasjon, firmaopplysninger og notater om behov, oppsett og avtaler i et kunderegister. Opplysningene lagres så lenge kundeforholdet varer, og slettes senest 12 måneder etter at det er avsluttet.</p>
-      <p>Faktura og regnskapsopplysninger oppbevares i fem år etter bokføringsloven.</p>
+      <p>Faktura- og regnskapsopplysninger oppbevares i fem år etter bokføringsloven.</p>
 
       <h2>Det vi ikke lover</h2>
       <p>Fjellhøy er ikke sertifisert etter en GDPR-ordning, og vi gir ingen juridisk garanti. Denne siden beskriver hvordan oppsettet faktisk fungerer: i dine kontoer, med din godkjenning, og med databehandleravtale før oppstart. Spørsmål om hva bedriften din selv er ansvarlig for, tar du med regnskapsfører eller advokat der det trengs.</p>
@@ -239,7 +243,7 @@
       <div class="faq">
         <details open>
           <summary>Hvor ligger dataene når agenten er satt opp?</summary>
-          <p>I dine egne kontoer. Fjellhøy kopierer ikke e-posten eller dokumentene dine utover det oppsettet krever, og tilgangene fjernes når oppsettet er ferdig. Agent-tilbyderen du velger behandler opplysningene under din avtale med den tilbyderen.</p>
+          <p>I dine egne kontoer. Fjellhøy kopierer ikke e-posten eller dokumentene dine utover det oppsettet krever, og tilgangene fjernes når oppsettet er ferdig, eller når oppfølgingen avsluttes. Agent-tilbyderen du velger, behandler opplysningene under din avtale med den tilbyderen.</p>
         </details>
         <details>
           <summary>Signerer dere databehandleravtale?</summary>
@@ -255,7 +259,7 @@
         </details>
         <details>
           <summary>Hvor lenge oppbevares regnskapsopplysninger?</summary>
-          <p>Faktura og regnskapsopplysninger oppbevares i fem år etter bokføringsloven.</p>
+          <p>Faktura- og regnskapsopplysninger oppbevares i fem år etter bokføringsloven.</p>
         </details>
         <details>
           <summary>Er Fjellhøy GDPR-sertifisert, eller garanterer dere at oppsettet er lovlig?</summary>
@@ -286,7 +290,8 @@
       <a href="ai-radgiver-for-smb.html">Rådgivning for SMB</a>
       <a href="hva-koster-en-ai-agent-for-en-smb-i-2026.html">Hva koster en AI-agent</a>
       <a href="gdpr-og-databehandleravtale.html">GDPR og databehandleravtale</a>
-      <a href="sikkerhet.html">Sikkerhet</a><a href="personvern.html">Personvern</a>
+      <a href="sikkerhet.html">Sikkerhet</a>
+      <a href="index.html#faq">Spørsmål</a><a href="personvern.html">Personvern</a>
     </div>
     <p class="footer-copy">Fjellhøy AS · org.nr. 936 970 583 MVA · Sole allé 65, 1540 Vestby · <a href="tel:+4741600048">+47 416 00 048</a> · <a href="mailto:andreas@fjellhoy.com">andreas@fjellhoy.com</a></p>
     <p class="footer-year">© <span id="year">2026</span> Fjellhøy AS</p>

@@ -47,7 +47,7 @@
         "height": 400
       },
       "image": "https://fjellhoy.com/assets/fjellhoy-v2c-profilbilde.png",
-      "telephone": "+47 41600048",
+      "telephone": "+47 416 00 048",
       "email": "andreas@fjellhoy.com",
       "description": "Fjellhøy AS gir rådgivning og automatisering av kontorarbeid for små bedrifter og styrer, inkludert regnskap og styrearbeid. Vi setter opp en AI-agent i kontoene kunden allerede bruker, og kunden godkjenner før noe sendes.",
       "identifier": {
@@ -97,7 +97,7 @@
       ],
       "contactPoint": {
         "@type": "ContactPoint",
-        "telephone": "+47-416-00-048",
+        "telephone": "+47 416 00 048",
         "email": "andreas@fjellhoy.com",
         "contactType": "customer service",
         "availableLanguage": [
@@ -214,7 +214,7 @@
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" sizes="180x180">
 </head>
 <body>
-<div class="preview-bar" role="note"><div class="container"><p><strong>Forhåndsvisning D.</strong> Forslaget på forsiden er variant A. Denne siden skal ikke indekseres, og fjernes før merge.</p><p><a href="preview-hero-a.html">Variant A</a> · <a href="preview-hero-b.html">Variant B</a> · <a href="preview-hero-c.html">Variant C</a> · <a href="preview-hero-d.html" aria-current="page">Variant D</a> · <a href="en/preview-hero-d.html" hreflang="en" lang="en">English</a></p></div></div>
+<div class="preview-bar" role="note"><div class="container"><p><strong>Forhåndsvisning D.</strong> Forslaget på forsiden er variant A. Siden skal ikke indekseres, og fjernes før merge.</p><p><a href="preview-hero-a.html">Variant A</a> · <a href="preview-hero-b.html">Variant B</a> · <a href="preview-hero-c.html">Variant C</a> · <a href="preview-hero-d.html" aria-current="page">Variant D</a> · <a href="en/preview-hero-d.html" hreflang="en" lang="en">English</a></p></div></div>
 <div id="top"></div>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -228,27 +228,28 @@
       <img class="brand-logo" src="assets/fjellhoy-v2c-bred.svg" alt="" width="138" height="46">
     </a>
     <nav class="nav-links" aria-label="Hovedmeny">
+  <div class="nav-drop">
       <a href="#ai-agent">Tjenester</a>
-      <a href="sikkerhet.html">Sikkerhet</a>
-      <a href="#slik">Slik fungerer det</a>
-      <a href="#priser">Priser</a>
-      <a href="#styrer">For styrer</a>
-      <a href="hvorfor-fjellhoy.html">Om Fjellhøy</a>
-      <a href="#faq">Spørsmål</a>
+      <div class="nav-sub"><div class="nav-sub-box">
+        <a href="okonomiavdeling.html">Økonomiavdeling</a>
+        <a href="#styrer">For styrer</a>
+      </div></div>
+    </div>
+  <a href="#slik">Slik fungerer det</a>
+  <a href="#priser">Priser</a>
+  <a href="hvorfor-fjellhoy.html">Om Fjellhøy</a>
     </nav>
     <a class="btn btn-small btn-accent nav-cta" href="#kontakt">Book en prat</a>
     <nav class="lang-switch" aria-label="Språk"><a href="preview-hero-d.html" hreflang="nb" lang="nb" aria-current="page">NO</a><a href="en/preview-hero-d.html" hreflang="en" lang="en">EN</a></nav>
     <button class="menu-toggle" type="button" aria-label="Meny" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span></button>
   </div>
   <nav id="mobile-menu" class="mobile-menu" aria-label="Seksjoner" hidden>
-    <a href="okonomiavdeling.html">Økonomiavdeling</a>
-    <a href="sikkerhet.html">Sikkerhet</a>
+    <a href="#ai-agent">Tjenester</a>
+    <a class="menu-sub" href="okonomiavdeling.html">Økonomiavdeling</a>
+    <a class="menu-sub" href="#styrer">For styrer</a>
     <a href="#slik">Slik fungerer det</a>
     <a href="#priser">Priser</a>
-    <a href="#styrer">For styrer</a>
     <a href="hvorfor-fjellhoy.html">Om Fjellhøy</a>
-    <a href="#faq">Spørsmål</a>
-    <a href="#kontakt">Kontakt</a>
     <a class="btn btn-accent mobile-menu-cta" href="#kontakt">Book en prat</a>
   </nav>
 </header>
@@ -262,12 +263,19 @@
   <div class="container hero-grid">
     <div class="hero-copy">
       <span class="slogan-pill"><svg class="ico-xs" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4-6.2-4.6-6.2 4.6 2.4-7.4L2 9.4h7.6z" fill="currentColor"/></svg>Den beste kollegaen du slipper å ansette</span>
-      <h1>Et helt kontorteam av AI-agenter: e-post, økonomi, fakturaer, markedsføring og oversikt over konkurrentene. Du godkjenner, de gjør resten.</h1>
-      <p class="hero-subtitle">Fra kundeoppfølging og nettsider til styrepapirer. De følger med på markeder, konkurrenter og nyheter og lager ukentlige rapporter.</p>
+      <h1>Et kontorteam for økonomi, e-post, marked og styre.</h1>
+      <ul class="hero-chips">
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h7l5 5v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h4"/></svg>Økonomi og bilag</li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg>E-post og kunder</li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 21V4"/><path d="M5 4h11l-2.2 4L16 12H5"/></svg>Markedsføring</li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19V10"/><path d="M10 19V5"/><path d="M16 19v-6"/><path d="M3 19h18"/></svg>Analyse og rapporter</li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21h18"/><path d="M6 21V9l6-5 6 5v12"/><path d="M10 21v-5h4v5"/></svg>Styrearbeid</li>
+      </ul>
+      <p class="hero-subtitle">De hjelper deg med økonomi og forbereder bilag. Du godkjenner, de gjør resten.</p>
       <dl class="tldr">
         <div>
           <dt>Hva</dt>
-          <dd>En AI-agent lager utkast til e-post, økonomi, marked og styrearbeid.</dd>
+          <dd>Hjelper deg med økonomi og forbereder bilag.</dd>
         </div>
         <div>
           <dt>For hvem</dt>
@@ -307,6 +315,15 @@
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- HVA ER EN AI-AGENT, KORT -->
+<section class="agent-intro" aria-labelledby="agent-intro-title">
+  <div class="container">
+    <h2 id="agent-intro-title">Hva er en AI-agent?</h2>
+    <p>En AI-agent – også kalt KI-agent – er en digital medarbeider som bruker kunstig intelligens til å <em>gjøre</em> oppgaver for deg, ikke bare svare på spørsmål. Den personlige assistenten jeg setter opp for deg, er nettopp en slik agent.</p>
+    <p class="agent-more"><a href="#ai-agent">Se de tre stegene</a></p>
   </div>
 </section>
 
@@ -402,7 +419,7 @@
       <div class="signal-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></div>
       <div>
         <h2>Den sier fra når noe betyr noe</h2>
-        <p>En aksje du eier får en nyhet som kan påvirke verdien. Samme dag får du vite hva som skjedde, hva det kan bety i kroner og hva du bør vurdere. Resten av dagene er det stille.</p>
+        <p>En aksje du eier får en nyhet som kan påvirke verdien. Samme dag får du vite hva som skjedde, og hva det kan bety. Resten av dagene er det stille.</p>
       </div>
     </aside>
   </div>
@@ -547,15 +564,15 @@
               <ul class="setup-list">
                 <li>Likviditet for de neste ukene, fra utestående og regninger som kommer.</li>
                 <li>Margen på badjobben til Marte Ådnanes, sjekket mot lignende jobber.</li>
-                <li>Purreutkast på forfalt faktura. MVA hos Sindre Vassenden og sertifikat er med.</li>
+                <li>Purreutkast på forfalt faktura. mva hos Sindre Vassenden og sertifikat er med.</li>
               </ul>
             </section>
             <section class="setup-part">
               <h4>Dette slipper du</h4>
               <ul class="setup-list">
                 <li>Å regne de neste ukenes likviditet for hånd</li>
-                <li>Å oppdage svak margen på jobben til Marte Ådnanes for sent</li>
-                <li>Å skrive purring og holde MVA og sertifikat i hodet</li>
+                <li>Å oppdage svak margin på jobben til Marte Ådnanes for sent</li>
+                <li>Å skrive purring og holde mva og sertifikat i hodet</li>
               </ul>
             </section>
           </div>
@@ -606,7 +623,7 @@
           <p class="divider"><span>09:15</span></p>
           <div class="msg msg-user"><div class="bubble"><p>Hvordan ser likviditeten ut?</p></div></div>
           <p class="workline is-done"><i class="wico" aria-hidden="true"></i><span>Sammenlignet med regninger som kommer</span></p>
-          <div class="msg msg-bot"><span class="ava-sm" aria-hidden="true">A</span><div class="bot-col"><p class="bot-name">Din assistent</p><p class="bot-text">Uken er stram før MVA hos Sindre Vassenden. Ingenting er betalt.</p></div></div>
+          <div class="msg msg-bot"><span class="ava-sm" aria-hidden="true">A</span><div class="bot-col"><p class="bot-name">Din assistent</p><p class="bot-text">Uken er stram før mva hos Sindre Vassenden. Ingenting er betalt.</p></div></div>
           <p class="divider"><span>14:20</span><span class="div-tag">Rutine</span></p>
           <div class="msg msg-bot"><span class="ava-sm" aria-hidden="true">A</span><div class="bot-col"><p class="bot-name">Din assistent</p><p class="bot-text">Lomelde Bygg AS har en faktura som er forfalt.</p><div class="qcard"><p>Skal jeg purre Lomelde Bygg AS?</p><div class="choices"><span class="choice is-primary is-on">Ja, lag purring</span><span class="choice is-off">Vent en uke</span></div></div></div></div>
           <p class="divider"><span>16:30</span><span class="div-tag">Rutine</span></p>
@@ -624,8 +641,7 @@
     <div class="section-head">
       <span class="eyebrow">Enkelt forklart</span>
       <h2>Hva er en AI-agent?</h2>
-      <p>En AI-agent – også kalt KI-agent – er en digital medarbeider som bruker kunstig intelligens til å <em>gjøre</em> oppgaver for deg, ikke bare svare på spørsmål. Den personlige assistenten jeg setter opp for deg, er nettopp en slik agent. Den jobber i tre enkle steg:</p>
-      <p class="bransjer-links"><a href="okonomiavdeling.html">Økonomiavdeling</a> — fakturamottak, bilagsføring og månedsrapport for bedrifter som bruker Xledger, Business Central, Tripletex eller Visma.</p>
+      <p>Den jobber i tre enkle steg:</p>
     </div>
     <ol class="agent-flow">
       <li class="agent-step">
@@ -659,6 +675,9 @@
     </div>
   </div>
 </section>
+
+
+<p class="container bransjer-links"><a href="okonomiavdeling.html">Økonomiavdeling</a> — fakturamottak, forberedte bilag og månedsrapport. Du eller regnskapsføreren godkjenner.</p>
 
 <!-- SIKKERHET -->
 <section class="section section-compact-top" id="sikkerhet">
@@ -784,7 +803,7 @@
     <div class="price-extras price-extras-single">
       <div class="extra extra-guarantee">
         <div class="icon-wrap"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div>
-        <div><h3>Pengene tilbake-garanti</h3><p>Er du ikke fornøyd etter oppstarten, får du pengene tilbake.</p></div>
+        <div><h3>Pengene-tilbake-garanti</h3><p>Er du ikke fornøyd etter oppstarten, får du pengene tilbake.</p></div>
       </div>
     </div>
   </div>
@@ -944,7 +963,7 @@
         </div>
         <p class="cta-contact"><a href="tel:+4741600048">+47 416 00 048</a><a href="mailto:andreas@fjellhoy.com">andreas@fjellhoy.com</a></p>
       </div>
-      <p class="contact-proof">Fjellhøy AS · org.nr. 936 970 583 · 1540 Vestby · <a href="https://virksomhet.brreg.no/nb/oppslag/enheter/936970583">Registrert i Foretaksregisteret</a></p>
+      <p class="contact-proof">Fjellhøy AS · org.nr. 936 970 583 · Sole allé 65, 1540 Vestby · <a href="https://virksomhet.brreg.no/nb/oppslag/enheter/936970583">Registrert i Foretaksregisteret</a></p>
     </div>
   </div>
 </section>
@@ -985,6 +1004,7 @@
       <a href="okonomiavdeling.html">Økonomiavdeling</a>
       <a href="gdpr-og-databehandleravtale.html">GDPR og databehandleravtale</a>
       <a href="sikkerhet.html">Sikkerhet</a>
+      <a href="#faq">Spørsmål</a>
       <a href="personvern.html">Personvern</a>
     </div>
     <p class="footer-copy">Fjellhøy AS · org.nr. 936 970 583 MVA · Sole allé 65, 1540 Vestby · <a href="tel:+4741600048">+47 416 00 048</a> · <a href="mailto:andreas@fjellhoy.com">andreas@fjellhoy.com</a></p>
@@ -1107,24 +1127,24 @@
   };
   const scenes={
     'handverk|leder':{
-      day:['Likviditet for de neste ukene, fra utestående og regninger som kommer.','Margen på badjobben til Marte Ådnanes, sjekket mot lignende jobber.','Purreutkast på forfalt faktura. MVA hos Sindre Vassenden og sertifikat er med.'],
-      skip:['Å regne de neste ukenes likviditet for hånd','Å oppdage svak margen på jobben til Marte Ådnanes for sent','Å skrive purring og holde MVA og sertifikat i hodet'],
+      day:['Likviditet for de neste ukene, fra utestående og regninger som kommer.','Margen på badjobben til Marte Ådnanes, sjekket mot lignende jobber.','Purreutkast på forfalt faktura. mva hos Sindre Vassenden og sertifikat er med.'],
+      skip:['Å regne de neste ukenes likviditet for hånd','Å oppdage svak margin på jobben til Marte Ådnanes for sent','Å skrive purring og holde mva og sertifikat i hodet'],
     },
     'handverk|selger':{
       day:['Research før møtet med Marte Ådnanes: historikk og åpne saker.','Åpne tilbud i rekkefølge. Marte Ådnanes følges opp først.','Tilbudsutkast til Marte Ådnanes, bygget på badjobben i fjor.'],
-      skip:['Å lete i historikken til Marte rett før møtet','Å gjette hvilket tilbud som skal følges opp først','Å skrive tilbudet til Marte Ådnanes fra blankt ark'],
+      skip:['Å lete i historikken til Marte Ådnanes rett før møtet','Å gjette hvilket tilbud som skal følges opp først','Å skrive tilbudet til Marte Ådnanes fra blankt ark'],
     },
     'handverk|kontor':{
       day:['Fakturaer er avstemt mot ordre. Avvik fra Brekkevik Rør AS er flagget.','Utkast til oppfølging av Marte Ådnanes og leverandøren. Ingenting sendes ennå.','Mappen til Sindre Vassenden er samlet fra regnskapssystemet ditt.'],
-      skip:['Å avstemme faktura mot ordre for hånd','Å skrive oppfølgingen til Marte og leverandøren fra blankt ark','Å lete fram grunnlag til Sindre Vassenden'],
+      skip:['Å avstemme faktura mot ordre for hånd','Å skrive oppfølgingen til Marte Ådnanes og leverandøren fra blankt ark','Å lete fram grunnlag til Sindre Vassenden'],
     },
     'handverk|enk':{
-      day:['Enkel likviditet: utestående og regninger neste uke.','Timer på badjobben til Marte er samlet. Fakturaen er et utkast.','MVA-frist og oppfølging til Marte Ådnanes. Du sier ja selv.'],
-      skip:['Å regne likviditeten mellom jobbene','Å samle timer til faktura sent på kvelden','Å glemme MVA-fristen og oppfølgingen til Marte'],
+      day:['Enkel likviditet: utestående og regninger neste uke.','Timer på badjobben til Marte Ådnanes er samlet. Fakturaen er et utkast.','mva-frist og oppfølging til Marte Ådnanes. Du sier ja selv.'],
+      skip:['Å regne likviditeten mellom jobbene','Å samle timer til faktura sent på kvelden','Å glemme mva-fristen og oppfølgingen til Marte Ådnanes'],
     },
     'regnskap|leder':{
-      day:['Ukentlig nøkkeltall: omsetning, ordrereserve og avvik mot budsjett.','Møtebrief før Lomelde Bygg AS, med historikk, åpne saker og agenda.','A-melding og MVA er flagget. Sindre Vassenden har fristen på listen.'],
-      skip:['Å hente nøkkeltallene fra flere steder','Å møte Lomelde Bygg AS uten historikk og åpne saker','Å holde a-melding og MVA i hodet'],
+      day:['Ukentlig nøkkeltall: omsetning, ordrereserve og avvik mot budsjett.','Møtebrief før Lomelde Bygg AS, med historikk, åpne saker og agenda.','A-melding og mva er flagget. Sindre Vassenden har fristen på listen.'],
+      skip:['Å hente nøkkeltallene fra flere steder','Å møte Lomelde Bygg AS uten historikk og åpne saker','Å holde a-melding og mva i hodet'],
     },
     'regnskap|selger':{
       day:['Research før møtet med Instefjord Eiendom AS: tidligere oppdrag og åpne saker.','Pipeline: tre tilbud ligger åpne, satt i rekkefølge.','Tilbudsutkast til Lomelde Bygg AS, bygget på forrige lignende oppdrag.'],
@@ -1139,44 +1159,44 @@
       skip:['Å regne likviditeten mellom oppdrag','Å samle timer til faktura for hånd','Å oppdage skattefristen for sent'],
     },
     'helse|leder':{
-      day:['Likviditet neste uker, fra utestående oppgjør og faste regninger.','Møtebrief før timen med Marte Ådnanes: historikk, åpne saker og agenda.','Forsikring og autorisasjon har frist. Ubesvart henvendelse fra Marte er med.'],
+      day:['Likviditet neste uker, fra utestående oppgjør og faste regninger.','Møtebrief før timen med Marte Ådnanes: historikk, åpne saker og agenda.','Forsikring og autorisasjon har frist. Ubesvart henvendelse fra Marte Ådnanes er med.'],
       skip:['Å sette opp likviditeten mellom timene','Å møte Marte Ådnanes uten åpne saker','Å oppdage frist på forsikring og autorisasjon for sent'],
     },
     'helse|selger':{
       day:['Research før samtalen med Marte Ådnanes: historikk og åpent spørsmål.','Oppfølging av henvendelser som har ligget stille, i rekkefølge.','Utkast til tilbud om opplegg, bygget på et lignende forløp. Ikke sendt.'],
-      skip:['Å lete i historikken til Marte før samtalen','Å glemme henvendelser som har ligget stille','Å skrive tilbudet fra blankt ark'],
+      skip:['Å lete i historikken til Marte Ådnanes før samtalen','Å glemme henvendelser som har ligget stille','Å skrive tilbudet fra blankt ark'],
     },
     'helse|kontor':{
       day:['Oppgjør avstemt mot timer. Avvik for Marte Ådnanes er flagget.','Utkast til oppfølging av ubesvart time. Ingenting sendes uten ditt ja.','Grunnlag til Sindre Vassenden er samlet fra regnskapssystemet ditt.'],
-      skip:['Å avstemme oppgjør mot timer for hånd','Å skrive oppfølgingen til Marte fra blankt ark','Å samle grunnlaget til Sindre Vassenden selv'],
+      skip:['Å avstemme oppgjør mot timer for hånd','Å skrive oppfølgingen til Marte Ådnanes fra blankt ark','Å samle grunnlaget til Sindre Vassenden selv'],
     },
     'helse|enk':{
-      day:['Enkel likviditet fra utestående oppgjør.','Timer og oppgjør for Marte Ådnanes er klare til faktura.','MVA-frist og oppfølging av timen. Utkastet venter på deg.'],
-      skip:['Å regne likviditeten mellom timene','Å samle oppgjør til faktura for hånd','Å glemme MVA og oppfølgingen til Marte'],
+      day:['Enkel likviditet fra utestående oppgjør.','Timer og oppgjør for Marte Ådnanes er klare til faktura.','mva-frist og oppfølging av timen. Utkastet venter på deg.'],
+      skip:['Å regne likviditeten mellom timene','Å samle oppgjør til faktura for hånd','Å glemme mva og oppfølgingen til Marte Ådnanes'],
     },
     'butikk|leder':{
-      day:['Prisendring hos Brekkevik Rør AS er flagget mot forrige avtale.','Margen på avsluttede ordre avviker. Tre ordre er merket.','Likviditet neste uke, og MVA-frist hos Sindre Vassenden.'],
-      skip:['Å oppdage prisendringen fra Brekkevik Rør AS i etterkant','Å sjekke margen på avsluttede ordre for hånd','Å regne neste uke og MVA-fristen selv'],
+      day:['Prisendring hos Brekkevik Rør AS er flagget mot forrige avtale.','Margen på avsluttede ordre avviker. Tre ordre er merket.','Likviditet neste uke, og mva-frist hos Sindre Vassenden.'],
+      skip:['Å oppdage prisendringen fra Brekkevik Rør AS i etterkant','Å sjekke marginen på avsluttede ordre for hånd','Å regne neste uke og mva-fristen selv'],
     },
     'butikk|selger':{
       day:['Research før samtalen med Marte Ådnanes om leveransen.','Åpne tilbud i rekkefølge. Lomelde Bygg AS har ligget lengst.','Tilbudsutkast bygget på en lignende ordre. Du leser før det sendes.'],
-      skip:['Å møte Marte uten leveransehistorikken','Å følge opp åpne tilbud i tilfeldig rekkefølge','Å skrive tilbudet uten lignende ordre'],
+      skip:['Å møte Marte Ådnanes uten leveransehistorikken','Å følge opp åpne tilbud i tilfeldig rekkefølge','Å skrive tilbudet uten lignende ordre'],
     },
     'butikk|kontor':{
       day:['Fakturaer avstemt mot ordre. Brekkevik Rør AS er flagget på avvikslisten.','Utkast til leverandøroppfølging og svar til Marte Ådnanes om retur.','Mappen til Sindre Vassenden er klar fra regnskapssystemet ditt.'],
       skip:['Å avstemme faktura mot ordre for hånd','Å skrive leverandøroppfølgingen fra blankt ark','Å lete fram bilag til Sindre Vassenden'],
     },
     'butikk|enk':{
-      day:['Enkel likviditet: utestående og varekjøp neste uke.','Tilbud til Marte Ådnanes, bygget på en lignende ordre.','MVA-frist og oppfølging av ordren. Ingenting sendes ennå.'],
-      skip:['Å regne likviditet og varekjøp for hånd','Å skrive tilbudet til Marte fra blankt ark','Å glemme MVA-fristen'],
+      day:['Enkel likviditet: utestående og varekjøp neste uke.','Tilbud til Marte Ådnanes, bygget på en lignende ordre.','mva-frist og oppfølging av ordren. Ingenting sendes ennå.'],
+      skip:['Å regne likviditet og varekjøp for hånd','Å skrive tilbudet til Marte Ådnanes fra blankt ark','Å glemme mva-fristen'],
     },
     'eiendom|leder':{
       day:['Likviditet fra utestående husleie og regninger de neste ukene.','Kontrakten fra Instefjord Eiendom AS har punkter som avviker fra vanlige vilkår.','Forespørselen fra Marte Ådnanes er ubesvart. Forsikringsfrist er flagget.'],
-      skip:['Å regne likviditeten fra husleie og regninger for hånd','Å lese kontrakten uten å se avvikene','Å glemme forespørselen fra Marte og forsikringsfristen'],
+      skip:['Å regne likviditeten fra husleie og regninger for hånd','Å lese kontrakten uten å se avvikene','Å glemme forespørselen fra Marte Ådnanes og forsikringsfristen'],
     },
     'eiendom|selger':{
       day:['Research før visning med Marte Ådnanes: historikk og åpne spørsmål.','Ubesvarte tilbud er satt i rekkefølge for oppfølging.','Tilbudsutkast til Instefjord Eiendom AS, bygget på forrige oppdrag.'],
-      skip:['Å gå på visning uten historikken til Marte','Å glemme ubesvarte tilbud','Å skrive tilbudet til Instefjord Eiendom AS fra blankt ark'],
+      skip:['Å gå på visning uten historikken til Marte Ådnanes','Å glemme ubesvarte tilbud','Å skrive tilbudet til Instefjord Eiendom AS fra blankt ark'],
     },
     'eiendom|kontor':{
       day:['Krav avstemt mot avtaler. Avvik hos Marte Ådnanes er flagget.','Utkast til oppfølging av Instefjord Eiendom AS. Ingenting sendes ennå.','Grunnlag til Sindre Vassenden er samlet fra regnskapssystemet ditt.'],
@@ -1184,42 +1204,42 @@
     },
     'eiendom|enk':{
       day:['Enkel likviditet fra husleie som står ute.','Tilbud til Marte Ådnanes om det praktiske. Utkast, ikke sendt.','Kontraktsfrist og skattefrist. Oppfølgingen venter på deg.'],
-      skip:['Å regne likviditeten fra husleie for hånd','Å skrive tilbudet til Marte fra blankt ark','Å glemme kontraktsfrist og skatt'],
+      skip:['Å regne likviditeten fra husleie for hånd','Å skrive tilbudet til Marte Ådnanes fra blankt ark','Å glemme kontraktsfrist og skatt'],
     },
     'konsulent|leder':{
-      day:['Nøkkeltall denne uken: omsetning, ordrereserve og avvik mot budsjett.','Møtebrief før Marte Ådnanes, med historikk, åpne saker og agenda.','Tilbudet til Lomelde Bygg AS er ubesvart. MVA hos Sindre Vassenden er med.'],
+      day:['Nøkkeltall denne uken: omsetning, ordrereserve og avvik mot budsjett.','Møtebrief før Marte Ådnanes, med historikk, åpne saker og agenda.','Tilbudet til Lomelde Bygg AS er ubesvart. mva hos Sindre Vassenden er med.'],
       skip:['Å hente nøkkeltall fra flere steder før uken starter','Å møte Marte Ådnanes uten historikk og agenda','Å la tilbudet til Lomelde Bygg AS bli liggende'],
     },
     'konsulent|selger':{
       day:['Research før møtet med Marte Ådnanes: tidligere oppdrag og åpne saker.','Pipeline med åpne tilbud i rekkefølge. Lomelde Bygg AS først.','Tilbudsutkast bygget på et lignende oppdrag. Du leser før det sendes.'],
-      skip:['Å møte Marte uten tidligere oppdrag','Å miste oversikten over åpne tilbud','Å skrive tilbudet fra blankt ark'],
+      skip:['Å møte Marte Ådnanes uten tidligere oppdrag','Å miste oversikten over åpne tilbud','Å skrive tilbudet fra blankt ark'],
     },
     'konsulent|kontor':{
       day:['Fakturaer avstemt mot timer. Avvik på Lomelde Bygg AS er flagget.','Utkast til oppfølging etter møtet med Marte Ådnanes.','Timegrunnlag til Sindre Vassenden er hentet fra regnskapssystemet ditt.'],
-      skip:['Å avstemme faktura mot timer for hånd','Å skrive oppfølgingen til Marte fra blankt ark','Å rekonstruere timene til Sindre Vassenden'],
+      skip:['Å avstemme faktura mot timer for hånd','Å skrive oppfølgingen til Marte Ådnanes fra blankt ark','Å rekonstruere timene til Sindre Vassenden'],
     },
     'konsulent|enk':{
-      day:['Enkel likviditet før neste ukes regninger.','Timer hos Marte Ådnanes er klare. Fakturaen er et utkast.','MVA-frist, og tilbudet til Lomelde Bygg AS er ubesvart.'],
-      skip:['Å regne likviditeten mellom oppdrag','Å samle timer til faktura sent på kvelden','Å glemme MVA og tilbudet til Lomelde Bygg AS'],
+      day:['Enkel likviditet før neste ukes regninger.','Timer hos Marte Ådnanes er klare. Fakturaen er et utkast.','mva-frist, og tilbudet til Lomelde Bygg AS er ubesvart.'],
+      skip:['Å regne likviditeten mellom oppdrag','Å samle timer til faktura sent på kvelden','Å glemme mva og tilbudet til Lomelde Bygg AS'],
     },
     'restaurant|leder':{
-      day:['Prisendring hos Brekkevik Rør AS, og likviditet før neste ukes regninger.','Margen på avsluttet selskap for Marte Ådnanes avviker fra lignende.','Forsikring og MVA har frist. Sindre Vassenden står på listen.'],
-      skip:['Å oppdage prisendringen fra Brekkevik Rør AS for sent','Å sjekke margen på selskapet til Marte for hånd','Å holde forsikring og MVA i hodet'],
+      day:['Prisendring hos Brekkevik Rør AS, og likviditet før neste ukes regninger.','Margen på avsluttet selskap for Marte Ådnanes avviker fra lignende.','Forsikring og mva har frist. Sindre Vassenden står på listen.'],
+      skip:['Å oppdage prisendringen fra Brekkevik Rør AS for sent','Å sjekke marginen på selskapet til Marte Ådnanes for hånd','Å holde forsikring og mva i hodet'],
     },
     'restaurant|selger':{
       day:['Research før henvendelsen fra Marte Ådnanes om selskap.','Åpne forespørsler i rekkefølge. Lomelde Bygg AS har ventet lengst.','Tilbudsutkast til selskapet, bygget på et lignende arrangement.'],
-      skip:['Å svare Marte uten å se tidligere selskap','Å følge opp forespørsler i tilfeldig rekkefølge','Å skrive tilbudet fra blankt ark'],
+      skip:['Å svare Marte Ådnanes uten å se tidligere selskap','Å følge opp forespørsler i tilfeldig rekkefølge','Å skrive tilbudet fra blankt ark'],
     },
     'restaurant|kontor':{
       day:['Leverandørfaktura avstemt mot følgeseddel. Brekkevik Rør AS avviker.','Utkast til oppfølging av leverandøren og svar til Marte Ådnanes.','Mappen til Sindre Vassenden er samlet fra regnskapssystemet ditt.'],
       skip:['Å avstemme faktura mot følgeseddel for hånd','Å skrive oppfølgingen fra blankt ark','Å samle bilag til Sindre Vassenden selv'],
     },
     'restaurant|enk':{
-      day:['Enkel likviditet før varekjøp neste uke.','Tilbud på selskap til Marte Ådnanes, bygget på et lignende.','MVA-frist og oppfølging. Utkastet sendes ikke før du sier ja.'],
-      skip:['Å regne likviditet og varekjøp for hånd','Å skrive tilbudet på selskapet fra blankt ark','Å glemme MVA-fristen'],
+      day:['Enkel likviditet før varekjøp neste uke.','Tilbud på selskap til Marte Ådnanes, bygget på et lignende.','mva-frist og oppfølging. Utkastet sendes ikke før du sier ja.'],
+      skip:['Å regne likviditet og varekjøp for hånd','Å skrive tilbudet på selskapet fra blankt ark','Å glemme mva-fristen'],
     },
     'annet|leder':{
-      day:['Likviditet neste uker, fra utestående og kommende regninger.','Møtebrief før Marte Ådnanes, med historikk, åpne saker og agenda.','Kort notat om et anbud, og frist for MVA og a-melding.'],
+      day:['Likviditet neste uker, fra utestående og kommende regninger.','Møtebrief før Marte Ådnanes, med historikk, åpne saker og agenda.','Kort notat om et anbud, og frist for mva og a-melding.'],
       skip:['Å regne likviditeten for hånd','Å møte Marte Ådnanes uten åpne saker','Å vurdere anbud og frister fra blankt ark'],
     },
     'annet|selger':{
@@ -1231,8 +1251,8 @@
       skip:['Å avstemme faktura mot underlag for hånd','Å skrive oppfølgingen fra blankt ark','Å lete fram mappen til Sindre Vassenden'],
     },
     'annet|enk':{
-      day:['Enkel likviditet: utestående og regninger neste uke.','Tilbud til Marte Ådnanes. Timer er samlet til faktura.','MVA-frist og kundeoppfølging. Du godkjenner før noe sendes.'],
-      skip:['Å regne likviditeten mellom jobbene','Å skrive tilbud og samle timer for hånd','Å glemme MVA og oppfølgingen'],
+      day:['Enkel likviditet: utestående og regninger neste uke.','Tilbud til Marte Ådnanes. Timer er samlet til faktura.','mva-frist og kundeoppfølging. Du godkjenner før noe sendes.'],
+      skip:['Å regne likviditeten mellom jobbene','Å skrive tilbud og samle timer for hånd','Å glemme mva og oppfølgingen'],
     },
     'borettslag|styreleder':{
       day:['Faktura fra Brekkevik Rør AS er sjekket mot tidligere pris og avtalen.','Saksliste og innkalling ligger klare. Utkast til svar til Halvard Mjøsund.','Vedtak fra forrige møte, og to tilbud fra håndverkere, er sammenlignet.'],
@@ -1642,15 +1662,15 @@
       ],
       "say": "God morgen Sindre. Dette er dagen din:",
       "points": [
-        "Faktura 1042 til Marte er forfalt.",
-        "MVA-meldingen må sendes denne uken.",
+        "Faktura 1042 til Marte Ådnanes er forfalt.",
+        "mva-meldingen må sendes denne uken.",
         "Brekkevik Rør sjekkes mot avtalen.",
         "Stram likviditet de neste ukene."
       ]
     },
     {
       "t": "08:10",
-      "user": "Ta purringen til Marte først.",
+      "user": "Ta purringen til Marte Ådnanes først.",
       "work": [
         "Skrev utkast til Marte Ådnanes"
       ],
@@ -1658,7 +1678,7 @@
       "mail": {
         "to": "Marte Ådnanes",
         "sub": "Faktura forfalt",
-        "body": "Hei Marte. Vi minner om faktura 1042 for badjobben, som forfalt 10. oktober. Gi gjerne beskjed om noe er uklart. Hilsen Sindre",
+        "body": "Hei Marte Ådnanes. Vi minner om faktura 1042 for badjobben, som forfalt 10. oktober. Gi gjerne beskjed om noe er uklart. Hilsen Sindre",
         "draft": true
       }
     },
@@ -1672,15 +1692,15 @@
       "mail": {
         "to": "Marte Ådnanes",
         "sub": "Faktura forfalt",
-        "body": "Hei Marte. Vi minner om faktura 1042 for badjobben, som forfalt 10. oktober. Beløpet kan deles i to. Gi gjerne beskjed om noe er uklart. Hilsen Sindre"
+        "body": "Hei Marte Ådnanes. Vi minner om faktura 1042 for badjobben, som forfalt 10. oktober. Beløpet kan deles i to. Gi gjerne beskjed om noe er uklart. Hilsen Sindre"
       }
     },
     {
       "t": "10:40",
       "work": [
-        "Klargjorde grunnlaget for MVA"
+        "Klargjorde grunnlaget for mva"
       ],
-      "say": "Grunnlaget for MVA-meldingen er klart. Du godkjenner før den sendes.",
+      "say": "Grunnlaget for mva-meldingen er klart. Du godkjenner før den sendes.",
       "file": "MVA_oktober.xlsx"
     },
     {
@@ -1705,7 +1725,7 @@
       "work": [
         "Sammenlignet med regninger som kommer"
       ],
-      "say": "Brekkevik Rør AS kan vente til du har sett avviket. Kontorleien kan vente til fredag. MVA-meldingen kan ikke vente.",
+      "say": "Brekkevik Rør AS kan vente til du har sett avviket. Kontorleien kan vente til fredag. mva-meldingen kan ikke vente.",
       "file": "Likviditet_uke43.xlsx"
     },
     {
@@ -1743,11 +1763,11 @@
         "work": [
           "Sammenlignet med regninger som kommer"
         ],
-        "say": "Uken er stram før MVA hos Sindre Vassenden. Ingenting er betalt."
+        "say": "Uken er stram før mva hos Sindre Vassenden. Ingenting er betalt."
       },
       {
         "t": "12:10",
-        "user": "Hva med margen på badjobben til Marte?",
+        "user": "Hva med marginen på badjobben til Marte Ådnanes?",
         "work": [
           "Sammenlignet med 3 lignende badjobber"
         ],
@@ -1794,7 +1814,7 @@
       },
       {
         "t": "09:05",
-        "user": "Forbered meg til møtet med Marte.",
+        "user": "Forbered meg til møtet med Marte Ådnanes.",
         "work": [
           "Samlet 2 åpne saker"
         ],
@@ -1807,7 +1827,7 @@
         ],
         "say": "Marte Ådnanes har ventet lengst. Så Lomelde Bygg AS, deretter Instefjord Eiendom AS.",
         "ask": {
-          "q": "Skal jeg følge opp Marte først?",
+          "q": "Skal jeg følge opp Marte Ådnanes først?",
           "opts": [
             "Ja, lag utkast",
             "Ta Lomelde Bygg AS først"
@@ -1818,16 +1838,16 @@
       },
       {
         "t": "15:40",
-        "user": "Lag et tilbud til Marte basert på badjobben i fjor.",
+        "user": "Lag et tilbud til Marte Ådnanes basert på badjobben i fjor.",
         "work": [
           "Leste badjobben fra i fjor"
         ],
         "say": "Tilbudet er bygget på den jobben. Les det før du trykker Send.",
-        "file": "Tilbud_Marte_Ådnanes.pdf",
+        "file": "Tilbud_Marte Ådnanes_Ådnanes.pdf",
         "mail": {
           "to": "Marte Ådnanes",
           "sub": "Tilbud, bad",
-          "body": "Hei Marte. Her er tilbud på badet, bygget på jobben vi gjorde i fjor. Si fra om du vil justere noe før vi går videre. Hilsen Sindre"
+          "body": "Hei Marte Ådnanes. Her er tilbud på badet, bygget på jobben vi gjorde i fjor. Si fra om du vil justere noe før vi går videre. Hilsen Sindre"
         }
       }
     ],
@@ -1862,11 +1882,11 @@
         "work": [
           "Skrev utkast til Marte Ådnanes"
         ],
-        "say": "Oppfølging til Marte, med kopi til leverandøren. Ingenting sendes før du trykker Send.",
+        "say": "Oppfølging til Marte Ådnanes, med kopi til leverandøren. Ingenting sendes før du trykker Send.",
         "mail": {
           "to": "Marte Ådnanes",
           "sub": "Oppfølging av ordre",
-          "body": "Hei Marte. Jeg viser til ordren. Vi er i gang, og jeg sender en kort status når neste del er klar. Gi gjerne beskjed om noe haster. Hilsen Sindre"
+          "body": "Hei Marte Ådnanes. Jeg viser til ordren. Vi er i gang, og jeg sender en kort status når neste del er klar. Gi gjerne beskjed om noe haster. Hilsen Sindre"
         }
       },
       {
@@ -1897,7 +1917,7 @@
       },
       {
         "t": "12:30",
-        "user": "Samle timene på badjobben til Marte.",
+        "user": "Samle timene på badjobben til Marte Ådnanes.",
         "work": [
           "Samlet timer fra 4 dager"
         ],
@@ -1905,7 +1925,7 @@
         "mail": {
           "to": "Marte Ådnanes",
           "sub": "Faktura, badjobb",
-          "body": "Hei Marte. Her er faktura for timene på badjobben. Si fra om noe ikke stemmer, så retter jeg det. Hilsen Sindre"
+          "body": "Hei Marte Ådnanes. Her er faktura for timene på badjobben. Si fra om noe ikke stemmer, så retter jeg det. Hilsen Sindre"
         }
       },
       {
@@ -1913,7 +1933,7 @@
         "work": [
           "Sjekket 2 frister"
         ],
-        "say": "MVA-fristen denne perioden nærmer seg. Oppfølgingen til Marte er ikke sendt.",
+        "say": "mva-fristen denne perioden nærmer seg. Oppfølgingen til Marte Ådnanes er ikke sendt.",
         "ask": {
           "q": "Skal jeg minne Marte Ådnanes?",
           "opts": [
@@ -1965,13 +1985,13 @@
       {
         "t": "16:30",
         "work": [
-          "Sjekket a-melding og MVA"
+          "Sjekket a-melding og mva"
         ],
-        "say": "A-melding og MVA denne perioden er flagget. Varselutkastet til Sindre Vassenden sendes ikke før du trykker Send.",
+        "say": "A-melding og mva denne perioden er flagget. Varselutkastet til Sindre Vassenden sendes ikke før du trykker Send.",
         "mail": {
           "to": "Sindre Vassenden",
           "sub": "Frister denne perioden",
-          "body": "Hei Sindre. A-melding og MVA har frist denne perioden. Begge står på listen. Gi gjerne beskjed om noe skal flyttes."
+          "body": "Hei Sindre. A-melding og mva har frist denne perioden. Begge står på listen. Gi gjerne beskjed om noe skal flyttes."
         }
       }
     ],
@@ -2134,14 +2154,14 @@
           "Fant 2 åpne saker"
         ],
         "say": "Historikk, to åpne saker og et forslag til agenda er klare.",
-        "file": "Motebrief_Marte_Ådnanes.pdf"
+        "file": "Motebrief_Marte Ådnanes_Ådnanes.pdf"
       },
       {
         "t": "13:10",
         "work": [
           "Sjekket 2 frister"
         ],
-        "say": "Forsikring og autorisasjon har frist denne perioden. Henvendelsen fra Marte er fortsatt ubesvart.",
+        "say": "Forsikring og autorisasjon har frist denne perioden. Henvendelsen fra Marte Ådnanes er fortsatt ubesvart.",
         "ask": {
           "q": "Skal jeg svare Marte Ådnanes?",
           "opts": [
@@ -2161,7 +2181,7 @@
         "mail": {
           "to": "Marte Ådnanes",
           "sub": "Oppfølging etter timen",
-          "body": "Hei Marte. Takk for i dag. Her er en kort oppsummering av det vi avtalte, så du har det samlet. Gi gjerne beskjed om noe skal endres. Hilsen Sindre"
+          "body": "Hei Marte Ådnanes. Takk for i dag. Her er en kort oppsummering av det vi avtalte, så du har det samlet. Gi gjerne beskjed om noe skal endres. Hilsen Sindre"
         }
       }
     ],
@@ -2176,7 +2196,7 @@
       },
       {
         "t": "09:50",
-        "user": "Forbered meg til samtalen med Marte.",
+        "user": "Forbered meg til samtalen med Marte Ådnanes.",
         "work": [
           "Samlet 1 åpent spørsmål"
         ],
@@ -2189,7 +2209,7 @@
         ],
         "say": "Tre henvendelser har ligget stille. Marte Ådnanes har ventet lengst.",
         "ask": {
-          "q": "Skal jeg følge opp Marte først?",
+          "q": "Skal jeg følge opp Marte Ådnanes først?",
           "opts": [
             "Ja, lag utkast",
             "Ta den neste først"
@@ -2208,7 +2228,7 @@
         "mail": {
           "to": "Marte Ådnanes",
           "sub": "Tilbud om opplegg",
-          "body": "Hei Marte. Her er et forslag til opplegg, bygget på et lignende forløp. Si fra om det treffer, eller om noe skal justeres. Hilsen Sindre"
+          "body": "Hei Marte Ådnanes. Her er et forslag til opplegg, bygget på et lignende forløp. Si fra om det treffer, eller om noe skal justeres. Hilsen Sindre"
         }
       }
     ],
@@ -2226,7 +2246,7 @@
         "work": [
           "Sammenlignet med timene"
         ],
-        "say": "Ett oppgjør for Marte stemmer ikke med timene. De andre er i orden.",
+        "say": "Ett oppgjør for Marte Ådnanes stemmer ikke med timene. De andre er i orden.",
         "ask": {
           "q": "Skal jeg legge det til side?",
           "opts": [
@@ -2246,7 +2266,7 @@
         "mail": {
           "to": "Marte Ådnanes",
           "sub": "Time som venter",
-          "body": "Hei Marte. Du har en time som fortsatt står ubesvart. Si fra om den passer, eller om vi skal finne et nytt tidspunkt. Hilsen Sindre"
+          "body": "Hei Marte Ådnanes. Du har en time som fortsatt står ubesvart. Si fra om den passer, eller om vi skal finne et nytt tidspunkt. Hilsen Sindre"
         }
       },
       {
@@ -2277,7 +2297,7 @@
       },
       {
         "t": "12:15",
-        "user": "Samle timer og oppgjør for Marte.",
+        "user": "Samle timer og oppgjør for Marte Ådnanes.",
         "work": [
           "Samlet timer fra 3 dager"
         ],
@@ -2285,15 +2305,15 @@
         "mail": {
           "to": "Marte Ådnanes",
           "sub": "Oppgjør",
-          "body": "Hei Marte. Her er oppgjøret for timene. Si fra om noe ikke stemmer, så retter jeg det før det går videre. Hilsen Sindre"
+          "body": "Hei Marte Ådnanes. Her er oppgjøret for timene. Si fra om noe ikke stemmer, så retter jeg det før det går videre. Hilsen Sindre"
         }
       },
       {
         "t": "16:30",
         "work": [
-          "Sjekket MVA-fristen"
+          "Sjekket mva-fristen"
         ],
-        "say": "MVA-fristen nærmer seg. Oppfølgingen av timen venter på deg.",
+        "say": "mva-fristen nærmer seg. Oppfølgingen av timen venter på deg.",
         "ask": {
           "q": "Skal jeg skrive oppfølgingen?",
           "opts": [
@@ -2317,9 +2337,9 @@
       {
         "t": "10:00",
         "work": [
-          "Sjekket margen på 3 ordre"
+          "Sjekket marginen på 3 ordre"
         ],
-        "say": "Tre avsluttede ordre skiller seg ut på margen. De er merket.",
+        "say": "Tre avsluttede ordre skiller seg ut på marginen. De er merket.",
         "ask": {
           "q": "Skal jeg legge ordreavvikene til side?",
           "opts": [
@@ -2336,7 +2356,7 @@
         "work": [
           "Hentet utestående fra regnskapssystemet"
         ],
-        "say": "Neste uke er stram. MVA-fristen hos Sindre Vassenden er med.",
+        "say": "Neste uke er stram. mva-fristen hos Sindre Vassenden er med.",
         "file": "Likviditet_uke43.xlsx"
       },
       {
@@ -2344,11 +2364,11 @@
         "work": [
           "Skrev varselutkast til Sindre Vassenden"
         ],
-        "say": "Utkast om MVA-fristen. Ingenting sendes før du trykker Send.",
+        "say": "Utkast om mva-fristen. Ingenting sendes før du trykker Send.",
         "mail": {
           "to": "Sindre Vassenden",
-          "sub": "MVA-frist",
-          "body": "Hei Sindre. MVA-fristen står på listen denne perioden. Gi gjerne beskjed om du vil at jeg setter av tid til den."
+          "sub": "mva-frist",
+          "body": "Hei Sindre. mva-fristen står på listen denne perioden. Gi gjerne beskjed om du vil at jeg setter av tid til den."
         }
       }
     ],
@@ -2359,11 +2379,11 @@
           "Leste 5 e-poster",
           "Hentet leveransen til Marte Ådnanes"
         ],
-        "say": "Før samtalen med Marte: leveransen og ett åpent spørsmål er samlet."
+        "say": "Før samtalen med Marte Ådnanes: leveransen og ett åpent spørsmål er samlet."
       },
       {
         "t": "09:40",
-        "user": "Forbered meg til samtalen med Marte om leveransen.",
+        "user": "Forbered meg til samtalen med Marte Ådnanes om leveransen.",
         "work": [
           "Samlet 1 åpent spørsmål"
         ],
@@ -2379,7 +2399,7 @@
           "q": "Skal jeg følge opp Lomelde Bygg AS først?",
           "opts": [
             "Ja, lag utkast",
-            "Ta Marte først"
+            "Ta Marte Ådnanes først"
           ],
           "pick": 0,
           "after": "Utkastet kommer. Det sendes ikke før du sier ja."
@@ -2433,7 +2453,7 @@
         "mail": {
           "to": "Marte Ådnanes",
           "sub": "Retur",
-          "body": "Hei Marte. Jeg viser til returen. Den er notert hos oss. Gi gjerne beskjed om noe haster, så tar jeg det først. Hilsen Sindre"
+          "body": "Hei Marte Ådnanes. Jeg viser til returen. Den er notert hos oss. Gi gjerne beskjed om noe haster, så tar jeg det først. Hilsen Sindre"
         }
       },
       {
@@ -2464,7 +2484,7 @@
       },
       {
         "t": "12:40",
-        "user": "Lag et tilbud til Marte, som den lignende ordren.",
+        "user": "Lag et tilbud til Marte Ådnanes, som den lignende ordren.",
         "work": [
           "Leste 1 lignende ordre"
         ],
@@ -2472,15 +2492,15 @@
         "mail": {
           "to": "Marte Ådnanes",
           "sub": "Tilbud",
-          "body": "Hei Marte. Her er tilbudet, bygget på en lignende ordre. Si fra om du vil justere noe. Hilsen Sindre"
+          "body": "Hei Marte Ådnanes. Her er tilbudet, bygget på en lignende ordre. Si fra om du vil justere noe. Hilsen Sindre"
         }
       },
       {
         "t": "16:30",
         "work": [
-          "Sjekket MVA-fristen"
+          "Sjekket mva-fristen"
         ],
-        "say": "MVA-fristen nærmer seg, og ordren til Marte er ikke fulgt opp.",
+        "say": "mva-fristen nærmer seg, og ordren til Marte Ådnanes er ikke fulgt opp.",
         "ask": {
           "q": "Skal jeg følge opp ordren?",
           "opts": [
@@ -2521,7 +2541,7 @@
       },
       {
         "t": "13:00",
-        "user": "Forespørselen fra Marte, er den svart?",
+        "user": "Forespørselen fra Marte Ådnanes, er den svart?",
         "work": [
           "Leste tråden med Marte Ådnanes"
         ],
@@ -2536,7 +2556,7 @@
         "mail": {
           "to": "Marte Ådnanes",
           "sub": "Forespørselen din",
-          "body": "Hei Marte. Takk for forespørselen. Jeg har sett på den, og her er et kort svar så du har det samlet. Gi gjerne beskjed om noe mangler. Hilsen Sindre"
+          "body": "Hei Marte Ådnanes. Takk for forespørselen. Jeg har sett på den, og her er et kort svar så du har det samlet. Gi gjerne beskjed om noe mangler. Hilsen Sindre"
         }
       }
     ],
@@ -2551,11 +2571,11 @@
       },
       {
         "t": "09:15",
-        "user": "Forbered meg til visningen med Marte.",
+        "user": "Forbered meg til visningen med Marte Ådnanes.",
         "work": [
           "Samlet 2 åpne spørsmål"
         ],
-        "say": "Spørsmålene ligger øverst. Ingenting er sendt til Marte."
+        "say": "Spørsmålene ligger øverst. Ingenting er sendt til Marte Ådnanes."
       },
       {
         "t": "12:25",
@@ -2601,7 +2621,7 @@
         "work": [
           "Sammenlignet med avtalen"
         ],
-        "say": "Ett krav til Marte avviker fra avtalen. De andre stemmer.",
+        "say": "Ett krav til Marte Ådnanes avviker fra avtalen. De andre stemmer.",
         "ask": {
           "q": "Skal jeg legge det til side?",
           "opts": [
@@ -2652,7 +2672,7 @@
       },
       {
         "t": "12:35",
-        "user": "Lag et tilbud til Marte om det praktiske.",
+        "user": "Lag et tilbud til Marte Ådnanes om det praktiske.",
         "work": [
           "Leste forespørselen"
         ],
@@ -2660,7 +2680,7 @@
         "mail": {
           "to": "Marte Ådnanes",
           "sub": "Tilbud, praktisk",
-          "body": "Hei Marte. Her er et tilbud på det praktiske rundt boligen. Si fra om noe skal tas med eller tas ut. Hilsen Sindre"
+          "body": "Hei Marte Ådnanes. Her er et tilbud på det praktiske rundt boligen. Si fra om noe skal tas med eller tas ut. Hilsen Sindre"
         }
       },
       {
@@ -2698,14 +2718,14 @@
           "Fant 2 åpne saker"
         ],
         "say": "Historikk, to åpne saker og et forslag til agenda er klare.",
-        "file": "Motebrief_Marte_Ådnanes.pdf"
+        "file": "Motebrief_Marte Ådnanes_Ådnanes.pdf"
       },
       {
         "t": "13:25",
         "work": [
           "Fant 1 ubesvart tilbud"
         ],
-        "say": "Tilbudet til Lomelde Bygg AS er fortsatt ubesvart. MVA hos Sindre Vassenden er med på listen.",
+        "say": "Tilbudet til Lomelde Bygg AS er fortsatt ubesvart. mva hos Sindre Vassenden er med på listen.",
         "ask": {
           "q": "Skal jeg minne Lomelde Bygg AS?",
           "opts": [
@@ -2734,13 +2754,13 @@
         "t": "07:00 · Morgenrapport (fast rutine)",
         "work": [
           "Leste 6 e-poster",
-          "Hentet tidligere oppdrag hos Marte"
+          "Hentet tidligere oppdrag hos Marte Ådnanes"
         ],
         "say": "Før møtet med Marte Ådnanes: to tidligere oppdrag og én åpen sak."
       },
       {
         "t": "09:35",
-        "user": "Forbered meg til møtet med Marte.",
+        "user": "Forbered meg til møtet med Marte Ådnanes.",
         "work": [
           "Samlet 1 åpen sak"
         ],
@@ -2756,7 +2776,7 @@
           "q": "Skal jeg følge opp Lomelde Bygg AS først?",
           "opts": [
             "Ja, lag utkast",
-            "Ta Marte først"
+            "Ta Marte Ådnanes først"
           ],
           "pick": 0,
           "after": "Utkastet kommer. Det sendes ikke før du sier ja."
@@ -2810,7 +2830,7 @@
         "mail": {
           "to": "Marte Ådnanes",
           "sub": "Etter møtet",
-          "body": "Hei Marte. Takk for møtet. Her er en kort oppfølging av det vi snakket om. Gi gjerne beskjed om noe skal rettes. Hilsen Sindre"
+          "body": "Hei Marte Ådnanes. Takk for møtet. Her er en kort oppfølging av det vi snakket om. Gi gjerne beskjed om noe skal rettes. Hilsen Sindre"
         }
       },
       {
@@ -2841,7 +2861,7 @@
       },
       {
         "t": "12:20",
-        "user": "Kan du samle timene hos Marte?",
+        "user": "Kan du samle timene hos Marte Ådnanes?",
         "work": [
           "Samlet timer fra 4 dager"
         ],
@@ -2849,16 +2869,16 @@
         "mail": {
           "to": "Marte Ådnanes",
           "sub": "Timer denne perioden",
-          "body": "Hei Marte. Her er timene denne perioden. Si fra om noe ikke stemmer, så retter jeg det før det faktureres. Hilsen Sindre"
+          "body": "Hei Marte Ådnanes. Her er timene denne perioden. Si fra om noe ikke stemmer, så retter jeg det før det faktureres. Hilsen Sindre"
         }
       },
       {
         "t": "16:30",
         "work": [
-          "Sjekket MVA-fristen",
+          "Sjekket mva-fristen",
           "Fant 1 ubesvart tilbud"
         ],
-        "say": "MVA-fristen nærmer seg, og tilbudet til Lomelde Bygg AS er fortsatt ubesvart.",
+        "say": "mva-fristen nærmer seg, og tilbudet til Lomelde Bygg AS er fortsatt ubesvart.",
         "ask": {
           "q": "Skal jeg minne om tilbudet?",
           "opts": [
@@ -2898,7 +2918,7 @@
       },
       {
         "t": "14:10",
-        "user": "Hva med forsikring og MVA?",
+        "user": "Hva med forsikring og mva?",
         "work": [
           "Sjekket 2 frister"
         ],
@@ -2912,8 +2932,8 @@
         "say": "Utkastet til Sindre er klart. Ingenting sendes før du trykker Send.",
         "mail": {
           "to": "Sindre Vassenden",
-          "sub": "Forsikring og MVA",
-          "body": "Hei Sindre. Forsikring og MVA har frist denne perioden. Begge står på listen. Gi gjerne beskjed om noe skal tas først."
+          "sub": "Forsikring og mva",
+          "body": "Hei Sindre. Forsikring og mva har frist denne perioden. Begge står på listen. Gi gjerne beskjed om noe skal tas først."
         }
       }
     ],
@@ -2928,7 +2948,7 @@
       },
       {
         "t": "10:15",
-        "user": "Forbered meg til henvendelsen fra Marte.",
+        "user": "Forbered meg til henvendelsen fra Marte Ådnanes.",
         "work": [
           "Samlet 1 lignende arrangement"
         ],
@@ -2939,15 +2959,15 @@
         "work": [
           "Satte 3 forespørsler i rekkefølge"
         ],
-        "say": "Lomelde Bygg AS har ventet lengst. Marte står som nummer to.",
+        "say": "Lomelde Bygg AS har ventet lengst. Marte Ådnanes står som nummer to.",
         "ask": {
           "q": "Skal jeg svare Lomelde Bygg AS først?",
           "opts": [
             "Ja, lag utkast",
-            "Ta Marte først"
+            "Ta Marte Ådnanes først"
           ],
           "pick": 1,
-          "after": "Greit. Marte først. Utkastet sendes ikke før du sier ja."
+          "after": "Greit. Marte Ådnanes først. Utkastet sendes ikke før du sier ja."
         }
       },
       {
@@ -2960,7 +2980,7 @@
         "mail": {
           "to": "Marte Ådnanes",
           "sub": "Tilbud, selskap",
-          "body": "Hei Marte. Her er et tilbud på selskapet, bygget på et lignende arrangement. Si fra om noe skal justeres. Hilsen Sindre"
+          "body": "Hei Marte Ådnanes. Her er et tilbud på selskapet, bygget på et lignende arrangement. Si fra om noe skal justeres. Hilsen Sindre"
         }
       }
     ],
@@ -3029,7 +3049,7 @@
       },
       {
         "t": "12:50",
-        "user": "Lag tilbud på selskap til Marte, som det lignende.",
+        "user": "Lag tilbud på selskap til Marte Ådnanes, som det lignende.",
         "work": [
           "Leste 1 lignende selskap"
         ],
@@ -3037,15 +3057,15 @@
         "mail": {
           "to": "Marte Ådnanes",
           "sub": "Tilbud, selskap",
-          "body": "Hei Marte. Her er tilbudet på selskapet. Si fra om noe skal endres. Hilsen Sindre"
+          "body": "Hei Marte Ådnanes. Her er tilbudet på selskapet. Si fra om noe skal endres. Hilsen Sindre"
         }
       },
       {
         "t": "16:30",
         "work": [
-          "Sjekket MVA-fristen"
+          "Sjekket mva-fristen"
         ],
-        "say": "MVA-fristen nærmer seg. Oppfølgingen er ikke sendt.",
+        "say": "mva-fristen nærmer seg. Oppfølgingen er ikke sendt.",
         "ask": {
           "q": "Skal jeg skrive oppfølgingen?",
           "opts": [
@@ -3075,7 +3095,7 @@
           "Fant 2 åpne saker"
         ],
         "say": "Historikk, to åpne saker og et forslag til agenda er klare.",
-        "file": "Motebrief_Marte_Ådnanes.pdf"
+        "file": "Motebrief_Marte Ådnanes_Ådnanes.pdf"
       },
       {
         "t": "13:30",
@@ -3083,7 +3103,7 @@
           "Leste anbudsnotatet",
           "Sjekket 2 frister"
         ],
-        "say": "Kort notat om anbudet er klart. MVA og a-melding har frist.",
+        "say": "Kort notat om anbudet er klart. mva og a-melding har frist.",
         "ask": {
           "q": "Skal jeg legge anbudet på listen i kveld?",
           "opts": [
@@ -3102,8 +3122,8 @@
         "say": "Utkast om fristene. Ingenting sendes før du trykker Send.",
         "mail": {
           "to": "Sindre Vassenden",
-          "sub": "MVA og a-melding",
-          "body": "Hei Sindre. MVA og a-melding har frist denne perioden. Begge står på listen. Gi gjerne beskjed om noe skal tas først."
+          "sub": "mva og a-melding",
+          "body": "Hei Sindre. mva og a-melding har frist denne perioden. Begge står på listen. Gi gjerne beskjed om noe skal tas først."
         }
       }
     ],
@@ -3118,7 +3138,7 @@
       },
       {
         "t": "09:25",
-        "user": "Forbered meg til møtet med Marte.",
+        "user": "Forbered meg til møtet med Marte Ådnanes.",
         "work": [
           "Samlet 2 åpne saker"
         ],
@@ -3131,7 +3151,7 @@
         ],
         "say": "Tre tilbud er åpne. Marte Ådnanes har ventet lengst, så Lomelde Bygg AS.",
         "ask": {
-          "q": "Skal jeg følge opp Marte først?",
+          "q": "Skal jeg følge opp Marte Ådnanes først?",
           "opts": [
             "Ja, lag utkast",
             "Ta Lomelde Bygg AS først"
@@ -3188,7 +3208,7 @@
         "mail": {
           "to": "Marte Ådnanes",
           "sub": "Oppfølging",
-          "body": "Hei Marte. Jeg viser til saken. Her er en kort oppfølging, så du har den samlet. Gi gjerne beskjed om noe mangler. Hilsen Sindre"
+          "body": "Hei Marte Ådnanes. Jeg viser til saken. Her er en kort oppfølging, så du har den samlet. Gi gjerne beskjed om noe mangler. Hilsen Sindre"
         }
       },
       {
@@ -3219,7 +3239,7 @@
       },
       {
         "t": "12:25",
-        "user": "Lag et tilbud til Marte, og samle timene.",
+        "user": "Lag et tilbud til Marte Ådnanes, og samle timene.",
         "work": [
           "Samlet timer fra 3 dager",
           "Leste forrige jobb"
@@ -3228,15 +3248,15 @@
         "mail": {
           "to": "Marte Ådnanes",
           "sub": "Tilbud og timer",
-          "body": "Hei Marte. Her er tilbudet, og timene er samlet under. Si fra om noe skal rettes før det faktureres. Hilsen Sindre"
+          "body": "Hei Marte Ådnanes. Her er tilbudet, og timene er samlet under. Si fra om noe skal rettes før det faktureres. Hilsen Sindre"
         }
       },
       {
         "t": "16:30",
         "work": [
-          "Sjekket MVA-fristen"
+          "Sjekket mva-fristen"
         ],
-        "say": "MVA-fristen nærmer seg. Kundeoppfølgingen er ikke sendt.",
+        "say": "mva-fristen nærmer seg. Kundeoppfølgingen er ikke sendt.",
         "ask": {
           "q": "Skal jeg skrive oppfølgingen?",
           "opts": [

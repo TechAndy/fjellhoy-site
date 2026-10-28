@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; connect-src 'self'; base-uri 'self'; form-action 'none'; object-src 'none'; upgrade-insecure-requests">
-<title>AI for fakturamottak og bilag for bedrifter som bruker Xledger, Business Central, Tripletex eller Visma | Fjellhøy</title>
-<meta name="description" content="For bedrifter som bruker Xledger, Business Central, Tripletex eller Visma. AI-assistent til fakturamottak, kontering og månedsrapport. Forslag til matching og avvik. Et menneske godkjenner før noe bokføres eller sendes.">
+<title>AI som forbereder bilag til fakturamottak og månedsrapport | Fjellhøy</title>
+<meta name="description" content="For bedrifter som bruker Xledger, Business Central, Tripletex eller Visma. AI-assistent som forbereder bilag. Du eller regnskapsføreren godkjenner. Forslag til matching og avvik. Du eller regnskapsføreren godkjenner før noe sendes.">
 <link rel="canonical" href="https://fjellhoy.com/okonomiavdeling.html">
 <link rel="alternate" hreflang="nb" href="https://fjellhoy.com/okonomiavdeling.html">
 <link rel="alternate" hreflang="no" href="https://fjellhoy.com/okonomiavdeling.html">
@@ -102,8 +102,8 @@
     {
       "@type": "Service",
       "name": "AI-assistent for økonomiavdelingen",
-      "serviceType": "AI-hjelp til fakturamottak, bilagsføring og månedsrapport",
-      "description": "For bedrifter som bruker Xledger, Business Central, Tripletex eller Visma. Assistenten jobber ved siden av ERP-et, foreslår kontering, matching og avvik, og lager et utkast til månedsrapport. Et menneske godkjenner før noe bokføres eller sendes. Ingen sertifisert integrasjon eller ferdig kobling.",
+      "serviceType": "AI-hjelp til fakturamottak, forberedte bilag og månedsrapport",
+      "description": "For bedrifter som bruker Xledger, Business Central, Tripletex eller Visma. Assistenten jobber ved siden av ERP-et, foreslår kontering, matching og avvik, og lager et utkast til månedsrapport. Du eller regnskapsføreren godkjenner før noe sendes. Ingen sertifisert integrasjon eller ferdig kobling.",
       "provider": {
         "@id": "https://fjellhoy.com/#organization"
       },
@@ -122,7 +122,7 @@
           "name": "Erstatter assistenten Xledger, Business Central, Tripletex eller Visma?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Nei. Den jobber ved siden av systemet dere allerede bruker. Bokføringen blir liggende der. Assistenten forbereder forslag, og et menneske godkjenner før noe bokføres eller sendes."
+            "text": "Nei. Den jobber ved siden av systemet dere allerede bruker. Bokføringen blir liggende der. Assistenten forbereder forslag, og du eller regnskapsføreren godkjenner før noe sendes."
           }
         },
         {
@@ -135,10 +135,10 @@
         },
         {
           "@type": "Question",
-          "name": "Kan assistenten bokføre eller sende månedsrapporten selv?",
+          "name": "Kan assistenten sende månedsrapporten selv?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Nei. Et menneske godkjenner før noe bokføres eller sendes. Kontrollen ligger hos økonomiavdelingen."
+            "text": "Nei. Du eller regnskapsføreren godkjenner før noe sendes. Kontrollen ligger hos økonomiavdelingen."
           }
         },
         {
@@ -202,27 +202,29 @@
       <img class="brand-logo" src="assets/fjellhoy-v2c-bred.svg" alt="" width="138" height="46">
     </a>
     <nav class="nav-links" aria-label="Hovedmeny">
+  <div class="nav-drop">
       <a href="index.html#ai-agent">Tjenester</a>
-      <a href="sikkerhet.html">Sikkerhet</a>
-      <a href="index.html#slik">Slik fungerer det</a>
-      <a href="index.html#priser">Priser</a>
-      <a href="index.html#styrer">For styrer</a>
-      <a href="hvorfor-fjellhoy.html">Om Fjellhøy</a>
-      <a href="#sporsmal">Spørsmål</a>
+      <div class="nav-sub"><div class="nav-sub-box">
+        <a href="okonomiavdeling.html">Økonomiavdeling</a>
+        <a href="index.html#styrer">For styrer</a>
+      </div></div>
+    </div>
+  <a href="index.html#slik">Slik fungerer det</a>
+  <a href="index.html#priser">Priser</a>
+  <a href="hvorfor-fjellhoy.html">Om Fjellhøy</a>
     </nav>
     <a class="btn btn-small btn-accent nav-cta" href="#kontakt">Book en prat</a>
     <nav class="lang-switch" aria-label="Språk"><a href="okonomiavdeling.html" hreflang="nb" lang="nb" aria-current="page">NO</a><a href="en/finance-department.html" hreflang="en" lang="en">EN</a></nav>
     <button class="menu-toggle" type="button" aria-label="Meny" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span></button>
   </div>
   <nav id="mobile-menu" class="mobile-menu" aria-label="Seksjoner" hidden>
+    <a href="index.html#ai-agent">Tjenester</a>
+    <a class="menu-sub" href="okonomiavdeling.html">Økonomiavdeling</a>
+    <a class="menu-sub" href="index.html#styrer">For styrer</a>
     <a href="index.html#slik">Slik fungerer det</a>
     <a href="index.html#priser">Priser</a>
-    <a href="index.html#styrer">For styrer</a>
     <a href="hvorfor-fjellhoy.html">Om Fjellhøy</a>
-    <a href="#sporsmal">Spørsmål</a>
-    <a href="sikkerhet.html">Sikkerhet</a>
-    <a href="#kontakt">Kontakt</a>
-    <a class="btn btn-accent mobile-menu-cta" href="#kontakt">Book en prat</a>
+    <a class="btn btn-accent mobile-menu-cta" href="index.html#kontakt">Book en prat</a>
   </nav>
 </header>
 <div class="menu-backdrop" hidden></div>
@@ -233,8 +235,8 @@
     <div class="section-head section-head-wide">
       <p class="crumb"><a href="index.html">Forside</a> · Økonomiavdeling</p>
       <span class="eyebrow">Økonomiavdeling</span>
-      <h1>AI-hjelp til fakturamottak, bilagsføring og månedsrapport for bedrifter som bruker Xledger, Business Central, Tripletex eller Visma</h1>
-      <p>Økonomiavdelingen i en bedrift med omtrent 30 til 150 ansatte tar imot fakturaer, konterer bilag og setter sammen månedsrapporten. Fjellhøy setter opp en AI-assistent, den samme typen agent som ellers på siden, som jobber ved siden av ERP-et dere allerede bruker. Den forbereder forslag. Et menneske godkjenner før noe bokføres eller sendes.</p>
+      <h1>AI-hjelp til fakturamottak, forberedte bilag og månedsrapport for bedrifter som bruker Xledger, Business Central, Tripletex eller Visma</h1>
+      <p>Økonomiavdelingen i en bedrift med omtrent 30 til 150 ansatte tar imot fakturaer, konterer bilag og setter sammen månedsrapporten. Fjellhøy setter opp en AI-assistent, den samme typen agent som ellers på siden, som jobber ved siden av ERP-et dere allerede bruker. Den forbereder forslag. Du eller regnskapsføreren godkjenner før noe sendes.</p>
     </div>
     <div class="audience audience-3">
       <article class="audience-card">
@@ -243,16 +245,16 @@
         <ul class="checklist">
           <li><svg><use href="#i-check"/></svg>Forslag til matching</li>
           <li><svg><use href="#i-check"/></svg>Avvik merket før godkjenning</li>
-          <li><svg><use href="#i-check"/></svg>Ingenting bokføres av seg selv</li>
+          <li><svg><use href="#i-check"/></svg>Ingenting sendes uten godkjenning</li>
         </ul>
       </article>
       <article class="audience-card">
-        <h3>Bilagsføring og kontering</h3>
+        <h3>Forberedte bilag</h3>
         <p>Den foreslår konto, mva-kode og avdeling ut fra hvordan lignende bilag er kontert før. Forslaget ligger klart til den som skal si ja.</p>
         <ul class="checklist">
           <li><svg><use href="#i-check"/></svg>Forslag til kontering</li>
           <li><svg><use href="#i-check"/></svg>Avvik som bør ses på</li>
-          <li><svg><use href="#i-check"/></svg>Et menneske godkjenner før bokføring</li>
+          <li><svg><use href="#i-check"/></svg>Du eller regnskapsføreren godkjenner</li>
         </ul>
       </article>
       <article class="audience-card">
@@ -273,7 +275,7 @@
     <div class="section-head section-head-wide">
       <span class="eyebrow">Ved siden av ERP-et</span>
       <h2>Assistenten jobber ved siden av Xledger, Business Central, Tripletex eller Visma</h2>
-      <p>Assistenten erstatter ikke Xledger, Business Central, Tripletex eller Visma. Bokføringen blir liggende i systemet dere har. Fjellhøy har ikke en sertifisert integrasjon, et partnerskap eller en ferdig kobling til noen av dem. Vi setter opp assistenten i kontoene bedriften eier, og tilpasser den til rutinene dere beskriver i den første praten. Det dere får, er forslag: kontering, matching, avvik og et utkast til månedsrapport. Et menneske i økonomiavdelingen ser forslaget og sier ja før noe bokføres eller sendes. Kjernen er kontroll.</p>
+      <p>Assistenten erstatter ikke Xledger, Business Central, Tripletex eller Visma. Bokføringen blir liggende i systemet dere har. Fjellhøy har ikke en sertifisert integrasjon, et partnerskap eller en ferdig kobling til noen av dem. Vi setter opp assistenten i kontoene bedriften eier, og tilpasser den til rutinene dere beskriver i den første praten. Det dere får, er forslag: kontering, matching, avvik og et utkast til månedsrapport. Forslaget ligger klart, og du eller regnskapsføreren godkjenner før noe sendes. Kjernen er kontroll.</p>
     </div>
     <div class="section-head section-head-wide">
       <span class="eyebrow">Tre steg</span>
@@ -284,7 +286,7 @@
         <span class="step-num">1</span>
         <div class="step-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
         <h3>En gratis prat</h3>
-        <p>Vi går gjennom fakturamottak, kontering og månedsrapport, og hvilket av systemene dere bruker i dag.</p>
+        <p>Vi går gjennom fakturamottak, forberedte bilag og månedsrapport, og hvilket av systemene dere bruker i dag.</p>
       </li>
       <li class="step">
         <span class="step-num">2</span>
@@ -296,11 +298,12 @@
         <span class="step-num">3</span>
         <div class="step-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 12 2.5 2.5L16 9"/></svg></div>
         <h3>Forslag, deretter et ja</h3>
-        <p>Noen hos dere godkjenner før noe bokføres eller sendes. Uten det ja-et skjer det ingenting.</p>
+        <p>Du eller regnskapsføreren godkjenner før noe sendes. Uten det ja-et skjer det ingenting.</p>
       </li>
     </ol>
     <div class="section-head bransje-cta">
-      <p>Hvert forslag og hvert ja logges. Tilgangen kan trekkes tilbake. Les <a href="sikkerhet.html">Sikkerhet</a> og <a href="gdpr-og-databehandleravtale.html">GDPR og databehandleravtale</a>. Databehandleravtale inngås før oppstart.</p>
+      <p>Hvert forslag og hvert ja logges. Tilgangen kan trekkes tilbake. Les <a href="sikkerhet.html">Sikkerhet</a>
+      <a href="#sporsmal">Spørsmål</a> og <a href="gdpr-og-databehandleravtale.html">GDPR og databehandleravtale</a>. Databehandleravtale inngås før oppstart.</p>
       <p><a class="btn btn-large btn-accent" href="#kontakt">Book en gratis prat</a></p>
       <p class="bransje-links">Les også: <a href="ai-for-bilag-og-regnskap.html">Bilag og regnskap</a> · <a href="automatisere-fakturahandtering.html">Automatisere fakturahåndtering</a> · <a href="regnskapsbyra.html">Regnskapsbyrå</a> · <a href="sikkerhet.html">Sikkerhet</a> · <a href="gdpr-og-databehandleravtale.html">GDPR og databehandleravtale</a></p>
     </div>
@@ -317,15 +320,15 @@
     <div class="faq">
       <details open>
         <summary>Erstatter assistenten Xledger, Business Central, Tripletex eller Visma?</summary>
-        <p>Nei. Den jobber ved siden av systemet dere allerede bruker. Bokføringen blir liggende der. Assistenten forbereder forslag, og et menneske godkjenner før noe bokføres eller sendes.</p>
+        <p>Nei. Den jobber ved siden av systemet dere allerede bruker. Bokføringen blir liggende der. Assistenten forbereder forslag, og du eller regnskapsføreren godkjenner før noe sendes.</p>
       </details>
       <details>
         <summary>Er dette en sertifisert integrasjon eller en ferdig kobling til Xledger, Business Central, Tripletex eller Visma?</summary>
         <p>Nei. Fjellhøy har ikke en sertifisert integrasjon, et partnerskap eller en ferdig kobling til Xledger, Business Central, Tripletex eller Visma. Vi setter opp assistenten i kontoene bedriften eier, tilpasset rutinene dere har.</p>
       </details>
       <details>
-        <summary>Kan assistenten bokføre eller sende månedsrapporten selv?</summary>
-        <p>Nei. Et menneske godkjenner før noe bokføres eller sendes. Kontrollen ligger hos økonomiavdelingen.</p>
+        <summary>Kan assistenten sende månedsrapporten selv?</summary>
+        <p>Nei. Du eller regnskapsføreren godkjenner før noe sendes. Kontrollen ligger hos økonomiavdelingen.</p>
       </details>
       <details>
         <summary>Hva kan assistenten foreslå?</summary>
@@ -353,7 +356,7 @@
       <div>
         <span class="eyebrow eyebrow-light">Den beste kollegaen du slipper å ansette</span>
         <h2>Book en gratis prat</h2>
-        <p>En gratis 20-minutters prat om fakturamottak, kontering og månedsrapport for bedrifter som bruker Xledger, Business Central, Tripletex eller Visma. Ring 416 00 048, eller skriv til andreas@fjellhoy.com. Ingenting sendes før du selv ringer eller sender e-posten.</p>
+        <p>En gratis 20-minutters prat om fakturamottak, forberedte bilag og månedsrapport for bedrifter som bruker Xledger, Business Central, Tripletex eller Visma. Ring 416 00 048, eller skriv til andreas@fjellhoy.com. Ingenting sendes før du selv ringer eller sender e-posten.</p>
       </div>
       <div class="cta-side">
         <div class="cta-actions">
@@ -379,6 +382,7 @@
       <a href="https://fjellhoy.com">fjellhoy.com</a>
       <a href="okonomiavdeling.html" aria-current="page">Økonomiavdeling</a>
       <a href="sikkerhet.html">Sikkerhet</a>
+      <a href="#sporsmal">Spørsmål</a>
       <a href="ai-for-bilag-og-regnskap.html">Bilag og regnskap</a>
       <a href="automatisere-fakturahandtering.html">Automatisere fakturahåndtering</a>
       <a href="gdpr-og-databehandleravtale.html">GDPR og databehandleravtale</a>

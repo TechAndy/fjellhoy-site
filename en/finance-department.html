@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; connect-src 'self'; base-uri 'self'; form-action 'none'; object-src 'none'; upgrade-insecure-requests">
-<title>AI for invoice intake and posting for companies using Xledger, Business Central, Tripletex or Visma | Fjellhøy</title>
-<meta name="description" content="For companies using Xledger, Business Central, Tripletex or Visma. An AI assistant for invoice intake, voucher posting and the monthly report. It suggests coding, matching and exceptions. A person approves before anything is posted or sent.">
+<title>AI for invoice intake and prepared vouchers for companies using Xledger, Business Central, Tripletex or Visma | Fjellhøy</title>
+<meta name="description" content="For companies using Xledger, Business Central, Tripletex or Visma. An AI assistant for invoice intake, prepared vouchers and a monthly report. It suggests coding, matching and exceptions. You or your accountant approve before anything is sent.">
 <link rel="canonical" href="https://fjellhoy.com/en/finance-department.html">
 <link rel="alternate" hreflang="nb" href="https://fjellhoy.com/okonomiavdeling.html">
 <link rel="alternate" hreflang="no" href="https://fjellhoy.com/okonomiavdeling.html">
@@ -102,8 +102,8 @@
     {
       "@type": "Service",
       "name": "AI assistant for the finance department",
-      "serviceType": "AI help with invoice intake, voucher posting and monthly reporting",
-      "description": "For companies using Xledger, Business Central, Tripletex or Visma. The assistant works alongside the ERP, suggests coding, matching and exceptions, and drafts a monthly report. A person approves before anything is posted or sent. No certified integration and no ready-made connector.",
+      "serviceType": "AI help with invoice intake, prepared vouchers and a monthly report",
+      "description": "For companies using Xledger, Business Central, Tripletex or Visma. The assistant works alongside the ERP, suggests coding, matching and exceptions, and drafts a monthly report. You or your accountant approve before anything is sent. No certified integration and no ready-made connector.",
       "provider": {
         "@id": "https://fjellhoy.com/#organization"
       },
@@ -122,7 +122,7 @@
           "name": "Does the assistant replace Xledger, Business Central, Tripletex or Visma?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "No. It works alongside the system you already use. The books stay there. The assistant prepares suggestions, and a person approves before anything is posted or sent."
+            "text": "No. It works alongside the system you already use. The books stay there. The assistant prepares suggestions, and you or your accountant approve before anything is sent."
           }
         },
         {
@@ -138,7 +138,7 @@
           "name": "Can the assistant post entries or send the monthly report on its own?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "No. A person approves before anything is posted or sent. Control stays with the finance department."
+            "text": "No. You or your accountant approve before anything is sent. Control stays with the finance department."
           }
         },
         {
@@ -202,27 +202,29 @@
       <img class="brand-logo" src="../assets/fjellhoy-v2c-bred.svg" alt="" width="138" height="46">
     </a>
     <nav class="nav-links" aria-label="Main">
+  <div class="nav-drop">
       <a href="index.html#ai-agent">Services</a>
-      <a href="security.html">Security</a>
-      <a href="index.html#slik">How it works</a>
-      <a href="index.html#priser">Pricing</a>
-      <a href="index.html#styrer">For boards</a>
-      <a href="hvorfor-fjellhoy.html">About</a>
-      <a href="#sporsmal">Questions</a>
+      <div class="nav-sub"><div class="nav-sub-box">
+        <a href="finance-department.html">Finance department</a>
+        <a href="index.html#styrer">For boards</a>
+      </div></div>
+    </div>
+  <a href="index.html#slik">How it works</a>
+  <a href="index.html#priser">Pricing</a>
+  <a href="hvorfor-fjellhoy.html">About</a>
     </nav>
     <a class="btn btn-small btn-accent nav-cta" href="#kontakt">Book a call</a>
     <nav class="lang-switch" aria-label="Language"><a href="../okonomiavdeling.html" hreflang="nb" lang="nb">NO</a><a href="finance-department.html" hreflang="en" lang="en" aria-current="page">EN</a></nav>
     <button class="menu-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span></button>
   </div>
   <nav id="mobile-menu" class="mobile-menu" aria-label="Sections" hidden>
+    <a href="index.html#ai-agent">Services</a>
+    <a class="menu-sub" href="finance-department.html">Finance department</a>
+    <a class="menu-sub" href="index.html#styrer">For boards</a>
     <a href="index.html#slik">How it works</a>
     <a href="index.html#priser">Pricing</a>
-    <a href="index.html#styrer">For boards</a>
     <a href="hvorfor-fjellhoy.html">About</a>
-    <a href="#sporsmal">Questions</a>
-    <a href="security.html">Security</a>
-    <a href="#kontakt">Contact</a>
-    <a class="btn btn-accent mobile-menu-cta" href="#kontakt">Book a call</a>
+    <a class="btn btn-accent mobile-menu-cta" href="index.html#kontakt">Book a call</a>
   </nav>
 </header>
 <div class="menu-backdrop" hidden></div>
@@ -233,8 +235,8 @@
     <div class="section-head section-head-wide">
       <p class="crumb"><a href="index.html">Home</a> · Finance department</p>
       <span class="eyebrow">Finance department</span>
-      <h1>AI help with invoice intake, voucher posting and monthly reporting for companies using Xledger, Business Central, Tripletex or Visma</h1>
-      <p>The finance department in a company of about 30 to 150 people takes in invoices, codes and posts them, and pulls the monthly report together. Fjellhøy sets up an AI assistant, the same kind of agent described elsewhere on this site, that works alongside the ERP you already use. It prepares suggestions. A person approves before anything is posted or sent.</p>
+      <h1>AI help with invoice intake, prepared vouchers and a monthly report for companies using Xledger, Business Central, Tripletex or Visma</h1>
+      <p>The finance department in a company of about 30 to 150 people takes in invoices, codes and posts them, and pulls the monthly report together. Fjellhøy sets up an AI assistant, the same kind of agent described elsewhere on this site, that works alongside the ERP you already use. It prepares suggestions. You or your accountant approve before anything is sent.</p>
     </div>
     <div class="audience audience-3">
       <article class="audience-card">
@@ -243,16 +245,16 @@
         <ul class="checklist">
           <li><svg><use href="#i-check"/></svg>A suggested match</li>
           <li><svg><use href="#i-check"/></svg>Exceptions flagged before approval</li>
-          <li><svg><use href="#i-check"/></svg>Nothing is posted on its own</li>
+          <li><svg><use href="#i-check"/></svg>Nothing is sent without approval</li>
         </ul>
       </article>
       <article class="audience-card">
-        <h3>Coding and voucher posting</h3>
+        <h3>Prepared vouchers</h3>
         <p>It suggests the account, the VAT code and the department from the way similar vouchers were coded before. The suggestion waits for the person who should say yes.</p>
         <ul class="checklist">
           <li><svg><use href="#i-check"/></svg>A suggested coding</li>
           <li><svg><use href="#i-check"/></svg>Exceptions worth a look</li>
-          <li><svg><use href="#i-check"/></svg>A person approves before posting</li>
+          <li><svg><use href="#i-check"/></svg>You or your accountant approve</li>
         </ul>
       </article>
       <article class="audience-card">
@@ -273,7 +275,7 @@
     <div class="section-head section-head-wide">
       <span class="eyebrow">Alongside the ERP</span>
       <h2>The assistant works alongside Xledger, Business Central, Tripletex or Visma</h2>
-      <p>The assistant does not replace Xledger, Business Central, Tripletex or Visma. The books stay in the system you have. Fjellhøy does not offer a certified integration, a partnership or a ready-made connector for any of them. We set the assistant up in accounts your company owns, and shape it around the routines you describe in the first conversation. What you get are suggestions: coding, matching, exceptions and a draft monthly report. Someone in the finance department sees the suggestion and says yes before anything is posted or sent. The point is control.</p>
+      <p>The assistant does not replace Xledger, Business Central, Tripletex or Visma. The books stay in the system you have. Fjellhøy does not offer a certified integration, a partnership or a ready-made connector for any of them. We set the assistant up in accounts your company owns, and shape it around the routines you describe in the first conversation. What you get are suggestions: coding, matching, exceptions and a draft monthly report. The suggestion is ready, and you or your accountant approve before anything is sent. The point is control.</p>
     </div>
     <div class="section-head section-head-wide">
       <span class="eyebrow">Three steps</span>
@@ -296,11 +298,12 @@
         <span class="step-num">3</span>
         <div class="step-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 12 2.5 2.5L16 9"/></svg></div>
         <h3>A suggestion, then a yes</h3>
-        <p>Someone on your team approves before anything is posted or sent. Without that yes, nothing happens.</p>
+        <p>You or your accountant approve before anything is sent. Without that yes, nothing happens.</p>
       </li>
     </ol>
     <div class="section-head bransje-cta">
-      <p>Every suggestion and every yes is logged. Access can be taken back. Read <a href="security.html">Security</a> and <a href="gdpr-and-data-processing-agreement.html">GDPR and the data processing agreement</a>. A data processing agreement is signed before we start.</p>
+      <p>Every suggestion and every yes is logged. Access can be taken back. Read <a href="security.html">Security</a>
+      <a href="#sporsmal">Questions</a> and <a href="gdpr-and-data-processing-agreement.html">GDPR and the data processing agreement</a>. A data processing agreement is signed before we start.</p>
       <p><a class="btn btn-large btn-accent" href="#kontakt">Book a free call</a></p>
       <p class="bransje-links">Also read: <a href="ai-for-bilag-og-regnskap.html">Receipts and bookkeeping</a> · <a href="automatisere-fakturahandtering.html">Automating invoice handling</a> · <a href="regnskapsbyra.html">Accounting firms</a> · <a href="security.html">Security</a> · <a href="gdpr-and-data-processing-agreement.html">GDPR and the data processing agreement</a></p>
     </div>
@@ -317,7 +320,7 @@
     <div class="faq">
       <details open>
         <summary>Does the assistant replace Xledger, Business Central, Tripletex or Visma?</summary>
-        <p>No. It works alongside the system you already use. The books stay there. The assistant prepares suggestions, and a person approves before anything is posted or sent.</p>
+        <p>No. It works alongside the system you already use. The books stay there. The assistant prepares suggestions, and you or your accountant approve before anything is sent.</p>
       </details>
       <details>
         <summary>Is this a certified integration or a ready-made connector for Xledger, Business Central, Tripletex or Visma?</summary>
@@ -325,7 +328,7 @@
       </details>
       <details>
         <summary>Can the assistant post entries or send the monthly report on its own?</summary>
-        <p>No. A person approves before anything is posted or sent. Control stays with the finance department.</p>
+        <p>No. You or your accountant approve before anything is sent. Control stays with the finance department.</p>
       </details>
       <details>
         <summary>What can the assistant suggest?</summary>
@@ -379,6 +382,7 @@
       <a href="https://fjellhoy.com/en/">fjellhoy.com</a>
       <a href="finance-department.html" aria-current="page">Finance department</a>
       <a href="security.html">Security</a>
+      <a href="#sporsmal">Questions</a>
       <a href="ai-for-bilag-og-regnskap.html">Receipts and bookkeeping</a>
       <a href="automatisere-fakturahandtering.html">Automating invoice handling</a>
       <a href="gdpr-and-data-processing-agreement.html">GDPR and data processing agreement</a>

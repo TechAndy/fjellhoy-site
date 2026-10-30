@@ -1,0 +1,795 @@
+<!doctype html>
+<html lang="nb">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>AI Aften · Tønsberg</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#14213D;
+  --navy-2:#1b2c52;
+  --gold:#B08D57;
+  --gold-2:#e4d2a8;
+  --paper:#f4efe6;
+  --ink:#14213D;
+  --muted:rgba(244,239,230,.72);
+  --line:rgba(176,141,87,.45);
+  --serif:"Fraunces",Georgia,serif;
+  --sans:"Inter",system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:var(--navy);color:var(--paper);font-family:var(--sans)}
+button,a{font-family:inherit}
+canvas#sky{position:fixed;inset:0;width:100%;height:100%;z-index:0;display:block}
+body.in-deck,body.is-vote{background:radial-gradient(1100px 640px at 50% -8%, #1c315c 0%, #14213D 58%)}
+body.in-deck canvas#sky,body.is-vote canvas#sky{display:none}
+.saver,.deck,.vote{position:relative;z-index:1}
+.saver{
+  min-height:100%;display:flex;align-items:center;justify-content:center;
+  text-align:center;padding:32px 20px;transition:opacity .7s ease,visibility .7s ease;
+}
+body.in-deck .saver,body.is-vote .saver{opacity:0;visibility:hidden;pointer-events:none}
+body.shot.in-deck .saver,body.shot.is-vote .saver,body.is-vote .saver{display:none}
+.saver-card{max-width:760px}
+.logo{width:min(420px,78vw);height:auto;margin:0 auto 18px;display:block}
+.lockup{margin:0 0 16px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-2);font-size:13px;font-weight:700}
+.kicker{letter-spacing:.14em;text-transform:uppercase;color:var(--gold-2);font-size:14px;font-weight:600;margin:0 0 18px}
+h1,h2{font-family:var(--serif);font-weight:500;letter-spacing:-.02em;margin:0}
+.event-name{font-family:var(--serif);font-size:clamp(2.2rem,5vw,3.6rem);line-height:1.1;margin:0}
+.start{
+  margin-top:36px;border:1px solid var(--line);background:transparent;color:var(--paper);
+  border-radius:999px;padding:16px 28px;font-size:18px;font-weight:600;cursor:pointer;
+  animation:pulse 2.8s ease-in-out infinite;
+}
+.start:hover,.start:focus-visible{background:rgba(176,141,87,.16);outline:none}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(176,141,87,.35)}50%{box-shadow:0 0 0 12px rgba(176,141,87,0)}}
+.deck{display:none;min-height:100%}
+body.in-deck .deck{display:block}
+.step{
+  display:none;min-height:100vh;padding:72px 7vw 88px;
+  animation:fade .45s ease;
+}
+.step.is-on{display:flex;align-items:center}
+.step-inner{width:min(1080px,100%);margin:0 auto}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.eyebrow{color:var(--gold);font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin:0 0 12px}
+h2{font-size:clamp(1.8rem,4vw,3.1rem);line-height:1.12;margin-bottom:16px}
+.lead{font-size:clamp(1.05rem,1.6vw,1.28rem);line-height:1.5;color:var(--muted);max-width:40em;margin:0}
+.lead a{color:var(--gold-2)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px;padding:0;list-style:none}
+.chips li{border:1px solid var(--line);border-radius:999px;padding:7px 12px;color:var(--gold-2);font-size:14px;font-weight:600}
+.poll{display:grid;grid-template-columns:220px 1fr;gap:36px;align-items:center;margin-top:28px}
+.qr-card{background:#fff;color:var(--ink);border-radius:18px;padding:14px;text-align:center}
+.qr-card canvas,.qr-card img{width:180px;height:180px;display:block;margin:0 auto}
+.qr-card p{margin:8px 0 0;font-size:12px;line-height:1.35}
+.bars{display:grid;gap:14px}
+.bar-row{display:grid;grid-template-columns:9.5em 1fr auto;gap:10px;align-items:center;font-size:15px}
+.track{height:14px;border-radius:999px;background:rgba(255,255,255,.08);overflow:hidden}
+.fill{height:100%;width:0;background:linear-gradient(90deg,#9a7844,var(--gold-2));border-radius:inherit;transition:width .35s ease}
+.num{font-variant-numeric:tabular-nums;color:var(--gold-2);min-width:3.2em;text-align:right}
+.hint{margin-top:18px;color:rgba(244,239,230,.55);font-size:13px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:22px}
+.card{border:1px solid var(--line);border-radius:18px;padding:16px 16px 18px;background:rgba(255,255,255,.04)}
+.card h3{margin:8px 0;font-size:1.05rem}
+.card p{margin:0;color:var(--muted);line-height:1.45;font-size:15px}
+.tag{display:inline-block;border:1px solid var(--gold);color:var(--gold-2);border-radius:999px;padding:2px 8px;font-size:12px;font-weight:700;letter-spacing:.04em}
+.timeline{list-style:none;margin:22px 0 0;padding:0;display:grid;gap:12px}
+.timeline li{display:grid;grid-template-columns:8.2em 1fr;gap:14px;padding-top:12px;border-top:1px solid rgba(176,141,87,.28)}
+.when{color:var(--gold-2);font-weight:700;font-size:14px}
+.timeline p{margin:0;line-height:1.45}
+.timeline a{color:var(--gold-2)}
+.callout{margin-top:18px;border-left:4px solid var(--gold);padding:8px 0 8px 16px}
+.callout strong{font-family:var(--serif);font-size:clamp(1.4rem,2.5vw,2rem);font-weight:500;display:block;line-height:1.2}
+.extra{margin-top:16px;padding:14px 16px;border-radius:16px;background:rgba(176,141,87,.12)}
+.mark{display:none;position:fixed;z-index:4;top:0;left:0;right:0;align-items:center;gap:14px;padding:14px 22px;background:linear-gradient(#14213D, rgba(20,33,61,.92) 70%, rgba(20,33,61,0))}
+.mark img{height:40px;width:auto}
+.mark span{color:var(--gold-2);font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+body.in-deck .mark,body.is-vote .mark{display:flex}
+.chrome{position:fixed;z-index:3;left:0;right:0;bottom:0;display:none;align-items:center;justify-content:space-between;gap:16px;padding:14px 22px;color:rgba(244,239,230,.7);font-size:13px;pointer-events:none;background:linear-gradient(rgba(20,33,61,0), #14213D 45%)}
+body.in-deck .chrome{display:flex}
+.chrome .brandfoot{color:var(--gold-2);font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.nav-hit{position:fixed;top:0;bottom:64px;width:12vw;z-index:2;border:0;background:transparent;cursor:pointer}
+.nav-hit.prev{left:0}.nav-hit.next{right:0}
+body.is-vote .nav-hit,body:not(.in-deck) .nav-hit{display:none}
+.vote{display:none;min-height:100%;padding:28px 18px 48px}
+body.is-vote .vote{display:block}
+.vote h1{font-size:1.8rem;margin:8px 0 6px}
+.vote-poll{margin:22px 0;padding-top:8px}
+.vote-poll h2{font-size:1.25rem}
+.vopts{display:grid;gap:10px;margin-top:12px}
+.vopts button{text-align:left;background:#1c2d54;color:var(--paper);border:1px solid var(--line);border-radius:14px;padding:16px;font-size:17px;font-weight:600;cursor:pointer}
+.vopts button.is-on{background:var(--gold);color:#2a1a08;border-color:var(--gold)}
+.check{display:flex;gap:10px;align-items:flex-start;margin:10px 0}
+.check span{color:var(--gold);font-weight:700}
+@media (max-width:800px){
+  .poll,.cards,.timeline li{grid-template-columns:1fr}
+  .bar-row{grid-template-columns:1fr auto}
+  .step{padding:64px 22px 96px}
+}
+body.shot .saver{transition:none}
+body.shot.in-deck .saver{display:none}
+body.shot .step{animation:none}
+@media (prefers-reduced-motion:reduce){
+  .start{animation:none}
+  .step{animation:none}
+  .fill{transition:none}
+  .saver{transition:none}
+}
+</style>
+</head>
+<body>
+<canvas id="sky" aria-hidden="true"></canvas>
+
+<div class="saver" id="saver">
+  <div class="saver-card">
+    <img class="logo" src="../assets/fjellhoy-v2c-bred-mork.svg" alt="Fjellhøy">
+    <p class="lockup">AI Aften – TFNF</p>
+    <p class="event-name">AI Aften · Tønsberg</p>
+    <button class="start" id="start" type="button">Trykk for å starte</button>
+  </div>
+</div>
+
+<main class="deck" id="deck">
+  <section class="step" id="velkommen" data-step="velkommen">
+    <div class="step-inner">
+      <p class="eyebrow">AI Aften · Tønsberg</p>
+      <h2>Agenter i jobben du allerede har.</h2>
+      <p class="lead">Vi leser rommet, ser på hva som faktisk skjedde i 2026, og på Andreas sin tese for 2027. Så viser han typen grovarbeid en agent kan legge klar, uten å sende noe på egen hånd.</p>
+      <ul class="chips">
+        <li>Rommet</li><li>2026</li><li>2027</li><li>Egne eksempler</li><li>Trygghet</li>
+      </ul>
+      <p class="hint">Piltaster, klikk i kanten eller sveip. Esc tilbake til ventebildet.</p>
+    </div>
+  </section>
+
+  <section class="step" id="poll-bruk" data-step="poll-bruk" data-poll="bruk">
+    <div class="step-inner">
+      <p class="eyebrow">Rommet</p>
+      <h2>Har du brukt AI-agenter?</h2>
+      <div class="poll">
+        <div class="qr-card">
+          <canvas class="qr" width="180" height="180" data-poll="bruk" aria-label="QR-kode til avstemning"></canvas>
+          <p>Skann og stem på telefonen.</p>
+        </div>
+        <div class="bars" data-poll="bruk"></div>
+      </div>
+      <p class="hint">Demo i denne nettleseren. Tast 1, 2 og 3 legger til. Shift og samme tall trekker fra.</p>
+    </div>
+  </section>
+
+  <section class="step" id="poll-onske" data-step="poll-onske" data-poll="onske">
+    <div class="step-inner">
+      <p class="eyebrow">Rommet</p>
+      <h2>Hva vil du ha med deg hjem?</h2>
+      <div class="poll">
+        <div class="qr-card">
+          <canvas class="qr" width="180" height="180" data-poll="onske" aria-label="QR-kode til avstemning"></canvas>
+          <p>Skann og stem på telefonen.</p>
+        </div>
+        <div class="bars" data-poll="onske"></div>
+      </div>
+      <p class="hint">Tast 1, 2 og 3 legger til. Shift og samme tall trekker fra.</p>
+    </div>
+  </section>
+
+  <section class="step" id="grunnlag" data-step="grunnlag">
+    <div class="step-inner">
+      <p class="eyebrow">Felles grunn</p>
+      <h2>En agent gjør et stykke arbeid. En chat svarer når du spør.</h2>
+      <div class="cards">
+        <article class="card"><h3>Leser</h3><p>Bare det du har valgt å koble til, for eksempel e-post og fakturaer.</p></article>
+        <article class="card"><h3>Lager utkast</h3><p>Svar, oppfølging og et første utkast du kan lese.</p></article>
+        <article class="card"><h3>Stopper</h3><p>Ingenting sendes før du har sagt ja.</p></article>
+      </div>
+      <div class="extra" id="never-extra" hidden>
+        <p>Flest i rommet har ikke prøvd en agent. Vi bruker litt mer tid her. Du trenger ikke kunne teknikken. Du skal kjenne igjen grovarbeidet, og vite hvor du selv sier ja.</p>
+      </div>
+      <p class="roomline hint" id="roomline"></p>
+    </div>
+  </section>
+
+  <section class="step" id="aar-2026" data-step="aar-2026">
+    <div class="step-inner">
+      <p class="eyebrow">2026, året i AI</p>
+      <h2>Et utvalg, med kilde.</h2>
+      <p class="lead">Ikke en komplett liste. Bare hendelser vi kan peke på.</p>
+      <ol class="timeline" id="timeline"></ol>
+    </div>
+  </section>
+
+  <section class="step" id="spaadom" data-step="spaadom">
+    <div class="step-inner">
+      <p class="eyebrow">2027</p>
+      <h2>Andreas sin tese, ikke en fasit.</h2>
+      <div class="callout"><strong>Kommersielle agenter blir det nye standardproduktet.</strong></div>
+      <p class="lead">Med det mener han at agenten er noe en liten bedrift kan kjøpe og sette opp i kontoene den allerede har. Du godkjenner fortsatt før noe sendes. Chatten blir ikke borte, men den er ikke lenger hele produktet.</p>
+    </div>
+  </section>
+
+  <section class="step" id="eksempler" data-step="eksempler">
+    <div class="step-inner">
+      <p class="eyebrow">Egne eksempler</p>
+      <h2>Slik kan grovarbeidet se ut.</h2>
+      <p class="lead">Dette er typer arbeid Fjellhøy allerede beskriver. Andreas bytter inn sine egne gjennomganger. Ingen kundecase.</p>
+      <div class="cards">
+        <article class="card"><span class="tag">SJEKK</span><h3>Fakturakontroll</h3><p>Agenten legger et avvik klart mot tidligere fakturaer fra samme leverandør. Du leser før noe betales. Andreas fyller inn sitt eget eksempel.</p></article>
+        <article class="card"><span class="tag">SJEKK</span><h3>E-postutkast</h3><p>Et svarutkast ligger klart i tonen du bruker. Det går ikke ut før du trykker send. Andreas fyller inn sitt eget eksempel.</p></article>
+        <article class="card"><span class="tag">SJEKK</span><h3>Dokumentasjon</h3><p>Kvalitetsnotater og oppfølging samles til et utkast du kan rette. Andreas fyller inn sitt eget eksempel.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="step" id="trygghet" data-step="trygghet">
+    <div class="step-inner">
+      <p class="eyebrow">Trygghet</p>
+      <h2>Du er sjefen.</h2>
+      <div class="check"><span>1</span><p>Ingenting sendes, betales eller slettes uten ditt ja.</p></div>
+      <div class="check"><span>2</span><p>Agenten ser bare kontoene du selv har koblet til.</p></div>
+      <div class="check"><span>3</span><p>Passord og betalinger tar du selv.</p></div>
+      <article class="card" style="margin-top:18px;max-width:36em">
+        <span class="tag">SJEKK – ikke bekreftet</span>
+        <h3>Gjest</h3>
+        <p>Stian Mundal, 200 (Tønsberg). Ikke bekreftet som gjest for denne kvelden.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="step" id="avslutning" data-step="avslutning">
+    <div class="step-inner">
+      <p class="eyebrow">Avslutning</p>
+      <h2>Takk for i kveld.</h2>
+      <p class="lead">Spørsmål kan vente til etterpå. Andreas Berthelsen, Fjellhøy AS.</p>
+      <p class="lead" style="margin-top:14px"><a href="mailto:andreas@fjellhoy.com">andreas@fjellhoy.com</a> · <a href="tel:+4741600048">+47 416 00 048</a></p>
+      <article class="card" style="margin-top:22px;max-width:36em">
+        <span class="tag">SJEKK</span>
+        <h3>Neste AI Aften</h3>
+        <p>Dato og sted er ikke satt.</p>
+      </article>
+    </div>
+  </section>
+</main>
+
+<div class="vote" id="vote">
+  <p class="kicker">Stem · AI Aften</p>
+  <h1>To spørsmål.</h1>
+  <p class="lead">Stemmen lagres på denne telefonen i demo. Den vises på storskjermen når et felles telleverk er koblet på, eller når den som leder kvelden justerer tallene der.</p>
+  <div id="vote-polls"></div>
+</div>
+
+<button class="nav-hit prev" type="button" id="hit-prev" aria-label="Forrige"></button>
+<button class="nav-hit next" type="button" id="hit-next" aria-label="Neste"></button>
+<header class="mark"><img src="../assets/fjellhoy-v2c-bred-mork.svg" alt="Fjellhøy"><span>AI Aften – TFNF</span></header>
+<div class="chrome"><span class="brandfoot">AI Aften – TFNF</span><span id="hintkeys">← →</span><span id="counter"></span></div>
+
+<!--
+Kilder til tidslinjen, 2026. Bare det som er brukt i TIDSLINJE under.
+- 20. mai 2026, Google I/O, Gemini 3.5 Flash: https://blog.google/innovation-and-ai/technology/ai/google-io-2026-all-our-announcements/
+- 8. juli 2026, forordning (EU) 2026/1744 endrer AI-forordningen: https://eur-lex.europa.eu/eli/reg/2024/1689/2026-07-27/eng
+- 2. august 2026, AI-forordningen gjelder i hovedsak: https://ai-act-service-desk.ec.europa.eu/en/ai-act/faq/when-does-ai-act-go-effect-what-its-timeline-implementation
+- 22. september 2026, Claude Opus 5.5: https://www.anthropic.com/claude-opus-5-5
+- 29. september 2026, OpenAI DevDay og Dots: https://openai.com/index/devday-2026-recap/ og https://openai.com/index/introducing-dots/
+Avstemning: demo i localStorage. For felles telling på tvers av telefon og storskjerm må Andreas godkjenne et realtime-backend og sette window.FJELLHOY_POLLS.
+-->
+<script>
+(function(){
+  var REDUCED = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var STEPS = ["velkommen","poll-bruk","poll-onske","grunnlag","aar-2026","spaadom","eksempler","trygghet","avslutning"];
+  var POLLS = {
+    bruk: {
+      q: "Har du brukt AI-agenter?",
+      options: [
+        {id:"once", label:"Prøvd én gang"},
+        {id:"now", label:"Bruker nå"},
+        {id:"never", label:"Aldri"}
+      ]
+    },
+    onske: {
+      q: "Hva vil du ha med deg hjem?",
+      options: [
+        {id:"epost", label:"E-postutkast"},
+        {id:"faktura", label:"Faktura og bilag"},
+        {id:"trygg", label:"Trygghet og kontroll"}
+      ]
+    }
+  };
+  var TIDSLINJE = [
+    {when:"20. mai", text:"Google I/O: Gemini 3.5 Flash ble lansert.", source:"Google", href:"https://blog.google/innovation-and-ai/technology/ai/google-io-2026-all-our-announcements/"},
+    {when:"8. juli", text:"EU vedtok forordning (EU) 2026/1744, som endrer AI-forordningen, blant annet når høyrisikoreglene gjelder.", source:"EUR-Lex", href:"https://eur-lex.europa.eu/eli/reg/2024/1689/2026-07-27/eng"},
+    {when:"2. aug.", text:"AI-forordningen gjelder i hovedsak. Åpenhetskrav og håndheving starter. Reglene for høyrisikosystemer i vedlegg III kommer 2. desember 2027.", source:"EU-kommisjonen", href:"https://ai-act-service-desk.ec.europa.eu/en/ai-act/faq/when-does-ai-act-go-effect-what-its-timeline-implementation"},
+    {when:"22. sep.", text:"Anthropic lanserte Claude Opus 5.5.", source:"Anthropic", href:"https://www.anthropic.com/claude-opus-5-5"},
+    {when:"29. sep.", text:"OpenAI DevDay: Dots ble presentert, agenter som kan jobbe videre og ta med resultatet tilbake når noe må avgjøres.", source:"OpenAI", href:"https://openai.com/index/introducing-dots/"},
+    {when:"[SJEKK]", text:"Norsk hendelse i 2026 som Andreas vil trekke fram. Ikke fylt inn.", source:"", href:""}
+  ];
+
+  function emptyCounts(){
+    var out = {};
+    Object.keys(POLLS).forEach(function(pid){
+      out[pid] = {};
+      POLLS[pid].options.forEach(function(op){ out[pid][op.id] = 0; });
+    });
+    return out;
+  }
+  function createDemoBackend(){
+    var key = "fjellhoy-ai-aften-polls";
+    var listeners = {};
+    var data = emptyCounts();
+    try{
+      var saved = JSON.parse(localStorage.getItem(key) || "{}");
+      Object.keys(data).forEach(function(pid){
+        Object.keys(data[pid]).forEach(function(oid){
+          var n = saved[pid] && saved[pid][oid];
+          if (typeof n === "number" && n >= 0) data[pid][oid] = n;
+        });
+      });
+    }catch(e){}
+    function read(){ return data; }
+    function write(){
+      try{ localStorage.setItem(key, JSON.stringify(data)); }catch(e){}
+      Object.keys(listeners).forEach(function(pid){ (listeners[pid]||[]).forEach(function(fn){ fn(data[pid]); }); });
+    }
+    return {
+      mode: "demo",
+      get: function(pid){ return Promise.resolve(read()[pid]); },
+      vote: function(pid, oid){
+        var data = read();
+        if (data[pid] && oid in data[pid]) data[pid][oid] += 1;
+        write(data);
+        return Promise.resolve(data[pid]);
+      },
+      setCount: function(pid, oid, next){
+        var data = read();
+        if (data[pid] && oid in data[pid]) data[pid][oid] = Math.max(0, next);
+        write(data);
+        return Promise.resolve(data[pid]);
+      },
+      subscribe: function(pid, fn){
+        listeners[pid] = listeners[pid] || [];
+        listeners[pid].push(fn);
+        this.get(pid).then(fn);
+      }
+    };
+  }
+  function createBackend(){
+    var remote = window.FJELLHOY_POLLS;
+    if (remote && typeof remote.vote === "function" && typeof remote.get === "function" && typeof remote.subscribe === "function") return remote;
+    return createDemoBackend();
+  }
+  var backend = createBackend();
+
+  function total(counts){
+    return Object.keys(counts).reduce(function(sum, k){ return sum + counts[k]; }, 0);
+  }
+  function leader(counts){
+    var best = null, n = -1;
+    Object.keys(counts).forEach(function(k){ if (counts[k] > n){ n = counts[k]; best = k; } });
+    return n > 0 ? best : null;
+  }
+  function renderBars(pid, counts){
+    var host = document.querySelector('.bars[data-poll="'+pid+'"]');
+    if (!host) return;
+    var sum = total(counts);
+    host.innerHTML = POLLS[pid].options.map(function(op){
+      var pct = sum ? Math.round(counts[op.id] / sum * 100) : 0;
+      return '<div class="bar-row"><span>'+op.label+'</span><div class="track"><div class="fill" style="width:'+pct+'%"></div></div><span class="num">'+counts[op.id]+'</span></div>';
+    }).join("");
+  }
+  function applyRoom(counts){
+    var extra = document.getElementById("never-extra");
+    var line = document.getElementById("roomline");
+    var lead = leader(counts || {});
+    if (extra) extra.hidden = lead !== "never";
+    if (!line) return;
+    if (!lead){ line.textContent = "Ingen stemmer ennå."; return; }
+    var label = {once:"Prøvd én gang", now:"Bruker nå", never:"Aldri"}[lead];
+    line.textContent = "I rommet akkurat nå: flest har svart «"+label+"».";
+  }
+  Object.keys(POLLS).forEach(function(pid){
+    backend.subscribe(pid, function(counts){
+      renderBars(pid, counts);
+      if (pid === "bruk") applyRoom(counts);
+    });
+  });
+
+  var list = document.getElementById("timeline");
+  list.innerHTML = TIDSLINJE.map(function(item){
+    var src = item.href ? ' <a href="'+item.href+'">'+item.source+'</a>' : "";
+    return "<li><div class=\"when\">"+item.when+"</div><p>"+item.text+src+"</p></li>";
+  }).join("");
+
+  function voteUrl(pid){
+    var u = new URL(location.href);
+    u.search = "";
+    u.hash = "";
+    u.searchParams.set("vote","1");
+    if (pid) u.searchParams.set("poll", pid);
+    return u.toString();
+  }
+
+  var GF = (function(){
+    var exp = new Uint8Array(512), log = new Uint8Array(256), i, x = 1;
+    for (i = 0; i < 255; i++){ exp[i] = x; log[x] = i; x <<= 1; if (x & 0x100) x ^= 0x11d; }
+    for (i = 255; i < 512; i++) exp[i] = exp[i-255];
+    return {
+      mul: function(a,b){ return (a && b) ? exp[log[a] + log[b]] : 0; }
+    };
+  })();
+  function rs(data, eccLen){
+    var gen = [1], i, j, res = data.slice();
+    for (i = 0; i < eccLen; i++){
+      var next = [1, GF.exp ? 0 : 0];
+    }
+    var exp = new Uint8Array(512), log = new Uint8Array(256); x = 1;
+    for (i = 0; i < 255; i++){ exp[i] = x; log[x] = i; x <<= 1; if (x & 0x100) x ^= 0x11d; }
+    for (i = 255; i < 512; i++) exp[i] = exp[i-255];
+    gen = [1];
+    for (i = 0; i < eccLen; i++){
+      var ng = new Array(gen.length+1).fill(0);
+      for (j = 0; j < gen.length; j++){
+        ng[j] ^= gen[j];
+        ng[j+1] ^= (gen[j] ? exp[log[gen[j]] + i] : 0);
+      }
+      gen = ng;
+    }
+    res = data.concat(new Array(eccLen).fill(0));
+    for (i = 0; i < data.length; i++){
+      var coef = res[i];
+      if (!coef) continue;
+      for (j = 0; j < gen.length; j++){
+        res[i+j] ^= (gen[j] ? exp[(log[gen[j]] + log[coef]) % 255] : 0);
+      }
+    }
+    return res.slice(data.length);
+  }
+  var SPEC = {
+    1:{ecc:10, blocks:[[1,16]], align:[]},
+    2:{ecc:16, blocks:[[1,28]], align:[18]},
+    3:{ecc:26, blocks:[[1,44]], align:[22]},
+    4:{ecc:18, blocks:[[2,32]], align:[26]},
+    5:{ecc:24, blocks:[[2,43]], align:[30]},
+    6:{ecc:16, blocks:[[4,27]], align:[34]}
+  };
+  function capacity(v){
+    var s = SPEC[v], n = 0;
+    s.blocks.forEach(function(b){ n += b[0]*b[1]; });
+    return n;
+  }
+  function chooseVersion(len){
+    var v;
+    for (v = 1; v <= 6; v++){
+      if (capacity(v) >= len + 3) return v;
+    }
+    return 6;
+  }
+  function makeData(text, v){
+    var bytes = [];
+    for (var i = 0; i < text.length; i++) bytes.push(text.charCodeAt(i) & 255);
+    var cap = capacity(v);
+    var bits = [];
+    function push(val, n){ for (var k = n-1; k >= 0; k--) bits.push((val >>> k) & 1); }
+    push(0b0100, 4);
+    push(bytes.length, 8);
+    bytes.forEach(function(b){ push(b, 8); });
+    var maxBits = cap * 8;
+    var pad = Math.min(4, maxBits - bits.length);
+    push(0, pad);
+    while (bits.length % 8) bits.push(0);
+    var out = [];
+    for (i = 0; i < bits.length; i += 8){
+      var n = 0;
+      for (var j = 0; j < 8; j++) n = (n << 1) | bits[i+j];
+      out.push(n);
+    }
+    var toggle = 0xEC;
+    while (out.length < cap){ out.push(toggle); toggle = toggle === 0xEC ? 0x11 : 0xEC; }
+    return out;
+  }
+  function interleave(data, v){
+    var spec = SPEC[v], blocks = [], offset = 0, bi, b;
+    spec.blocks.forEach(function(group){
+      for (bi = 0; bi < group[0]; bi++){
+        var chunk = data.slice(offset, offset + group[1]);
+        offset += group[1];
+        blocks.push({data:chunk, ecc:rs(chunk, spec.ecc)});
+      }
+    });
+    var out = [];
+    var maxD = 0, maxE = spec.ecc;
+    blocks.forEach(function(bl){ if (bl.data.length > maxD) maxD = bl.data.length; });
+    for (i = 0; i < maxD; i++) blocks.forEach(function(bl){ if (i < bl.data.length) out.push(bl.data[i]); });
+    for (i = 0; i < maxE; i++) blocks.forEach(function(bl){ out.push(bl.ecc[i]); });
+    return out;
+  }
+  function finder(m, r, c){
+    for (var y = -1; y <= 7; y++) for (var x = -1; x <= 7; x++){
+      var rr = r+y, cc = c+x;
+      if (rr < 0 || cc < 0 || rr >= m.length || cc >= m.length) continue;
+      var on = (x>=0 && x<=6 && (y===0 || y===6)) || (y>=0 && y<=6 && (x===0 || x===6)) || (x>=2 && x<=4 && y>=2 && y<=4);
+      if (x<0 || y<0 || x>6 || y>6) on = false;
+      m[rr][cc] = on ? 1 : 0;
+    }
+  }
+  function qrMatrix(text){
+    var v = chooseVersion(text.length), size = 21 + 4*(v-1);
+    var m = [], reserved = [], y, x;
+    for (y = 0; y < size; y++){ m.push(new Array(size).fill(null)); reserved.push(new Array(size).fill(false)); }
+    function reserve(r,c){ if(r>=0&&c>=0&&r<size&&c<size) reserved[r][c] = true; }
+    [[0,0],[0,size-7],[size-7,0]].forEach(function(p){ finder(m,p[0],p[1]); for(y=-1;y<=7;y++)for(x=-1;x<=7;x++)reserve(p[0]+y,p[1]+x); });
+    for (x = 0; x < size; x++){
+      if (m[6][x] == null) m[6][x] = x % 2 === 0 ? 1 : 0;
+      if (m[x][6] == null) m[x][6] = x % 2 === 0 ? 1 : 0;
+      reserve(6,x); reserve(x,6);
+    }
+    var align = SPEC[v].align, pos = [6].concat(align);
+    for (var i = 0; i < pos.length; i++) for (var j = 0; j < pos.length; j++){
+      if ((i===0 && j===0) || (i===0 && j===pos.length-1) || (i===pos.length-1 && j===0)) continue;
+      var cy = pos[i], cx = pos[j];
+      for (y = -2; y <= 2; y++) for (x = -2; x <= 2; x++){
+        var on = Math.max(Math.abs(x), Math.abs(y)) !== 1;
+        m[cy+y][cx+x] = on ? 1 : 0;
+        reserve(cy+y, cx+x);
+      }
+    }
+    m[size-8][8] = 1; reserve(size-8, 8);
+    for (y = 0; y < 9; y++){ reserve(y,8); reserve(8,y); }
+    for (y = 0; y < 8; y++){ reserve(y, size-8+ (y>0?0:0)); reserve(8, size-1-y); reserve(size-1-y, 8); }
+    for (i = 0; i < 8; i++){ reserve(8, size-1-i); reserve(size-1-i, 8); }
+    var codewords = interleave(makeData(text, v), v);
+    var bits = [];
+    codewords.forEach(function(cw){ for (var b = 7; b >= 0; b--) bits.push((cw >>> b) & 1); });
+    var rem = (size*size - document.querySelectorAll && 0) ;
+    var bit = 0, upward = true;
+    for (var col = size - 1; col > 0; col -= 2){
+      if (col === 6) col--;
+      for (var k = 0; k < size; k++){
+        var row = upward ? size - 1 - k : k;
+        for (var c2 = 0; c2 < 2; c2++){
+          var cc = col - c2;
+          if (reserved[row][cc]) continue;
+          m[row][cc] = bit < bits.length ? bits[bit++] : 0;
+        }
+      }
+      upward = !upward;
+    }
+    return maskBest(m, reserved);
+  }
+  function maskBit(mask, r, c){
+    if (mask === 0) return (r + c) % 2 === 0;
+    if (mask === 1) return r % 2 === 0;
+    if (mask === 2) return c % 3 === 0;
+    if (mask === 3) return (r + c) % 3 === 0;
+    if (mask === 4) return (Math.floor(r/2) + Math.floor(c/3)) % 2 === 0;
+    if (mask === 5) return ((r*c) % 2) + ((r*c) % 3) === 0;
+    if (mask === 6) return (((r*c) % 2) + ((r*c) % 3)) % 2 === 0;
+    return (((r+c) % 2) + ((r*c) % 3)) % 2 === 0;
+  }
+  function formatBits(ecc, mask){
+    var data = (ecc << 3) | mask;
+    var rem = data << 10;
+    for (var i = 14; i >= 10; i--) if ((rem >>> i) & 1) rem ^= 0x537 << (i - 10);
+    return ((data << 10) | rem) ^ 0x5412;
+  }
+  function applyFormat(m, bits){
+    var size = m.length, coords = [];
+    for (var i = 0; i < 6; i++) coords.push([8, i]);
+    coords.push([8,7],[8,8],[7,8]);
+    for (i = 5; i >= 0; i--) coords.push([i, 8]);
+    coords.forEach(function(p, idx){ m[p[0]][p[1]] = (bits >>> (14-idx)) & 1; });
+    for (i = 0; i < 7; i++) m[size-1-i][8] = (bits >>> (14-i)) & 1;
+    m[size-8][8] = 1;
+    for (i = 0; i < 8; i++) m[8][size-1-i] = (bits >>> (7-i)) & 1;
+  }
+  function maskBest(raw, reserved){
+    var best = null, bestScore = Infinity, mask, size = raw.length;
+    for (mask = 0; mask < 8; mask++){
+      var m = raw.map(function(row){ return row.slice(); });
+      for (var r = 0; r < size; r++) for (var c = 0; c < size; c++){
+        if (!reserved[r][c] && maskBit(mask, r, c)) m[r][c] ^= 1;
+      }
+      applyFormat(m, formatBits(0, mask));
+      var score = penalty(m);
+      if (score < bestScore){ bestScore = score; best = m; }
+    }
+    return best;
+  }
+  function penalty(m){
+    var size = m.length, score = 0, r, c, run, k;
+    for (r = 0; r < size; r++){
+      run = 1;
+      for (c = 1; c < size; c++){
+        if (m[r][c] === m[r][c-1]) run++;
+        else { if (run >= 5) score += 3 + (run-5); run = 1; }
+      }
+      if (run >= 5) score += 3 + (run-5);
+    }
+    return score;
+  }
+  function drawQr(canvas, text){
+    var m;
+    try { m = qrMatrix(text); }
+    catch (e) { return; }
+    var n = m.length, ctx = canvas.getContext("2d");
+    var q = 180;
+    canvas.width = q; canvas.height = q;
+    ctx.fillStyle = "#fff";
+    ctx.fillRect(0,0,q,q);
+    var s = Math.floor(q / (n + 2));
+    var off = Math.floor((q - s*n) / 2);
+    ctx.fillStyle = "#14213D";
+    for (var r = 0; r < n; r++) for (var c = 0; c < n; c++){
+      if (m[r][c]) ctx.fillRect(off + c*s, off + r*s, s, s);
+    }
+  }
+  document.querySelectorAll("canvas.qr").forEach(function(cv){
+    drawQr(cv, voteUrl(cv.getAttribute("data-poll")));
+  });
+
+  var step = 0, started = false;
+  var qs = new URLSearchParams(location.search);
+  function showStep(n){
+    step = Math.max(0, Math.min(STEPS.length-1, n));
+    STEPS.forEach(function(id, i){
+      document.getElementById(id).classList.toggle("is-on", i === step);
+    });
+    document.getElementById("counter").textContent = String(step+1).padStart(2,"0")+" / "+String(STEPS.length).padStart(2,"0");
+  }
+  function startShow(){
+    if (started) return;
+    started = true;
+    document.body.classList.add("in-deck");
+    cancelAnimationFrame(raf);
+    var want = qs.get("step");
+    var idx = want ? STEPS.indexOf(want) : 0;
+    showStep(idx < 0 ? 0 : idx);
+    var root = document.documentElement;
+    if (root.requestFullscreen) root.requestFullscreen().catch(function(){});
+  }
+  function toSaver(){
+    started = false;
+    document.body.classList.remove("in-deck");
+    if (!REDUCED) raf = requestAnimationFrame(frame);
+    if (document.fullscreenElement && document.exitFullscreen) document.exitFullscreen().catch(function(){});
+  }
+  document.getElementById("start").addEventListener("click", startShow);
+  document.getElementById("hit-next").addEventListener("click", function(){ if (started) showStep(step+1); });
+  document.getElementById("hit-prev").addEventListener("click", function(){ if (started) showStep(step-1); });
+  document.addEventListener("keydown", function(e){
+    if (document.body.classList.contains("is-vote")) return;
+    if (!started && (e.key === "Enter" || e.key === " ")){ e.preventDefault(); startShow(); return; }
+    if (!started) return;
+    if (e.key === "ArrowRight" || e.key === "PageDown"){ e.preventDefault(); showStep(step+1); }
+    else if (e.key === "ArrowLeft" || e.key === "PageUp"){ e.preventDefault(); showStep(step-1); }
+    else if (e.key === "Escape"){ e.preventDefault(); toSaver(); }
+    else if (e.key === "Home"){ showStep(0); }
+    else if (e.key === "End"){ showStep(STEPS.length-1); }
+    else if (/^[1-3]$/.test(e.key)){
+      var sec = document.getElementById(STEPS[step]);
+      var pid = sec && sec.getAttribute("data-poll");
+      if (!pid) return;
+      var op = POLLS[pid].options[Number(e.key)-1];
+      backend.get(pid).then(function(counts){
+        var next = counts[op.id] + (e.shiftKey ? -1 : 1);
+        backend.setCount(pid, op.id, next);
+      });
+    }
+  });
+  var touchX = null;
+  document.addEventListener("touchstart", function(e){ touchX = e.changedTouches[0].clientX; }, {passive:true});
+  document.addEventListener("touchend", function(e){
+    if (touchX == null || !started || document.body.classList.contains("is-vote")) return;
+    var dx = e.changedTouches[0].clientX - touchX;
+    if (Math.abs(dx) > 50) showStep(step + (dx < 0 ? 1 : -1));
+    touchX = null;
+  }, {passive:true});
+
+  var voteRoot = document.getElementById("vote-polls");
+  function renderVote(){
+    voteRoot.innerHTML = Object.keys(POLLS).map(function(pid){
+      var p = POLLS[pid];
+      var buttons = p.options.map(function(op){
+        return '<button type="button" data-pid="'+pid+'" data-oid="'+op.id+'">'+op.label+'</button>';
+      }).join("");
+      return '<div class="vote-poll" id="vp-'+pid+'"><h2>'+p.q+'</h2><div class="vopts">'+buttons+'</div></div>';
+    }).join("");
+    voteRoot.querySelectorAll("button").forEach(function(btn){
+      btn.addEventListener("click", function(){
+        backend.vote(btn.getAttribute("data-pid"), btn.getAttribute("data-oid"));
+        btn.parentNode.querySelectorAll("button").forEach(function(b){ b.classList.remove("is-on"); });
+        btn.classList.add("is-on");
+      });
+    });
+  }
+  if (qs.get("step") || qs.get("shot")) document.body.classList.add("shot");
+  if (qs.get("vote") === "1"){
+    document.body.classList.add("is-vote");
+    renderVote();
+    var focus = qs.get("poll");
+    if (focus && document.getElementById("vp-"+focus)) document.getElementById("vp-"+focus).scrollIntoView();
+  } else if (qs.get("step")) {
+    startShow();
+  }
+  if (qs.get("demo") === "never"){
+    backend.setCount("bruk","never",6);
+    backend.setCount("bruk","once",2);
+    backend.setCount("bruk","now",1);
+  }
+
+  var canvas = document.getElementById("sky");
+  var ctx = canvas.getContext("2d");
+  var dots = [], w = 0, h = 0, raf = 0, t0 = 0;
+  function resize(){
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    w = window.innerWidth; h = window.innerHeight;
+    canvas.width = Math.floor(w * dpr);
+    canvas.height = Math.floor(h * dpr);
+    canvas.style.width = w + "px";
+    canvas.style.height = h + "px";
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+  }
+  function seed(){
+    var count = Math.round(Math.min(90, Math.max(36, w * h / 18000)));
+    dots = [];
+    for (var i = 0; i < count; i++){
+      dots.push({
+        x: Math.random()*w,
+        y: Math.random()*h,
+        vx: (Math.random()-0.5)*0.22,
+        vy: (Math.random()-0.5)*0.22
+      });
+    }
+  }
+  function frame(now){
+    var pulse = REDUCED ? 0.5 : (0.5 + 0.5*Math.sin((now||0)/1400));
+    ctx.clearRect(0,0,w,h);
+    ctx.strokeStyle = "rgba(176,141,87,"+(0.045+pulse*0.04)+")";
+    ctx.lineWidth = 1;
+    var gap = 72;
+    ctx.beginPath();
+    for (var x = gap/2; x < w; x += gap){ ctx.moveTo(x,0); ctx.lineTo(x,h); }
+    for (var y = gap/2; y < h; y += gap){ ctx.moveTo(0,y); ctx.lineTo(w,y); }
+    ctx.stroke();
+    var i, j, a, b, dx, dy, dist;
+    for (i = 0; i < dots.length; i++){
+      a = dots[i];
+      if (!REDUCED){
+        a.x += a.vx; a.y += a.vy;
+        if (a.x < 0 || a.x > w) a.vx *= -1;
+        if (a.y < 0 || a.y > h) a.vy *= -1;
+      }
+    }
+    for (i = 0; i < dots.length; i++){
+      for (j = i+1; j < dots.length; j++){
+        a = dots[i]; b = dots[j];
+        dx = a.x-b.x; dy = a.y-b.y;
+        dist = Math.hypot(dx, dy);
+        if (dist < 140){
+          ctx.strokeStyle = "rgba(228,210,168,"+(1-dist/140)*0.28+")";
+          ctx.beginPath();
+          ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y); ctx.stroke();
+        }
+      }
+    }
+    ctx.fillStyle = "rgba(228,210,168,.85)";
+    for (i = 0; i < dots.length; i++){
+      ctx.beginPath();
+      ctx.arc(dots[i].x, dots[i].y, 1.6, 0, Math.PI*2);
+      ctx.fill();
+    }
+    if (!REDUCED) raf = requestAnimationFrame(frame);
+  }
+  function bootSky(){
+    resize(); seed();
+    cancelAnimationFrame(raf);
+    if (document.body.classList.contains("in-deck") || document.body.classList.contains("is-vote")) return;
+    if (REDUCED) frame(0);
+    else raf = requestAnimationFrame(frame);
+  }
+  window.addEventListener("resize", bootSky);
+  bootSky();
+})();
+</script>
+</body>
+</html>

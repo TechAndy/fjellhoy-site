@@ -274,7 +274,7 @@ Kilder til tidslinjen, 2026. Bare det som er brukt i TIDSLINJE under.
 - 29. september 2026, OpenAI DevDay og Dots: https://openai.com/index/devday-2026-recap/ og https://openai.com/index/introducing-dots/
 Avstemning: window.FJELLHOY_POLLS poster {poll, option, voterId} til https://ntfy.sh/fjellhoy-aiaften-<session>.
 Storskjermen lytter på https://ntfy.sh/<topic>/sse?since=all. Siste stemme per voterId vinner.
-Tast 1/2/3 sender {type:"delta", poll, option, delta, nonce} og legges oppå stemmene.
+Tast 1/2/3 sender {poll, option, delta, nonce} og legges oppå stemmene.
 ?session= bytter emne. R på storskjermen lager et nytt emne. Uten kontakt med ntfy brukes lokal demo.
 ?demo=never og ?demo=local publiserer aldri. Ingen navn, telefon eller annen persondata sendes.
 -->
@@ -551,9 +551,9 @@ Tast 1/2/3 sender {type:"delta", poll, option, delta, nonce} og legges oppå ste
         try { msg = JSON.parse(msg); } catch (e) { return; }
       }
       if (!msg || typeof msg !== "object") return;
-      if (msg.type === "vote"){
+      if (typeof msg.voterId === "string" && msg.delta == null){
         if (!hasOption(msg.poll, msg.option)) return;
-        if (typeof msg.voterId !== "string" || !/^[a-z0-9]{8,40}$/.test(msg.voterId)) return;
+        if (!/^[a-z0-9]{8,40}$/.test(msg.voterId)) return;
         var pending = optVotes[msg.poll];
         var mine = sent[msg.poll];
         if (mine && mine.voterId === msg.voterId && mine.option !== msg.option) return;
@@ -567,7 +567,7 @@ Tast 1/2/3 sender {type:"delta", poll, option, delta, nonce} og legges oppå ste
         emit(msg.poll);
         return;
       }
-      if (msg.type === "delta"){
+      if (typeof msg.delta === "number"){
         if (!hasOption(msg.poll, msg.option)) return;
         var d = msg.delta;
         if (typeof d !== "number" || (d | 0) !== d || d === 0 || Math.abs(d) > 1000) return;
@@ -625,7 +625,7 @@ Tast 1/2/3 sender {type:"delta", poll, option, delta, nonce} og legges oppå ste
       }
       optVotes[pid] = { voterId: id, option: oid };
       emit(pid);
-      return publish({ type: "vote", poll: pid, option: oid, voterId: id }).catch(function(){
+      return publish({ poll: pid, option: oid, voterId: id }).catch(function(){
         fallback();
       }).then(function(){ return countsFor(pid); });
     }
@@ -642,7 +642,7 @@ Tast 1/2/3 sender {type:"delta", poll, option, delta, nonce} og legges oppå ste
       var nonce = randomId(12);
       optDeltas.push({ nonce: nonce, poll: pid, option: oid, delta: diff });
       emit(pid);
-      return publish({ type: "delta", poll: pid, option: oid, delta: diff, nonce: nonce }).catch(function(){
+      return publish({ poll: pid, option: oid, delta: diff, nonce: nonce }).catch(function(){
         fallback();
       }).then(function(){ return countsFor(pid); });
     }

@@ -25,6 +25,8 @@
 html,body{margin:0;height:100%;background:var(--navy);color:var(--paper);font-family:var(--sans)}
 button,a{font-family:inherit}
 canvas#sky{position:fixed;inset:0;width:100%;height:100%;z-index:0;display:block}
+body.in-deck,body.is-vote{background:radial-gradient(1100px 640px at 50% -8%, #1c315c 0%, #14213D 58%)}
+body.in-deck canvas#sky,body.is-vote canvas#sky{display:none}
 .saver,.deck,.vote{position:relative;z-index:1}
 .saver{
   min-height:100%;display:flex;align-items:center;justify-content:center;
@@ -33,7 +35,8 @@ canvas#sky{position:fixed;inset:0;width:100%;height:100%;z-index:0;display:block
 body.in-deck .saver,body.is-vote .saver{opacity:0;visibility:hidden;pointer-events:none}
 body.shot.in-deck .saver,body.shot.is-vote .saver,body.is-vote .saver{display:none}
 .saver-card{max-width:760px}
-.logo{width:min(420px,78vw);height:auto;margin:0 auto 28px;display:block}
+.logo{width:min(420px,78vw);height:auto;margin:0 auto 18px;display:block}
+.lockup{margin:0 0 16px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-2);font-size:13px;font-weight:700}
 .kicker{letter-spacing:.14em;text-transform:uppercase;color:var(--gold-2);font-size:14px;font-weight:600;margin:0 0 18px}
 h1,h2{font-family:var(--serif);font-weight:500;letter-spacing:-.02em;margin:0}
 .event-name{font-family:var(--serif);font-size:clamp(2.2rem,5vw,3.6rem);line-height:1.1;margin:0}
@@ -82,8 +85,13 @@ h2{font-size:clamp(1.8rem,4vw,3.1rem);line-height:1.12;margin-bottom:16px}
 .callout{margin-top:18px;border-left:4px solid var(--gold);padding:8px 0 8px 16px}
 .callout strong{font-family:var(--serif);font-size:clamp(1.4rem,2.5vw,2rem);font-weight:500;display:block;line-height:1.2}
 .extra{margin-top:16px;padding:14px 16px;border-radius:16px;background:rgba(176,141,87,.12)}
-.chrome{position:fixed;z-index:3;left:0;right:0;bottom:0;display:none;align-items:center;justify-content:space-between;padding:14px 22px;color:rgba(244,239,230,.7);font-size:13px;pointer-events:none}
+.mark{display:none;position:fixed;z-index:4;top:0;left:0;right:0;align-items:center;gap:14px;padding:14px 22px;background:linear-gradient(#14213D, rgba(20,33,61,.92) 70%, rgba(20,33,61,0))}
+.mark img{height:40px;width:auto}
+.mark span{color:var(--gold-2);font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+body.in-deck .mark,body.is-vote .mark{display:flex}
+.chrome{position:fixed;z-index:3;left:0;right:0;bottom:0;display:none;align-items:center;justify-content:space-between;gap:16px;padding:14px 22px;color:rgba(244,239,230,.7);font-size:13px;pointer-events:none;background:linear-gradient(rgba(20,33,61,0), #14213D 45%)}
 body.in-deck .chrome{display:flex}
+.chrome .brandfoot{color:var(--gold-2);font-weight:700;letter-spacing:.08em;text-transform:uppercase}
 .nav-hit{position:fixed;top:0;bottom:64px;width:12vw;z-index:2;border:0;background:transparent;cursor:pointer}
 .nav-hit.prev{left:0}.nav-hit.next{right:0}
 body.is-vote .nav-hit,body:not(.in-deck) .nav-hit{display:none}
@@ -119,6 +127,7 @@ body.shot .step{animation:none}
 <div class="saver" id="saver">
   <div class="saver-card">
     <img class="logo" src="../assets/fjellhoy-v2c-bred-mork.svg" alt="Fjellhøy">
+    <p class="lockup">AI Aften – TFNF</p>
     <p class="event-name">AI Aften · Tønsberg</p>
     <button class="start" id="start" type="button">Trykk for å starte</button>
   </div>
@@ -253,7 +262,8 @@ body.shot .step{animation:none}
 
 <button class="nav-hit prev" type="button" id="hit-prev" aria-label="Forrige"></button>
 <button class="nav-hit next" type="button" id="hit-next" aria-label="Neste"></button>
-<div class="chrome"><span id="hintkeys">← →</span><span id="counter"></span></div>
+<header class="mark"><img src="../assets/fjellhoy-v2c-bred-mork.svg" alt="Fjellhøy"><span>AI Aften – TFNF</span></header>
+<div class="chrome"><span class="brandfoot">AI Aften – TFNF</span><span id="hintkeys">← →</span><span id="counter"></span></div>
 
 <!--
 Kilder til tidslinjen, 2026. Bare det som er brukt i TIDSLINJE under.
@@ -630,6 +640,7 @@ Avstemning: demo i localStorage. For felles telling på tvers av telefon og stor
     if (started) return;
     started = true;
     document.body.classList.add("in-deck");
+    cancelAnimationFrame(raf);
     var want = qs.get("step");
     var idx = want ? STEPS.indexOf(want) : 0;
     showStep(idx < 0 ? 0 : idx);
@@ -639,6 +650,7 @@ Avstemning: demo i localStorage. For felles telling på tvers av telefon og stor
   function toSaver(){
     started = false;
     document.body.classList.remove("in-deck");
+    if (!REDUCED) raf = requestAnimationFrame(frame);
     if (document.fullscreenElement && document.exitFullscreen) document.exitFullscreen().catch(function(){});
   }
   document.getElementById("start").addEventListener("click", startShow);
@@ -771,6 +783,7 @@ Avstemning: demo i localStorage. For felles telling på tvers av telefon og stor
   function bootSky(){
     resize(); seed();
     cancelAnimationFrame(raf);
+    if (document.body.classList.contains("in-deck") || document.body.classList.contains("is-vote")) return;
     if (REDUCED) frame(0);
     else raf = requestAnimationFrame(frame);
   }

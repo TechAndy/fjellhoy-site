@@ -63,8 +63,17 @@ h2{font-size:clamp(1.8rem,4vw,3.1rem);line-height:1.12;margin-bottom:16px}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px;padding:0;list-style:none}
 .chips li{border:1px solid var(--line);border-radius:999px;padding:7px 12px;color:var(--gold-2);font-size:14px;font-weight:600}
 .poll{display:grid;grid-template-columns:220px 1fr;gap:36px;align-items:center;margin-top:28px}
+.salen-poll{align-items:start;margin-top:12px;gap:22px 28px}
+.salen-polls{display:grid;grid-template-columns:1fr 1fr;gap:12px 40px}
+.salen-q h3{margin:0 0 6px;font-family:var(--sans);font-size:14px;font-weight:700;letter-spacing:0;line-height:1.25}
+.salen-q .bars{gap:5px}
+.salen-q .bar-row{font-size:13px;gap:6px;grid-template-columns:minmax(6.2em,11.6em) 1fr auto}
+.salen-q .track{height:9px}
+#bli-kjent.step{padding-top:56px;padding-bottom:70px}
+#bli-kjent h2{font-size:clamp(1.7rem,3.2vw,2.55rem);margin-bottom:8px}
 .qr-card{background:#fff;color:var(--ink);border-radius:18px;padding:14px;text-align:center}
 .qr-card canvas,.qr-card img{width:180px;height:180px;display:block;margin:0 auto}
+.salen-poll .qr-card canvas{width:156px;height:156px}
 .qr-card p{margin:8px 0 0;font-size:12px;line-height:1.35}
 .bars{display:grid;gap:14px}
 .bar-row{display:grid;grid-template-columns:9.5em 1fr auto;gap:10px;align-items:center;font-size:15px}
@@ -98,7 +107,7 @@ body.is-vote .nav-hit,body:not(.in-deck) .nav-hit{display:none}
 .vote{display:none;min-height:100%;padding:28px 18px 48px}
 body.is-vote .vote{display:block}
 .vote h1{font-size:1.8rem;margin:8px 0 6px}
-.vote-poll{margin:22px 0;padding-top:8px}
+.vote-poll{margin:22px 0;padding-top:8px;scroll-margin-top:76px}
 .vote-poll h2{font-size:1.25rem}
 .vopts{display:grid;gap:10px;margin-top:12px}
 .vopts button{text-align:left;background:#1c2d54;color:var(--paper);border:1px solid var(--line);border-radius:14px;padding:16px;font-size:17px;font-weight:600;cursor:pointer}
@@ -106,8 +115,8 @@ body.is-vote .vote{display:block}
 .check{display:flex;gap:10px;align-items:flex-start;margin:10px 0}
 .check span{color:var(--gold);font-weight:700}
 @media (max-width:800px){
-  .poll,.cards,.timeline li{grid-template-columns:1fr}
-  .bar-row{grid-template-columns:1fr auto}
+  .poll,.cards,.timeline li,.salen-polls{grid-template-columns:1fr}
+  .bar-row,.salen-q .bar-row{grid-template-columns:1fr auto}
   .step{padding:64px 22px 96px}
 }
 body.shot .saver{transition:none}
@@ -134,6 +143,42 @@ body.shot .step{animation:none}
 </div>
 
 <main class="deck" id="deck">
+  <section class="step" id="bli-kjent" data-step="bli-kjent">
+    <div class="step-inner">
+      <p class="eyebrow">Rommet</p>
+      <h2>Bli kjent med salen</h2>
+      <div class="poll salen-poll">
+        <div class="qr-card">
+          <canvas class="qr" width="180" height="180" data-poll="dager" aria-label="QR-kode til avstemning"></canvas>
+          <p>Skann og stem på telefonen.</p>
+        </div>
+        <div class="salen-polls">
+          <div class="salen-q">
+            <h3>Hvor mange dager i uken bruker du AI?</h3>
+            <div class="bars" data-poll="dager"></div>
+          </div>
+          <div class="salen-q">
+            <h3>Hvilken AI bruker du?</h3>
+            <div class="bars" data-poll="hvilken"></div>
+          </div>
+          <div class="salen-q">
+            <h3>Bruker du agenter?</h3>
+            <div class="bars" data-poll="agenter"></div>
+          </div>
+          <div class="salen-q">
+            <h3>Hvorfor kom du hit i dag?</h3>
+            <div class="bars" data-poll="hvorfor"></div>
+          </div>
+          <div class="salen-q">
+            <h3>Hvilket nivå vil du anse deg som?</h3>
+            <div class="bars" data-poll="niva"></div>
+          </div>
+        </div>
+      </div>
+      <p class="hint" data-net="status">Kobler til felles telling…</p>
+    </div>
+  </section>
+
   <section class="step" id="velkommen" data-step="velkommen">
     <div class="step-inner">
       <p class="eyebrow">AI Aften · Tønsberg</p>
@@ -272,8 +317,11 @@ Kilder til tidslinjen, 2026. Bare det som er brukt i TIDSLINJE under.
 - 2. august 2026, AI-forordningen gjelder i hovedsak: https://ai-act-service-desk.ec.europa.eu/en/ai-act/faq/when-does-ai-act-go-effect-what-its-timeline-implementation
 - 22. september 2026, Claude Opus 5.5: https://www.anthropic.com/claude-opus-5-5
 - 29. september 2026, OpenAI DevDay og Dots: https://openai.com/index/devday-2026-recap/ og https://openai.com/index/introducing-dots/
-Avstemning: window.FJELLHOY_POLLS poster {poll, option, voterId} til https://ntfy.sh/fjellhoy-aiaften-<session>.
-Storskjermen lytter på https://ntfy.sh/<topic>/sse?since=all. Siste stemme per voterId vinner.
+Avstemning: window.FJELLHOY_POLLS poster {poll, option, voterId}.
+De to eldre spørsmålene bruker https://ntfy.sh/fjellhoy-aiaften-<session>.
+Hvert spørsmål på «Bli kjent med salen» har sitt eget emne https://ntfy.sh/fjellhoy-aiaften-<session>-<poll>
+(poll: dager, hvilken, agenter, hvorfor, niva).
+Storskjermen lytter på emnene via /sse?since=all. Siste stemme per voterId vinner.
 Tast 1/2/3 sender {poll, option, delta, nonce} og legges oppå stemmene.
 ?session= bytter emne. R på storskjermen lager et nytt emne. Uten kontakt med ntfy brukes lokal demo.
 ?demo=never og ?demo=local publiserer aldri. Ingen navn, telefon eller annen persondata sendes.
@@ -281,8 +329,56 @@ Tast 1/2/3 sender {poll, option, delta, nonce} og legges oppå stemmene.
 <script>
 (function(){
   var REDUCED = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  var STEPS = ["velkommen","poll-bruk","poll-onske","grunnlag","aar-2026","spaadom","eksempler","trygghet","avslutning"];
+  var STEPS = ["bli-kjent","velkommen","poll-bruk","poll-onske","grunnlag","aar-2026","spaadom","eksempler","trygghet","avslutning"];
+  var SALEN_POLLS = ["dager","hvilken","agenter","hvorfor","niva"];
   var POLLS = {
+    dager: {
+      q: "Hvor mange dager i uken bruker du AI?",
+      options: [
+        {id:"hver", label:"Hver dag"},
+        {id:"fire", label:"4–5 dager"},
+        {id:"noen", label:"Noen ganger"},
+        {id:"ingen", label:"Bruker ikke AI"}
+      ]
+    },
+    hvilken: {
+      q: "Hvilken AI bruker du?",
+      options: [
+        {id:"chatgpt", label:"ChatGPT"},
+        {id:"copilot", label:"Copilot"},
+        {id:"gemini", label:"Gemini"},
+        {id:"claude", label:"Claude"},
+        {id:"grok", label:"Grok"},
+        {id:"annet", label:"Annet"}
+      ]
+    },
+    agenter: {
+      q: "Bruker du agenter?",
+      options: [
+        {id:"jevnlig", label:"Ja, jevnlig"},
+        {id:"testet", label:"Har testet"},
+        {id:"nei", label:"Nei"},
+        {id:"hva", label:"Hva er det?"}
+      ]
+    },
+    hvorfor: {
+      q: "Hvorfor kom du hit i dag?",
+      options: [
+        {id:"laere", label:"Lære mer"},
+        {id:"verktoy", label:"Finne verktøy til jobben"},
+        {id:"nettverk", label:"Nettverk"},
+        {id:"nysgjerrig", label:"Nysgjerrig"}
+      ]
+    },
+    niva: {
+      q: "Hvilket nivå vil du anse deg som?",
+      options: [
+        {id:"ny", label:"Nybegynner"},
+        {id:"normal", label:"Normal"},
+        {id:"avansert", label:"Avansert"},
+        {id:"proff", label:"Profesjonell"}
+      ]
+    },
     bruk: {
       q: "Har du brukt AI-agenter?",
       options: [
@@ -353,7 +449,10 @@ Tast 1/2/3 sender {poll, option, delta, nonce} og legges oppå stemmene.
   }
   function setRoomStatus(extra){
     var text = extra ? KEY_HINT + " " + extra : KEY_HINT;
-    document.querySelectorAll("[data-net]").forEach(function(el){ el.textContent = text; });
+    document.querySelectorAll("[data-net]").forEach(function(el){
+      if (el.getAttribute("data-net") === "status") el.textContent = extra || "";
+      else el.textContent = text;
+    });
   }
   function setVoteStatus(text){
     var el = document.getElementById("vote-status");
@@ -507,8 +606,17 @@ Tast 1/2/3 sender {poll, option, delta, nonce} og legges oppå stemmene.
       (listeners[pid] || []).forEach(function(fn){ fn(c); });
     }
     function emitAll(){ Object.keys(POLLS).forEach(emit); }
+    function pollTopic(pid){
+      if (pid && SALEN_POLLS.indexOf(pid) !== -1) return topic + "-" + pid;
+      return topic;
+    }
+    function listenTopics(){
+      var all = [topic];
+      SALEN_POLLS.forEach(function(pid){ all.push(topic + "-" + pid); });
+      return all.join(",");
+    }
     function publish(obj){
-      return fetch(NTFY_BASE + topic, {
+      return fetch(NTFY_BASE + pollTopic(obj && obj.poll), {
         method: "POST",
         headers: { "Content-Type": "text/plain" },
         body: JSON.stringify(obj)
@@ -585,7 +693,7 @@ Tast 1/2/3 sender {poll, option, delta, nonce} og legges oppå stemmene.
       conn++;
       var my = conn;
       if (es){ try { es.close(); } catch (e) {} es = null; }
-      var src = new EventSource(NTFY_BASE + topic + "/sse?since=all");
+      var src = new EventSource(NTFY_BASE + listenTopics() + "/sse?since=all");
       es = src;
       failTimer = setTimeout(function(){
         if (my !== conn || api.mode !== "ntfy") return;
@@ -1024,8 +1132,18 @@ Tast 1/2/3 sender {poll, option, delta, nonce} og legges oppå stemmene.
   }, {passive:true});
 
   var voteRoot = document.getElementById("vote-polls");
+  function voteIds(){
+    var focus = qs.get("poll");
+    var title = document.querySelector("#vote h1");
+    if (SALEN_POLLS.indexOf(focus) !== -1){
+      if (title) title.textContent = "Fem spørsmål.";
+      return SALEN_POLLS;
+    }
+    if (title) title.textContent = "To spørsmål.";
+    return ["bruk","onske"];
+  }
   function renderVote(){
-    voteRoot.innerHTML = Object.keys(POLLS).map(function(pid){
+    voteRoot.innerHTML = voteIds().map(function(pid){
       var p = POLLS[pid];
       var buttons = p.options.map(function(op){
         var on = savedChoice(pid) === op.id ? "is-on" : "";

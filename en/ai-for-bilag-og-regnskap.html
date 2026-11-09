@@ -6,7 +6,12 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; connect-src 'self'; base-uri 'self'; form-action 'none'; object-src 'none'; upgrade-insecure-requests">
 <title>Automation of receipts and bookkeeping | Fjellhøy</title>
-<meta name="description" content="Automation of receipts and bookkeeping. An AI agent drafts the work in the accounts you already use, and you approve it before anything is sent.">
+<meta name="description" content="Receipts from email, invoice checks and papers ready for the accountant. You approve before anything is booked or sent.">
+<meta property="og:title" content="Automation of receipts and bookkeeping | Fjellhøy">
+<meta property="og:description" content="Receipts from email, invoice checks and papers ready for the accountant. You approve before anything is booked or sent.">
+<meta name="twitter:title" content="Automation of receipts and bookkeeping | Fjellhøy">
+<meta name="twitter:description" content="Receipts from email, invoice checks and papers ready for the accountant. You approve before anything is booked or sent.">
+
 <link rel="canonical" href="https://fjellhoy.com/en/ai-for-bilag-og-regnskap.html">
 <link rel="alternate" hreflang="nb" href="https://fjellhoy.com/ai-for-bilag-og-regnskap.html">
 <link rel="alternate" hreflang="no" href="https://fjellhoy.com/ai-for-bilag-og-regnskap.html">
@@ -41,7 +46,7 @@
         "height": 400
       },
       "image": "https://fjellhoy.com/assets/fjellhoy-v2c-profilbilde.png",
-      "telephone": "+47 41600048",
+      "telephone": "+4741600048",
       "email": "andreas@fjellhoy.com",
       "description": "Fjellhøy AS advises small businesses and boards and automates office work, including bookkeeping and board work. An AI agent is set up in the accounts the customer already uses, and the customer approves anything before it is sent.",
       "identifier": {
@@ -91,7 +96,7 @@
       ],
       "contactPoint": {
         "@type": "ContactPoint",
-        "telephone": "+47-416-00-048",
+        "telephone": "+4741600048",
         "email": "andreas@fjellhoy.com",
         "contactType": "customer service",
         "availableLanguage": [
@@ -131,6 +136,8 @@
 <meta name="twitter:image" content="https://fjellhoy.com/assets/fjellhoy-v2c-profilbilde.png">
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
+
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
@@ -145,9 +152,14 @@
       <a href="index.html#ai-agent">Services</a>
       <div class="nav-sub"><div class="nav-sub-box">
         <a href="finance-department.html">Finance department</a>
-        <a href="index.html#styrer">For boards</a>
+        <a href="borettslag-og-sameier.html">For boards</a>
+        <a href="handverkere.html">Tradespeople</a>
+        <a href="regnskapsbyra.html">Accounting firms</a>
+        <a href="kurs-og-foredrag.html">Talks and courses</a>
+        <a href="bot-maler.html">Bot templates</a>
       </div></div>
     </div>
+  <a href="security.html">Security</a>
   <a href="index.html#slik">How it works</a>
   <a href="index.html#priser">Pricing</a>
   <a href="hvorfor-fjellhoy.html">About</a>
@@ -159,15 +171,20 @@
   <nav id="mobile-menu" class="mobile-menu" aria-label="Sections" hidden>
     <a href="index.html#ai-agent">Services</a>
     <a class="menu-sub" href="finance-department.html">Finance department</a>
-    <a class="menu-sub" href="index.html#styrer">For boards</a>
+    <a class="menu-sub" href="borettslag-og-sameier.html">For boards</a>
+    <a class="menu-sub" href="handverkere.html">Tradespeople</a>
+    <a class="menu-sub" href="regnskapsbyra.html">Accounting firms</a>
+    <a class="menu-sub" href="kurs-og-foredrag.html">Talks and courses</a>
+    <a class="menu-sub" href="bot-maler.html">Bot templates</a>
+    <a href="security.html">Security</a>
     <a href="index.html#slik">How it works</a>
     <a href="index.html#priser">Pricing</a>
     <a href="hvorfor-fjellhoy.html">About</a>
-    <a class="btn btn-accent mobile-menu-cta" href="index.html#kontakt">Book a call</a>
+    <a class="btn btn-accent mobile-menu-cta" href="index.html#kontakt">Book a chat</a>
   </nav>
 </header>
 <div class="menu-backdrop" hidden></div>
-<main>
+<main id="main">
 <section class="section">
   <div class="container">
     <div class="section-head">
@@ -176,7 +193,9 @@
       <h1>Automation of receipts and bookkeeping</h1>
       <p>Receipts scattered across email and phones slow down bookkeeping. An AI agent can gather them, check invoices and get everything ready for you and your accountant.</p>
     </div>
-    <div class="audience audience-3">
+
+      <h2 class="section-subhead">What the assistant takes care of</h2>
+      <div class="audience audience-3">
       <article class="audience-card">
         <h3>Receipts from email</h3>
         <p>Receipts and invoices arriving by email are picked out and gathered.</p>
@@ -206,7 +225,7 @@
       </article>
     </div>
     <div class="section-head bransje-cta">
-      <p>Example: Marte Ådnanes at Lomelde Bygg AS gets a list of missing receipts before month end. She decides what goes to the accountant. The example shows the way of working. It is not a customer story.</p>
+      <p>Example: A managing director at a building firm gets a list of missing receipts before month end. The example is fictitious and shows the way of working, not a customer. She decides what goes to the accountant. The example shows the way of working. It is not a customer story.</p>
       <p>The agent does not replace your accountant. It does the groundwork in the accounts you connect.</p>
       <p><a class="btn btn-large btn-accent" href="#kontakt">Book a call</a></p>
       <p class="bransje-links">Also read: <a href="finance-department.html">Finance department</a> · <a href="ai-for-holdingselskap-og-eiendom.html">Holding companies and property</a> · <a href="ai-for-styrepapirer.html">Board papers</a> · <a href="automatisere-fakturahandtering.html">Automating invoice handling</a> · <a href="borettslag-og-sameier.html">Housing co-ops</a> · <a href="index.html#styrer">Board packages</a></p>
@@ -232,8 +251,34 @@
 <footer class="site-footer">
   <div class="container footer-inner">
     <a href="index.html" class="brand brand-light"><img class="brand-logo" src="../assets/fjellhoy-v2c-bred-mork.svg" alt="Fjellhøy" width="138" height="46"></a>
-    <div class="footer-links"><a href="tel:+4741600048">+47 416 00 048</a><a href="mailto:andreas@fjellhoy.com">andreas@fjellhoy.com</a><a href="https://fjellhoy.com/en/">fjellhoy.com</a><a href="regnskapsbyra.html">Accounting firms</a><a href="handverkere.html">Trades</a><a href="borettslag-og-sameier.html">Housing co-ops and condominiums</a><a href="eiendomsmegler.html">Estate agents</a><a href="advokat.html">Law firms</a><a href="klinikk-og-tannlege.html">Clinics and dentists</a><a href="nettbutikk.html">Online shops</a><a href="byggfirma.html">Construction firms</a><a href="ai-agent-for-bedrifter.html">Automation for businesses</a><a href="ai-assistent-epost-kalender.html">Email and calendar</a><a href="ai-kurs-for-bedrifter.html">Training in office automation</a><a href="hvorfor-fjellhoy.html">About Fjellhøy</a><a href="ai-for-bilag-og-regnskap.html">Automating invoice handling</a><a href="ai-epost-og-kundeoppfolging.html">Email and customer follow-up</a><a href="ai-radgiver-for-smb.html">Advice for small businesses</a><a href="hva-koster-en-ai-agent-for-en-smb-i-2026.html">What an AI agent costs</a><a href="gdpr-and-data-processing-agreement.html">GDPR and data processing agreement</a><a href="security.html">Security</a>
-      <a href="index.html#faq">Questions</a><a href="personvern.html">Privacy</a></div>
+    <div class="footer-links">
+      <a href="tel:+4741600048">+47 416 00 048</a>
+      <a href="mailto:andreas@fjellhoy.com">andreas@fjellhoy.com</a>
+      <a href="https://fjellhoy.com/en/">fjellhoy.com/en</a>
+      <a href="regnskapsbyra.html">Accounting firms</a>
+      <a href="handverkere.html">Tradespeople</a>
+      <a href="borettslag-og-sameier.html">Housing cooperatives</a>
+      <a href="kurs-og-foredrag.html">Talks and courses</a>
+      <a href="bot-maler.html">Bot templates</a>
+      <a href="eiendomsmegler.html">Estate agents</a>
+      <a href="advokat.html">Law firms</a>
+      <a href="klinikk-og-tannlege.html">Clinics and dentists</a>
+      <a href="nettbutikk.html">Online stores</a>
+      <a href="byggfirma.html">Builders</a>
+      <a href="ai-agent-for-bedrifter.html">Automation for businesses</a>
+      <a href="ai-assistent-epost-kalender.html">Email and calendar</a>
+      <a href="ai-kurs-for-bedrifter.html">Office automation training</a>
+      <a href="hvorfor-fjellhoy.html">About Fjellhøy</a>
+      <a href="automatisere-fakturahandtering.html">Automating invoice handling</a>
+      <a href="ai-epost-og-kundeoppfolging.html">Email and customer follow-up</a>
+      <a href="ai-radgiver-for-smb.html">Advice for small businesses</a>
+      <a href="hva-koster-en-ai-agent-for-en-smb-i-2026.html">What an AI agent costs</a>
+      <a href="finance-department.html">Finance department</a>
+      <a href="gdpr-and-data-processing-agreement.html">GDPR and data processing agreement</a>
+      <a href="security.html">Security</a>
+      <a href="index.html#faq">Questions</a>
+      <a href="personvern.html">Privacy</a>
+    </div>
     <p class="footer-copy">Fjellhøy AS · org. no. 936 970 583 · VAT registered · Sole allé 65, 1540 Vestby · <a href="tel:+4741600048">+47 416 00 048</a> · <a href="mailto:andreas@fjellhoy.com">andreas@fjellhoy.com</a></p>
     <p class="footer-year">© <span id="year">2026</span> Fjellhøy AS</p>
   </div>

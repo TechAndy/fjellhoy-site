@@ -336,4 +336,32 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://fjellhoy.com/en/gdpr-and-data-processing-agreement.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://fjellhoy.com/gdpr-og-databehandleravtale.html"/>
   </url>
+  <url>
+    <loc>https://fjellhoy.com/kurs-og-foredrag.html</loc>
+    <xhtml:link rel="alternate" hreflang="nb" href="https://fjellhoy.com/kurs-og-foredrag.html"/>
+    <xhtml:link rel="alternate" hreflang="no" href="https://fjellhoy.com/kurs-og-foredrag.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fjellhoy.com/en/kurs-og-foredrag.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fjellhoy.com/kurs-og-foredrag.html"/>
+  </url>
+  <url>
+    <loc>https://fjellhoy.com/en/kurs-og-foredrag.html</loc>
+    <xhtml:link rel="alternate" hreflang="nb" href="https://fjellhoy.com/kurs-og-foredrag.html"/>
+    <xhtml:link rel="alternate" hreflang="no" href="https://fjellhoy.com/kurs-og-foredrag.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fjellhoy.com/en/kurs-og-foredrag.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fjellhoy.com/kurs-og-foredrag.html"/>
+  </url>
+  <url>
+    <loc>https://fjellhoy.com/bot-maler.html</loc>
+    <xhtml:link rel="alternate" hreflang="nb" href="https://fjellhoy.com/bot-maler.html"/>
+    <xhtml:link rel="alternate" hreflang="no" href="https://fjellhoy.com/bot-maler.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fjellhoy.com/en/bot-maler.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fjellhoy.com/bot-maler.html"/>
+  </url>
+  <url>
+    <loc>https://fjellhoy.com/en/bot-maler.html</loc>
+    <xhtml:link rel="alternate" hreflang="nb" href="https://fjellhoy.com/bot-maler.html"/>
+    <xhtml:link rel="alternate" hreflang="no" href="https://fjellhoy.com/bot-maler.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fjellhoy.com/en/bot-maler.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fjellhoy.com/bot-maler.html"/>
+  </url>
 </urlset>

@@ -7,6 +7,7 @@
   --navy:#14213D;
   --accent:#B08D57;
   --accent-600:#9a7844;
+  --accent-text:#7c5e32;
   --accent-100:#f4efe4;
   --sand:#f6f3ee;
   --sand-200:#efeae2;
@@ -241,7 +242,7 @@ svg{flex-shrink:0}
 .icon-card-cta h3{color:#fff;font-family:var(--serif);font-size:1.4rem}
 .icon-card-cta p{color:#d4cec3;margin-bottom:18px}
 .icon-card-cta .icon-wrap{background:rgba(255,255,255,.12);color:var(--accent)}
-.text-link{display:inline-flex;align-items:center;gap:8px;color:var(--accent);font-weight:600;text-decoration:none}
+.text-link{display:inline-flex;align-items:center;gap:8px;color:var(--accent-text);font-weight:600;text-decoration:none}
 .text-link:hover{gap:12px}
 .icon-wrap{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;background:#e7ecf4;color:var(--fjord-600)}
 .icon-wrap svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
@@ -303,7 +304,7 @@ svg{flex-shrink:0}
 .board-card h3{color:#fff;font-size:1.2rem}
 .board-card .amount{color:#fff}
 .board-card .unit{color:#b7b0a4}
-.board-card .includes{font-size:14px;font-weight:600;color:var(--accent);margin:4px 0 12px}
+.board-card .includes{font-size:14px;font-weight:600;color:var(--accent-text);margin:4px 0 12px}
 .board-card .price{margin-bottom:18px}
 .board-card .checklist li{color:#c8d9d4}
 .board-card .checklist svg{color:var(--accent)}
@@ -653,3 +654,7 @@ svg{flex-shrink:0}
   .menu-toggle{margin-left:0}
 }
 
+
+.skip-link{position:absolute;left:12px;top:-40px;z-index:10000;padding:8px 14px;background:#fff;color:var(--ink);font-weight:600;border-radius:8px;text-decoration:none;box-shadow:var(--shadow)}
+.skip-link:focus,.skip-link:focus-visible{top:12px;outline:3px solid var(--accent);outline-offset:3px}
+.section-subhead{font-family:var(--serif);font-size:1.35rem;margin:0 0 18px;color:var(--ink)}

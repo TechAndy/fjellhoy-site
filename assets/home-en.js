@@ -4,20 +4,95 @@ const toggle=document.querySelector('.menu-toggle');
   const backdrop=document.querySelector('.menu-backdrop');
   const toTop=document.querySelector('.to-top');
 
+  let menuScrollY=0;
+  const dropBtn=()=>menu.querySelector('.nav-drop-btn');
+  const setDrop=open=>{
+    const btn=dropBtn();
+    const panel=btn&&document.getElementById(btn.getAttribute('aria-controls'));
+    if(!btn||!panel)return;
+    btn.setAttribute('aria-expanded',open?'true':'false');
+    panel.hidden=!open;
+  };
+  const setPageInert=open=>{
+    document.documentElement.classList.toggle('menu-open',open);
+    document.querySelectorAll('body > *').forEach(el=>{
+      if(el===header||el.classList.contains('menu-backdrop'))return;
+      el.inert=open;
+    });
+  };
   const setMenu=open=>{
+    const wasOpen=document.body.classList.contains('menu-open');
+    if(open&&!wasOpen){
+      menuScrollY=window.scrollY||document.documentElement.scrollTop||0;
+      document.body.style.position='fixed';
+      document.body.style.top=`-${menuScrollY}px`;
+      document.body.style.left='0';
+      document.body.style.right='0';
+      document.body.style.width='100%';
+    }
     header.classList.toggle('open',open);
     document.body.classList.toggle('menu-open',open);
     toggle.setAttribute('aria-expanded',open?'true':'false');
     menu.hidden=!open;
     backdrop.hidden=!open;
+    setPageInert(open);
+    if(open)setDrop(false);
+    if(!open&&wasOpen){
+      setDrop(false);
+      const y=menuScrollY;
+      document.body.style.position='';
+      document.body.style.top='';
+      document.body.style.left='';
+      document.body.style.right='';
+      document.body.style.width='';
+      const root=document.documentElement;
+      const prev=root.style.scrollBehavior;
+      root.style.scrollBehavior='auto';
+      window.scrollTo(0,y);
+      root.style.scrollBehavior=prev;
+    }
   };
-
+  const menuFocusable=()=>[...header.querySelectorAll('a[href],button')].filter(el=>!el.closest('[hidden]'));
   toggle.addEventListener('click',()=>setMenu(toggle.getAttribute('aria-expanded')!=='true'));
-  menu.addEventListener('click',e=>{if(e.target.closest('a'))setMenu(false);});
+  menu.addEventListener('click',e=>{
+    const btn=e.target.closest('.nav-drop-btn');
+    if(btn){setDrop(btn.getAttribute('aria-expanded')!=='true');return;}
+    if(e.target.closest('a'))setMenu(false);
+  });
+  menu.addEventListener('keydown',e=>{
+    const btn=dropBtn();
+    if(!btn||document.activeElement!==btn)return;
+    if(e.key==='ArrowDown'){
+      e.preventDefault();
+      setDrop(true);
+      const first=document.getElementById(btn.getAttribute('aria-controls'))?.querySelector('a');
+      if(first)first.focus();
+      return;
+    }
+    if(e.key==='Enter'||e.key===' '){
+      e.preventDefault();
+      setDrop(btn.getAttribute('aria-expanded')!=='true');
+    }
+  });
   backdrop.addEventListener('click',()=>setMenu(false));
   document.addEventListener('keydown',e=>{
-    if(e.key==='Escape'&&toggle.getAttribute('aria-expanded')==='true'){setMenu(false);toggle.focus();}
+    if(toggle.getAttribute('aria-expanded')!=='true')return;
+    if(e.key==='Escape'){
+      const btn=dropBtn();
+      if(btn&&btn.getAttribute('aria-expanded')==='true'){setDrop(false);btn.focus();return;}
+      setMenu(false);
+      toggle.focus();
+      return;
+    }
+    if(e.key!=='Tab')return;
+    const items=menuFocusable();
+    if(!items.length)return;
+    const first=items[0], last=items[items.length-1];
+    if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus();}
+    else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus();}
   });
+  const desktopMq=matchMedia('(min-width:1001px)');
+  desktopMq.addEventListener('change',()=>{if(desktopMq.matches)setMenu(false);});
 
   const onScroll=()=>{
     header.classList.toggle('scrolled',window.scrollY>8);
@@ -25,10 +100,6 @@ const toggle=document.querySelector('.menu-toggle');
   };
   onScroll();
   addEventListener('scroll',onScroll,{passive:true});
-
-  const desktop=matchMedia('(min-width:1001px)');
-  const closeOnDesktop=()=>{if(desktop.matches)setMenu(false);};
-  desktop.addEventListener('change',closeOnDesktop);
 
   document.getElementById('year').textContent=new Date().getFullYear();
 

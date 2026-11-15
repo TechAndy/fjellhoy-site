@@ -350,16 +350,43 @@ svg{flex-shrink:0}
 .cta-inner p{color:#cfc8bb;max-width:32em}
 
 /* footer */
-.site-footer{background:var(--fjord-900);color:#c4bdb0;padding:44px 0}
-.footer-inner{display:flex;align-items:center;gap:32px;flex-wrap:wrap}
+.site-footer{background:var(--fjord-900);color:#c4bdb0;padding:48px 0 40px}
+.footer-inner{display:flex;flex-direction:column;align-items:stretch;gap:28px}
 .brand-light{color:#fff}
-.footer-links{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:8px 28px;margin-left:auto;flex:1 1 320px;min-width:0}
-.footer-links a{color:#e7e1d6;text-decoration:none;font-size:15px}
+.footer-brand{display:flex;flex-wrap:wrap;align-items:center;gap:14px 32px}
+.footer-contact{display:flex;flex-wrap:wrap;gap:6px 18px;margin:0}
+.footer-contact a{color:#e7e1d6;text-decoration:none;font-size:15px;font-weight:600}
+.footer-contact a:hover{color:var(--accent)}
+.footer-nav{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px 32px;width:100%;padding-top:24px;border-top:1px solid rgba(255,255,255,.08)}
+.footer-col{min-width:0}
+.footer-col summary{list-style:none;margin:0 0 12px;color:#e4d2a8;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.footer-col summary::-webkit-details-marker{display:none}
+.footer-col summary::marker{content:""}
+.footer-links{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.footer-links a{color:#e7e1d6;text-decoration:none;font-size:15px;line-height:1.4}
 .footer-links a:hover{color:var(--accent)}
 .footer-copy{font-size:14px;color:#9a9388;width:100%;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);line-height:1.6}
 .footer-copy a{color:#e7e1d6;text-decoration:none;white-space:nowrap}
 .footer-copy a:hover{color:var(--accent)}
 .footer-year{font-size:13px;color:#9a9388;width:100%;margin:8px 0 0}
+@media (min-width:801px){
+  .footer-col summary{pointer-events:none}
+}
+@media (max-width:800px){
+  .footer-nav{grid-template-columns:1fr 1fr;gap:0;padding-top:0}
+  .footer-col{border-bottom:1px solid rgba(255,255,255,.08)}
+  .footer-col[open]{grid-column:1 / -1;border-left:0;padding-left:0;padding-right:0}
+  .footer-col:nth-child(odd){padding-right:12px}
+  .footer-col:nth-child(even){padding-left:12px;border-left:1px solid rgba(255,255,255,.08)}
+  .footer-col summary{cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:48px;margin:0;padding:12px 0}
+  .footer-col summary::after{content:"";flex:none;width:8px;height:8px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:translateY(-2px) rotate(45deg);transition:transform .2s}
+  .footer-col[open] summary::after{transform:translateY(2px) rotate(225deg)}
+  .footer-col[open] summary{margin-bottom:2px}
+  .footer-links{padding:0 0 14px}
+}
+@media (prefers-reduced-motion:reduce){
+  .footer-col summary::after{transition:none}
+}
 .cta-side{display:flex;flex-direction:column;align-items:flex-end;gap:14px}
 .cta-actions{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:12px}
 .cta-contact{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:8px 18px;margin:0;font-size:15px}
@@ -416,7 +443,6 @@ svg{flex-shrink:0}
   .hero-who img{width:48px;height:48px}
   .hero-actions{align-items:stretch}
   .cta-actions{flex-direction:column}
-  .footer-links{margin-left:0;flex:1 1 auto;flex-direction:column;align-items:flex-start;justify-content:flex-start;gap:8px}
 }
 /* slogan + hero sub */
 .slogan-pill{display:inline-flex;align-items:center;gap:8px;margin-bottom:22px;padding:8px 16px 8px 12px;border-radius:999px;background:rgba(176,141,87,.14);border:1px solid rgba(176,141,87,.35);color:#e4d2a8;font-size:14.5px;font-weight:600;letter-spacing:.005em}
@@ -562,6 +588,7 @@ svg{flex-shrink:0}
   html.menu-open,body.menu-open{overflow:hidden;overscroll-behavior:none}
   .to-top{position:fixed;right:16px;bottom:16px;z-index:45;align-items:center;gap:6px;padding:10px 14px;border-radius:999px;background:var(--fjord-700);color:#fff;text-decoration:none;font-size:13px;font-weight:600;box-shadow:0 10px 24px -10px rgba(11,33,34,.6);opacity:0;visibility:hidden;transform:translateY(8px);pointer-events:none;transition:opacity .2s,transform .2s,visibility .2s}
   .to-top.is-visible{display:inline-flex;opacity:1;visibility:visible;transform:none;pointer-events:auto}
+  .to-top.is-visible.is-clear{opacity:0;visibility:hidden;transform:translateY(8px);pointer-events:none;transition:none}
   body.menu-open .to-top{opacity:0;visibility:hidden;pointer-events:none}
 }
 @media (max-width:600px){
